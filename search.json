@@ -1,0 +1,37 @@
+[
+  {
+    "objectID": "blog.html",
+    "href": "blog.html",
+    "title": "Moments and Musings",
+    "section": "",
+    "text": "🚧 This page is under construction 🚧"
+  },
+  {
+    "objectID": "work.html",
+    "href": "work.html",
+    "title": "Work",
+    "section": "",
+    "text": "Open source work"
+  },
+  {
+    "objectID": "posts/2025-07-29/index.html",
+    "href": "posts/2025-07-29/index.html",
+    "title": "Empty blog post",
+    "section": "",
+    "text": "Empty blog text"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "About",
+    "section": "",
+    "text": "I graduated from Williams College in 2023 with a double major in computer science and math. After my undergraduate education, I spent a year in Spain teaching computer science, among other topics, at a vocational school. I’ve also had the good fortune to join batches at the Recurse Center in summer of 2022 and fall of 2024 in which I spent time building out a number of projects, like this or this!\nLast year, I helped out in the Michigan Dems 2024 campaign, writing some texting scripts and mostly organzing volunteer door-knockers and phone bankers. More recently I worked as a maintainer for an in-house Student Information Service for a local high school, which entailed a full-stack React/NextJS project deployed on Vercel.\nCurrently I’m working as a Great Tables intern for Posit!\n\n🔭 My role now involves the development of a supplemental great-tables package called gt-extras!\n🔭 It’s written in Python, and built for the same functionality offered by a sister R package, found here.\n🌱 I’m also currently learning how to toy around with R Shiny apps, one of which can be found here.\n💬 I’m looking to collaborate on gt-extras, please submit issues and PR’s if you’re interested!\n👯 I spend my free time rock climbing, playing soccer and table tennis, and volunteering at a weekly legal clinic."
+  },
+  {
+    "objectID": "index.html#hi-im-jules-walzer-goldfeld",
+    "href": "index.html#hi-im-jules-walzer-goldfeld",
+    "title": "About",
+    "section": "",
+    "text": "I graduated from Williams College in 2023 with a double major in computer science and math. After my undergraduate education, I spent a year in Spain teaching computer science, among other topics, at a vocational school. I’ve also had the good fortune to join batches at the Recurse Center in summer of 2022 and fall of 2024 in which I spent time building out a number of projects, like this or this!\nLast year, I helped out in the Michigan Dems 2024 campaign, writing some texting scripts and mostly organzing volunteer door-knockers and phone bankers. More recently I worked as a maintainer for an in-house Student Information Service for a local high school, which entailed a full-stack React/NextJS project deployed on Vercel.\nCurrently I’m working as a Great Tables intern for Posit!\n\n🔭 My role now involves the development of a supplemental great-tables package called gt-extras!\n🔭 It’s written in Python, and built for the same functionality offered by a sister R package, found here.\n🌱 I’m also currently learning how to toy around with R Shiny apps, one of which can be found here.\n💬 I’m looking to collaborate on gt-extras, please submit issues and PR’s if you’re interested!\n👯 I spend my free time rock climbing, playing soccer and table tennis, and volunteering at a weekly legal clinic."
+  }
+]
