@@ -1,5 +1,0 @@
----
-title: "Empty blog post"
----
-
-Empty blog text

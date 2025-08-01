@@ -1,0 +1,51 @@
+---
+title: "A Great Summer of Great Tables"
+subtitle: "My experience in the 2025 Posit internship"
+date: 2025-08-01
+toc: True
+---
+
+I spent the summer working for Posit (formerly known as RStudio), and I loved it. I was on the tinytools squad, more specifically as a 
+
+## What I Did
+
+The technical work 
+
+### gt-extras
+
+If you're here I assume you know about [**gt-extras**](https://posit-dev.github.io/gt-extras/), so I'll avoid the shameless plug. 
+
+
+
+### Great Tables
+
+### Package Promotion
+
+Part of the joy of the crossover between gt-extras and Great Tables has been the opportunity to share what 
+
+## What I Learned
+
+### Package Development
+
+### Development Organization
+
+With a little shame, I must admit I never knew how to use a branch. That's an exaggeration. I knew what a branch _was_, and I knew to make one so I didn't have to commit to the main branch. The shameful part is once I had a branch, all the new code went into that. (🙈 Don't look at the repository for this website). And then one day, when I felt like there was probably too much code I hadn't commited to the main branch, I'd merge it and ta-da, surely that was good enough... right?
+
+With even more shame, I have to admit I didn't know how to write a suite of tests.
+
+When I say I've learned to do these things, I don't mean I'm a pro. I mean with the mentoring of Rich and Michael, I am now much _better_ at adhering these practices than I used to be.
+
+
+### Writing things like this!
+
+Whether it's a blog post for me (this one!), a blog [post](https://posit-dev.github.io/great-tables/blog/plots-in-tables/) for Great Tables or a blog post for the entirety of Posit, I have had no shortage of oppotunites to talk about myself. As you might guess, this doesn't come naturally to me, but it's yet another skill I've gotten to practice and hone in my summer at Posit.
+
+In every instance (yes, even the slides), my musings are presented with the help of Quarto markdown. I promise this isn't an ad, but having never used Quarto before this summer, I can confidently say I can't imagine a life without it.
+
+
+
+## What's Next (It's Not Over Yet)
+
+At the time of publication, I still have a few weeks remaining in my time at Posit. Big things are still planned, from more features in gt-extras, to upgrades 
+
+

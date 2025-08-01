@@ -1,0 +1,39 @@
+---
+title: "A Great Summer of Great Tables"
+subtitle: "My experience at the 2025 Posit internship"
+author: "Jules Walzer-Goldfeld"
+format:
+  revealjs:
+    incremental: true   
+
+---
+
+
+# Hello!
+
+## Intro about me
+
+# What I've gotten to work on
+
+## Great Tables
+
+## gt-extras
+
+### Porting a package
+
+
+## Technical Writing
+
+# 
+
+Porting a package
+
+extending a package
+    learning about the parent package
+    contributing to said package
+
+promoting a package
+
+
+
+(blog post and slides for org)
