@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss  xmlns:atom="http://www.w3.org/2005/Atom" 
+      xmlns:media="http://search.yahoo.com/mrss/" 
+      xmlns:content="http://purl.org/rss/1.0/modules/content/" 
+      xmlns:dc="http://purl.org/dc/elements/1.1/" 
+      version="2.0">
+<channel>
+<title>Jules Walzer-Goldfeld</title>
+<link>https://juleswg23.github.io/blog.html</link>
+<atom:link href="https://juleswg23.github.io/blog.xml" rel="self" type="application/rss+xml"/>
+<description></description>
+<generator>quarto-1.7.31</generator>
+<lastBuildDate>Fri, 01 Aug 2025 04:00:00 GMT</lastBuildDate>
+<item>
+  <title>A Great Summer of Great Tables</title>
+  <link>https://juleswg23.github.io/posts/Posit Internship Reflection/</link>
+  <description><![CDATA[ 
+
+
+
+
+
+<p>I spent the summer working for Posit (formerly known as RStudio), and I loved it. I was on the tinytools squad, more specifically as a</p>
+<section id="what-i-did" class="level2">
+<h2 class="anchored" data-anchor-id="what-i-did">What I Did</h2>
+<p>The technical work</p>
+<section id="gt-extras" class="level3">
+<h3 class="anchored" data-anchor-id="gt-extras">gt-extras</h3>
+<p>If you’re here I assume you know about <a href="https://posit-dev.github.io/gt-extras/"><strong>gt-extras</strong></a>, so I’ll avoid the shameless plug.</p>
+</section>
+<section id="great-tables" class="level3">
+<h3 class="anchored" data-anchor-id="great-tables">Great Tables</h3>
+</section>
+<section id="package-promotion" class="level3">
+<h3 class="anchored" data-anchor-id="package-promotion">Package Promotion</h3>
+<p>Part of the joy of the crossover between gt-extras and Great Tables has been the opportunity to share what</p>
+</section>
+</section>
+<section id="what-i-learned" class="level2">
+<h2 class="anchored" data-anchor-id="what-i-learned">What I Learned</h2>
+<section id="package-development" class="level3">
+<h3 class="anchored" data-anchor-id="package-development">Package Development</h3>
+</section>
+<section id="development-organization" class="level3">
+<h3 class="anchored" data-anchor-id="development-organization">Development Organization</h3>
+<p>With a little shame, I must admit I never knew how to use a branch. That’s an exaggeration. I knew what a branch <em>was</em>, and I knew to make one so I didn’t have to commit to the main branch. The shameful part is once I had a branch, all the new code went into that. (🙈 Don’t look at the repository for this website). And then one day, when I felt like there was probably too much code I hadn’t commited to the main branch, I’d merge it and ta-da, surely that was good enough… right?</p>
+<p>With even more shame, I have to admit I didn’t know how to write a suite of tests.</p>
+<p>When I say I’ve learned to do these things, I don’t mean I’m a pro. I mean with the mentoring of Rich and Michael, I am now much <em>better</em> at adhering these practices than I used to be.</p>
+</section>
+<section id="writing-things-like-this" class="level3">
+<h3 class="anchored" data-anchor-id="writing-things-like-this">Writing things like this!</h3>
+<p>Whether it’s a blog post for me (this one!), a blog <a href="https://posit-dev.github.io/great-tables/blog/plots-in-tables/">post</a> for Great Tables or a blog post for the entirety of Posit, I have had no shortage of oppotunites to talk about myself. As you might guess, this doesn’t come naturally to me, but it’s yet another skill I’ve gotten to practice and hone in my summer at Posit.</p>
+<p>In every instance (yes, even the slides), my musings are presented with the help of Quarto markdown. I promise this isn’t an ad, but having never used Quarto before this summer, I can confidently say I can’t imagine a life without it.</p>
+</section>
+</section>
+<section id="whats-next-its-not-over-yet" class="level2">
+<h2 class="anchored" data-anchor-id="whats-next-its-not-over-yet">What’s Next (It’s Not Over Yet)</h2>
+<p>At the time of publication, I still have a few weeks remaining in my time at Posit. Big things are still planned, from more features in gt-extras, to upgrades</p>
+
+
+</section>
+
+ ]]></description>
+  <guid>https://juleswg23.github.io/posts/Posit Internship Reflection/</guid>
+  <pubDate>Fri, 01 Aug 2025 04:00:00 GMT</pubDate>
+</item>
+</channel>
+</rss>

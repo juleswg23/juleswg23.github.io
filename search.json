@@ -4,21 +4,91 @@
     "href": "blog.html",
     "title": "Moments and Musings",
     "section": "",
-    "text": "🚧 This page is under construction 🚧"
+    "text": "A Great Summer of Great Tables\n\n\nMy experience in the 2025 Posit internship\n\n\n\n\n\n\n\n\nAug 1, 2025\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "talks/Posit Open Souce Reflection/index.html#intro-about-me",
+    "href": "talks/Posit Open Souce Reflection/index.html#intro-about-me",
+    "title": "A Great Summer of Great Tables",
+    "section": "Intro about me",
+    "text": "Intro about me"
+  },
+  {
+    "objectID": "talks/Posit Open Souce Reflection/index.html#great-tables",
+    "href": "talks/Posit Open Souce Reflection/index.html#great-tables",
+    "title": "A Great Summer of Great Tables",
+    "section": "Great Tables",
+    "text": "Great Tables"
+  },
+  {
+    "objectID": "talks/Posit Open Souce Reflection/index.html#gt-extras",
+    "href": "talks/Posit Open Souce Reflection/index.html#gt-extras",
+    "title": "A Great Summer of Great Tables",
+    "section": "gt-extras",
+    "text": "gt-extras\nPorting a package"
+  },
+  {
+    "objectID": "talks/Posit Open Souce Reflection/index.html#technical-writing",
+    "href": "talks/Posit Open Souce Reflection/index.html#technical-writing",
+    "title": "A Great Summer of Great Tables",
+    "section": "Technical Writing",
+    "text": "Technical Writing"
+  },
+  {
+    "objectID": "posts/Posit Internship Reflection/index.html",
+    "href": "posts/Posit Internship Reflection/index.html",
+    "title": "A Great Summer of Great Tables",
+    "section": "",
+    "text": "I spent the summer working for Posit (formerly known as RStudio), and I loved it. I was on the tinytools squad, more specifically as a"
+  },
+  {
+    "objectID": "posts/Posit Internship Reflection/index.html#what-i-did",
+    "href": "posts/Posit Internship Reflection/index.html#what-i-did",
+    "title": "A Great Summer of Great Tables",
+    "section": "What I Did",
+    "text": "What I Did\nThe technical work\n\ngt-extras\nIf you’re here I assume you know about gt-extras, so I’ll avoid the shameless plug.\n\n\nGreat Tables\n\n\nPackage Promotion\nPart of the joy of the crossover between gt-extras and Great Tables has been the opportunity to share what"
+  },
+  {
+    "objectID": "posts/Posit Internship Reflection/index.html#what-i-learned",
+    "href": "posts/Posit Internship Reflection/index.html#what-i-learned",
+    "title": "A Great Summer of Great Tables",
+    "section": "What I Learned",
+    "text": "What I Learned\n\nPackage Development\n\n\nDevelopment Organization\nWith a little shame, I must admit I never knew how to use a branch. That’s an exaggeration. I knew what a branch was, and I knew to make one so I didn’t have to commit to the main branch. The shameful part is once I had a branch, all the new code went into that. (🙈 Don’t look at the repository for this website). And then one day, when I felt like there was probably too much code I hadn’t commited to the main branch, I’d merge it and ta-da, surely that was good enough… right?\nWith even more shame, I have to admit I didn’t know how to write a suite of tests.\nWhen I say I’ve learned to do these things, I don’t mean I’m a pro. I mean with the mentoring of Rich and Michael, I am now much better at adhering these practices than I used to be.\n\n\nWriting things like this!\nWhether it’s a blog post for me (this one!), a blog post for Great Tables or a blog post for the entirety of Posit, I have had no shortage of oppotunites to talk about myself. As you might guess, this doesn’t come naturally to me, but it’s yet another skill I’ve gotten to practice and hone in my summer at Posit.\nIn every instance (yes, even the slides), my musings are presented with the help of Quarto markdown. I promise this isn’t an ad, but having never used Quarto before this summer, I can confidently say I can’t imagine a life without it."
+  },
+  {
+    "objectID": "posts/Posit Internship Reflection/index.html#whats-next-its-not-over-yet",
+    "href": "posts/Posit Internship Reflection/index.html#whats-next-its-not-over-yet",
+    "title": "A Great Summer of Great Tables",
+    "section": "What’s Next (It’s Not Over Yet)",
+    "text": "What’s Next (It’s Not Over Yet)\nAt the time of publication, I still have a few weeks remaining in my time at Posit. Big things are still planned, from more features in gt-extras, to upgrades"
   },
   {
     "objectID": "work.html",
     "href": "work.html",
-    "title": "Work",
+    "title": "Things I’ve Done",
     "section": "",
-    "text": "Open source work"
+    "text": "Slides for a talk I gave about my internship at Posit"
   },
   {
-    "objectID": "posts/2025-07-29/index.html",
-    "href": "posts/2025-07-29/index.html",
-    "title": "Empty blog post",
+    "objectID": "work.html#talks",
+    "href": "work.html#talks",
+    "title": "Things I’ve Done",
     "section": "",
-    "text": "Empty blog text"
+    "text": "Slides for a talk I gave about my internship at Posit"
+  },
+  {
+    "objectID": "work.html#open-source-work",
+    "href": "work.html#open-source-work",
+    "title": "Things I’ve Done",
+    "section": "Open source work",
+    "text": "Open source work\ngt-extras\n\nAuthor of the gt-extras library, a collection of helpers for Great Tables\nBased on gtExtras in R"
+  },
+  {
+    "objectID": "work.html#personal-projects",
+    "href": "work.html#personal-projects",
+    "title": "Things I’ve Done",
+    "section": "Personal Projects",
+    "text": "Personal Projects\nMarion Stokes Shiny Dashboard\n\nThe dashboard is a place to explore television news data from the Marion Stokes tapes archive\nIn collaboration with Daniel Fernandez, a history student at The New School working on his senior thesis\n\nMega Tic Tac Toe\n\nAn iOS app to play tic tac toe inside of tic tac toe\nHere are the rules, I’m always up for a game"
   },
   {
     "objectID": "index.html",
