@@ -57,7 +57,7 @@ It didn't stop there – as I progressed through styling and coloring functions,
 
 It seems obvious now, but I had never thought about what happens to a package after we write it. It's a good thing I had Michael and Rich pushing me through this step because, had it been up to me, the world would never have learned about this package. Talking about the package doesn't come easily to me, especially when it's to an audience of more than just my roommate, but it really helped that the team gave me the first boost (and it certainly didn't hurt to have the Posit organization promoting it too).
 
-And selfishly I must admit the effect of broadcasting the package far and wide is rewarding. Seeing the package featured on a blog post, or used in someone's repository will make my day. Becasue it's so cool to know the design choices I stayed awake thinking about were (possibly) appreciated by a fellow data enthusiast.
+And selfishly I must admit the effect of broadcasting the package far and wide is rewarding. Seeing the package featured on a blog post, or used in someone's repository will make my day. Because it's so cool to know the design choices I stayed awake thinking about were (possibly) appreciated by a fellow data enthusiast.
 
 ## What I Learned
 
@@ -66,7 +66,9 @@ This summer touched on so many aspects of open source code, from the technical t
 ### Package Development
 
 <!-- todo -->
-Before this summer, I had no idea what really went into making a Python package from scratch. I learned how to set everything up, from the folder structure, to setup files, to GitHub actions and byeond. I got comfortable with things like versioning, documentation, and publishing to PyPI. Now packaging up code feels way less mysterious and way more doable.
+Before this summer, I had no idea what really went into making a Python package from scratch. I learned how to set everything up, from the folder structure, to setup files, to GitHub actions and beyond. I got comfortable with things like versioning, documentation, and publishing to PyPI. Now packaging up code feels way less mysterious and way more doable.
+
+The open process taught me to write code that is readable and maintainable, not just functional. I also gained a deeper appreciation for documentation, not just as a reference, but as a way to welcome new users and contributors.
 
 ### Development Organization
 
@@ -74,14 +76,14 @@ With a little shame, I must admit I never knew how to use a branch. That's an ex
 
 With even more shame, I have to admit I didn't know how to write a suite of tests. Again, I knew what tests were supposed to do, but the concept seemed like something meant for more professional environments, never for code that I worked on. Until my work became code that other people could theoretically rely on – then I knew it had to be dependable. So from snapshot tests, to checking for the presence of css and html content, future changes and dependency upgrades can be relied up to not break the package.
 
-When I say I've learned to do these things, I don't mean I'm a pro. I mean that with the mentoring of Rich and Michael, I am now much _better_ at adhering these practices than I used to be.
+When I say I've learned to do these things, I don't mean I'm a pro. I mean that with the mentoring of Rich and Michael, I am now much _better_ at adhering to these practices than I used to be.
 
 ### Writing things like this!
 
 <!-- add link to posit blog post -->
-Whether it's a blog post for me (this one!), a blog [post](https://posit-dev.github.io/great-tables/blog/plots-in-tables/) for Great Tables or a blog post for the entirety of Posit, I have had no shortage of oppotunites to talk about myself. As you might guess, this doesn't come naturally to me, but it's yet another skill I've gotten to practice and hone in my summer at Posit.
+Whether it's a blog post for me (this one!), a blog [post](https://posit-dev.github.io/great-tables/blog/plots-in-tables/) for Great Tables or a blog post for the entirety of Posit, I have had no shortage of opportunities to talk about myself. As you might guess, this doesn't come naturally to me, but it's yet another skill I've gotten to practice and hone in my summer at Posit.
 
-In every instance (yes, even the [slides](../../talks/Posit%20Open%20Souce%20Reflection/index.qmd)), my musings are presented with the help of Quarto markdown. I promise I'm not getting paid to say this, but having never used Quarto before this summer, I can confidently say I can't imagine a life without it. Life with Quarto was especially easy when the team that maintains it was part of the organization I worked for :) which I'll definitely miss. Instead, I guess you'll find me lurking in GitHub issues.
+In every instance (yes, even the [slides](../../talks/Posit%20Open%20Source%20Reflection/index.qmd)), my musings are presented with the help of Quarto markdown. I promise I'm not getting paid to say this, but having never used Quarto before this summer, I can confidently say I can't imagine a life without it. Life with Quarto was especially easy when the team that maintains it was part of the organization I worked for :) which I'll definitely miss. Instead, I guess you'll find me lurking in GitHub issues.
 
 ## What's Next (It's Not Over Yet)
 
