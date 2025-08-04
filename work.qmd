@@ -2,16 +2,21 @@
 title: "Things I've Done"
 ---
 
-## Talks
-
-[Slides](./talks/Posit%20Open%20Souce%20Reflection/index.qmd) for a talk I gave about my [internship at Posit](./posts/Posit%20Internship%20Reflection/index.qmd)
-
 ## Open source work
 
 **gt-extras**
 
 * Author of the [gt-extras](https://posit-dev.github.io/gt-extras/) library, a collection of helpers for Great Tables
-* Based on gtExtras in R
+* Based on {gtExtras} in R
+
+**Great Tables**
+
+* Contributor to a number of features and bug fixes in [the popular port of R's {gt}](https://github.com/posit-dev/great-tables)
+* Published an entry in the [Great Tables blog](https://posit-dev.github.io/great-tables/blog/plots-in-tables/)
+
+## Talks
+
+[Slides](./talks/Posit%20Open%20Souce%20Reflection/index.qmd) for a talk I gave about my [internship at Posit](./posts/Posit%20Internship%20Reflection/index.qmd)
 
 ## Personal Projects
 
@@ -23,4 +28,4 @@ title: "Things I've Done"
 **Mega Tic Tac Toe**
 
 * An [iOS app](https://github.com/juleswg23/MegaTicTacToe) to play tic tac toe inside of tic tac toe
-* Here are the [rules](https://bejofo.com/ttt), I'm always up for a game 
+* Here are the [rules](https://bejofo.com/ttt), but be careful I'm always up for a game 
