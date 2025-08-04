@@ -4,14 +4,14 @@
     "href": "blog.html",
     "title": "Moments and Musings",
     "section": "",
-    "text": "A Great Summer of Great Tables\n\n\nMy experience in the 2025 Posit internship\n\n\n\n\n\n\n\n\nAug 1, 2025\n\n\n\n\n\nNo matching items"
+    "text": "No matching items"
   },
   {
-    "objectID": "talks/Posit Open Souce Reflection/index.html#intro-about-me",
-    "href": "talks/Posit Open Souce Reflection/index.html#intro-about-me",
+    "objectID": "talks/Posit Open Souce Reflection/index.html#about-me",
+    "href": "talks/Posit Open Souce Reflection/index.html#about-me",
     "title": "A Great Summer of Great Tables",
-    "section": "Intro about me",
-    "text": "Intro about me"
+    "section": "About me",
+    "text": "About me"
   },
   {
     "objectID": "talks/Posit Open Souce Reflection/index.html#great-tables",
@@ -25,7 +25,14 @@
     "href": "talks/Posit Open Souce Reflection/index.html#gt-extras",
     "title": "A Great Summer of Great Tables",
     "section": "gt-extras",
-    "text": "gt-extras\nPorting a package"
+    "text": "gt-extras"
+  },
+  {
+    "objectID": "talks/Posit Open Souce Reflection/index.html#porting-a-package",
+    "href": "talks/Posit Open Souce Reflection/index.html#porting-a-package",
+    "title": "A Great Summer of Great Tables",
+    "section": "Porting a package",
+    "text": "Porting a package"
   },
   {
     "objectID": "talks/Posit Open Souce Reflection/index.html#technical-writing",
@@ -35,73 +42,45 @@
     "text": "Technical Writing"
   },
   {
-    "objectID": "posts/Posit Internship Reflection/index.html",
-    "href": "posts/Posit Internship Reflection/index.html",
-    "title": "A Great Summer of Great Tables",
-    "section": "",
-    "text": "I spent the summer working for Posit (formerly known as RStudio), and I loved it. I was on the tinytools squad, more specifically as a"
-  },
-  {
-    "objectID": "posts/Posit Internship Reflection/index.html#what-i-did",
-    "href": "posts/Posit Internship Reflection/index.html#what-i-did",
-    "title": "A Great Summer of Great Tables",
-    "section": "What I Did",
-    "text": "What I Did\nThe technical work\n\ngt-extras\nIf you’re here I assume you know about gt-extras, so I’ll avoid the shameless plug.\n\n\nGreat Tables\n\n\nPackage Promotion\nPart of the joy of the crossover between gt-extras and Great Tables has been the opportunity to share what"
-  },
-  {
-    "objectID": "posts/Posit Internship Reflection/index.html#what-i-learned",
-    "href": "posts/Posit Internship Reflection/index.html#what-i-learned",
-    "title": "A Great Summer of Great Tables",
-    "section": "What I Learned",
-    "text": "What I Learned\n\nPackage Development\n\n\nDevelopment Organization\nWith a little shame, I must admit I never knew how to use a branch. That’s an exaggeration. I knew what a branch was, and I knew to make one so I didn’t have to commit to the main branch. The shameful part is once I had a branch, all the new code went into that. (🙈 Don’t look at the repository for this website). And then one day, when I felt like there was probably too much code I hadn’t commited to the main branch, I’d merge it and ta-da, surely that was good enough… right?\nWith even more shame, I have to admit I didn’t know how to write a suite of tests.\nWhen I say I’ve learned to do these things, I don’t mean I’m a pro. I mean with the mentoring of Rich and Michael, I am now much better at adhering these practices than I used to be.\n\n\nWriting things like this!\nWhether it’s a blog post for me (this one!), a blog post for Great Tables or a blog post for the entirety of Posit, I have had no shortage of oppotunites to talk about myself. As you might guess, this doesn’t come naturally to me, but it’s yet another skill I’ve gotten to practice and hone in my summer at Posit.\nIn every instance (yes, even the slides), my musings are presented with the help of Quarto markdown. I promise this isn’t an ad, but having never used Quarto before this summer, I can confidently say I can’t imagine a life without it."
-  },
-  {
-    "objectID": "posts/Posit Internship Reflection/index.html#whats-next-its-not-over-yet",
-    "href": "posts/Posit Internship Reflection/index.html#whats-next-its-not-over-yet",
-    "title": "A Great Summer of Great Tables",
-    "section": "What’s Next (It’s Not Over Yet)",
-    "text": "What’s Next (It’s Not Over Yet)\nAt the time of publication, I still have a few weeks remaining in my time at Posit. Big things are still planned, from more features in gt-extras, to upgrades"
-  },
-  {
     "objectID": "work.html",
     "href": "work.html",
     "title": "Things I’ve Done",
     "section": "",
-    "text": "Slides for a talk I gave about my internship at Posit"
-  },
-  {
-    "objectID": "work.html#talks",
-    "href": "work.html#talks",
-    "title": "Things I’ve Done",
-    "section": "",
-    "text": "Slides for a talk I gave about my internship at Posit"
+    "text": "gt-extras\n\nAuthor of the gt-extras library, a collection of helpers for Great Tables\nBased on {gtExtras} in R\n\nGreat Tables\n\nContributor to a number of features and bug fixes in the popular port of R’s {gt}\nPublished an entry in the Great Tables blog"
   },
   {
     "objectID": "work.html#open-source-work",
     "href": "work.html#open-source-work",
     "title": "Things I’ve Done",
-    "section": "Open source work",
-    "text": "Open source work\ngt-extras\n\nAuthor of the gt-extras library, a collection of helpers for Great Tables\nBased on gtExtras in R"
+    "section": "",
+    "text": "gt-extras\n\nAuthor of the gt-extras library, a collection of helpers for Great Tables\nBased on {gtExtras} in R\n\nGreat Tables\n\nContributor to a number of features and bug fixes in the popular port of R’s {gt}\nPublished an entry in the Great Tables blog"
+  },
+  {
+    "objectID": "work.html#talks",
+    "href": "work.html#talks",
+    "title": "Things I’ve Done",
+    "section": "Talks",
+    "text": "Talks\nSlides for a talk I gave about my internship at Posit"
   },
   {
     "objectID": "work.html#personal-projects",
     "href": "work.html#personal-projects",
     "title": "Things I’ve Done",
     "section": "Personal Projects",
-    "text": "Personal Projects\nMarion Stokes Shiny Dashboard\n\nThe dashboard is a place to explore television news data from the Marion Stokes tapes archive\nIn collaboration with Daniel Fernandez, a history student at The New School working on his senior thesis\n\nMega Tic Tac Toe\n\nAn iOS app to play tic tac toe inside of tic tac toe\nHere are the rules, I’m always up for a game"
+    "text": "Personal Projects\nMarion Stokes Shiny Dashboard\n\nThe dashboard is a place to explore television news data from the Marion Stokes tapes archive\nIn collaboration with Daniel Fernandez, a history student at The New School working on his senior thesis\n\nMega Tic Tac Toe\n\nAn iOS app to play tic tac toe inside of tic tac toe\nHere are the rules, but be careful I’m always up for a game\n\nConnect Four\n\nSocket-backed Connect four full-stack application written in TypeScript\nPlay in real time here"
   },
   {
     "objectID": "index.html",
     "href": "index.html",
     "title": "About",
     "section": "",
-    "text": "I graduated from Williams College in 2023 with a double major in computer science and math. After my undergraduate education, I spent a year in Spain teaching computer science, among other topics, at a vocational school. I’ve also had the good fortune to join batches at the Recurse Center in summer of 2022 and fall of 2024 in which I spent time building out a number of projects, like this or this!\nLast year, I helped out in the Michigan Dems 2024 campaign, writing some texting scripts and mostly organzing volunteer door-knockers and phone bankers. More recently I worked as a maintainer for an in-house Student Information Service for a local high school, which entailed a full-stack React/NextJS project deployed on Vercel.\nCurrently I’m working as a Great Tables intern for Posit!\n\n🔭 My role now involves the development of a supplemental great-tables package called gt-extras!\n🔭 It’s written in Python, and built for the same functionality offered by a sister R package, found here.\n🌱 I’m also currently learning how to toy around with R Shiny apps, one of which can be found here.\n💬 I’m looking to collaborate on gt-extras, please submit issues and PR’s if you’re interested!\n👯 I spend my free time rock climbing, playing soccer and table tennis, and volunteering at a weekly legal clinic."
+    "text": "I graduated from Williams College in 2023 with a double major in computer science and math. After my undergraduate education, I spent a year in Spain teaching computer science, among other topics, at a vocational school. I’ve also had the good fortune to join batches at the Recurse Center in summer of 2022 and fall of 2024 in which I spent time building out a number of projects, like these!\nLast year, I helped out in the Michigan Dems 2024 campaign, writing some texting scripts and mostly organzing volunteer door-knockers and phone bankers. More recently I worked as a maintainer for an in-house Student Information Service for a local high school, which entailed a full-stack React/NextJS project deployed on Vercel.\nCurrently I’m working as a Great Tables intern for Posit!\n\n🔭 My role now involves the development of a supplemental Great Tables package called gt-extras!\n🔭 It’s written in Python, and built for the same functionality offered by a sister R package.\n🌱 I’m currently learning how to toy around with R Shiny apps, one of which can be found here.\n💬 I’m looking to collaborate on gt-extras, please submit issues and PR’s!\n👯 I spend my time climbing, playing soccer and table tennis, and volunteering at a weekly legal clinic."
   },
   {
     "objectID": "index.html#hi-im-jules-walzer-goldfeld",
     "href": "index.html#hi-im-jules-walzer-goldfeld",
     "title": "About",
     "section": "",
-    "text": "I graduated from Williams College in 2023 with a double major in computer science and math. After my undergraduate education, I spent a year in Spain teaching computer science, among other topics, at a vocational school. I’ve also had the good fortune to join batches at the Recurse Center in summer of 2022 and fall of 2024 in which I spent time building out a number of projects, like this or this!\nLast year, I helped out in the Michigan Dems 2024 campaign, writing some texting scripts and mostly organzing volunteer door-knockers and phone bankers. More recently I worked as a maintainer for an in-house Student Information Service for a local high school, which entailed a full-stack React/NextJS project deployed on Vercel.\nCurrently I’m working as a Great Tables intern for Posit!\n\n🔭 My role now involves the development of a supplemental great-tables package called gt-extras!\n🔭 It’s written in Python, and built for the same functionality offered by a sister R package, found here.\n🌱 I’m also currently learning how to toy around with R Shiny apps, one of which can be found here.\n💬 I’m looking to collaborate on gt-extras, please submit issues and PR’s if you’re interested!\n👯 I spend my free time rock climbing, playing soccer and table tennis, and volunteering at a weekly legal clinic."
+    "text": "I graduated from Williams College in 2023 with a double major in computer science and math. After my undergraduate education, I spent a year in Spain teaching computer science, among other topics, at a vocational school. I’ve also had the good fortune to join batches at the Recurse Center in summer of 2022 and fall of 2024 in which I spent time building out a number of projects, like these!\nLast year, I helped out in the Michigan Dems 2024 campaign, writing some texting scripts and mostly organzing volunteer door-knockers and phone bankers. More recently I worked as a maintainer for an in-house Student Information Service for a local high school, which entailed a full-stack React/NextJS project deployed on Vercel.\nCurrently I’m working as a Great Tables intern for Posit!\n\n🔭 My role now involves the development of a supplemental Great Tables package called gt-extras!\n🔭 It’s written in Python, and built for the same functionality offered by a sister R package.\n🌱 I’m currently learning how to toy around with R Shiny apps, one of which can be found here.\n💬 I’m looking to collaborate on gt-extras, please submit issues and PR’s!\n👯 I spend my time climbing, playing soccer and table tennis, and volunteering at a weekly legal clinic."
   }
 ]
