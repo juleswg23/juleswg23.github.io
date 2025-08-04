@@ -2,7 +2,7 @@
 title: "Things I've Done"
 ---
 
-## Open source work
+## Open Source
 
 **gt-extras**
 
