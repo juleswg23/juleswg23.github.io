@@ -29,3 +29,8 @@ title: "Things I've Done"
 
 * An [iOS app](https://github.com/juleswg23/MegaTicTacToe) to play tic tac toe inside of tic tac toe
 * Here are the [rules](https://bejofo.com/ttt), but be careful I'm always up for a game 
+
+**Connect Four**
+
+* Socket-backed [Connect four](https://github.com/juleswg23/connect-four-live) full-stack application written in TypeScript
+* Play in real time [here](https://ancient-chelsae-jules-personal-c110e413.koyeb.app/)
