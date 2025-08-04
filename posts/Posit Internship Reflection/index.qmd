@@ -5,7 +5,7 @@ date: 2025-08-04
 # date-modified: 2025-08-05
 toc: true
 toc-expand: true
-draft: true
+# draft: true
 ---
 
 I spent the summer working for Posit (formerly known as RStudio), and I loved it. I was on the tinytools squad, as an intern for **Great Tables**, the Python port of {gt} in R. My team was responsible for many of the major ports from Posit's R packages to Python. They are awesome – this is certainly an incomplete list, but they've created the Python versions of {ggplot2}, {pointblank}, {scales}, {forcats}, {dplyr}, and {reactable}, to name a few.
