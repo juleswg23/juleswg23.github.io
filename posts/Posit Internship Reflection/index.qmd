@@ -78,5 +78,3 @@ In every instance (yes, even the slides), my musings are presented with the help
 ## What's Next (It's Not Over Yet)
 
 At the time of publication, I still have a few weeks remaining in my time at Posit. Big things are still planned, from more features in gt-extras, to upgrades for Great Tables. Stick around here or give [**gt-extas**](https://github.com/posit-dev/gt-extras) a star and follow along with my work there.
-
-

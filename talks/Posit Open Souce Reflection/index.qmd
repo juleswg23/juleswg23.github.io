@@ -4,22 +4,30 @@ subtitle: "My experience at the 2025 Posit internship"
 author: "Jules Walzer-Goldfeld"
 format:
   revealjs:
-    incremental: true   
-
+    slide-number: h.v
+    incremental: true
+    progress: true
+    theme: [simple, custom.scss]
+    # controls: true
+# toc: true
 ---
 
 
 # Hello!
 
-## Intro about me
+## About me
 
-# What I've gotten to work on
+# What I've gotten to do
 
 ## Great Tables
 
 ## gt-extras
 
-### Porting a package
+![](../../images/gap.png)
+
+# What I've learned
+
+## Porting a package
 
 
 ## Technical Writing
