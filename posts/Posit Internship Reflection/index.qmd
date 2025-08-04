@@ -1,27 +1,41 @@
 ---
 title: "A Great Summer of Great Tables"
 subtitle: "My experience in the 2025 Posit internship"
-date: 2025-08-01
+date: 2025-08-04
 toc: True
 ---
 
-I spent the summer working for Posit (formerly known as RStudio), and I loved it. I was on the tinytools squad, more specifically as a 
+I spent the summer working for Posit (formerly known as RStudio), and I loved it. I was on the tinytools squad, as an intern for **Great Tables**, the Python port of {gt} in R. My team was responsible for many of the major ports from Posit's R packages to Python. This is certainly an incomplete list, but they've created the Python version of {ggplot2}, {pointblank}, {scales}, {forcats}, {dplyr}, and {reactable}, to name a few.
 
 ## What I Did
 
-The technical work 
+The technical work at first largely consisted of work on my own package, an addition to the Great Tables ecosystem by way of extension. But I was able to contribute directly to Great Tables as well, which was very satisfying. And then there was the unexpected third avenue of work involving the presentation and promotion of my work to engage with the broader open source community.
 
 ### gt-extras
 
-If you're here I assume you know about [**gt-extras**](https://posit-dev.github.io/gt-extras/), so I'll avoid the shameless plug. 
+If you're here I'll assume you know about the [**gt-extras**](https://posit-dev.github.io/gt-extras/) package, or at the very least you know who I am, so I'll avoid the shameless plug. The overwhelming majority of my work this summer has entailed a port of the {gtExtras} R package to Python, a task that was made more complex and interesting because of the underlying differences between the R and Python versions of Great Tables.
 
+The core tasks of the gt-extras library are to
 
+1.  make existing features of Great Tables easier to use
+2.  add new in-cell plotting
+3.  compose styles to replicate the look of famous publications
+
+Rich Iannone (one of my mentors) got me started with one of themes
+
+Michael Chow (my other mentor) 
+
+Okay, fine – I can't help but show off some of the cool things it can do. We can see a summary of the 2011 NFL season, my favorite being the winloss charts, primarily because of how much winning my New York Giants did that season.
+
+![](../../images/2011-nfl-season.png.png){width=32em fig-align="center"}
 
 ### Great Tables
 
+The very first PR I made to Great Tables was an entirely new feature, to rotate column labels 90 degrees. I don't think I realized it at the time, but the workflow of that task was exactly how I approached the functions in gt-extras. Namely, I had to write a function, write a docstring, add it to the documentation, and then write tests. This last part kind of grew on me, even though I'd embarrassingly never really done it before.
+
 ### Package Promotion
 
-Part of the joy of the crossover between gt-extras and Great Tables has been the opportunity to share what 
+It seems obvious now, but I had never thought about what happens to a package after we write it. It's a good thing I had Michael and Rich pushing me through this step because, had it been up to me, the world would never have learned about this package. Talking about the package doesn't come easy to me, especially when it's to an audience of more than just my roommate, but it really helped that the team gave me the first boost (and it certainly didn't hurt to have the Posit organization promoting it too). 
 
 ## What I Learned
 
