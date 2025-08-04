@@ -39,7 +39,7 @@ Over the first couple of weeks, I met with both daily, and later we made longer 
 
 Okay, fine – I can't help but show off some of the cool things it can do. We can see a summary of the 2011 NFL season, my favorite being the winloss charts, primarily because of how much winning my New York Giants did that season.
 
-![A mega-example built with the gt-extras library](../../images/2011-nfl-season.png.png){width=36em fig-align="center"}
+![A mega-example built with the gt-extras library](../../images/2011-nfl-season.png){width=36em fig-align="center"}
 
 ### Great Tables
 
