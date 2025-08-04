@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://juleswg23.github.io/blog.html</loc>
-    <lastmod>2025-08-01T20:59:54.116Z</lastmod>
-  </url>
-  <url>
-    <loc>https://juleswg23.github.io/talks/Posit Open Source Reflection/index.html</loc>
-    <lastmod>2025-08-04T20:18:23.913Z</lastmod>
+    <loc>https://juleswg23.github.io/work.html</loc>
+    <lastmod>2025-08-04T20:46:03.244Z</lastmod>
   </url>
   <url>
     <loc>https://juleswg23.github.io/posts/Posit Internship Reflection/index.html</loc>
-    <lastmod>2025-08-04T20:27:44.847Z</lastmod>
+    <lastmod>2025-08-04T20:46:03.243Z</lastmod>
   </url>
   <url>
-    <loc>https://juleswg23.github.io/work.html</loc>
-    <lastmod>2025-08-04T20:22:18.077Z</lastmod>
+    <loc>https://juleswg23.github.io/blog.html</loc>
+    <lastmod>2025-08-04T20:46:03.219Z</lastmod>
   </url>
   <url>
     <loc>https://juleswg23.github.io/index.html</loc>
-    <lastmod>2025-08-04T19:31:20.209Z</lastmod>
+    <lastmod>2025-08-04T20:46:03.243Z</lastmod>
+  </url>
+  <url>
+    <loc>https://juleswg23.github.io/talks/Posit Open Source Reflection/index.html</loc>
+    <lastmod>2025-08-04T20:46:03.244Z</lastmod>
   </url>
 </urlset>
