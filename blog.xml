@@ -9,8 +9,8 @@
 <link>https://juleswg.me/blog.html</link>
 <atom:link href="https://juleswg.me/blog.xml" rel="self" type="application/rss+xml"/>
 <description></description>
-<generator>quarto-1.7.33</generator>
-<lastBuildDate>Mon, 04 Aug 2025 00:00:00 GMT</lastBuildDate>
+<generator>quarto-1.7.31</generator>
+<lastBuildDate>Mon, 04 Aug 2025 04:00:00 GMT</lastBuildDate>
 <item>
   <title>A Great Summer of Great Tables</title>
   <link>https://juleswg.me/posts/Posit Internship Reflection/</link>
@@ -101,7 +101,7 @@
 
  ]]></description>
   <guid>https://juleswg.me/posts/Posit Internship Reflection/</guid>
-  <pubDate>Mon, 04 Aug 2025 00:00:00 GMT</pubDate>
+  <pubDate>Mon, 04 Aug 2025 04:00:00 GMT</pubDate>
 </item>
 </channel>
 </rss>
