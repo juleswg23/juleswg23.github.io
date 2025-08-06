@@ -6,14 +6,14 @@
       version="2.0">
 <channel>
 <title>Jules Walzer-Goldfeld</title>
-<link>https://juleswg23.github.io/blog.html</link>
-<atom:link href="https://juleswg23.github.io/blog.xml" rel="self" type="application/rss+xml"/>
+<link>https://juleswg.me/blog.html</link>
+<atom:link href="https://juleswg.me/blog.xml" rel="self" type="application/rss+xml"/>
 <description></description>
-<generator>quarto-1.7.32</generator>
+<generator>quarto-1.7.33</generator>
 <lastBuildDate>Mon, 04 Aug 2025 00:00:00 GMT</lastBuildDate>
 <item>
   <title>A Great Summer of Great Tables</title>
-  <link>https://juleswg23.github.io/posts/Posit Internship Reflection/</link>
+  <link>https://juleswg.me/posts/Posit Internship Reflection/</link>
   <description><![CDATA[ 
 
 
@@ -30,7 +30,7 @@
 <p>If you’re here I’ll assume you know about the <a href="https://posit-dev.github.io/gt-extras/"><strong>gt-extras</strong></a> package, or at the very least you know who I am, so I’ll avoid the shameless plug. The overwhelming majority of my work this summer has entailed a port of the {gtExtras} R package to Python, a task that was made more complex and interesting because of the underlying differences between the R and Python versions of Great Tables.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://juleswg23.github.io/images/gap.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:36em"></p>
+<p><img src="https://juleswg.me/images/gap.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:36em"></p>
 </figure>
 </div>
 <p>The core tasks of the gt-extras library are to:</p>
@@ -47,7 +47,7 @@
 <p>Okay, fine – I can’t help but show off some of the cool things it can do. We can see a summary of the 2011 NFL season, my favorite being the winloss charts, primarily because of how much winning my New York Giants did that season.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://juleswg23.github.io/images/2011-nfl-season.png" class="img-fluid figure-img" style="width:36em"></p>
+<p><img src="https://juleswg.me/images/2011-nfl-season.png" class="img-fluid figure-img" style="width:36em"></p>
 <figcaption>A mega-example built with the gt-extras library</figcaption>
 </figure>
 </div>
@@ -100,7 +100,7 @@
 </section>
 
  ]]></description>
-  <guid>https://juleswg23.github.io/posts/Posit Internship Reflection/</guid>
+  <guid>https://juleswg.me/posts/Posit Internship Reflection/</guid>
   <pubDate>Mon, 04 Aug 2025 00:00:00 GMT</pubDate>
 </item>
 </channel>
