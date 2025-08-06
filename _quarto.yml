@@ -3,7 +3,7 @@ project:
 
 website:
   title: "Jules Walzer-Goldfeld"
-  site-url: https://juleswg23.github.io/
+  site-url: https://juleswg.me/
   navbar:
     right:
       - file: index.qmd
