@@ -4,3 +4,4 @@ gt_extras
 polars
 pandas
 jupyter
+ipykernel
