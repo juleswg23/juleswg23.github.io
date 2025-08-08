@@ -1,5 +1,61 @@
 [
   {
+    "objectID": "blog.html",
+    "href": "blog.html",
+    "title": "Moments and Musings",
+    "section": "",
+    "text": "A Great Summer of Great Tables\n\n\nMy experience in the 2025 Posit internship\n\n\n\n\n\n\n\n\nAug 4, 2025\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "talks/Posit-Open-Source-Reflection/index.html#who-are-you-listening-to",
+    "href": "talks/Posit-Open-Source-Reflection/index.html#who-are-you-listening-to",
+    "title": "A Great Summer of Great Tables",
+    "section": "Who are you listening to",
+    "text": "Who are you listening to\n\n\n\n🐄 Studied CS and Math at Williams College\n🇪🇸 Was an English teacher in Spain\n💡 I enjoy patterns and helping people see patterns\n🧗 I like to play table tennis, soccer, chess, and climb rocks\n🔢 I like logic puzzles!"
+  },
+  {
+    "objectID": "talks/Posit-Open-Source-Reflection/index.html#gt-extras",
+    "href": "talks/Posit-Open-Source-Reflection/index.html#gt-extras",
+    "title": "A Great Summer of Great Tables",
+    "section": "gt-extras",
+    "text": "gt-extras\n\nA Python port of Thomas Mock’s R package: {gtExtras}"
+  },
+  {
+    "objectID": "talks/Posit-Open-Source-Reflection/index.html#gt-extras-1",
+    "href": "talks/Posit-Open-Source-Reflection/index.html#gt-extras-1",
+    "title": "A Great Summer of Great Tables",
+    "section": "gt-extras",
+    "text": "gt-extras\n\n\n\nPlotting\n\n\nColoring\n\n\nTheming\n\n\nIconing + Imaging\n\n\nUtilities\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCar\nmfr\nyear\nhp\nhp_rpm\ntrq\ntrq_rpm\nmpg_c\nmpg_h\n\n\n\n\nLaFerrari\nFerrari\n2015\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNSX\nAcura\n2017\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nGT-R\nNissan\n2016\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nAventador\nLamborghini\n2015\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHuracan\nLamborghini\n2015\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nGallardo\nLamborghini\n2014\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nContinental GT\nBentley\n2016\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nGranturismo\nMaserati\n2016\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nQuattroporte\nMaserati\n2016\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nIsland\nsize\n\n\n\n\nAsia\n\n\n\n\n\n\n16988\n\n\n\n\n\nAfrica\n\n\n\n\n\n\n11506\n\n\n\n\n\nNorth America\n\n\n\n\n\n\n9390\n\n\n\n\n\nSouth America\n\n\n\n\n\n\n6795\n\n\n\n\n\nAntarctica\n\n\n\n\n\n\n5500\n\n\n\n\n\nEurope\n\n\n\n\n\n\n3745\n\n\n\n\n\nAustralia\n\n\n\n\n\n\n2968\n\n\n\n\n\nGreenland\n\n\n\n\n\n\n840\n\n\n\n\n\nNew Guinea\n\n\n\n\n\n\n306\n\n\n\n\n\nBorneo\n\n\n\n\n\n\n280\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nDot Matrix Theme\n\n\nNew York Air Quality Measurements\n\n\nTime\nMeasurement\n\n\nYear\nMonth\nDay\nOzone,\nppbV\nSolar R.,\ncal/m2\nWind,\nmph\nTemp,\n°F\n\n\n\n\n1973\n5\n1\n41.0\n190.0\n7.4\n67\n\n\n1973\n5\n2\n36.0\n118.0\n8.0\n72\n\n\n1973\n5\n3\n12.0\n149.0\n12.6\n74\n\n\n1973\n5\n4\n18.0\n313.0\n11.5\n62\n\n\n1973\n5\n5\n\n\n14.3\n56\n\n\n1973\n5\n6\n28.0\n\n14.9\n66\n\n\n1973\n5\n7\n23.0\n299.0\n8.6\n65\n\n\n1973\n5\n8\n19.0\n99.0\n13.8\n59\n\n\n1973\n5\n9\n8.0\n19.0\n20.1\n61\n\n\n1973\n5\n10\n\n194.0\n8.6\n69\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nname\n1996_2001\n2001_2006\n2006_2011\n\n\n\n\nAddington Highlands\n\n\n\n\nAngles down\n\n\n\n\n\n-0.0111\n\n\n\n\n\n\nAngles up\n\n\n\n\n\n0.0458\n\n\n\n\n\n\nEquals\n\n\n\n\n\n0.002\n\n\n\n\nAdelaide Metcalfe\n\n\n\n\nEquals\n\n\n\n\n\n0.0067\n\n\n\n\n\n\nEquals\n\n\n\n\n\n-0.0044\n\n\n\n\n\n\nAngles down\n\n\n\n\n\n-0.0341\n\n\n\n\nAdjala-Tosorontio\n\n\n\n\nAngles up\n\n\n\n\n\n0.0773\n\n\n\n\n\n\nAngles up\n\n\n\n\n\n0.0608\n\n\n\n\n\n\nEquals\n\n\n\n\n\n-0.0086\n\n\n\n\nAdmaston/Bromley\n\n\n\n\nEquals\n\n\n\n\n\n-0.0046\n\n\n\n\n\n\nAngles down\n\n\n\n\n\n-0.0382\n\n\n\n\n\n\nAngles up\n\n\n\n\n\n0.0471\n\n\n\n\nAjax\n\n\n\n\nAngles up\n\n\n\n\n\n0.1447\n\n\n\n\n\n\nAngles up\n\n\n\n\n\n0.2226\n\n\n\n\n\n\nAngles up\n\n\n\n\n\n0.2155\n\n\n\n\nAlberton\n\n\n\n\nAngles down\n\n\n\n\n\n-0.0691\n\n\n\n\n\n\nEquals\n\n\n\n\n\n0.0021\n\n\n\n\n\n\nAngles down\n\n\n\n\n\n-0.0981\n\n\n\n\nAlfred and Plantagenet\n\n\n\n\nAngles up\n\n\n\n\n\n0.0334\n\n\n\n\n\n\nEquals\n\n\n\n\n\n0.0071\n\n\n\n\n\n\nAngles up\n\n\n\n\n\n0.0626\n\n\n\n\nAlgonquin Highlands\n\n\n\n\nAngles up\n\n\n\n\n\n0.083\n\n\n\n\n\n\nAngles up\n\n\n\n\n\n0.0816\n\n\n\n\n\n\nAngles up\n\n\n\n\n\n0.1063\n\n\n\n\nAlnwick/Haldimand\n\n\n\n\nAngles up\n\n\n\n\n\n0.0575\n\n\n\n\n\n\nAngles up\n\n\n\n\n\n0.1008\n\n\n\n\n\n\nAngles up\n\n\n\n\n\n0.0283\n\n\n\n\nAmaranth\n\n\n\n\nAngles up\n\n\n\n\n\n0.0928\n\n\n\n\n\n\nAngles up\n\n\n\n\n\n0.0199\n\n\n\n\n\n\nAngles up\n\n\n\n\n\n0.0307\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n        \n            \n        \n        \n            \n                Double Table\n            \n            \n            \n                \n                    \n\n\n\n\n\nname_given\naddress\n\n\n\n\nRuth\n4299 Bobcat Drive\n\n\nPeter\n3705 Hidden Pond Road\n\n\nFanette\n4200 Swick Hill Street\n\n\nJudyta\n2287 Cherry Ridge Drive\n\n\nLeonard\n1496 Hillhaven Drive\n\n\nMaymun\n4088 Barnes Avenue\n\n\n\n\n\n\n        \n                \n                \n                    \n\n\n\n\n\nname_given\naddress\n\n\n\n\nAlma\n4897 Duffy Street\n\n\nMariana\n2016 Kovar Road\n\n\nNing\n3892 Bel Meadow Drive\n\n\nMartin\n1850 Valley Lane\n\n\nCendrillon\nRue de Liège 466\n\n\nAdélaïde\nOrchideeenlaan 470"
+  },
+  {
+    "objectID": "talks/Posit-Open-Source-Reflection/index.html#gt-extras-2",
+    "href": "talks/Posit-Open-Source-Reflection/index.html#gt-extras-2",
+    "title": "A Great Summer of Great Tables",
+    "section": "gt-extras",
+    "text": "gt-extras\n\n\n\nfound at https://posit-dev.github.io/gt-extras/examples/"
+  },
+  {
+    "objectID": "talks/Posit-Open-Source-Reflection/index.html#section",
+    "href": "talks/Posit-Open-Source-Reflection/index.html#section",
+    "title": "A Great Summer of Great Tables",
+    "section": "",
+    "text": "Plotting\n\nMost effort (and most rewarding)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSummary Table\n\n\n45 rows x 5 cols\n\n\nType\nColumn\nPlot Overview\nMissing\nMean\nMedian\nSD\n\n\n\n\n\n\nClock\n\n\n\nDate\n\n\n\n2024-01-012024-02-0115 rows[2024-01-01 to 2024-01-07]10 rows[2024-01-07 to 2024-01-13]5 rows[2024-01-13 to 2024-01-19]10 rows[2024-01-19 to 2024-01-25]5 rows[2024-01-25 to 2024-02-01]\n\n0.0%\n—\n—\n—\n\n\n\n\nsignal\n\n\n\nValue\n\n\n\n10405 rows[10 to 15]10 rows[15 to 20]10 rows[20 to 25]5 rows[25 to 30]5 rows[30 to 35]5 rows[35 to 40]\n\n11.1%\n22.50\n21.00\n8.83\n\n\n\n\nList\n\n\n\nCategory\n\n\n10 rows\"A\"10 rows\"B\"10 rows\"C\"5 rows\"D\"\n\n22.2%\n—\n—\n—\n\n\n\n\nCheck\n\n\n\nBoolean\n\n\n30 rows\"True\"15 rows\"False\"\n\n0.0%\n0.67\n—\n—\n\n\n\n\nList\n\n\n\nStatus\n\n\n15 rows\"Active\"15 rows\"Inactive\"\n\n33.3%\n—\n—\n—\n\n\n\n\n\n\n\n\n\n\n\n\naside: this is awesome!"
+  },
+  {
+    "objectID": "talks/Posit-Open-Source-Reflection/index.html#great-tables",
+    "href": "talks/Posit-Open-Source-Reflection/index.html#great-tables",
+    "title": "A Great Summer of Great Tables",
+    "section": "Great Tables",
+    "text": "Great Tables\nextending a package learning about the parent package contributing to said package"
+  },
+  {
+    "objectID": "talks/Posit-Open-Source-Reflection/index.html#technical-writing",
+    "href": "talks/Posit-Open-Source-Reflection/index.html#technical-writing",
+    "title": "A Great Summer of Great Tables",
+    "section": "Technical Writing",
+    "text": "Technical Writing\n\nBlog post in Great Tables blog\nBlog post for Posit.co/blog\nPersonal blog post\nExtending Great Tables in get-started\n\npromoting a package"
+  },
+  {
     "objectID": "work.html",
     "href": "work.html",
     "title": "Things I’ve Done",
@@ -56,13 +112,6 @@
     "text": "What’s Next (It’s Not Over Yet)\nAt the time of publication, I still have a few weeks remaining in my time at Posit. Big things are still planned, from more features in gt-extras, to upgrades for Great Tables. Stick around here or give gt-extras a star and follow along with my work there."
   },
   {
-    "objectID": "blog.html",
-    "href": "blog.html",
-    "title": "Moments and Musings",
-    "section": "",
-    "text": "A Great Summer of Great Tables\n\n\nMy experience in the 2025 Posit internship\n\n\n\n\n\n\n\n\nAug 4, 2025\n\n\n\n\n\nNo matching items"
-  },
-  {
     "objectID": "index.html",
     "href": "index.html",
     "title": "About",
@@ -75,40 +124,5 @@
     "title": "About",
     "section": "",
     "text": "I graduated from Williams College in 2023 with a double major in computer science and math. After my undergraduate education, I spent a year in Spain teaching computer science, among other topics, at a vocational school. I’ve also had the good fortune to join batches at the Recurse Center in summer of 2022 and fall of 2024 in which I spent time building out a number of projects, like these!\nLast year, I helped out in the Michigan Dems 2024 campaign, writing some texting scripts and mostly organzing volunteer door-knockers and phone bankers. More recently I worked as a maintainer for an in-house Student Information Service for a local high school, which entailed a full-stack React/NextJS project deployed on Vercel.\nCurrently I’m working as a Great Tables intern for Posit!\n\n🔭 My role now involves the development of a supplemental Great Tables package called gt-extras!\n🔭 It’s written in Python, and built for the same functionality offered by a sister R package.\n🌱 I’m currently learning how to toy around with R Shiny apps, one of which can be found here.\n💬 I’m looking to collaborate on gt-extras, please submit issues and PR’s!\n👯 I spend my time climbing, playing soccer and table tennis, and volunteering at a weekly legal clinic."
-  },
-  {
-    "objectID": "talks/Posit Open Source Reflection/index.html#about-me",
-    "href": "talks/Posit Open Source Reflection/index.html#about-me",
-    "title": "A Great Summer of Great Tables",
-    "section": "About me",
-    "text": "About me"
-  },
-  {
-    "objectID": "talks/Posit Open Source Reflection/index.html#great-tables",
-    "href": "talks/Posit Open Source Reflection/index.html#great-tables",
-    "title": "A Great Summer of Great Tables",
-    "section": "Great Tables",
-    "text": "Great Tables"
-  },
-  {
-    "objectID": "talks/Posit Open Source Reflection/index.html#gt-extras",
-    "href": "talks/Posit Open Source Reflection/index.html#gt-extras",
-    "title": "A Great Summer of Great Tables",
-    "section": "gt-extras",
-    "text": "gt-extras"
-  },
-  {
-    "objectID": "talks/Posit Open Source Reflection/index.html#porting-a-package",
-    "href": "talks/Posit Open Source Reflection/index.html#porting-a-package",
-    "title": "A Great Summer of Great Tables",
-    "section": "Porting a package",
-    "text": "Porting a package"
-  },
-  {
-    "objectID": "talks/Posit Open Source Reflection/index.html#technical-writing",
-    "href": "talks/Posit Open Source Reflection/index.html#technical-writing",
-    "title": "A Great Summer of Great Tables",
-    "section": "Technical Writing",
-    "text": "Technical Writing"
   }
 ]
