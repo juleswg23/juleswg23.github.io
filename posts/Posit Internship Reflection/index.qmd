@@ -83,7 +83,7 @@ I'm not claiming to be a pro, but thanks to Rich and Michael's mentoring, I am n
 <!-- add link to posit blog post -->
 Whether it's a blog post for me (this one!), a blog [post](https://posit-dev.github.io/great-tables/blog/plots-in-tables/) for Great Tables or a blog post for the entirety of Posit, I have had no shortage of opportunities to talk about my work. As you might guess, this doesn't come naturally to me, but it's yet another skill I've gotten to practice and hone in my summer at Posit.
 
-In every instance (yes, even the [slides](../../talks/Posit%20Open%20Source%20Reflection/index.qmd)), I've presented my musings using Quarto markdown. I promise I'm not getting paid to say this, but having never used Quarto before this summer, I can confidently say I can't imagine a life without it. Life with Quarto was especially easy when the team that maintains it was part of the organization I worked for :) which I'll definitely miss. Instead, I guess you'll find me lurking in GitHub issues.
+In every instance (yes, even the [slides](../../talks/Posit-Open-Source-Reflection/index.qmd)), I've presented my musings using Quarto markdown. I promise I'm not getting paid to say this, but having never used Quarto before this summer, I can confidently say I can't imagine a life without it. Life with Quarto was especially easy when the team that maintains it was part of the organization I worked for :) which I'll definitely miss. Instead, I guess you'll find me lurking in GitHub issues.
 
 ## What's Next (It's Not Over Yet)
 

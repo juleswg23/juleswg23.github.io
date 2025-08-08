@@ -1,0 +1,381 @@
+---
+title: "A Great Summer of Great Tables"
+subtitle: "My experience at the 2025 Posit internship"
+author: "Jules Walzer-Goldfeld"
+freeze: true
+format:
+  revealjs:
+    slide-number: h.v
+    incremental: true
+    progress: true
+    theme: [simple, custom.scss]
+    preview-links: auto
+    transition: fade
+    transition-speed: fast
+    auto-stretch: false
+    # controls: true
+# toc: true
+---
+
+
+# Hello!
+
+## About me
+
+::::: {.columns}
+
+::: {.column width="70%"}
+
+
+- 🐄 Studied CS and Math at Williams College
+
+- 🇪🇸 Was an English teacher in Spain
+
+- 💡 I enjoy patterns and helping people see patterns
+
+- 🧗 I like to play table tennis, soccer, chess, and climb rocks
+
+- 🔢 I like logic puzzles!
+
+:::
+
+::: {.column width="30%" .fragment}
+![](./images/kenken.jpeg)
+:::
+
+:::::
+
+---
+
+### RStudio origin story
+<!-- images of my orignial rstudio days -->
+
+::: {.notes }
+I'm sure everyone has their RStudio origin moment
+:::
+
+:::: {.r-stack}
+
+:::{.fragment .fade-out fragment-index=1}
+![](./images/directory.png)
+:::
+
+:::{.fragment .fade-in fragment-index=1}
+![](./images/citibike.jpeg){height="20%" fig-align="center"}
+:::
+
+::::
+
+# What I've done this summer
+
+## gt-extras
+
+![](../../images/gap.png)
+
+A Python port of Thomas Mock's R package: [{gtExtras}](https://jthomasmock.github.io/gtExtras/)
+
+
+<!-- "Second gt-extras slide" -->
+## gt-extras
+
+:::::: {.columns}
+
+::::: {.column width="30%"}
+
+::: {.fragment fragment-index=1 .highlight-current-red}
+Plotting
+:::
+
+::: {.fragment fragment-index=2 .highlight-current-red}
+Coloring
+:::
+
+::: {.fragment fragment-index=3 .highlight-current-red}
+Theming
+:::
+
+::: {.fragment fragment-index=4 .highlight-current-red}
+Iconing + Imaging
+:::
+
+::: {.fragment fragment-index=5 .highlight-current-red}
+Utilities
+:::
+
+:::::
+
+::::: {.column width="70%"}
+
+:::: {.r-stack}
+
+::: {.fragment fragment-index=1 .fade-in-then-out}
+
+```{python}
+from great_tables import GT
+from great_tables.data import gtcars
+import gt_extras as gte
+
+gtcars_mini = gtcars.loc[
+    9:17,
+    ["model", "mfr", "year", "hp", "hp_rpm", "trq", "trq_rpm", "mpg_c", "mpg_h"]
+]
+
+gt = (
+    GT(gtcars_mini, rowname_col="model")
+    .tab_stubhead(label="Car")
+    .cols_align("center")
+    .cols_align("left", columns="mfr")
+    .tab_options(
+        table_background_color="transparent",
+        table_border_top_color="transparent",
+        table_width="350px",
+        table_font_size="21px",
+    )
+)
+
+gt.pipe(
+    gte.gt_plt_bar,
+    columns= ["hp", "hp_rpm", "trq", "trq_rpm", "mpg_c", "mpg_h"]
+)
+```
+:::
+
+::: {.fragment fragment-index=2 .fade-in-then-out}
+
+```{python}
+from great_tables import GT
+from great_tables.data import islands
+import gt_extras as gte
+
+islands_mini = (
+    islands
+    .sort_values(by="size", ascending=False)
+    .head(10)
+)
+
+gt = (
+    GT(islands_mini, rowname_col="name")
+    .tab_stubhead(label="Island")
+    .tab_options(
+        table_background_color="transparent",
+        table_border_top_color="transparent",
+        table_width="300px",
+        table_font_size="20px",
+    )
+)
+
+gt.pipe(gte.gt_color_box, columns="size", palette=["lightblue", "navy"])
+```
+:::
+
+::: {.fragment fragment-index=3 .fade-in-then-out}
+
+```{python}
+from great_tables import GT, html
+import gt_extras as gte
+from great_tables.data import airquality
+
+# Prepare the dataset
+airquality_mini = airquality.head(10).assign(Year=1973)
+
+# Create the base table
+gt = (
+    GT(airquality_mini)
+    .tab_header(
+        title="Dot Matrix Theme",
+        subtitle="New York Air Quality Measurements",
+    )
+    .tab_spanner(label="Time", columns=["Year", "Month", "Day"])
+    .tab_spanner(
+        label="Measurement",
+        columns=["Ozone", "Solar_R", "Wind", "Temp"],
+    )
+    .cols_move_to_start(columns=["Year", "Month", "Day"])
+    .cols_label(
+        Ozone=html("Ozone,<br>ppbV"),
+        Solar_R=html("Solar R.,<br>cal/m<sup>2</sup>"),
+        Wind=html("Wind,<br>mph"),
+        Temp=html("Temp,<br>&deg;F"),
+    )
+    .tab_options(
+        table_background_color="transparent",
+        table_border_top_color="transparent",
+        table_width="320px",
+        table_font_size="28px",
+    )
+)
+
+gt.pipe(gte.gt_theme_dot_matrix)
+```
+
+:::
+
+::: {.fragment fragment-index=4 .fade-in-then-out}
+
+```{python}
+from great_tables import GT
+from great_tables.data import towny
+import gt_extras as gte
+
+mini_towny = towny.head(10)
+gt = GT(mini_towny).cols_hide(None).cols_unhide("name")
+
+columns = [
+    "pop_change_1996_2001_pct",
+    "pop_change_2001_2006_pct",
+    "pop_change_2006_2011_pct",
+]
+
+for col in columns:
+    gt = (
+        gt
+        .cols_align(columns=col, align="center")
+        .cols_unhide(col)
+        .cols_label({col: col[11:20]})
+        .tab_options(
+            table_background_color="transparent",
+            table_border_top_color="transparent",
+            table_width="320px",
+            table_font_size="20px",
+        )
+
+        .pipe(
+            gte.gt_fa_rank_change,
+            column=col,
+            neutral_range=[-0.01, 0.01],
+        )
+    )
+
+gt
+```
+
+:::
+
+::: {.fragment fragment-index=5 .fade-in-then-out}
+
+```{python}
+from great_tables import GT
+import gt_extras as gte
+from great_tables.data import peeps
+
+df1 = peeps.loc[0:5, ["name_given", "address"]]
+df2 = peeps.loc[6:11, ["name_given", "address"]]
+
+gt1 = (
+    GT(df1)
+    .tab_header(title="Double Table")
+    .tab_options(
+        table_background_color="transparent",
+        table_border_top_color="transparent",
+        table_font_size="20px",
+    )
+)
+gt2 = (
+    GT(df2)
+    .tab_options(
+        table_background_color="transparent",
+        table_border_top_color="transparent",
+        table_font_size="20px",
+    )
+)
+
+gte.gt_two_column_layout(gt1, gt2, table_header_from=1)
+```
+
+:::
+
+::::
+
+:::::
+
+::::::
+
+<!-- "Third gt-extras slide" -->
+## gt-extras
+
+![found at [https://posit-dev.github.io/gt-extras/examples/](https://posit-dev.github.io/gt-extras/examples/)](./images/examples.png)
+
+<!-- "Fourth gt-extras slide" -->
+---
+### Plotting
+
+::: {.notes}
+Most effort (and most rewarding)
+:::
+
+```{python}
+import polars as pl
+from great_tables import GT
+import gt_extras as gte
+from datetime import datetime
+
+df = pl.DataFrame(
+    {
+        "Date": [
+            datetime(2024, 1, 1),
+            datetime(2024, 1, 2),
+            datetime(2024, 1, 7),
+            datetime(2024, 1, 8),
+            datetime(2024, 1, 13),
+            datetime(2024, 1, 16),
+            datetime(2024, 1, 20),
+            datetime(2024, 1, 22),
+            datetime(2024, 2, 1),
+        ]
+        * 5,
+        "Value": [10, 15, 20, None, 25, 18, 22, 30, 40] * 5,
+        "Category": ["A", "B", "C", "A", "B", "C", "D", None, None] * 5,
+        "Boolean": [True, False, True] * 15,
+        "Status": ["Active", "Inactive", None] * 15,
+    }
+)
+
+gte.gt_plt_summary(df).tab_options(
+    table_background_color="transparent", table_border_top_color="transparent"
+)
+```
+
+
+
+---
+![aside: this is awesome!](./images/quarto.png)
+
+
+## Great Tables
+
+
+
+
+
+# What I've learned
+
+## Porting a package
+
+
+## Technical Writing
+
+- Blog [post](https://posit-dev.github.io/great-tables/blog/plots-in-tables/) in Great Tables blog
+- Blog post for Posit.co/blog
+- Personal blog [post](../../posts/Posit%20Internship%20Reflection/index.qmd)
+- [Extending Great Tables](https://posit-dev.github.io/great-tables/get-started/extensions) in get-started
+
+
+# uh oh
+
+Porting a package
+
+extending a package
+    learning about the parent package
+    contributing to said package
+
+promoting a package
+
+
+
+(blog post and slides for org)
+
+# Thank you
+
+![](./images/GT_logo.svg){width="5%"}
+
+(These slides are on my website [juleswg.me](https://juleswg.me))
