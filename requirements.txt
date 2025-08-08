@@ -1,7 +1,5 @@
-quarto
 great_tables
 gt_extras
 polars
 pandas
 jupyter
-ipykernel
