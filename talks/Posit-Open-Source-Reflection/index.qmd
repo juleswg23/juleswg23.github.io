@@ -20,7 +20,7 @@ format:
 
 # Hello!
 
-## About me
+## Who are you listening to
 
 ::::: {.columns}
 
@@ -331,26 +331,23 @@ df = pl.DataFrame(
 )
 
 gte.gt_plt_summary(df).tab_options(
-    table_background_color="transparent", table_border_top_color="transparent"
+    table_background_color="transparent", table_border_top_color="transparent",
+    table_font_size="30px",
+    heading_title_font_size="38px",
+    heading_subtitle_font_size="26px",
 )
 ```
 
-
-
----
+::: {.fragment}
 ![aside: this is awesome!](./images/quarto.png)
+:::
 
 
 ## Great Tables
 
-
-
-
-
-# What I've learned
-
-## Porting a package
-
+extending a package
+    learning about the parent package
+    contributing to said package
 
 ## Technical Writing
 
@@ -360,22 +357,24 @@ gte.gt_plt_summary(df).tab_options(
 - [Extending Great Tables](https://posit-dev.github.io/great-tables/get-started/extensions) in get-started
 
 
-# uh oh
-
-Porting a package
-
-extending a package
-    learning about the parent package
-    contributing to said package
-
 promoting a package
 
 
-
-(blog post and slides for org)
-
 # Thank you
 
-![](./images/GT_logo.svg){width="5%"}
+::: {.nonincremental}
 
-(These slides are on my website [juleswg.me](https://juleswg.me))
+- Rich and Michael
+- The whole tiny-tools squad (Andrew, Hassan, Jeroen)
+- The other intern (Frances)
+- Isabel Z, Isabella V, Julia, Libby, Thomas & more who gave me feedback to build on
+- All my Donut meet and greeters
+
+:::
+
+
+![](./images/GT_logo.svg){width="40%" .absolute top=-30 right=20}
+
+::: footer
+(These slides are on my new personal site 👉 [juleswg.me](https://juleswg.me))
+:::
