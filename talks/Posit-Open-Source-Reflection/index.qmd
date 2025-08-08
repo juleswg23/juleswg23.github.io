@@ -2,7 +2,7 @@
 title: "A Great Summer of Great Tables"
 subtitle: "My experience at the 2025 Posit internship"
 author: "Jules Walzer-Goldfeld"
-freeze: true
+# freeze: true
 format:
   revealjs:
     slide-number: h.v
