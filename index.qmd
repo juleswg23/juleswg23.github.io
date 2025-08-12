@@ -19,7 +19,7 @@ format:
       body-width: 1050px
 ---
 
-## Hi I'm Jules Walzer-Goldfeld 👋
+## Hi! I'm Jules Walzer-Goldfeld 👋
 
 I graduated from Williams College in 2023 with a double major in computer science and math. After my undergraduate education, I spent a year in Spain teaching computer science, among other topics, at a vocational school. I've also had the good fortune to join batches at the [Recurse Center](https://www.recurse.com/) in summer of 2022 and fall of 2024 in which I spent time building out a number of projects, like [these](./work.qmd)!
 
