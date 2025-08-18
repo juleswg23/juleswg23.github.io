@@ -40,7 +40,7 @@ format:
 :::
 
 ::: {.column width="30%" .fragment}
-![](./images/kenken.jpeg)
+![](./assets/images/kenken.jpeg)
 :::
 
 :::::
@@ -57,11 +57,11 @@ I'm sure everyone has their RStudio origin moment
 :::: {.r-stack}
 
 :::{.fragment .fade-out fragment-index=1}
-![](./images/directory.png)
+![](./assets/images/directory.png)
 :::
 
 :::{.fragment .fade-in fragment-index=1}
-![](./images/citibike.jpeg){height="20%" fig-align="center"}
+![](./assets/images/citibike.jpeg){height="20%" fig-align="center"}
 :::
 
 ::::
@@ -254,7 +254,7 @@ gt
 ::: {.fragment fragment-index=5 .fade-in-then-out}
 
 ```{python}
-from great_tables import GT
+from great_tables import GT, style, loc
 import gt_extras as gte
 from great_tables.data import peeps
 
@@ -269,6 +269,7 @@ gt1 = (
         table_border_top_color="transparent",
         table_font_size="20px",
     )
+    .tab_style(style=style.fill("transparent"), locations=[loc.column_header(), loc.stubhead()])
 )
 gt2 = (
     GT(df2)
@@ -277,6 +278,7 @@ gt2 = (
         table_border_top_color="transparent",
         table_font_size="20px",
     )
+    .tab_style(style=style.fill("transparent"), locations=[loc.column_header(), loc.stubhead()])
 )
 
 gte.gt_two_column_layout(gt1, gt2, table_header_from=1)
@@ -293,11 +295,108 @@ gte.gt_two_column_layout(gt1, gt2, table_header_from=1)
 <!-- "Third gt-extras slide" -->
 ## gt-extras
 
-![found at [https://posit-dev.github.io/gt-extras/examples/](https://posit-dev.github.io/gt-extras/examples/)](./images/examples.png)
+:::: {.r-stack}
+
+::: {.fragment fragment-index=1 .fade-out}
+
+![found at [https://posit-dev.github.io/gt-extras/examples/](https://posit-dev.github.io/gt-extras/examples/)](./assets/images/examples.png){width="80%"}
+
+:::
+
+::: {.fragment fragment-index=1 .fade-in-then-out style="width: 1600px; zoom: 45%;"}
+
+```{python}
+import polars as pl
+from great_tables import GT, md, style, loc
+import gt_extras as gte
+
+nfl_df = pl.read_json("./assets/nfl_2011_stats.json")
+
+
+def make_gt(df) -> GT:
+    return (
+        GT(df, rowname_col="Team", groupname_col="team_division")
+        .tab_options(
+            table_background_color="transparent",
+            table_border_top_color="transparent",
+            table_font_size="20px",
+            heading_background_color="transparent",
+        )
+        .tab_header(
+            title="2011 NFL Season at a Glance",
+            subtitle="Super Bowl XLVI: New York Giants def. New England Patriots",
+        )
+        .tab_source_note(
+            md(
+                '<span style="float: right;">Source: [Lee Sharpe, nflverse](https://github.com/nflverse/nfldata)</span>'
+            )
+        )
+        .tab_stubhead(label="Team")
+        .tab_spanner(label="Scoring", columns=["Avg PF", "Avg PA", "Point Diff"])
+        .tab_spanner(label="Season Trends", columns=["Games", "Streak"])
+        .tab_style(style=style.fill("transparent"), locations=[loc.spanner_labels(["Season Trends", "Scoring"]), loc.column_header(), loc.stubhead()])
+        .fmt_number(columns="Point Diff", decimals=1)
+        .fmt_image("team_logo_espn")
+        .cols_hide(["Wins", "team_conf", "team_name"])
+        .cols_align(align="center", columns=["Avg PF", "Avg PA", "Games"])
+        .cols_move("team_logo_espn", after="Team")
+        .cols_label({"team_logo_espn": ""})
+        .pipe(
+            gte.gt_plt_winloss,
+            column="Games",
+            win_color="blue",
+            loss_color="orange",
+            tie_color="gray",
+            height=40,
+            width=120,
+        )
+        .pipe(
+            gte.gt_fa_rank_change,
+            column="Streak",
+            icon_type="turn",
+            color_up="blue",
+            color_down="orange",
+            size=14,
+        )
+        .pipe(
+            gte.gt_plt_dumbbell,
+            col1="Avg PF",
+            col2="Avg PA",
+            col1_color="green",
+            col2_color="red",
+            width=300,
+            height=40,
+            num_decimals=0,
+            label="Points For vs Points Against",
+            font_size=12,
+        )
+        .pipe(
+            gte.gt_color_box,
+            columns="Point Diff",
+            palette=["green", "yellow", "red"],
+            domain=[14, -14],
+        )
+        .pipe(gte.gt_highlight_cols, columns="Team", fill="lightgray")
+        .pipe(gte.gt_highlight_rows, rows="NYG", fill="gold", alpha=0.3)
+        .pipe(gte.gt_highlight_rows, rows="NE", fill="silver", alpha=0.3)
+        .pipe(gte.gt_add_divider, columns="Point Diff", color="darkblue", weight=3)
+        .pipe(gte.gt_theme_538)
+    )
+
+
+gt1 = make_gt(nfl_df.head(16))
+gt2 = make_gt(nfl_df.slice(16, 16))
+
+gte.gt_two_column_layout(gt1, gt2, table_header_from=1)
+```
+
+:::
+
+::::
 
 <!-- "Fourth gt-extras slide" -->
 ---
-### Plotting
+### Plotting ➡️ [`gt_plt_summary()`](https://posit-dev.github.io/gt-extras/reference/gt_plt_summary)
 
 ::: {.notes}
 Most effort (and most rewarding)
@@ -339,7 +438,7 @@ gte.gt_plt_summary(df).tab_options(
 ```
 
 ::: {.fragment}
-![aside: this is awesome!](./images/quarto.png)
+![aside: this is awesome!](./assets/images/quarto.png)
 :::
 
 
@@ -366,14 +465,14 @@ promoting a package
 
 - Rich and Michael
 - The whole tiny-tools squad (Andrew, Hassan, Jeroen)
-- The other intern (Frances)
+- Another open source intern (Frances)
 - Isabel Z, Isabella V, Julia, Libby, Thomas & more who gave me feedback to build on
 - All my Donut meet and greeters
 
 :::
 
 
-![](./images/GT_logo.svg){width="40%" .absolute top=-30 right=20}
+![](./assets/images/GT_logo.svg){width="40%" .absolute top=-30 right=20}
 
 ::: footer
 (These slides are on my new personal site 👉 [juleswg.me](https://juleswg.me))
