@@ -2,19 +2,18 @@
 title: "A Great Summer of Great Tables"
 subtitle: "My experience in the 2025 Posit internship"
 date: 2025-08-04
-# date-modified: 2025-08-05
+date-modified: 2025-08-18
 toc: true
 toc-expand: true
-# draft: true
 ---
 
 I spent the summer working for Posit (formerly known as RStudio), and I loved it. I was on the tinytools squad, as an intern for **Great Tables**, the Python port of {gt} in R. My team was responsible for many of the major ports from Posit's R packages to Python. They are awesome – this is certainly an incomplete list, but they've created the Python versions of {ggplot2}, {pointblank}, {scales}, {forcats}, {dplyr}, and {reactable}, to name a few.
 
 ## What I Did
 
-The technical work at first largely consisted of work on my own package, an addition to the Great Tables ecosystem by way of extension. But I was able to contribute directly to Great Tables as well, which was very satisfying. And then there was the unexpected third avenue of work involving the presentation and promotion of my work to engage with the broader open source community (which was very scary).
+The technical work at first largely consisted of work on my own package, an addition to the Great Tables ecosystem by way of extension. Then I was able to contribute directly to Great Tables as well, which was very satisfying. And then there was the unexpected third avenue of work involving the presentation and promotion of my work to engage with the broader open source community (which was quite scary).
 
-I also got to meet tons of folks from the wider Posit community, thanks to internal weekly matchmaking and fun talks/hangouts. I've met so many wonderful people over the past few months that I couldn't possibly list them all here. Suffice to say that from intern hangouts to coffee chats with Posit developers in Europe, to career advice with former python open source team members, to data science talks, the remote world of my internship has not been all too remote.
+I also got to meet tons of folks from the wider Posit community, thanks to internal weekly matchmaking, fun talks/hangouts (and even an in-person meetup). I've met so many wonderful people over the past few months that I couldn't possibly list them all here. Suffice to say that from intern hangouts to coffee chats with Posit developers in Europe, to career advice with former python open source team members, to data science talks, the remote world of my internship has not been all too remote.
 
 ### gt-extras
 
@@ -27,15 +26,15 @@ The core tasks of the gt-extras library are to:
 1.  make existing features of Great Tables easier to use
 2.  add in-cell plotting
 3.  compose styles to replicate the themes of famous publications
-4.  make html and post-processing steps simple
+4.  execute simple html and post-processing steps
 
-Rich Iannone (one of my great mentors) got me started with the package structure, since he had written a version with one of themes. That turned out to be the most bang for my buck – take the exact styling options researched and implemented by Thomas Mock in {gtExtras}, and with minimal syntax changes I had finished the first eight functions!
+Rich Iannone (one of my great mentors) got me started with the package structure, since he had already written a minimal version with one theme. That class of functions turned out to be the most bang for my buck – take the exact styling options researched and implemented by Thomas Mock in {gtExtras}, and with minimal syntax changes I had finished the themes!
 
-But it wasn't all copy and paste. In fact, after that, just about every function had a pretty critical deviation from the R version. The underlying dataframe in the Python package is different from R, and gtExtras had access to ggplot2, but we wanted to keep dependencies light, so I was doing all the data wrangling and graphics myself.
+But it wasn't all copy and paste. In fact, after that, just about every function had a pretty critical deviation from the R version. The underlying dataframe in the Python package is different from R, and gtExtras had access to ggplot2, two elements that were inaccessible to me. Since we wanted to keep dependencies light, I did all of the data wrangling and graphics myself.
 
-Michael Chow (my other great mentor) pointed me towards Narwhals (a library meant for handling different dataframe libraries). Both he and Rich encouraged me to try out different approaches to plotting, and while they could have easily told me "do it this way," I am very grateful that I was trusted enough to make those decisions and discoveries myself.
+Michael Chow (my other great mentor) pointed me towards Narwhals (a library meant for handling different dataframe libraries). Both he and Rich encouraged me to try out different approaches to plotting, and while they could have easily told me "do it this way," I am very grateful that I was trusted enough to make those decisions and discoveries myself. 
 
-Over the first couple of weeks, I met with both daily, and later we made longer term targets and paired for the more critical decisions. One of which was the first external contribution into my package, which was a delight to see. For the most part, I was given low-level autonomy over implementation choices, and reserved advice for decisions like how to approach building plots or how to unify competing underlying dataframes (looking at you, Narwhals 👀). The control was freeing, as it helped me learn what I could do myself, even when at first it felt like a good thing to ask for help on (like designing the documentation website).
+Over the first couple of weeks, I met with both daily, and later we made longer term targets and paired for the more critical decisions. One of which was the first external contribution into my package, which was a delight to see. For the most part, I was given low-level autonomy over implementation choices, and reserved pairing for decisions like how to approach building plots or how to unify competing underlying dataframes (looking at you, Narwhals 👀). The independence was freeing, as it helped me learn what I could do myself, even when at first it felt like a good thing to ask for help on (like designing the documentation website).
 
 Okay, fine – I can't help but show off some of the cool things it can do. We can see a summary of the 2011 NFL season, my favorite being the winloss charts, primarily because of how much winning my New York Giants did that season.
 
@@ -45,13 +44,15 @@ Okay, fine – I can't help but show off some of the cool things it can do. We c
 
 The very first PR I made to Great Tables was an entirely [new feature](https://github.com/posit-dev/great-tables/pull/696), to rotate column labels 90 degrees. I don't think I realized it at the time, but the workflow of that task was exactly how I approached the functions in gt-extras. Namely, I had to write a function, write a docstring with an example, add it to the documentation, and then write tests. This last part kind of grew on me, even though I'd embarrassingly never really done it before.
 
-It didn't stop there – as I progressed through styling and coloring functions, I uncovered little improvements I wanted to make to Great Tables. The bonus side effect of spending all those hours extending Great Tables is that I became perhaps the most frequent user (and tester) of the package. So a number of my own GitHub issues (and my subsequent PRs) made their way into the repository:
+It didn't stop there – as I progressed through styling and coloring functions, I uncovered little improvements I wanted to make to Great Tables. The bonus side effect of spending all those hours extending Great Tables is that I became perhaps the most frequent user (and tester) of the package. Eventually, I got to a point where I was fluent enough with Great Tables source code, and tacked some larger features and known bugs. So a number of my own GitHub issues (and my subsequent PRs) made their way into the repository:
 
-<!-- Change links to PRs not issues -->
-* a row striping indexing [bug](https://github.com/posit-dev/great-tables/issues/700) with grouped data 
-* a data coloring palette [bug](https://github.com/posit-dev/great-tables/issues/717)
-* an [improvement](https://github.com/posit-dev/great-tables/issues/744) to autocoloring the text of striped rows 
-* an [improvement](https://github.com/posit-dev/great-tables/issues/746) to autocoloring in semi-transparent elements 
+<!-- Add link to the PR that closes https://github.com/posit-dev/great-tables/pull/755, https://github.com/posit-dev/great-tables/issues/761 -->
+* A grand 😉 new [feature](https://github.com/posit-dev/great-tables/pull/765)
+* A collection of many [different](https://github.com/posit-dev/great-tables/pull/756) [fixes](https://github.com/posit-dev/great-tables/pull/754) to old group bugs.
+* a row striping indexing [bug](https://github.com/posit-dev/great-tables/issues/701) with grouped data 
+* a data coloring palette [bug](https://github.com/posit-dev/great-tables/issues/718)
+* an [improvement](https://github.com/posit-dev/great-tables/issues/745) to autocoloring the text of striped rows 
+* an [improvement](https://github.com/posit-dev/great-tables/issues/747) to autocoloring in semi-transparent elements
 
 ### Package Promotion
 
