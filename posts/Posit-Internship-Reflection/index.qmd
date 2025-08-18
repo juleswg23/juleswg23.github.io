@@ -47,11 +47,11 @@ The very first PR I made to Great Tables was an entirely [new feature](https://g
 It didn't stop there – as I progressed through styling and coloring functions, I uncovered little improvements I wanted to make to Great Tables. The bonus side effect of spending all those hours extending Great Tables is that I became perhaps the most frequent user (and tester) of the package. Eventually, I got to a point where I was fluent enough with Great Tables source code, and tacked some larger features and known bugs. So a number of my own GitHub issues (and my subsequent PRs) made their way into the repository:
 
 <!-- Add link to the PR that closes https://github.com/posit-dev/great-tables/pull/755, https://github.com/posit-dev/great-tables/issues/761 -->
-* A grand 😉 new [feature](https://github.com/posit-dev/great-tables/pull/765)
-* A collection of many [different](https://github.com/posit-dev/great-tables/pull/756) [fixes](https://github.com/posit-dev/great-tables/pull/754) to old group bugs.
+* a grand 😉 new [feature](https://github.com/posit-dev/great-tables/pull/765)
+* a collection of many [different](https://github.com/posit-dev/great-tables/pull/756) [fixes](https://github.com/posit-dev/great-tables/pull/754) to old group bugs
 * a row striping indexing [bug](https://github.com/posit-dev/great-tables/issues/701) with grouped data 
 * a data coloring palette [bug](https://github.com/posit-dev/great-tables/issues/718)
-* an [improvement](https://github.com/posit-dev/great-tables/issues/745) to autocoloring the text of striped rows 
+* an [improvement](https://github.com/posit-dev/great-tables/issues/745) to autocoloring the text of striped rows
 * an [improvement](https://github.com/posit-dev/great-tables/issues/747) to autocoloring in semi-transparent elements
 
 ### Package Promotion

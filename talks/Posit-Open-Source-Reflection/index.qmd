@@ -453,20 +453,77 @@ gte.gt_plt_summary(df).tab_options(
 
 ![](../../images/gap.png)
 
+## Great Tables
 
-extending a package
-    learning about the parent package
-    contributing to said package
+::: {.notes }
+- In the process of extending the Great Tables package, I learned quite a bit about the parent package.
+- I was essentially the most frequent user/tester of GT for 3 months
+- Found a number of color and striping-related bugs
+:::
+
+:::::: {.columns}
+
+::::: {.column width="40%"}
+
+::: {.fragment fragment-index=1 .highlight-current-red}
+A grand 😉 new [feature](https://github.com/posit-dev/great-tables/pull/765)
+:::
+
+::: {.fragment fragment-index=2 .highlight-current-red}
+A collection of many [different](https://github.com/posit-dev/great-tables/pull/756) [fixes](https://github.com/posit-dev/great-tables/pull/754) to old group bugs
+:::
+
+::: {.fragment fragment-index=3 .highlight-current-red}
+A row striping indexing [fix](https://github.com/posit-dev/great-tables/issues/701) with grouped data 
+:::
+
+::: {.fragment fragment-index=4 .highlight-current-red}
+A [pair](https://github.com/posit-dev/great-tables/issues/747) of [improvements](https://github.com/posit-dev/great-tables/issues/745) to autocoloring the text of striped rows
+:::
+
+:::::
+
+<!-- TODO include code examples -->
+
+::::: {.column width="60%"}
+
+:::: {.r-stack}
+
+::: {.fragment fragment-index=1 .fade-in-then-out}
+
+
+
+:::
+
+::: {.fragment fragment-index=2 .fade-in-then-out}
+
+:::
+
+::: {.fragment fragment-index=3 .fade-in-then-out}
+
+:::
+
+::: {.fragment fragment-index=4 .fade-in-then-out}
+
+:::
+
+::::
+
+:::::
+
+::::::
+
 
 ## Technical Writing
+
+::: {.notes}
+Promoting a package
+:::
 
 - Blog [post](https://posit-dev.github.io/great-tables/blog/plots-in-tables/) in Great Tables blog
 - Blog post for Posit.co/blog
 - Personal blog [post](../../posts/Posit-Internship-Reflection/index.qmd)
 - [Extending Great Tables](https://posit-dev.github.io/great-tables/get-started/extensions) in get-started
-
-
-promoting a package
 
 
 # Thank you
