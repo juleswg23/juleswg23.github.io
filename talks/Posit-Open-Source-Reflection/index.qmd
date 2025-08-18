@@ -293,6 +293,7 @@ gte.gt_two_column_layout(gt1, gt2, table_header_from=1)
 ::::::
 
 <!-- "Third gt-extras slide" -->
+
 ## gt-extras
 
 :::: {.r-stack}
@@ -444,6 +445,15 @@ gte.gt_plt_summary(df).tab_options(
 
 ## Great Tables
 
+::: {.notes }
+- In the process of extending the Great Tables package, I learned quite a bit about the parent package.
+- I was essentially the most frequent user/tester of GT for 3 months
+- Found a number of color and striping-related bugs
+:::
+
+![](../../images/gap.png)
+
+
 extending a package
     learning about the parent package
     contributing to said package
@@ -452,7 +462,7 @@ extending a package
 
 - Blog [post](https://posit-dev.github.io/great-tables/blog/plots-in-tables/) in Great Tables blog
 - Blog post for Posit.co/blog
-- Personal blog [post](../../posts/Posit%20Internship%20Reflection/index.qmd)
+- Personal blog [post](../../posts/Posit-Internship-Reflection/index.qmd)
 - [Extending Great Tables](https://posit-dev.github.io/great-tables/get-started/extensions) in get-started
 
 
