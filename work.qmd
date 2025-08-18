@@ -16,7 +16,7 @@ title: "Things I've Done"
 
 ## Talks
 
-[Slides](./talks/Posit-Open-Source-Reflection/index.qmd) for a talk I gave about my [internship at Posit](./posts/Posit%20Internship%20Reflection/index.qmd)
+[Slides](./talks/Posit-Open-Source-Reflection/index.qmd) for a talk I gave about my [internship at Posit](./posts/Posit-Internship-Reflection/index.qmd)
 
 ## Personal Projects
 
