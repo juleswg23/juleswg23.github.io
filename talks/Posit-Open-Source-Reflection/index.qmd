@@ -507,70 +507,13 @@ A [pair](https://github.com/posit-dev/great-tables/issues/747) of [improvements]
 
 ::: {.fragment fragment-index=1 .fade-in-then-out}
 
-```{python}
-from great_tables import GT, style, loc, vals
-from great_tables.data import sp500
-import pandas as pd
-
-# Filter and prepare the data
-filtered_data = (
-    sp500
-    .assign(date=pd.to_datetime(sp500['date']))  # Convert to datetime first
-    .query("date >= '2015-01-05' and date <= '2015-01-16'")
-    .sort_values('date')
-    .assign(week=lambda x: 'W' + x['date'].dt.strftime('%V'))
-    .drop(columns=['adj_close', 'volume'])
-)
-
-gt = (
-    GT(filtered_data, rowname_col="date", groupname_col="week")
-    .fmt_number(
-        columns=["open", "high", "low", "close"],
-        use_seps=False
-    )
-    .tab_options(
-        table_background_color="transparent",
-    )
-)
-(
-    gt.grand_summary_rows(
-        fns={"min": min, "max": max},
-        fmt=vals.fmt_integer,
-        columns=["open", "high", "low", "close"]
-    )
-    .tab_style(
-        style=[
-            style.text(color="crimson"),
-            style.fill(color="lightgray"),
-        ],
-        locations=loc.grand_summary(),
-    )
-)
-```
+![](./assets/images/grandSummary.png){height="80%" width="80%"}
 
 :::
 
 ::: {.fragment fragment-index=2 .fade-in-then-out}
 
-
-```{python}
-from great_tables import GT, exibble, style, loc
-
-(
-    GT(exibble.iloc[:, -5:], groupname_col="group")
-    .tab_options(
-        table_background_color="transparent",
-        row_group_as_column=True,
-    )
-    .tab_style(
-        style=[
-            style.text(color="crimson"),
-            style.fill(color="lightgray"),
-        ],
-        locations=loc.row_groups(),
-    )
-)
-```
+![](./assets/images/rowGroups.png)
 
 :::
 
@@ -853,7 +796,9 @@ class SummaryRows(_Sequence[SummaryRowInfo]):
 ## Technical Writing
 
 ::: {.notes}
+
 Promoting a package
+
 :::
 
 - Blog [post](https://posit-dev.github.io/great-tables/blog/plots-in-tables/) in Great Tables blog
@@ -864,6 +809,7 @@ Promoting a package
 ---
 
 ### Building Community
+
 [![](./assets/images/Contributions.png)](https://github.com/posit-dev/gt-extras/pulls?q=is%3Apr+-author%3Ajuleswg23+sort%3Aupdated-desc)
 
 
@@ -885,6 +831,3 @@ Promoting a package
 ::: footer
 (These slides are on my new personal site 👉 [juleswg.me](https://juleswg.me))
 :::
-
-<!-- more code examples -->
-<!-- include some struggles -->
