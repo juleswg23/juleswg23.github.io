@@ -94,7 +94,7 @@ A Python port of Thomas Mock's R package: [{gtExtras}](https://jthomasmock.githu
 <!-- Second gt-extras slide -->
 ## gt-extras
 
-[![embedded](./assets/images/API.png)](https://posit-dev.github.io/gt-extras/reference/)
+[![](./assets/images/API.png)](https://posit-dev.github.io/gt-extras/reference/)
 
 <!-- Third gt-extras slide -->
 ## gt-extras
@@ -797,6 +797,11 @@ Promoting a package
 - Personal blog [post](../../posts/Posit-Internship-Reflection/index.qmd)
 - [Extending Great Tables](https://posit-dev.github.io/great-tables/get-started/extensions) in get-started
 
+---
+
+### Building Community
+[![](./assets/images/Contributions.png)](https://github.com/posit-dev/gt-extras/pulls?q=is%3Apr+-author%3Ajuleswg23+sort%3Aupdated-desc)
+
 
 # Thank you
 
@@ -817,8 +822,5 @@ Promoting a package
 (These slides are on my new personal site 👉 [juleswg.me](https://juleswg.me))
 :::
 
-<!-- add community building (github prs) -->
-<!-- add slide on docs? -->
 <!-- more code examples -->
 <!-- include some struggles -->
-<!-- include the posit blog post -->
