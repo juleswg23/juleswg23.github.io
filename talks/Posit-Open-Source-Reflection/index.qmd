@@ -1,6 +1,6 @@
 ---
 title: "A Great Summer of Great Tables"
-subtitle: "My experience at the 2025 Posit internship"
+subtitle: "My experience as a 2025 Posit Intern"
 author: "Jules Walzer-Goldfeld"
 # freeze: true
 format:
@@ -743,16 +743,15 @@ def test_gt_plt_summary_boolean_all_true(DataFrame):
 ## Structure
 
 ```
-gt-extras/
-├── src/
-│   └── gt_extras/
-│       ├── __init__.py
-│       ├── plotting.py
-│       ├── colors.py
-│       ├── ...
-│       └── tests/
-│           ├── test_plotting.py
-│           └── ...
+src/
+├── gt_extras/
+│   ├── __init__.py
+│   ├── plotting.py
+│   ├── colors.py
+│   ├── ...
+│   └── tests/
+│       ├── test_plotting.py
+│       └── ...
 ├── docs/
 │   ├── _quarto.yml
 │   └── ...
