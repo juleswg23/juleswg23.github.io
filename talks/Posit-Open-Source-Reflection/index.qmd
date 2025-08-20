@@ -14,25 +14,7 @@ format:
     transition-speed: fast
     auto-stretch: false
     # controls: true
-# toc: true
 ---
-
-<style>
-.custom-font-size {
-  font-size: 30px;
-}
-
-.custom-font-size p {
-  margin-bottom: 1em;
-}
-
-
-.custom-stack > .r-stack > .fragment {
-  position: absolute !important;
-  top: 0 !important;
-}
-</style>
-
 
 # Hello!
 
@@ -286,8 +268,8 @@ from great_tables import GT, style, loc
 import gt_extras as gte
 from great_tables.data import peeps
 
-df1 = peeps.loc[0:5, ["name_given", "address"]]
-df2 = peeps.loc[6:11, ["name_given", "address"]]
+df1 = peeps.loc[0:15, ["name_given", "address"]]
+df2 = peeps.loc[16:31, ["name_given", "address"]]
 
 gt1 = (
     GT(df1)
@@ -592,7 +574,7 @@ from great_tables import GT, exibble, style, loc
 
 :::
 
-::: {.fragment fragment-index=3 fragment-index=4 .fade-in}
+::: {.fragment fragment-index=3 .fade-in}
 
 ```{python}
 import polars as pl
@@ -785,6 +767,88 @@ gt = (
 :::::::
 
 ::::::::
+
+# What I learned this summer
+
+## Package Development
+
+::: {.panel-tabset .custom-font-size}
+
+## Tests
+
+```{python}
+# | echo: True
+# | eval: False
+def test_gt_plt_bar_snap(snapshot, mini_gt):
+    res = gt_plt_bar(gt=mini_gt, columns="num")
+
+    assert_rendered_body(snapshot, gt=res)
+
+
+@pytest.mark.parametrize("DataFrame", [pd.DataFrame, pl.DataFrame])
+def test_gt_plt_summary_boolean_all_true(DataFrame):
+    df = DataFrame({"boolean": [True, True, True]})
+
+    result = gt_plt_summary(df)
+    html = result.as_raw_html()
+
+    assert "1.00" in html
+    assert 'fill-opacity="1.0"' in html
+    assert ">0.0%</td>" in html
+```
+
+## Structure
+
+```
+gt-extras/
+├── src/
+│   └── gt_extras/
+│       ├── __init__.py
+│       ├── plotting.py
+│       ├── colors.py
+│       ├── ...
+│       └── tests/
+│           ├── test_plotting.py
+│           └── ...
+├── docs/
+│   ├── _quarto.yml
+│   └── ...
+├── .gitignore
+├── Makefile
+├── README.md
+└── pyproject.toml
+```
+
+## Design
+
+```{python}
+# | echo: True
+# | eval: False
+@dataclass(frozen=True)
+class SummaryRowInfo:
+    """Information about a single summary row"""
+
+    id: str
+    label: str  # For now, label and id are identical
+    values: dict[str, str | int | float]  # TODO: consider datatype
+    side: Literal["top", "bottom"]  # TODO: switch to enum
+    group: GroupRowInfo
+
+
+class SummaryRows(_Sequence[SummaryRowInfo]):
+    """A sequence of summary rows"""
+
+    _d: list[SummaryRowInfo]
+
+    def __init__(self, rows: list[SummaryRowInfo] | None = None):
+        self._d = []
+        if rows is not None:
+            for row in rows:
+                self.add_summary_row(row)
+```
+
+:::
+
 
 ## Technical Writing
 

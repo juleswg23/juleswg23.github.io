@@ -7,3 +7,15 @@ $body-bg: #f6f6f3 !default;
 $presentation-h1-font-size: 2.0em;
 
 /*-- scss:rules --*/
+.custom-font-size {
+  font-size: 32px;
+}
+
+.custom-font-size p {
+  margin-bottom: 1em;
+}
+
+.custom-stack > .r-stack > .fragment {
+  position: absolute !important;
+  top: 0 !important;
+}
