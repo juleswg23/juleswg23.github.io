@@ -1,6 +1,6 @@
 ---
 title: "A Great Summer of Great Tables"
-subtitle: "My experience in the 2025 Posit internship"
+subtitle: "My experience as a 2025 Posit intern"
 date: 2025-08-04
 date-modified: 2025-08-21
 author: Jules Walzer-Goldfeld
