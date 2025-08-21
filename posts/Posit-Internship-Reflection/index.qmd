@@ -3,6 +3,7 @@ title: "A Great Summer of Great Tables"
 subtitle: "My experience in the 2025 Posit internship"
 date: 2025-08-04
 date-modified: 2025-08-21
+author: Jules Walzer-Goldfeld
 toc: true
 toc-expand: true
 image: ../../images/2011-nfl-season.png

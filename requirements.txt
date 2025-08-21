@@ -3,3 +3,5 @@ gt_extras
 polars
 pandas
 jupyter
+plotnine
+svg.py
