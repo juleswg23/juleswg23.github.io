@@ -2,6 +2,7 @@
 title: "A Great Summer of Great Tables"
 subtitle: "My experience as a 2025 Posit Intern"
 author: "Jules Walzer-Goldfeld"
+date-meta: 08-21-2025
 # freeze: true
 format:
   revealjs:
@@ -24,10 +25,9 @@ format:
 
 ::: {.column width="70%"}
 
+- 🐄 CS and Math at Williams College
 
-- 🐄 Studied CS and Math at Williams College
-
-- 🇪🇸 Was an English teacher in Spain
+- 🇪🇸 Taught English in Spain
 
 - 💡 I enjoy patterns and helping people see patterns
 
@@ -784,9 +784,9 @@ class SummaryRows(_Sequence[SummaryRowInfo]):
 
     def __init__(self, rows: list[SummaryRowInfo] | None = None):
         self._d = []
-        if rows is not None:
-            for row in rows:
-                self.add_summary_row(row)
+
+        for row in rows or []:
+            self.add_summary_row(row)
 ```
 
 :::
@@ -805,9 +805,8 @@ Promoting a package
 - Personal blog [post](../../posts/Posit-Internship-Reflection/index.qmd)
 - [Extending Great Tables](https://posit-dev.github.io/great-tables/get-started/extensions) in get-started
 
----
 
-### Building Community
+## Building Community
 
 [![](./assets/images/Contributions.png)](https://github.com/posit-dev/gt-extras/pulls?q=is%3Apr+-author%3Ajuleswg23+sort%3Aupdated-desc)
 
