@@ -79,9 +79,9 @@ ul.task-list li input[type="checkbox"] {
     }
 
     const options = {
-      valueNames: ['listing-date','listing-title','listing-author','listing-subtitle','listing-image','listing-description',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
+      valueNames: ['listing-date','listing-title','listing-author','listing-subtitle','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
       
-      searchColumns: ["listing-date","listing-title","listing-author","listing-subtitle","listing-image","listing-description"],
+      searchColumns: ["listing-date","listing-title","listing-author","listing-subtitle","listing-image","listing-description","listing-categories"],
     };
 
     window['quarto-listings'] = window['quarto-listings'] || {};
@@ -132,7 +132,7 @@ window.Quarto = {
 <link rel="stylesheet" href="styles.css">
 <link rel="alternate" type="application/rss+xml" title="Jules Walzer-Goldfeld" href="blog.xml" data-external="1"></head>
 
-<body class="nav-fixed fullcontent quarto-light">
+<body class="nav-fixed quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -187,7 +187,9 @@ window.Quarto = {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        
+    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(2)</span></div><div class="category" data-category="R3JlYXQlMjBUYWJsZXM=">Great Tables <span class="quarto-category-count">(2)</span></div><div class="category" data-category="UG9zaXQ=">Posit <span class="quarto-category-count">(2)</span></div><div class="category" data-category="UHl0aG9u">Python <span class="quarto-category-count">(2)</span></div></div></div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
@@ -216,7 +218,7 @@ window.Quarto = {
 
 <div class="quarto-listing quarto-listing-container-default" id="listing-listing">
 <div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-listing-date-sort="1754265600000" data-listing-file-modified-sort="1755788196286" data-listing-date-modified-sort="1755734400000" data-listing-reading-time-sort="9" data-listing-word-count-sort="1697">
+<div class="quarto-post image-right" data-index="0" data-categories="UHl0aG9uJTJDR3JlYXQlMjBUYWJsZXMlMkNQb3NpdA==" data-listing-date-sort="1754265600000" data-listing-file-modified-sort="1755795257427" data-listing-date-modified-sort="1755734400000" data-listing-reading-time-sort="9" data-listing-word-count-sort="1697">
 <div class="thumbnail"><a href="./posts/Posit-Internship-Reflection/index.html" class="no-external">
 
 <img loading="lazy" src="./images/2011-nfl-season.png" class="thumbnail-image">
@@ -227,7 +229,16 @@ window.Quarto = {
 <a href="./posts/Posit-Internship-Reflection/index.html" class="no-external">A Great Summer of Great Tables</a>
 </h3>
 <div class="listing-subtitle">
-<a href="./posts/Posit-Internship-Reflection/index.html" class="no-external">My experience in the 2025 Posit internship</a>
+<a href="./posts/Posit-Internship-Reflection/index.html" class="no-external">My experience as a 2025 Posit intern</a>
+</div>
+<div class="listing-categories">
+
+<div class="listing-category" onclick="window.quartoListingCategory('UHl0aG9u'); return false;">Python</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('R3JlYXQlMjBUYWJsZXM='); return false;">Great Tables</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('UG9zaXQ='); return false;">Posit</div>
+
 </div>
 <div class="delink listing-description"><a href="./posts/Posit-Internship-Reflection/index.html" class="no-external">
 I spent the summer working for Posit (formerly known as RStudio), and I loved it. I was on the tinytools squad, as an intern for <strong>Great Tables</strong>, the Python port of {gt} in R.…
@@ -244,7 +255,7 @@ Jules Walzer-Goldfeld
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="1" data-listing-date-sort="1751500800000" data-listing-file-modified-sort="1755788196286" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="8" data-listing-word-count-sort="1594">
+<div class="quarto-post image-right" data-index="1" data-categories="UHl0aG9uJTJDR3JlYXQlMjBUYWJsZXMlMkNQb3NpdA==" data-listing-date-sort="1751500800000" data-listing-file-modified-sort="1755795257427" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="8" data-listing-word-count-sort="1594">
 <div class="thumbnail"><a href="./posts/Posit-adding-plots-to-great-tables/index.html" class="no-external">
 
 <img loading="lazy" src="./images/adding-plots-to-great-tables.png" class="thumbnail-image">
@@ -256,6 +267,15 @@ Jules Walzer-Goldfeld
 </h3>
 <div class="listing-subtitle">
 <a href="./posts/Posit-adding-plots-to-great-tables/index.html" class="no-external">*Cross Posted from the Great Tables blog</a>
+</div>
+<div class="listing-categories">
+
+<div class="listing-category" onclick="window.quartoListingCategory('UHl0aG9u'); return false;">Python</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('R3JlYXQlMjBUYWJsZXM='); return false;">Great Tables</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('UG9zaXQ='); return false;">Posit</div>
+
 </div>
 <div class="delink listing-description"><a href="./posts/Posit-adding-plots-to-great-tables/index.html" class="no-external">
 While working on <strong>gt-extras</strong>, I’ve been exploring how to add small plots to Great Tables. These can go by many names, like spark lines, nanoplots, and so on. In this post…<code></code><code></code>

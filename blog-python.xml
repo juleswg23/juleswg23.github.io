@@ -6,8 +6,8 @@
       version="2.0">
 <channel>
 <title>Jules Walzer-Goldfeld</title>
-<link>https://juleswg.me/blog.html</link>
-<atom:link href="https://juleswg.me/blog.xml" rel="self" type="application/rss+xml"/>
+<link>https://juleswg.me/blog.html#category=Python</link>
+<atom:link href="https://juleswg.me/blog-python.xml" rel="self" type="application/rss+xml"/>
 <description></description>
 <generator>quarto-1.7.33</generator>
 <lastBuildDate>Mon, 04 Aug 2025 00:00:00 GMT</lastBuildDate>
