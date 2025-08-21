@@ -2,16 +2,24 @@
 title: "A Great Summer of Great Tables"
 subtitle: "My experience in the 2025 Posit internship"
 date: 2025-08-04
-date-modified: 2025-08-18
+date-modified: 2025-08-21
 toc: true
 toc-expand: true
+image: ../../images/2011-nfl-season.png
 ---
 
-I spent the summer working for Posit (formerly known as RStudio), and I loved it. I was on the tinytools squad, as an intern for **Great Tables**, the Python port of {gt} in R. My team was responsible for many of the major ports from Posit's R packages to Python. They are awesome – this is certainly an incomplete list, but they've created the Python versions of {ggplot2}, {pointblank}, {scales}, {forcats}, {dplyr}, and {reactable}, to name a few.
+I spent the summer working for Posit (formerly known as RStudio), and I loved it. I was on the tinytools squad, as an intern for [**Great Tables**](https://posit-dev.github.io/great-tables/), the Python port of {gt} in R. My team was responsible for many of the major ports from Posit's R packages to Python. They are awesome – this is certainly an incomplete list, but they've created the Python versions of {ggplot2}, {pointblank}, {scales}, {forcats}, {dplyr}, and {reactable}, to name a few.
+
+My summer consisted of:
+
+- Building and packaging a Python library ([**gt-extras**](https://posit-dev.github.io/gt-extras/))
+- Contributing fixes and features upstream to **Great Tables**
+- Presenting and promoting the open source work
+- Pairing with mentors and collaborating across Posit
 
 ## What I Did
 
-The technical work at first largely consisted of work on my own package, an addition to the Great Tables ecosystem by way of extension. Then I was able to contribute directly to Great Tables as well, which was very satisfying. And then there was the unexpected third avenue of work involving the presentation and promotion of my work to engage with the broader open source community (which was quite scary).
+The technical work at first largely consisted of work on my own package, an addition to the Great Tables ecosystem by way of extension. Then I was able to contribute directly to Great Tables as well, which was very satisfying. I also had the unexpected (and welcome) task of presenting and promoting my work to the open‑source community.
 
 I also got to meet tons of folks from the wider Posit community, thanks to internal weekly matchmaking, fun talks/hangouts (and even an in-person meetup). I've met so many wonderful people over the past few months that I couldn't possibly list them all here. Suffice to say that from intern hangouts to coffee chats with Posit developers in Europe, to career advice with former python open source team members, to data science talks, the remote world of my internship has not been all too remote.
 
@@ -86,6 +94,6 @@ Whether it's a blog post for me (this one!), a blog [post](https://posit-dev.git
 
 In every instance (yes, even the [slides](../../talks/Posit-Open-Source-Reflection/index.qmd)), I've presented my musings using Quarto markdown. I promise I'm not getting paid to say this, but having never used Quarto before this summer, I can confidently say I can't imagine a life without it. Life with Quarto was especially easy when the team that maintains it was part of the organization I worked for :) which I'll definitely miss. Instead, I guess you'll find me lurking in GitHub issues.
 
-## What's Next (It's Not Over Yet)
+## What's Next (It's not over yet)
 
 At the time of publication, I still have a few weeks remaining in my time at Posit. Big things are still planned, from more features in gt-extras, to upgrades for Great Tables. Stick around here or give [**gt-extras**](https://github.com/posit-dev/gt-extras) a star and follow along with my work there.
