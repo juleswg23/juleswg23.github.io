@@ -16,8 +16,8 @@ website:
         href: https://github.com/juleswg23
       - icon: linkedin
         href: https://www.linkedin.com/in/jules-w-51bb03199/
-      # - icon: rss
-      #   href: blog.xml
+      - icon: rss
+        href: blog.xml
 
 format:
   html:
