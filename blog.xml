@@ -20,10 +20,17 @@
 
 
 
-<p>I spent the summer working for Posit (formerly known as RStudio), and I loved it. I was on the tinytools squad, as an intern for <strong>Great Tables</strong>, the Python port of {gt} in R. My team was responsible for many of the major ports from Posit’s R packages to Python. They are awesome – this is certainly an incomplete list, but they’ve created the Python versions of {ggplot2}, {pointblank}, {scales}, {forcats}, {dplyr}, and {reactable}, to name a few.</p>
+<p>I spent the summer working for Posit (formerly known as RStudio), and I loved it. I was on the tinytools squad, as an intern for <a href="https://posit-dev.github.io/great-tables/"><strong>Great Tables</strong></a>, the Python port of {gt} in R. My team was responsible for many of the major ports from Posit’s R packages to Python. They are awesome – this is certainly an incomplete list, but they’ve created the Python versions of {ggplot2}, {pointblank}, {scales}, {forcats}, {dplyr}, and {reactable}, to name a few.</p>
+<p>My summer consisted of:</p>
+<ul>
+<li>Building and packaging a Python library (<a href="https://posit-dev.github.io/gt-extras/"><strong>gt-extras</strong></a>)</li>
+<li>Contributing fixes and features upstream to <strong>Great Tables</strong></li>
+<li>Presenting and promoting the open source work</li>
+<li>Pairing with mentors and collaborating across Posit</li>
+</ul>
 <section id="what-i-did" class="level2">
 <h2 class="anchored" data-anchor-id="what-i-did">What I Did</h2>
-<p>The technical work at first largely consisted of work on my own package, an addition to the Great Tables ecosystem by way of extension. Then I was able to contribute directly to Great Tables as well, which was very satisfying. And then there was the unexpected third avenue of work involving the presentation and promotion of my work to engage with the broader open source community (which was quite scary).</p>
+<p>The technical work at first largely consisted of work on my own package, an addition to the Great Tables ecosystem by way of extension. Then I was able to contribute directly to Great Tables as well, which was very satisfying. I also had the unexpected (and welcome) task of presenting and promoting my work to the open‑source community.</p>
 <p>I also got to meet tons of folks from the wider Posit community, thanks to internal weekly matchmaking, fun talks/hangouts (and even an in-person meetup). I’ve met so many wonderful people over the past few months that I couldn’t possibly list them all here. Suffice to say that from intern hangouts to coffee chats with Posit developers in Europe, to career advice with former python open source team members, to data science talks, the remote world of my internship has not been all too remote.</p>
 <section id="gt-extras" class="level3">
 <h3 class="anchored" data-anchor-id="gt-extras">gt-extras</h3>
@@ -95,7 +102,7 @@
 </section>
 </section>
 <section id="whats-next-its-not-over-yet" class="level2">
-<h2 class="anchored" data-anchor-id="whats-next-its-not-over-yet">What’s Next (It’s Not Over Yet)</h2>
+<h2 class="anchored" data-anchor-id="whats-next-its-not-over-yet">What’s Next (It’s not over yet)</h2>
 <p>At the time of publication, I still have a few weeks remaining in my time at Posit. Big things are still planned, from more features in gt-extras, to upgrades for Great Tables. Stick around here or give <a href="https://github.com/posit-dev/gt-extras"><strong>gt-extras</strong></a> a star and follow along with my work there.</p>
 
 
@@ -104,6 +111,7 @@
  ]]></description>
   <guid>https://juleswg.me/posts/Posit-Internship-Reflection/</guid>
   <pubDate>Mon, 04 Aug 2025 00:00:00 GMT</pubDate>
+  <media:content url="https://juleswg.me/images/2011-nfl-season.png" medium="image" type="image/png" height="101" width="144"/>
 </item>
 </channel>
 </rss>
