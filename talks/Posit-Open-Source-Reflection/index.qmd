@@ -3,7 +3,7 @@ title: "A Great Summer of Great Tables"
 subtitle: "My experience as a 2025 Posit Intern"
 author: "Jules Walzer-Goldfeld"
 date-meta: 08-21-2025
-# freeze: true
+freeze: true
 format:
   revealjs:
     slide-number: c/t
@@ -66,7 +66,7 @@ I'm sure everyone has their RStudio origin moment
 
 # What I've done this summer
 
-<!-- Third gt-extras slide -->
+<!-- First gt-extras slide -->
 ## gt-extras
 
 ![](../../images/gap.png)
