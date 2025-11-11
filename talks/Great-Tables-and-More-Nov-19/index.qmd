@@ -15,71 +15,58 @@ format:
     transition-speed: fast
     auto-stretch: false
     # controls: true
+    css: custom-styles.css
+revealjs-plugins:
+  - editable
+filters:
+  - editable
 ---
 
-<!-- 
-Abstract
+## intro section: 1 minute
 
-They say a picture is worth a thousand words, so why do we have to look at tables with a thousand cells of text?
+### About me
 
-In this session, we’ll explore the Great Tables package for Python, a powerful tool for creating clear, polished, and publication-ready tables.
+- gt-extras author
+- Great Tables at Posit: Michael Chow and Richard Iannone
+- I enjoy patterns and helping people see patterns
 
-We’ll also dive into gtExtras, an extension package that lets you embed small plots directly into your tables bringing your data to life, one cell at a time. Whether you’re building reports, dashboards, or presentations, these tools will help you turn tables into a powerful medium for data storytelling.
+<!-- todo add image of myself? -->
 
-Finally, we’ll showcase inspiring and creative entries from the 2025 Table Contest, celebrating what’s possible when data and design come together in tabular form.
--->
+::: {.notes}
+I want to quickly introduce myself. I'm Jules, and I'm the author of gt-extras and a contributor to Great Tables.
 
-# Hello!
+Been at posit 6 months
 
-## Who are you listening to
+Am into patterns and puzzles, and sports
 
-::::: {.columns}
-
-::: {.column width="70%"}
-
-- 📊 gt-extras author, and Great Tables contributor
-
-- 💡 I enjoy patterns and helping people see patterns
-
-- 🧗 I like to play table tennis, soccer, chess, and climb rocks
-
-- 🔢 I like logic puzzles!
-
+Intersection of these is data visualization
 :::
-
-::: {.column width="30%" .fragment}
-![](./assets/images/kenken.jpeg)
-:::
-
-:::::
-
-# What is Great Tables
-
-<!-- First Great Tables slide -->
-## Great Tables
-
-<!-- ![](../../images/gap.png) -->
-
-
-
-<!-- Second Great Tables slide -->
-## Great Tables
-
-<!-- [![](./assets/images/API.png)](https://posit-dev.github.io/gt-extras/reference/) -->
-
-<!-- Third Great Tables slide -->
-## Great Tables
-
-
-### Examples
-
-![found at [https://posit-dev.github.io/gt-extras/examples/](https://posit-dev.github.io/gt-extras/examples/)](./assets/images/examples.png){width="80%"}
 
 ---
 
-### NFL Example
+## Goals of the talk: 5 minutes
 
-::: {style="width: 1600px; zoom: 45%;"}
+### The problem
+
+> "They say a picture is worth a thousand words, so why do we have to look at tables with a thousand cells of text?"
+
+---
+
+![](./assets/images/bland_df.png)
+
+::: {.notes}
+You may have seen the talk abstract.
+
+I got into tables because I was one of those people who liked to flip to the appendix to see what the actual difference was between 2015 and 2016 sales.
+
+But when we look at a table, we have to look at 
+:::
+
+---
+
+### The solution
+
+::: {style="zoom: 55%;"}
 
 ```{python}
 import polars as pl
@@ -112,8 +99,8 @@ def make_gt(df) -> GT:
         .tab_spanner(label="Season Trends", columns=["Games", "Streak"])
         .tab_style(style=style.fill("transparent"), locations=[loc.spanner_labels(["Season Trends", "Scoring"]), loc.column_header(), loc.stubhead()])
         .fmt_number(columns="Point Diff", decimals=1)
-        .fmt_image("team_logo_espn")
-        .cols_hide(["Wins", "team_conf", "team_name"])
+        .fmt_image("team_logo_espn", width="10%")
+        .cols_hide(["Wins", "team_conf", "team_name", "team_logo_espn"])
         .cols_align(align="center", columns=["Avg PF", "Avg PA", "Games"])
         .cols_move("team_logo_espn", after="Team")
         .cols_label({"team_logo_espn": ""})
@@ -163,19 +150,612 @@ def make_gt(df) -> GT:
 gt1 = make_gt(nfl_df.head(16))
 gt2 = make_gt(nfl_df.slice(16, 16))
 
-gte.gt_two_column_layout(gt1, gt2, table_header_from=1)
+final_nfl_example = gte.gt_two_column_layout(gt1, gt2, table_header_from=1)
+
+final_nfl_example
 ```
 
 :::
 
 ---
-### Highlight some example here
 
-<!-- New section -->
+### The solution
 
-## gt-extras
+::::: {.columns}
 
-:::::: {.columns}
+::: {.column style="width: 60%; margin-top: 5%;"}
+
+![](./assets/images/bland_df.png)
+
+:::
+
+::: {.column style="zoom: 45%; width: 40%;"}
+
+```{python}
+gt1
+```
+
+:::
+
+:::::
+
+---
+
+### What did we really solve?
+
+:::{.fragment}
+![](./assets/images/pipeline.png){.absolute width=1060.94px height=118px left=-15px top=303.357px}
+:::
+
+:::{.fragment}
+![](./assets/images/excel.png){.absolute width=146.808px height=115px left=665px top=144.84px}
+:::
+
+:::{.fragment}
+![](./assets/images/non_excel.png){.absolute width=139.29px height=113.786px left=600px top=463.29px}
+:::
+
+::: {.notes}
+We want to keep the data flow within python
+:::
+
+---
+
+### Today's goals
+
+::::: {.columns}
+
+::: {.column width="40%"}
+
+<br>
+Understanding tables for data visualization
+
+:::
+
+::: {.column style="width: 60%; justify-items: center;"}
+
+![](./assets/images/table_components.svg){height="200px"}
+
+:::
+
+:::::
+
+::::: {.columns}
+
+::: {.column width="40%"}
+
+How to use **Great Tables**
+
+:::
+
+::: {.column style="width: 60%; justify-items: center;"}
+
+![](./assets/images/GT_logo.svg){height="100px"}
+
+:::
+
+:::::
+
+::::: {.columns}
+
+::: {.column width="40%"}
+
+Advanced use cases: **gt-extras**
+
+:::
+
+::: {.column style="width: 60%; zoom: 45%; justify-items: center;"}
+
+```{python}
+from great_tables import GT, loc, style
+from great_tables.data import gtcars
+import gt_extras as gte
+
+# Setup dataframe
+gtcars_mini = gtcars.iloc[5:13].copy().reset_index(drop=True)
+gtcars_mini["efficiency"] = gtcars_mini["mpg_c"] / gtcars_mini["hp"] * 100
+
+cars_gt_extras = (
+    GT(gtcars_mini, rowname_col="model")
+    .tab_stubhead(label="Car")
+    .cols_hide(["drivetrain", "hp_rpm", "trq_rpm", "trim", "bdy_style", "msrp", "trsmn", "ctry_origin", "mpg_c"])
+    .cols_align("center")
+    .tab_header(title="Car Performance Review", subtitle="Using gt-extras functionality")
+    .tab_options(
+        table_background_color="transparent",
+        table_border_top_color="transparent",
+        table_font_size="20px",
+        heading_background_color="transparent",
+    )
+    .tab_style(style.fill(color="transparent"), locations=[loc.column_labels(), loc.stubhead()])
+    .cols_width({"mpg_h": "20px"})
+
+    # Add gt-extras features using gt.pipe()
+    .pipe(gte.gt_color_box, columns=["hp", "trq"], palette=["lightblue", "darkblue"])
+    .pipe(gte.gt_plt_dot, category_col="mfr", data_col="efficiency", domain=[0, 0])
+    .pipe(gte.gt_plt_bar, columns=["mpg_h"])
+    .pipe(gte.gt_fa_rating, columns="efficiency")
+    .pipe(gte.gt_hulk_col_numeric, columns="year", palette="viridis")
+    .pipe(gte.gt_theme_538)
+)
+
+cars_gt_extras.show()
+```
+
+:::
+
+:::::
+
+::: {.notes}
+You may not be convinced tables are up for the job.
+So let's dissect what a presentation-level table looks like
+
+Then, we'll see an example workflow of using great tables
+
+Finally, I'll teach you a bit about gt-extras, which makes great tables shine even more
+:::
+
+---
+
+
+## Table contest examples of tables: 5 minutes
+
+<!-- todo -->
+
+---
+
+<!-- section on what elements go into a table, as defined by great tables -->
+
+### Table Structure
+
+![](./assets/images/table_components.svg){fig-align="center" height="600"}
+
+
+## (American) Football example
+
+---
+
+### Step 1: Start with Data
+
+::::: {.columns}
+
+::: {.column width="50%"}
+
+```{python}
+#| echo: true
+#| eval: false
+#| code-line-numbers: "6-7"
+import polars as pl
+from great_tables import GT, md, style, loc
+import gt_extras as gte
+
+nfl_df = pl.read_json("./assets/nfl_2011_stats.json")
+nfl_df.head(5)
+```
+
+:::
+
+::: {.column width="50%"}
+
+```{python}
+#| echo: false
+import polars as pl
+from great_tables import GT, md, style, loc
+import gt_extras as gte
+
+nfl_df = pl.read_json("./assets/nfl_2011_stats.json")
+nfl_df.head(5)
+```
+
+:::
+
+:::::
+
+::: {.notes}
+We start with a Polars DataFrame containing NFL team statistics from 2011. Each row is a team with columns for Team, Division, conference, wins, average points for/against, and other metrics. Nothing special yet—just data.
+:::
+
+---
+
+### Step 2: Create a Basic GT Table
+
+::::: {.columns}
+
+::: {.column width="50%"}
+
+```{python}
+#| echo: true
+#| eval: false
+#| code-line-numbers: "1-8"
+gt_basic = (
+    GT(nfl_df.head(8), rowname_col="Team")
+    .tab_header(
+        title="2011 NFL Season",
+        subtitle="Team Statistics"
+    )
+)
+gt_basic
+```
+
+:::
+
+::: {.column width="50%"}
+
+```{python}
+#| echo: false
+gt_basic = (
+    GT(nfl_df.head(8), rowname_col="Team")
+    .tab_header(
+        title="2011 NFL Season",
+        subtitle="Team Statistics"
+    )
+)
+gt_basic
+```
+
+:::
+
+:::::
+
+::: {.notes}
+We create a GT object from the DataFrame. We specify "Team" as the rowname_col—this becomes the stub (the leftmost column). We add a header with title and subtitle. This is the foundation. It's clean, organized, but not yet compelling.
+:::
+
+---
+
+### Step 3: Add Structure with Grouping & Spanners
+
+::::: {.columns}
+
+::: {.column width="50%"}
+
+```{python}
+#| echo: true
+#| eval: false
+#| code-line-numbers: "2,8-9"
+gt_grouped = (
+    GT(nfl_df.head(8), rowname_col="Team", groupname_col="team_division")
+    .tab_header(
+        title="2011 NFL Season",
+        subtitle="Team Statistics"
+    )
+    .tab_stubhead(label="Team")
+    .tab_spanner(label="Scoring", columns=["Avg PF", "Avg PA", "Point Diff"])
+)
+gt_grouped
+```
+
+:::
+
+::: {.column width="50%"}
+
+```{python}
+#| echo: false
+gt_grouped = (
+    GT(nfl_df.head(8), rowname_col="Team", groupname_col="team_division")
+    .tab_header(
+        title="2011 NFL Season",
+        subtitle="Team Statistics"
+    )
+    .tab_stubhead(label="Team")
+    .tab_spanner(label="Scoring", columns=["Avg PF", "Avg PA", "Point Diff"])
+)
+gt_grouped
+```
+
+:::
+
+:::::
+
+::: {.notes}
+Now we add structure. groupname_col organizes teams by division automatically. tab_spanner groups related columns—all the scoring metrics together. This creates visual and logical hierarchy. The reader's eye immediately understands the organization without reading labels.
+:::
+
+---
+
+### Step 4: Add Formatting & Styling
+
+::::: {.columns}
+
+::: {.column width="50%"}
+
+```{python}
+#| echo: true
+#| eval: false
+#| code-line-numbers: "10-14"
+gt_formatted = (
+    GT(nfl_df.head(8), rowname_col="Team", groupname_col="team_division")
+    .tab_header(
+        title="2011 NFL Season",
+        subtitle="Team Statistics"
+    )
+    .tab_stubhead(label="Team")
+    .tab_spanner(label="Scoring", columns=["Avg PF", "Avg PA", "Point Diff"])
+    .fmt_number(columns="Point Diff", decimals=1)
+    .cols_align(align="center", columns=["Avg PF", "Avg PA"])
+    .tab_options(
+        table_background_color="transparent",
+        table_border_top_color="transparent",
+    )
+)
+gt_formatted
+```
+
+:::
+
+::: {.column width="50%"}
+
+```{python}
+#| echo: false
+gt_formatted = (
+    GT(nfl_df.head(8), rowname_col="Team", groupname_col="team_division")
+    .tab_header(
+        title="2011 NFL Season",
+        subtitle="Team Statistics"
+    )
+    .tab_stubhead(label="Team")
+    .tab_spanner(label="Scoring", columns=["Avg PF", "Avg PA", "Point Diff"])
+    .fmt_number(columns="Point Diff", decimals=1)
+    .cols_align(align="center", columns=["Avg PF", "Avg PA"])
+    .tab_options(
+        table_background_color="transparent",
+        table_border_top_color="transparent",
+    )
+)
+gt_formatted
+```
+
+:::
+
+:::::
+
+::: {.notes}
+We format numbers to the right precision, align columns for readability, and adjust styling. Numbers become cleaner. The table starts to look polished. These are Great Tables features—they give you fine-grained control over presentation.
+:::
+
+---
+
+### Step 5: Add Color as a Data Channel
+
+::::: {.columns}
+
+::: {.column width="50%"}
+
+```{python}
+#| echo: true
+#| eval: false
+#| code-line-numbers: "1-6"
+gt_colored = gt_formatted.pipe(
+    gte.gt_color_box,
+    columns="Point Diff",
+    palette=["red", "yellow", "green"],
+    domain=[-14, 14]
+)
+gt_colored
+```
+
+:::
+
+::: {.column width="50%"}
+
+```{python}
+#| echo: false
+gt_colored = gt_formatted.pipe(
+    gte.gt_color_box,
+    columns="Point Diff",
+    palette=["red", "yellow", "green"],
+    domain=[-14, 14]
+)
+gt_colored
+```
+
+:::
+
+:::::
+
+::: {.notes}
+Now we use gt-extras! gt_color_box creates a color gradient where red is negative (bad), yellow is neutral, and green is positive (good). This is the power of color: you see performance instantly.
+:::
+
+---
+
+### Step 6: Embed Win/Loss Visualization
+
+::::: {.columns}
+
+::: {.column width="50%"}
+
+```{python}
+#| echo: true
+#| eval: false
+#| code-line-numbers: "1-8"
+gt_winloss = gt_colored.pipe(
+    gte.gt_plt_winloss,
+    column="Games",
+    win_color="blue",
+    loss_color="orange",
+    height=30,
+    width=100
+)
+gt_winloss
+```
+
+:::
+
+::: {.column width="50%"}
+
+```{python}
+#| echo: false
+gt_winloss = gt_colored.pipe(
+    gte.gt_plt_winloss,
+    column="Games",
+    win_color="blue",
+    loss_color="orange",
+    height=30,
+    width=100
+)
+gt_winloss
+```
+
+:::
+
+:::::
+
+::: {.notes}
+gt_plt_winloss takes our win-loss record and renders it as a bar chart right in the cell. Each team's record becomes visible instantly. Wins are blue, losses are orange. You can see streaks and patterns at a glance.
+:::
+
+---
+
+### Step 7: Add Dumbbell Chart (Points For vs Against)
+
+::::: {.columns}
+
+::: {.column width="50%"}
+
+```{python}
+#| echo: true
+#| eval: false
+#| code-line-numbers: "1-9"
+gt_dumbbell = gt_winloss.pipe(
+    gte.gt_plt_dumbbell,
+    col1="Avg PF",
+    col2="Avg PA",
+    col1_color="green",
+    col2_color="red",
+    width=250,
+    height=30
+)
+gt_dumbbell
+```
+
+:::
+
+::: {.column width="50%"}
+
+```{python}
+#| echo: false
+gt_dumbbell = gt_winloss.pipe(
+    gte.gt_plt_dumbbell,
+    col1="Avg PF",
+    col2="Avg PA",
+    col1_color="green",
+    col2_color="red",
+    width=250,
+    height=30
+)
+gt_dumbbell
+```
+
+:::
+
+:::::
+
+::: {.notes}
+gt_plt_dumbbell compares two columns visually. It's like showing the gap between what you score (green) and what your opponents score (red). That gap is your offensive advantage. Instantly visible.
+:::
+
+---
+
+### Step 8: Hide Unnecessary Columns & Add Icons
+
+::::: {.columns}
+
+::: {.column width="50%"}
+
+```{python}
+#| echo: true
+#| eval: false
+#| code-line-numbers: "1-11"
+gt_refined = gt_dumbbell.cols_hide(columns=["Wins", "team_conf", "team_name"]).fmt_image("team_logo_espn").pipe(
+    gte.gt_fa_rank_change,
+    column="Streak",
+    icon_type="turn",
+    color_up="blue",
+    color_down="orange"
+)
+gt_refined
+```
+
+:::
+
+::: {.column width="50%"}
+
+```{python}
+#| echo: false
+gt_refined = gt_dumbbell.cols_hide(columns=["Wins", "team_conf", "team_name"]).fmt_image("team_logo_espn").pipe(
+    gte.gt_fa_rank_change,
+    column="Streak",
+    icon_type="turn",
+    color_up="blue",
+    color_down="orange"
+)
+gt_refined
+```
+
+:::
+
+:::::
+
+::: {.notes}
+We hide redundant columns to reduce clutter, add team logos with `.fmt_image()`, and use `gt_fa_rank_change` to show trend direction with icons. Every remaining cell conveys meaning.
+:::
+
+---
+
+### Step 9: Add Visual Highlighting & Final Polish
+
+::::: {.columns}
+
+::: {.column width="50%"}
+
+```{python}
+#| echo: true
+#| eval: false
+#| code-line-numbers: "1-4"
+gt_final = gt_refined.pipe(
+    gte.gt_add_divider, columns="Point Diff", color="darkblue", weight=2
+)
+gt_final
+```
+
+:::
+
+::: {.column width="50%"}
+
+```{python}
+#| echo: false
+gt_final = gt_refined.pipe(
+    gte.gt_add_divider, columns="Point Diff", color="darkblue", weight=2
+).pipe(gte.gt_theme_538)
+gt_final
+```
+
+:::
+
+:::::
+
+::: {.notes}
+Final polish: `gt_add_divider` adds visual separation. `gt_theme_538` applies FiveThirtyEight styling—professional, publication-ready. The table goes from functional to beautiful. You've gone from raw data to a polished, interactive data visualization in 9 steps.
+:::
+
+---
+
+<!-- todo recap? -->
+
+## Advanced use cases: gt-extras
+
+---
+
+### gt-extras
+
+[![](./assets/images/API.png)](https://posit-dev.github.io/gt-extras/reference/)
+
+---
+
+### gt-extras
+
+::::::: {.columns}
 
 :::::: {.column width="30%"}
 
@@ -195,17 +775,23 @@ Theming
 Iconing + Imaging
 :::
 
+
+::: {.fragment fragment-index=5 .highlight-current-red}
+Utilities
+:::
+
 ::::::
 
 :::::: {.column width="70%"}
 
-:::::{.custom-stack }
+::::: {.custom-stack }
 
 :::: {.r-stack}
 
 ::: {.fragment fragment-index=1 .fade-in-then-out}
 
 `gt_plt_bar()`
+
 ```{python}
 from great_tables import GT
 from great_tables.data import gtcars
@@ -350,6 +936,42 @@ gt
 
 :::
 
+::: {.fragment fragment-index=5 .fade-in-then-out}
+
+`gt_two_column_layout()`
+```{python}
+from great_tables import GT, style, loc
+import gt_extras as gte
+from great_tables.data import peeps
+
+df1 = peeps.loc[0:15, ["name_given", "address"]]
+df2 = peeps.loc[16:31, ["name_given", "address"]]
+
+gt1 = (
+    GT(df1)
+    .tab_header(title="Double Table")
+    .tab_options(
+        table_background_color="transparent",
+        table_border_top_color="transparent",
+        table_font_size="20px",
+    )
+    .tab_style(style=style.fill("transparent"), locations=[loc.column_header(), loc.stubhead()])
+)
+gt2 = (
+    GT(df2)
+    .tab_options(
+        table_background_color="transparent",
+        table_border_top_color="transparent",
+        table_font_size="20px",
+    )
+    .tab_style(style=style.fill("transparent"), locations=[loc.column_header(), loc.stubhead()])
+)
+
+gte.gt_two_column_layout(gt1, gt2, table_header_from=1)
+```
+
+:::
+
 ::::
 
 :::::
@@ -358,22 +980,53 @@ gt
 
 :::::::
 
-# Table Contest 2025
+--- 
 
-## Subheader
+### gt-extras
 
-# Thank you
+![found at [https://posit-dev.github.io/gt-extras/examples/](https://posit-dev.github.io/gt-extras/examples/)](./assets/images/examples.png){width="80%"}
 
-::: {.nonincremental}
 
-- Rich Iannone and Michael Chow
-- Many other Posit folks who have worked hard on these projects (Andrew, Hassan, Jeroen)
+## Understanding the building blocks
 
+---
+
+### The Takeaway
+
+
+---
+
+### Thank you
+
+::: {.fragment fragment-index=1}
+Michael Chow and Richard Ianonne (and the Posit family)
 :::
 
 
-![](./assets/images/GT_logo.svg){width="40%" .absolute top=-30 right=20}
+:::::: {.fragment fragment-index=2}
+
+::::: {.columns}
+
+::: {.column width="60%"}
+
+- [Great Tables](https://posit-dev.github.io/great-tables/)
+
+- [gt-extras](https://posit-dev.github.io/gt-extras/)
+
+- [2025 Table Contest](https://posit.co/blog/2025-table-contest-winners/)
+
+:::
+
+::: {.column width="40%"}
+
+![](./assets/images/GT_logo.svg)
+
+:::
+
+:::::
+
+::::::
 
 ::: footer
-(These slides are on my new personal site 👉 [juleswg.me](https://juleswg.me))
+Find the slides [here](https://juleswg.me/talks/Great-Tables-and-More-Nov-19/index.html)
 :::
