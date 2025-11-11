@@ -21,46 +21,46 @@
     "text": "I graduated from Williams College in 2023 with a double major in computer science and math. After my undergraduate education, I spent a year in Spain teaching computer science, among other topics, at a vocational school. I’ve also had the good fortune to join batches at the Recurse Center in summer of 2022 and fall of 2024 in which I spent time building out a number of projects, like these!\nLast year, I helped out in the Michigan Dems 2024 campaign, writing some texting scripts and mostly organzing volunteer door-knockers and phone bankers. More recently I worked as a maintainer for an in-house Student Information Service for a local high school, which entailed a full-stack React/NextJS project deployed on Vercel.\nCurrently, I’m working on Python Email resources for Posit!\n\n🔭 My role now involves the exploration and development of resources for email in Python!\n🔭 I had previously been working on a supplemental Great Tables package called gt-extras!\n🌱 I’m currently learning how to toy around with R Shiny apps, one of which can be found here.\n💬 I’m looking to collaborate on gt-extras, please submit issues and PR’s!\n👯 I spend my time climbing, playing soccer and table tennis, and volunteering at a weekly legal clinic."
   },
   {
-    "objectID": "talks/Great-Tables-and-More-Nov-19/index.html#tables-dont-have-to-be-boring",
-    "href": "talks/Great-Tables-and-More-Nov-19/index.html#tables-dont-have-to-be-boring",
+    "objectID": "talks/Great-Tables-and-More-Nov-19/index.html#intro-section-1-minute",
+    "href": "talks/Great-Tables-and-More-Nov-19/index.html#intro-section-1-minute",
     "title": "Great Tables & gt-extras",
-    "section": "Tables Don’t Have to Be Boring",
-    "text": "Tables Don’t Have to Be Boring"
+    "section": "intro section: 1 minute",
+    "text": "intro section: 1 minute\nAbout me\n\ngt-extras author\nGreat Tables at Posit: Michael Chow and Richard Iannone\nI enjoy patterns and helping people see patterns\n\n\n\nI want to quickly introduce myself. I’m Jules, and I’m the author of gt-extras and a contributor to Great Tables.\nBeen at posit 6 months\nAm into patterns and puzzles, and sports\nIntersection of these is data visualization"
   },
   {
-    "objectID": "talks/Great-Tables-and-More-Nov-19/index.html#teaching-through-example",
-    "href": "talks/Great-Tables-and-More-Nov-19/index.html#teaching-through-example",
+    "objectID": "talks/Great-Tables-and-More-Nov-19/index.html#goals-of-the-talk-5-minutes",
+    "href": "talks/Great-Tables-and-More-Nov-19/index.html#goals-of-the-talk-5-minutes",
     "title": "Great Tables & gt-extras",
-    "section": "Teaching Through Example",
-    "text": "Teaching Through Example"
+    "section": "Goals of the talk: 5 minutes",
+    "text": "Goals of the talk: 5 minutes\nThe problem\n\n“They say a picture is worth a thousand words, so why do we have to look at tables with a thousand cells of text?”"
+  },
+  {
+    "objectID": "talks/Great-Tables-and-More-Nov-19/index.html#table-contest-examples-of-tables-5-minutes",
+    "href": "talks/Great-Tables-and-More-Nov-19/index.html#table-contest-examples-of-tables-5-minutes",
+    "title": "Great Tables & gt-extras",
+    "section": "Table contest examples of tables: 5 minutes",
+    "text": "Table contest examples of tables: 5 minutes"
+  },
+  {
+    "objectID": "talks/Great-Tables-and-More-Nov-19/index.html#american-football-example",
+    "href": "talks/Great-Tables-and-More-Nov-19/index.html#american-football-example",
+    "title": "Great Tables & gt-extras",
+    "section": "(American) Football example",
+    "text": "(American) Football example"
+  },
+  {
+    "objectID": "talks/Great-Tables-and-More-Nov-19/index.html#advanced-use-cases-gt-extras",
+    "href": "talks/Great-Tables-and-More-Nov-19/index.html#advanced-use-cases-gt-extras",
+    "title": "Great Tables & gt-extras",
+    "section": "Advanced use cases: gt-extras",
+    "text": "Advanced use cases: gt-extras"
   },
   {
     "objectID": "talks/Great-Tables-and-More-Nov-19/index.html#understanding-the-building-blocks",
     "href": "talks/Great-Tables-and-More-Nov-19/index.html#understanding-the-building-blocks",
     "title": "Great Tables & gt-extras",
-    "section": "Understanding the Building Blocks",
-    "text": "Understanding the Building Blocks"
-  },
-  {
-    "objectID": "talks/Great-Tables-and-More-Nov-19/index.html#examples-gallery",
-    "href": "talks/Great-Tables-and-More-Nov-19/index.html#examples-gallery",
-    "title": "Great Tables & gt-extras",
-    "section": "Examples Gallery",
-    "text": "Examples Gallery"
-  },
-  {
-    "objectID": "talks/Great-Tables-and-More-Nov-19/index.html#the-table-contest-design-meets-data",
-    "href": "talks/Great-Tables-and-More-Nov-19/index.html#the-table-contest-design-meets-data",
-    "title": "Great Tables & gt-extras",
-    "section": "The Table Contest: Design Meets Data",
-    "text": "The Table Contest: Design Meets Data"
-  },
-  {
-    "objectID": "talks/Great-Tables-and-More-Nov-19/index.html#key-takeaways",
-    "href": "talks/Great-Tables-and-More-Nov-19/index.html#key-takeaways",
-    "title": "Great Tables & gt-extras",
-    "section": "Key Takeaways",
-    "text": "Key Takeaways"
+    "section": "Understanding the building blocks",
+    "text": "Understanding the building blocks"
   },
   {
     "objectID": "posts/Posit-adding-plots-to-great-tables/index.html",
@@ -102,7 +102,7 @@
     "href": "posts/Posit-adding-plots-to-great-tables/index.html#a-comprehensive-package-plotnine",
     "title": "Adding Plots to Great Tables",
     "section": "A Comprehensive Package: Plotnine",
-    "text": "A Comprehensive Package: Plotnine\n\nfrom io import StringIO\nfrom plotnine import (\n    ggplot,\n    aes,\n    coord_flip,\n    geom_col,\n    scale_y_continuous,\n    scale_x_continuous,\n    theme_void,\n    geom_hline,\n)\n\nmax_legs_value = df[\"Legs\"].max()\n\n\ndef create_plot_plotnine(val: int) -&gt; str:\n    plot = (\n        ggplot()\n        + aes(x=1, y=val)\n        + geom_col(width=0.5, fill=\"green\", show_legend=False)\n        + scale_y_continuous(limits=(0, max_legs_value))\n        + scale_x_continuous(limits=(0.5, 1.5))\n        + coord_flip()\n        + theme_void()\n        + geom_hline(yintercept=0)\n    )\n\n    buf = StringIO()\n    plot.save(buf, format=\"svg\", width=0.5, height=0.3, verbose=False)\n    svg_content = buf.getvalue()\n    buf.close()\n\n    html = f\"&lt;div&gt;{svg_content}&lt;/div&gt;\"\n    return html\n\n\n# This might be familiar by now\ngt.fmt(fns=create_plot_plotnine, columns=\"Plot\")\n\n\n\n\n\n\n\n  Animal\n  Legs\n  Plot\n\n\n\n  \n    Ostrich\n    2\n    \n\n\n \n  \n   \n    \n    2025-10-21T11:55:03.125295\n    image/svg+xml\n    \n     \n      Matplotlib v3.9.4, https://matplotlib.org/\n     \n    \n   \n  \n \n \n  \n \n \n  \n   \n    \n    \n    \n    \n    \n    \n    \n    \n    \n   \n   \n    \n    \n    \n    \n    \n    \n    \n    \n    \n   \n   \n    \n   \n   \n    \n   \n  \n \n \n  \n   \n  \n \n\n\n  \n  \n    Spider\n    8\n    \n\n\n \n  \n   \n    \n    2025-10-21T11:55:03.178694\n    image/svg+xml\n    \n     \n      Matplotlib v3.9.4, https://matplotlib.org/\n     \n    \n   \n  \n \n \n  \n \n \n  \n   \n    \n    \n    \n    \n    \n    \n    \n    \n    \n   \n   \n    \n    \n    \n    \n    \n    \n    \n    \n    \n   \n   \n    \n   \n   \n    \n   \n  \n \n \n  \n   \n  \n \n\n\n  \n  \n    Lion\n    4\n    \n\n\n \n  \n   \n    \n    2025-10-21T11:55:03.231123\n    image/svg+xml\n    \n     \n      Matplotlib v3.9.4, https://matplotlib.org/\n     \n    \n   \n  \n \n \n  \n \n \n  \n   \n    \n    \n    \n    \n    \n    \n    \n    \n    \n   \n   \n    \n    \n    \n    \n    \n    \n    \n    \n    \n   \n   \n    \n   \n   \n    \n   \n  \n \n \n  \n   \n  \n \n\n\n  \n\n\n\n\n\n\n        \n\n\nNice! But that was a sizable chunk of code just to create plots comprised of one bar each. If you’re like me, you’ll find it’s not at all trivial to do, especially without experience using the plotting package.\nHowever, this isn’t the only graphic you might want to have on display – when you come across a use case that necessitates more detailed plots, a comprehensive plotting package like plotnine could very well be your best bet. Imagine we are passing in a list of tuples and want to generate a scatterplot, writing all of those as svg.py elements or direct HTML would be quite cumbersome."
+    "text": "A Comprehensive Package: Plotnine\n\nfrom io import StringIO\nfrom plotnine import (\n    ggplot,\n    aes,\n    coord_flip,\n    geom_col,\n    scale_y_continuous,\n    scale_x_continuous,\n    theme_void,\n    geom_hline,\n)\n\nmax_legs_value = df[\"Legs\"].max()\n\n\ndef create_plot_plotnine(val: int) -&gt; str:\n    plot = (\n        ggplot()\n        + aes(x=1, y=val)\n        + geom_col(width=0.5, fill=\"green\", show_legend=False)\n        + scale_y_continuous(limits=(0, max_legs_value))\n        + scale_x_continuous(limits=(0.5, 1.5))\n        + coord_flip()\n        + theme_void()\n        + geom_hline(yintercept=0)\n    )\n\n    buf = StringIO()\n    plot.save(buf, format=\"svg\", width=0.5, height=0.3, verbose=False)\n    svg_content = buf.getvalue()\n    buf.close()\n\n    html = f\"&lt;div&gt;{svg_content}&lt;/div&gt;\"\n    return html\n\n\n# This might be familiar by now\ngt.fmt(fns=create_plot_plotnine, columns=\"Plot\")\n\n\n\n\n\n\n\n  Animal\n  Legs\n  Plot\n\n\n\n  \n    Ostrich\n    2\n    \n\n\n \n  \n   \n    \n    2025-11-11T11:52:41.639051\n    image/svg+xml\n    \n     \n      Matplotlib v3.9.4, https://matplotlib.org/\n     \n    \n   \n  \n \n \n  \n \n \n  \n   \n    \n    \n    \n    \n    \n    \n    \n    \n    \n   \n   \n    \n    \n    \n    \n    \n    \n    \n    \n    \n   \n   \n    \n   \n   \n    \n   \n  \n \n \n  \n   \n  \n \n\n\n  \n  \n    Spider\n    8\n    \n\n\n \n  \n   \n    \n    2025-11-11T11:52:41.695352\n    image/svg+xml\n    \n     \n      Matplotlib v3.9.4, https://matplotlib.org/\n     \n    \n   \n  \n \n \n  \n \n \n  \n   \n    \n    \n    \n    \n    \n    \n    \n    \n    \n   \n   \n    \n    \n    \n    \n    \n    \n    \n    \n    \n   \n   \n    \n   \n   \n    \n   \n  \n \n \n  \n   \n  \n \n\n\n  \n  \n    Lion\n    4\n    \n\n\n \n  \n   \n    \n    2025-11-11T11:52:41.749777\n    image/svg+xml\n    \n     \n      Matplotlib v3.9.4, https://matplotlib.org/\n     \n    \n   \n  \n \n \n  \n \n \n  \n   \n    \n    \n    \n    \n    \n    \n    \n    \n    \n   \n   \n    \n    \n    \n    \n    \n    \n    \n    \n    \n   \n   \n    \n   \n   \n    \n   \n  \n \n \n  \n   \n  \n \n\n\n  \n\n\n\n\n\n\n        \n\n\nNice! But that was a sizable chunk of code just to create plots comprised of one bar each. If you’re like me, you’ll find it’s not at all trivial to do, especially without experience using the plotting package.\nHowever, this isn’t the only graphic you might want to have on display – when you come across a use case that necessitates more detailed plots, a comprehensive plotting package like plotnine could very well be your best bet. Imagine we are passing in a list of tuples and want to generate a scatterplot, writing all of those as svg.py elements or direct HTML would be quite cumbersome."
   },
   {
     "objectID": "posts/Posit-adding-plots-to-great-tables/index.html#conclusion",
@@ -158,7 +158,7 @@
     "href": "work.html#talks",
     "title": "Things I’ve Done",
     "section": "Talks",
-    "text": "Talks\nSlides for a talk I gave about my internship at Posit"
+    "text": "Talks\n\n\nI spoke at The Budapest BI Forum 2025 about Great Tables, and all the wonderful things you can do with the package! Here are the slides, and coming soon is the video link!\nSlides for an internal talk I gave about my internship at Posit"
   },
   {
     "objectID": "work.html#personal-projects",
