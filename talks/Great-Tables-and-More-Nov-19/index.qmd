@@ -349,10 +349,6 @@ Check out [Victor's table entry](https://github.com/rich-iannone/table-contest/d
 
 ### Step 1: Start with Data
 
-::::: {.columns}
-
-::: {.column width="50%"}
-
 ```{python}
 #| echo: true
 #| eval: false
@@ -362,26 +358,20 @@ from great_tables import GT, md, style, loc
 import gt_extras as gte
 
 nfl_df = pl.read_json("./assets/nfl_2011_stats.json")
-nfl_df.head(5)
+nfl_df.head(8)
 ```
-
-:::
-
-::: {.column width="50%"}
 
 ```{python}
 #| echo: false
 import polars as pl
 from great_tables import GT, md, style, loc
 import gt_extras as gte
+from IPython.display import HTML
 
 nfl_df = pl.read_json("./assets/nfl_2011_stats.json")
-nfl_df.head(5)
+display(HTML("<style>.dataframe { zoom: 45%; }</style>"))
+nfl_df.head(9)
 ```
-
-:::
-
-:::::
 
 ::: {.notes}
 We start with a Polars DataFrame containing NFL team statistics from 2011. Each row is a team with columns for Team, Division, conference, wins, average points for/against, and other metrics. Nothing special yet—just data.
@@ -389,201 +379,206 @@ We start with a Polars DataFrame containing NFL team statistics from 2011. Each 
 
 ---
 
-### Step 2: Create a Basic GT Table
-
-::::: {.columns}
-
-::: {.column width="50%"}
+### Step 2: Add Structure - Row Names & Groups
 
 ```{python}
 #| echo: true
 #| eval: false
-#| code-line-numbers: "1-8"
-gt_basic = (
-    GT(nfl_df.head(8), rowname_col="Team")
-    .tab_header(
-        title="2011 NFL Season",
-        subtitle="Team Statistics"
-    )
-)
-gt_basic
+#| code-line-numbers: "1"
+GT(nfl_df.head(8), rowname_col="Team", groupname_col="team_division")
 ```
-
-:::
-
-::: {.column width="50%"}
 
 ```{python}
 #| echo: false
-gt_basic = (
-    GT(nfl_df.head(8), rowname_col="Team")
-    .tab_header(
-        title="2011 NFL Season",
-        subtitle="Team Statistics"
-    )
-)
-gt_basic
-```
-
-:::
-
-:::::
-
-::: {.notes}
-We create a GT object from the DataFrame. We specify "Team" as the rowname_col—this becomes the stub (the leftmost column). We add a header with title and subtitle. This is the foundation. It's clean, organized, but not yet compelling.
-:::
-
----
-
-### Step 3: Add Structure with Grouping & Spanners
-
-::::: {.columns}
-
-::: {.column width="50%"}
-
-```{python}
-#| echo: true
-#| eval: false
-#| code-line-numbers: "2,8-9"
-gt_grouped = (
+gt_structured = (
     GT(nfl_df.head(8), rowname_col="Team", groupname_col="team_division")
-    .tab_header(
-        title="2011 NFL Season",
-        subtitle="Team Statistics"
-    )
-    .tab_stubhead(label="Team")
-    .tab_spanner(label="Scoring", columns=["Avg PF", "Avg PA", "Point Diff"])
-)
-gt_grouped
-```
-
-:::
-
-::: {.column width="50%"}
-
-```{python}
-#| echo: false
-gt_grouped = (
-    GT(nfl_df.head(8), rowname_col="Team", groupname_col="team_division")
-    .tab_header(
-        title="2011 NFL Season",
-        subtitle="Team Statistics"
-    )
-    .tab_stubhead(label="Team")
-    .tab_spanner(label="Scoring", columns=["Avg PF", "Avg PA", "Point Diff"])
-)
-gt_grouped
-```
-
-:::
-
-:::::
-
-::: {.notes}
-Now we add structure. groupname_col organizes teams by division automatically. tab_spanner groups related columns—all the scoring metrics together. This creates visual and logical hierarchy. The reader's eye immediately understands the organization without reading labels.
-:::
-
----
-
-### Step 4: Add Formatting & Styling
-
-::::: {.columns}
-
-::: {.column width="50%"}
-
-```{python}
-#| echo: true
-#| eval: false
-#| code-line-numbers: "10-14"
-gt_formatted = (
-    GT(nfl_df.head(8), rowname_col="Team", groupname_col="team_division")
-    .tab_header(
-        title="2011 NFL Season",
-        subtitle="Team Statistics"
-    )
-    .tab_stubhead(label="Team")
-    .tab_spanner(label="Scoring", columns=["Avg PF", "Avg PA", "Point Diff"])
-    .fmt_number(columns="Point Diff", decimals=1)
-    .cols_align(align="center", columns=["Avg PF", "Avg PA"])
     .tab_options(
         table_background_color="transparent",
         table_border_top_color="transparent",
+        table_font_size="14px"
     )
 )
-gt_formatted
+gt_structured
 ```
-
-:::
-
-::: {.column width="50%"}
-
-```{python}
-#| echo: false
-gt_formatted = (
-    GT(nfl_df.head(8), rowname_col="Team", groupname_col="team_division")
-    .tab_header(
-        title="2011 NFL Season",
-        subtitle="Team Statistics"
-    )
-    .tab_stubhead(label="Team")
-    .tab_spanner(label="Scoring", columns=["Avg PF", "Avg PA", "Point Diff"])
-    .fmt_number(columns="Point Diff", decimals=1)
-    .cols_align(align="center", columns=["Avg PF", "Avg PA"])
-    .tab_options(
-        table_background_color="transparent",
-        table_border_top_color="transparent",
-    )
-)
-gt_formatted
-```
-
-:::
-
-:::::
 
 ::: {.notes}
-We format numbers to the right precision, align columns for readability, and adjust styling. Numbers become cleaner. The table starts to look polished. These are Great Tables features—they give you fine-grained control over presentation.
+We specify "Team" as the rowname_col—this becomes the stub (the leftmost column). We also add groupname_col="team_division" to organize teams by division automatically. This is the structural foundation.
 :::
 
 ---
 
-### Step 5: Add Color as a Data Channel
-
-::::: {.columns}
-
-::: {.column width="50%"}
+### Step 3: Add Structure - Header & Labels
 
 ```{python}
 #| echo: true
 #| eval: false
 #| code-line-numbers: "1-6"
-gt_colored = gt_formatted.pipe(
-    gte.gt_color_box,
-    columns="Point Diff",
-    palette=["red", "yellow", "green"],
-    domain=[-14, 14]
-)
-gt_colored
+GT(nfl_df.head(8), rowname_col="Team", groupname_col="team_division")
+    .tab_header(
+        title="2011 NFL Season",
+        subtitle="Team Statistics"
+    )
+    .tab_stubhead(label="Team")
 ```
-
-:::
-
-::: {.column width="50%"}
 
 ```{python}
 #| echo: false
-gt_colored = gt_formatted.pipe(
+gt_header = (
+    GT(nfl_df.head(8), rowname_col="Team", groupname_col="team_division")
+    .tab_header(
+        title="2011 NFL Season",
+        subtitle="Team Statistics"
+    )
+    .tab_stubhead(label="Team")
+    .tab_options(
+        table_background_color="transparent",
+        table_border_top_color="transparent",
+        table_font_size="14px"
+    )
+)
+gt_header
+```
+
+::: {.notes}
+We add a header with title and subtitle, and label the stub. This provides context and makes the table self-documenting.
+:::
+
+---
+
+### Step 4: Add Structure - Column Spanners
+
+```{python}
+#| echo: true
+#| eval: false
+#| code-line-numbers: "1-2"
+gt_header
+    .tab_spanner(label="Scoring", columns=["Avg PF", "Avg PA", "Point Diff"])
+```
+
+```{python}
+#| echo: false
+gt_spanned = (
+    GT(nfl_df.head(8), rowname_col="Team", groupname_col="team_division")
+    .tab_header(
+        title="2011 NFL Season",
+        subtitle="Team Statistics"
+    )
+    .tab_stubhead(label="Team")
+    .tab_spanner(label="Scoring", columns=["Avg PF", "Avg PA", "Point Diff"])
+    .tab_options(
+        table_background_color="transparent",
+        table_border_top_color="transparent",
+        table_font_size="14px"
+    )
+)
+gte.gt_highlight_cols(gt_spanned, ["Avg PF", "Avg PA", "Point Diff"], include_column_labels=True)
+```
+
+::: {.notes}
+tab_spanner groups related columns—all the scoring metrics together. This creates visual and logical hierarchy. The reader's eye immediately understands the organization.
+:::
+
+---
+
+### Step 5: Format - Numbers & Alignment
+
+```{python}
+#| echo: true
+#| eval: false
+#| code-line-numbers: "1-2"
+gt_spanned
+    .fmt_number(columns="Point Diff", decimals=1)
+    .cols_align(align="center", columns=["Avg PF", "Avg PA"])
+```
+
+```{python}
+#| echo: false
+gt_formatted = (
+    GT(nfl_df.head(8), rowname_col="Team", groupname_col="team_division")
+    .tab_header(
+        title="2011 NFL Season",
+        subtitle="Team Statistics"
+    )
+    .tab_stubhead(label="Team")
+    .tab_spanner(label="Scoring", columns=["Avg PF", "Avg PA", "Point Diff"])
+    .fmt_number(columns="Point Diff", decimals=1)
+    .cols_align(align="center", columns=["Avg PF", "Avg PA"])
+    .tab_options(
+        table_background_color="transparent",
+        table_border_top_color="transparent",
+        table_font_size="14px"
+    )
+)
+gt_formatted
+```
+
+::: {.notes}
+We format numbers to the right precision and align columns for readability. Numbers become cleaner and more professional-looking.
+:::
+
+---
+
+### Step 6: Style - Hide Unnecessary Columns
+
+```{python}
+#| echo: true
+#| eval: false
+#| code-line-numbers: "1"
+gt_formatted.cols_hide(["team_logo_espn"])
+```
+
+```{python}
+#| echo: false
+gt_cleaned = (
+    GT(nfl_df.head(8), rowname_col="Team", groupname_col="team_division")
+    .tab_header(
+        title="2011 NFL Season",
+        subtitle="Team Statistics"
+    )
+    .tab_stubhead(label="Team")
+    .tab_spanner(label="Scoring", columns=["Avg PF", "Avg PA", "Point Diff"])
+    .fmt_number(columns="Point Diff", decimals=1)
+    .cols_align(align="center", columns=["Avg PF", "Avg PA"])
+    .cols_hide(["team_logo_espn"])
+    .tab_options(
+        table_background_color="transparent",
+        table_border_top_color="transparent",
+        table_font_size="14px"
+    )
+)
+gt_cleaned
+```
+
+::: {.notes}
+We hide columns we don't need to display. This declutters the table and focuses attention on what matters. Now we have a clean foundation ready for gt-extras visualizations.
+:::
+
+---
+
+### Step 7: Add Color as a Data Channel
+
+```{python}
+#| echo: true
+#| eval: false
+#| code-line-numbers: "1-6"
+gt_cleaned.pipe(
     gte.gt_color_box,
     columns="Point Diff",
     palette=["red", "yellow", "green"],
     domain=[-14, 14]
 )
-gt_colored
 ```
 
-:::
-
-:::::
+```{python}
+#| echo: false
+gt_colored = gt_cleaned.pipe(
+    gte.gt_color_box,
+    columns="Point Diff",
+    palette=["red", "yellow", "green"],
+    domain=[-14, 14]
+)
+gte.gt_highlight_cols(gt_colored, "Point Diff", include_column_labels=True)
+```
 
 ::: {.notes}
 Now we use gt-extras! gt_color_box creates a color gradient where red is negative (bad), yellow is neutral, and green is positive (good). This is the power of color: you see performance instantly.
@@ -591,17 +586,13 @@ Now we use gt-extras! gt_color_box creates a color gradient where red is negativ
 
 ---
 
-### Step 6: Embed Win/Loss Visualization
-
-::::: {.columns}
-
-::: {.column width="50%"}
+### Step 8: Embed Win/Loss Visualization
 
 ```{python}
 #| echo: true
 #| eval: false
 #| code-line-numbers: "1-8"
-gt_winloss = gt_colored.pipe(
+gt_colored.pipe(
     gte.gt_plt_winloss,
     column="Games",
     win_color="blue",
@@ -609,12 +600,7 @@ gt_winloss = gt_colored.pipe(
     height=30,
     width=100
 )
-gt_winloss
 ```
-
-:::
-
-::: {.column width="50%"}
 
 ```{python}
 #| echo: false
@@ -626,12 +612,8 @@ gt_winloss = gt_colored.pipe(
     height=30,
     width=100
 )
-gt_winloss
+gte.gt_highlight_cols(gt_winloss, "Games", include_column_labels=True)
 ```
-
-:::
-
-:::::
 
 ::: {.notes}
 gt_plt_winloss takes our win-loss record and renders it as a bar chart right in the cell. Each team's record becomes visible instantly. Wins are blue, losses are orange. You can see streaks and patterns at a glance.
@@ -639,17 +621,13 @@ gt_plt_winloss takes our win-loss record and renders it as a bar chart right in 
 
 ---
 
-### Step 7: Add Dumbbell Chart (Points For vs Against)
-
-::::: {.columns}
-
-::: {.column width="50%"}
+### Step 9: Add Dumbbell Chart (Points For vs Against)
 
 ```{python}
 #| echo: true
 #| eval: false
 #| code-line-numbers: "1-9"
-gt_dumbbell = gt_winloss.pipe(
+gt_winloss.pipe(
     gte.gt_plt_dumbbell,
     col1="Avg PF",
     col2="Avg PA",
@@ -658,12 +636,7 @@ gt_dumbbell = gt_winloss.pipe(
     width=250,
     height=30
 )
-gt_dumbbell
 ```
-
-:::
-
-::: {.column width="50%"}
 
 ```{python}
 #| echo: false
@@ -676,12 +649,8 @@ gt_dumbbell = gt_winloss.pipe(
     width=250,
     height=30
 )
-gt_dumbbell
+gte.gt_highlight_cols(gt_dumbbell, "Avg PF", include_column_labels=True)
 ```
-
-:::
-
-:::::
 
 ::: {.notes}
 gt_plt_dumbbell compares two columns visually. It's like showing the gap between what you score (green) and what your opponents score (red). That gap is your offensive advantage. Instantly visible.
@@ -689,86 +658,102 @@ gt_plt_dumbbell compares two columns visually. It's like showing the gap between
 
 ---
 
-### Step 8: Hide Unnecessary Columns & Add Icons
-
-::::: {.columns}
-
-::: {.column width="50%"}
+### Step 10: Add Streak Icons
 
 ```{python}
 #| echo: true
 #| eval: false
-#| code-line-numbers: "1-11"
-gt_refined = gt_dumbbell.cols_hide(columns=["Wins", "team_conf", "team_name"]).fmt_image("team_logo_espn").pipe(
+#| code-line-numbers: "1-7"
+gt_dumbbell.pipe(
     gte.gt_fa_rank_change,
     column="Streak",
     icon_type="turn",
     color_up="blue",
     color_down="orange"
 )
-gt_refined
 ```
-
-:::
-
-::: {.column width="50%"}
 
 ```{python}
 #| echo: false
-gt_refined = gt_dumbbell.cols_hide(columns=["Wins", "team_conf", "team_name"]).fmt_image("team_logo_espn").pipe(
+gt_streak = gt_dumbbell.pipe(
     gte.gt_fa_rank_change,
     column="Streak",
     icon_type="turn",
     color_up="blue",
     color_down="orange"
 )
-gt_refined
+gte.gt_highlight_cols(gt_streak, "Streak", include_column_labels=True)
 ```
 
-:::
-
-:::::
-
 ::: {.notes}
-We hide redundant columns to reduce clutter, add team logos with `.fmt_image()`, and use `gt_fa_rank_change` to show trend direction with icons. Every remaining cell conveys meaning.
+We use `gt_fa_rank_change` to show trend direction with icons. The icons make streaks immediately visible - blue arrows for winning streaks, orange for losing streaks.
 :::
 
 ---
 
-### Step 9: Add Visual Highlighting & Final Polish
-
-::::: {.columns}
-
-::: {.column width="50%"}
+### Step 11: Hide Unnecessary Columns
 
 ```{python}
 #| echo: true
 #| eval: false
-#| code-line-numbers: "1-4"
-gt_final = gt_refined.pipe(
-    gte.gt_add_divider, columns="Point Diff", color="darkblue", weight=2
-)
-gt_final
+#| code-line-numbers: "1"
+gt_streak.cols_hide(columns=["Wins", "team_conf", "team_name"])
 ```
-
-:::
-
-::: {.column width="50%"}
 
 ```{python}
 #| echo: false
-gt_final = gt_refined.pipe(
+gt_refined = gt_streak.cols_hide(columns=["Wins", "team_conf", "team_name"])
+gt_refined
+```
+
+::: {.notes}
+We hide redundant columns to reduce clutter. Every remaining cell conveys meaning.
+:::
+
+---
+
+### Step 12: Add Divider
+
+```{python}
+#| echo: true
+#| eval: false
+#| code-line-numbers: "1-2"
+gt_refined.pipe(
     gte.gt_add_divider, columns="Point Diff", color="darkblue", weight=2
-).pipe(gte.gt_theme_538)
+)
+```
+
+```{python}
+#| echo: false
+gt_divided = gt_refined.pipe(
+    gte.gt_add_divider, columns="Point Diff", color="darkblue", weight=2
+)
+gt_divided
+```
+
+::: {.notes}
+`gt_add_divider` adds visual separation between the scoring metrics and the season trends, making the table structure clearer.
+:::
+
+---
+
+### Step 13: Apply Theme
+
+```{python}
+#| echo: true
+#| eval: false
+#| code-line-numbers: "1"
+gt_divided.pipe(gte.gt_theme_538)
+```
+
+```{python}
+#| echo: false
+gt_final = gt_divided.pipe(gte.gt_theme_538)
 gt_final
 ```
 
-:::
-
-:::::
-
 ::: {.notes}
-Final polish: `gt_add_divider` adds visual separation. `gt_theme_538` applies FiveThirtyEight styling—professional, publication-ready. The table goes from functional to beautiful. You've gone from raw data to a polished, interactive data visualization in 9 steps.
+`gt_theme_538` applies FiveThirtyEight styling—professional, publication-ready. The table goes from functional to beautiful. You've gone from raw data to a polished, interactive data visualization in 13 steps.
 :::
 
 ---
