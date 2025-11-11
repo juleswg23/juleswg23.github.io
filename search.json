@@ -21,130 +21,46 @@
     "text": "I graduated from Williams College in 2023 with a double major in computer science and math. After my undergraduate education, I spent a year in Spain teaching computer science, among other topics, at a vocational school. I’ve also had the good fortune to join batches at the Recurse Center in summer of 2022 and fall of 2024 in which I spent time building out a number of projects, like these!\nLast year, I helped out in the Michigan Dems 2024 campaign, writing some texting scripts and mostly organzing volunteer door-knockers and phone bankers. More recently I worked as a maintainer for an in-house Student Information Service for a local high school, which entailed a full-stack React/NextJS project deployed on Vercel.\nCurrently, I’m working on Python Email resources for Posit!\n\n🔭 My role now involves the exploration and development of resources for email in Python!\n🔭 I had previously been working on a supplemental Great Tables package called gt-extras!\n🌱 I’m currently learning how to toy around with R Shiny apps, one of which can be found here.\n💬 I’m looking to collaborate on gt-extras, please submit issues and PR’s!\n👯 I spend my time climbing, playing soccer and table tennis, and volunteering at a weekly legal clinic."
   },
   {
-    "objectID": "talks/Great-Tables-and-More-Nov-19/talk-outline.html",
-    "href": "talks/Great-Tables-and-More-Nov-19/talk-outline.html",
-    "title": "Great Tables & gt-extras: Talk Outline",
-    "section": "",
-    "text": "Duration: 35 minutes + 5 min Q&A\n\n\n\n\n\n\nSlide: Title Slide - Title: “Great Tables & gt-extras” - Subtitle: “Telling Better Data Stories with Beautiful Tables”\nSlide: About You - 📊 gt-extras author, Great Tables contributor - 💡 I enjoy patterns and helping people see patterns - Who am I to tell you about tables? (Personal connection: KenKen puzzle image. emphasize that tables, like puzzles, are a great place to see patterns.)\nSlide: The Problem - Show a screenshot of a plain, ugly table (default pandas DataFrame display) - Quote: “They say a picture is worth a thousand words, so why do we have to look at tables with a thousand cells of text?” - The belief we’re challenging: “Tables are boring. Charts tell the real stories.” - Our argument: Tables CAN be beautiful, engaging, AND tell powerful stories\n\n\n\n\n\n\n\nSlide: Full NFL Table - Show the complete rendered NFL 2011 season table (from current slides) - Take a moment to let it sink in: This is a table, but it’s visually engaging - It tells multiple stories at once\nSlide: What Makes It Work? - Strategic use of color (green/yellow/red for point differential) - Embedded visualizations (win/loss streaks, dumbbell plots) - Clear hierarchy and organization (division grouping, team logos) - Responsive styling (Super Bowl winners highlighted) - Professional theme/polish\nSlide: This Wasn’t Hand-Coded HTML - This was created with Python + Great Tables + gt-extras - Clean, chainable API (show the method chaining structure without diving into code details yet) - The point: You don’t need to be a web designer to make this\n\n\n\n\n\n\n\nSection: What is Great Tables? (7 minutes)\nSlide: Great Tables Foundation - Created by Rich Iannone (originally gt in R) - Now available in Python (maintained by Michael Chow at Posit) - Philosophy: Tables are a first-class visualization medium - Key capabilities: - Organize and present data clearly - Apply professional formatting (numbers, dates, currencies) - Add titles, subtitles, source notes - Style cells, rows, columns - Create polished, publication-ready output\nSlide: The Components of a Table - Show the Great Tables component diagram (visual reference from docs) - The building blocks (from top to bottom): - Table Header (optional) - Title and subtitle - Stub & Stub Head (optional) - Row labels and row groups - Column Labels (required) - Column headers, optionally with spanners - Table Body (required) - The data cells - Table Footer (optional) - Source notes and footnotes - Key insight: Think of a table as a composition of parts, not a monolith - The chainable API lets you build these parts together, each method adds clarity\nSlide: Building Blocks in Action - The NFL Example - Show how each component appears in the NFL table: - Header: “NFL 2011 Season” title - Stub: Team names, organized by division (row groups) - Column Labels: Score, Wins, Losses, etc. - Body: The data, with embedded visualizations and colors - Footer: Data source attribution - Key insight: Every component serves the story. Nothing is decorative.\nSlide: Structuring Your Data - The stub: Grouping rows for context (e.g., by division) - Makes patterns visible without additional explanation - Example: In NFL table, you immediately see which division won the most games - Column organization: Headers and spanners group related columns - Example: Group “Wins/Losses/Ties” under one spanner vs. separating them - Why it matters: Structure guides the reader’s eye and shapes their understanding\nSlide: Formatting & Polishing - Format numbers meaningfully: - Decimals (precision matters) - Currency (for financial data) - Percentages (for proportions) - Compact notation (large numbers readable) - Example: In NFL table, points are formatted consistently - Polish with basic styling: - Colors, fonts, alignment—choose intentionally - Every choice should reduce cognitive load, not add distraction - Why it matters: Professional formatting signals “this data is important”\nSlide: The Art of Visual Hierarchy - Guide attention with contrast: - Color (most powerful): Use strategically to highlight patterns - Size/weight: Headers bigger/bolder than body - Spacing: Group related items, separate concerns - Strategic use of the full table: - Headers and spanners guide the eye to structure - Stubs create visual anchors - Footer provides context (source, notes) - Example: NFL table uses color on point differential to instantly convey performance - Key insight: Every element works together to tell the story faster\nSection: gt-extras - Unlocking Creative Potential (7 minutes)\nSlide: What is gt-extras? - Extension package that adds powerful new capabilities to Great Tables - Built on top of the Great Tables foundation (components + formatting + styling) - Philosophy: Use tables for data storytelling, not just data presentation - The question it answers: “What if we could embed visualizations and advanced styling within table cells?” - Organized into 4 main capability areas:\nSlide 1: Plotting Functions ⭐ PRIMARY FOCUS - “Put Small Multiples Inside Your Table Cells” - gt_plt_bar() - Embed bar charts in cells (compare magnitudes) - gt_plt_dumbbell() - Compare two values visually (before/after, actual vs. target) - gt_plt_winloss() - Show win/loss/tie records at a glance (seasons, streaks) - gt_plt_bullet() - Show performance against targets (goal tracking) - gt_plt_sparkline() - Trend visualization in cells (time series at a glance) - Why? Numbers alone obscure patterns. Let visualizations live alongside data. - Example from NFL table: Win/loss streaks and dumbbell plots (margin of victory vs. margin of defeat)\nSlide 2: Coloring & Highlighting Functions - “Leverage Color as a Data Channel” - gt_color_box() - Heat map style coloring with custom palettes - gt_highlight_cols() / gt_highlight_rows() - Draw attention strategically - gt_add_divider() - Visual separation for emphasis - Why? Color is one of the fastest ways our brains process information - Cognitive science: Humans process color faster than text or even small charts - Example from NFL table: Green/yellow/red for point differential\nSlide 3: Theming Functions - “Pre-Built, Professional Aesthetics” - gt_theme_538() - FiveThirtyEight style (data journalism aesthetic) - gt_theme_dot_matrix() - Playful, retro aesthetic - Pre-built themes for instant professionalism - Why? Consistency and polish matter; shouldn’t require hours of CSS - Insight: Great Tables handles the technical details; gt-extras provides the polish\nSlide 4: Iconing & Imaging Functions - gt_fa_rank_change() - Font Awesome icons for trends (arrows, up/down, etc.) - fmt_image() - Embed images directly in cells (logos, photos) - Why? Visual elements are faster to parse than text - Example: NFL table uses team logos instead of team name text alone\nSlide: The Real Power - Stacking Capabilities - Show the NFL example as a complete picture: - Start with a DataFrame of NFL data - Use Great Tables to structure: grouping by division (stub), organizing columns - Use Great Tables to format: team logos (images), scores (numbers) - Use Great Tables to style: basic colors and fonts - Use gt-extras to elevate: embedded win/loss streaks, dumbbell plots, color boxes - Use gt-extras theming: consistent, professional aesthetic - Each layer adds a dimension to the storytelling - The result: One cohesive, beautiful table that answers multiple questions simultaneously - Key insight: Great Tables is the foundation. gt-extras is the creative power-up.\n\n\n\n\n\n\n\nSlide: What People Have Built (from posit-dev.github.io/gt-extras/examples/) - Showcase 3-4 different pre-rendered examples from gt-extras documentation - Show diversity of approaches: - Financial/business tables - Sports analytics - Scientific data - Creative/experimental - Message: This isn’t just for one use case; it’s a toolkit for many stories\nSlide: Show 2-3 Specific Examples - Example 1: gt_plt_bar() with car data (horsepower, torque across models) - Example 2: gt_color_box() with island sizes (intuitive color gradients) - Example 3: gt_theme_dot_matrix() with air quality data (playful but professional)\n\n\n\n\n\n\n\nSlide: 2025 Table Contest - Brief interlude: Posit Table Contest celebrates creative data visualization in tabular form - Entries showcase the full spectrum of possibility - Some use gt or gt-extras - Some use other tools (R gt, HTML, JavaScript tables, etc.) - The point: See what you might create with these tools\nSlide: Contest Winner Highlight (1-2 examples) - Show a stunning example or two - Don’t dive deep—just let it inspire - Message: This is what’s possible. Your next table could be here.\n\n\n\n\n\nSlide: The Takeaway - Tables don’t have to be boring - Great Tables + gt-extras make beautiful, functional tables accessible - Tables can tell stories as well as (or better than) charts—faster, clearer, more nuanced - You have everything you need to try this right now\nSlide: Thanks + Resources - Credit: Rich Iannone, Michael Chow, and the Posit team - Links: - Great Tables: https://posit-dev.github.io/great-tables/ - gt-extras: https://posit-dev.github.io/gt-extras/ - Table Contest: https://posit.co/table-contest/ - Q&A invitation\n\n\n\n\n\nTables are underrated. They’re often faster to parse than charts.\nBeauty and function go together. Polish isn’t frivolous; it signals professionalism and engages your audience.\nThe tools are accessible. You don’t need to be a designer or web developer.\nStorytelling is the goal. Every formatting choice should serve the narrative.\n\n\n\n\n\nIntro (Who are you): 2 min\nThe Problem: 2 min\nKiller Example (full view): 1 min\nDeconstructing the example: 5 min\nWhat is Great Tables?: 7 min\n\nFoundation + API: 2 min\nStructuring data: 2 min\nFormatting & polishing: 2 min\nVisual hierarchy: 1 min\n\nWhat is gt-extras?: 7 min\n\nOverview + 4 capability areas: 4 min\nThe power of combining: 3 min\n\nExamples Gallery: 4 min\nTable Contest: 2 min\nClosing: 1 min\nTotal: 31 minutes (4 min buffer for pacing/questions mid-talk)\n\n\n\n\n\n\nTone: Enthusiastic but authentic. You love patterns; tables are patterns in data.\nVisuals: Rely heavily on pre-rendered examples. Let the tables speak for themselves.\nPacing: Start strong with the NFL example to show “this is possible.” Then explain the tools. Then show more possibilities.\nCall to Action: Leave people wanting to try it. This is an inspiration talk, not a tutorial.\n\n\n\n\nThe talk follows a specific philosophy about tables as a medium: 1. Tables have components (not monolith structure) - Great Tables teaches you to think compositionally 2. Each component serves the story - Nothing is decorative; every choice guides understanding 3. Great Tables provides the foundation - Structure, formatting, styling 4. gt-extras adds creative power - Embed visualizations, leverage color, achieve polish 5. The result is data storytelling - Just as effective as (often better than) charts for communicating insights\nUse this framework to guide which examples you show and how you present them. Every visual should reinforce: “Look how these components work together to tell a story.”"
-  },
-  {
-    "objectID": "talks/Great-Tables-and-More-Nov-19/talk-outline.html#telling-better-data-stories-with-beautiful-tables",
-    "href": "talks/Great-Tables-and-More-Nov-19/talk-outline.html#telling-better-data-stories-with-beautiful-tables",
-    "title": "Great Tables & gt-extras: Talk Outline",
-    "section": "",
-    "text": "Duration: 35 minutes + 5 min Q&A"
-  },
-  {
-    "objectID": "talks/Great-Tables-and-More-Nov-19/talk-outline.html#act-i-the-hook-5-minutes",
-    "href": "talks/Great-Tables-and-More-Nov-19/talk-outline.html#act-i-the-hook-5-minutes",
-    "title": "Great Tables & gt-extras: Talk Outline",
-    "section": "",
-    "text": "Slide: Title Slide - Title: “Great Tables & gt-extras” - Subtitle: “Telling Better Data Stories with Beautiful Tables”\nSlide: About You - 📊 gt-extras author, Great Tables contributor - 💡 I enjoy patterns and helping people see patterns - Who am I to tell you about tables? (Personal connection: KenKen puzzle image. emphasize that tables, like puzzles, are a great place to see patterns.)\nSlide: The Problem - Show a screenshot of a plain, ugly table (default pandas DataFrame display) - Quote: “They say a picture is worth a thousand words, so why do we have to look at tables with a thousand cells of text?” - The belief we’re challenging: “Tables are boring. Charts tell the real stories.” - Our argument: Tables CAN be beautiful, engaging, AND tell powerful stories"
-  },
-  {
-    "objectID": "talks/Great-Tables-and-More-Nov-19/talk-outline.html#act-ii-the-killer-example-8-minutes",
-    "href": "talks/Great-Tables-and-More-Nov-19/talk-outline.html#act-ii-the-killer-example-8-minutes",
-    "title": "Great Tables & gt-extras: Talk Outline",
-    "section": "",
-    "text": "Slide: Full NFL Table - Show the complete rendered NFL 2011 season table (from current slides) - Take a moment to let it sink in: This is a table, but it’s visually engaging - It tells multiple stories at once\nSlide: What Makes It Work? - Strategic use of color (green/yellow/red for point differential) - Embedded visualizations (win/loss streaks, dumbbell plots) - Clear hierarchy and organization (division grouping, team logos) - Responsive styling (Super Bowl winners highlighted) - Professional theme/polish\nSlide: This Wasn’t Hand-Coded HTML - This was created with Python + Great Tables + gt-extras - Clean, chainable API (show the method chaining structure without diving into code details yet) - The point: You don’t need to be a web designer to make this"
-  },
-  {
-    "objectID": "talks/Great-Tables-and-More-Nov-19/talk-outline.html#act-iii-build-it-up-14-minutes",
-    "href": "talks/Great-Tables-and-More-Nov-19/talk-outline.html#act-iii-build-it-up-14-minutes",
-    "title": "Great Tables & gt-extras: Talk Outline",
-    "section": "",
-    "text": "Section: What is Great Tables? (7 minutes)\nSlide: Great Tables Foundation - Created by Rich Iannone (originally gt in R) - Now available in Python (maintained by Michael Chow at Posit) - Philosophy: Tables are a first-class visualization medium - Key capabilities: - Organize and present data clearly - Apply professional formatting (numbers, dates, currencies) - Add titles, subtitles, source notes - Style cells, rows, columns - Create polished, publication-ready output\nSlide: The Components of a Table - Show the Great Tables component diagram (visual reference from docs) - The building blocks (from top to bottom): - Table Header (optional) - Title and subtitle - Stub & Stub Head (optional) - Row labels and row groups - Column Labels (required) - Column headers, optionally with spanners - Table Body (required) - The data cells - Table Footer (optional) - Source notes and footnotes - Key insight: Think of a table as a composition of parts, not a monolith - The chainable API lets you build these parts together, each method adds clarity\nSlide: Building Blocks in Action - The NFL Example - Show how each component appears in the NFL table: - Header: “NFL 2011 Season” title - Stub: Team names, organized by division (row groups) - Column Labels: Score, Wins, Losses, etc. - Body: The data, with embedded visualizations and colors - Footer: Data source attribution - Key insight: Every component serves the story. Nothing is decorative.\nSlide: Structuring Your Data - The stub: Grouping rows for context (e.g., by division) - Makes patterns visible without additional explanation - Example: In NFL table, you immediately see which division won the most games - Column organization: Headers and spanners group related columns - Example: Group “Wins/Losses/Ties” under one spanner vs. separating them - Why it matters: Structure guides the reader’s eye and shapes their understanding\nSlide: Formatting & Polishing - Format numbers meaningfully: - Decimals (precision matters) - Currency (for financial data) - Percentages (for proportions) - Compact notation (large numbers readable) - Example: In NFL table, points are formatted consistently - Polish with basic styling: - Colors, fonts, alignment—choose intentionally - Every choice should reduce cognitive load, not add distraction - Why it matters: Professional formatting signals “this data is important”\nSlide: The Art of Visual Hierarchy - Guide attention with contrast: - Color (most powerful): Use strategically to highlight patterns - Size/weight: Headers bigger/bolder than body - Spacing: Group related items, separate concerns - Strategic use of the full table: - Headers and spanners guide the eye to structure - Stubs create visual anchors - Footer provides context (source, notes) - Example: NFL table uses color on point differential to instantly convey performance - Key insight: Every element works together to tell the story faster\nSection: gt-extras - Unlocking Creative Potential (7 minutes)\nSlide: What is gt-extras? - Extension package that adds powerful new capabilities to Great Tables - Built on top of the Great Tables foundation (components + formatting + styling) - Philosophy: Use tables for data storytelling, not just data presentation - The question it answers: “What if we could embed visualizations and advanced styling within table cells?” - Organized into 4 main capability areas:\nSlide 1: Plotting Functions ⭐ PRIMARY FOCUS - “Put Small Multiples Inside Your Table Cells” - gt_plt_bar() - Embed bar charts in cells (compare magnitudes) - gt_plt_dumbbell() - Compare two values visually (before/after, actual vs. target) - gt_plt_winloss() - Show win/loss/tie records at a glance (seasons, streaks) - gt_plt_bullet() - Show performance against targets (goal tracking) - gt_plt_sparkline() - Trend visualization in cells (time series at a glance) - Why? Numbers alone obscure patterns. Let visualizations live alongside data. - Example from NFL table: Win/loss streaks and dumbbell plots (margin of victory vs. margin of defeat)\nSlide 2: Coloring & Highlighting Functions - “Leverage Color as a Data Channel” - gt_color_box() - Heat map style coloring with custom palettes - gt_highlight_cols() / gt_highlight_rows() - Draw attention strategically - gt_add_divider() - Visual separation for emphasis - Why? Color is one of the fastest ways our brains process information - Cognitive science: Humans process color faster than text or even small charts - Example from NFL table: Green/yellow/red for point differential\nSlide 3: Theming Functions - “Pre-Built, Professional Aesthetics” - gt_theme_538() - FiveThirtyEight style (data journalism aesthetic) - gt_theme_dot_matrix() - Playful, retro aesthetic - Pre-built themes for instant professionalism - Why? Consistency and polish matter; shouldn’t require hours of CSS - Insight: Great Tables handles the technical details; gt-extras provides the polish\nSlide 4: Iconing & Imaging Functions - gt_fa_rank_change() - Font Awesome icons for trends (arrows, up/down, etc.) - fmt_image() - Embed images directly in cells (logos, photos) - Why? Visual elements are faster to parse than text - Example: NFL table uses team logos instead of team name text alone\nSlide: The Real Power - Stacking Capabilities - Show the NFL example as a complete picture: - Start with a DataFrame of NFL data - Use Great Tables to structure: grouping by division (stub), organizing columns - Use Great Tables to format: team logos (images), scores (numbers) - Use Great Tables to style: basic colors and fonts - Use gt-extras to elevate: embedded win/loss streaks, dumbbell plots, color boxes - Use gt-extras theming: consistent, professional aesthetic - Each layer adds a dimension to the storytelling - The result: One cohesive, beautiful table that answers multiple questions simultaneously - Key insight: Great Tables is the foundation. gt-extras is the creative power-up."
-  },
-  {
-    "objectID": "talks/Great-Tables-and-More-Nov-19/talk-outline.html#act-iv-examples-gallery-6-minutes",
-    "href": "talks/Great-Tables-and-More-Nov-19/talk-outline.html#act-iv-examples-gallery-6-minutes",
-    "title": "Great Tables & gt-extras: Talk Outline",
-    "section": "",
-    "text": "Slide: What People Have Built (from posit-dev.github.io/gt-extras/examples/) - Showcase 3-4 different pre-rendered examples from gt-extras documentation - Show diversity of approaches: - Financial/business tables - Sports analytics - Scientific data - Creative/experimental - Message: This isn’t just for one use case; it’s a toolkit for many stories\nSlide: Show 2-3 Specific Examples - Example 1: gt_plt_bar() with car data (horsepower, torque across models) - Example 2: gt_color_box() with island sizes (intuitive color gradients) - Example 3: gt_theme_dot_matrix() with air quality data (playful but professional)"
-  },
-  {
-    "objectID": "talks/Great-Tables-and-More-Nov-19/talk-outline.html#act-v-inspiration-challenge-3-minutes",
-    "href": "talks/Great-Tables-and-More-Nov-19/talk-outline.html#act-v-inspiration-challenge-3-minutes",
-    "title": "Great Tables & gt-extras: Talk Outline",
-    "section": "",
-    "text": "Slide: 2025 Table Contest - Brief interlude: Posit Table Contest celebrates creative data visualization in tabular form - Entries showcase the full spectrum of possibility - Some use gt or gt-extras - Some use other tools (R gt, HTML, JavaScript tables, etc.) - The point: See what you might create with these tools\nSlide: Contest Winner Highlight (1-2 examples) - Show a stunning example or two - Don’t dive deep—just let it inspire - Message: This is what’s possible. Your next table could be here."
-  },
-  {
-    "objectID": "talks/Great-Tables-and-More-Nov-19/talk-outline.html#act-vi-closing-1-minute",
-    "href": "talks/Great-Tables-and-More-Nov-19/talk-outline.html#act-vi-closing-1-minute",
-    "title": "Great Tables & gt-extras: Talk Outline",
-    "section": "",
-    "text": "Slide: The Takeaway - Tables don’t have to be boring - Great Tables + gt-extras make beautiful, functional tables accessible - Tables can tell stories as well as (or better than) charts—faster, clearer, more nuanced - You have everything you need to try this right now\nSlide: Thanks + Resources - Credit: Rich Iannone, Michael Chow, and the Posit team - Links: - Great Tables: https://posit-dev.github.io/great-tables/ - gt-extras: https://posit-dev.github.io/gt-extras/ - Table Contest: https://posit.co/table-contest/ - Q&A invitation"
-  },
-  {
-    "objectID": "talks/Great-Tables-and-More-Nov-19/talk-outline.html#key-themes-to-weave-throughout",
-    "href": "talks/Great-Tables-and-More-Nov-19/talk-outline.html#key-themes-to-weave-throughout",
-    "title": "Great Tables & gt-extras: Talk Outline",
-    "section": "",
-    "text": "Tables are underrated. They’re often faster to parse than charts.\nBeauty and function go together. Polish isn’t frivolous; it signals professionalism and engages your audience.\nThe tools are accessible. You don’t need to be a designer or web developer.\nStorytelling is the goal. Every formatting choice should serve the narrative."
-  },
-  {
-    "objectID": "talks/Great-Tables-and-More-Nov-19/talk-outline.html#timing-breakdown",
-    "href": "talks/Great-Tables-and-More-Nov-19/talk-outline.html#timing-breakdown",
-    "title": "Great Tables & gt-extras: Talk Outline",
-    "section": "",
-    "text": "Intro (Who are you): 2 min\nThe Problem: 2 min\nKiller Example (full view): 1 min\nDeconstructing the example: 5 min\nWhat is Great Tables?: 7 min\n\nFoundation + API: 2 min\nStructuring data: 2 min\nFormatting & polishing: 2 min\nVisual hierarchy: 1 min\n\nWhat is gt-extras?: 7 min\n\nOverview + 4 capability areas: 4 min\nThe power of combining: 3 min\n\nExamples Gallery: 4 min\nTable Contest: 2 min\nClosing: 1 min\nTotal: 31 minutes (4 min buffer for pacing/questions mid-talk)"
-  },
-  {
-    "objectID": "talks/Great-Tables-and-More-Nov-19/talk-outline.html#notes-for-you",
-    "href": "talks/Great-Tables-and-More-Nov-19/talk-outline.html#notes-for-you",
-    "title": "Great Tables & gt-extras: Talk Outline",
-    "section": "",
-    "text": "Tone: Enthusiastic but authentic. You love patterns; tables are patterns in data.\nVisuals: Rely heavily on pre-rendered examples. Let the tables speak for themselves.\nPacing: Start strong with the NFL example to show “this is possible.” Then explain the tools. Then show more possibilities.\nCall to Action: Leave people wanting to try it. This is an inspiration talk, not a tutorial."
-  },
-  {
-    "objectID": "talks/Great-Tables-and-More-Nov-19/talk-outline.html#conceptual-framework",
-    "href": "talks/Great-Tables-and-More-Nov-19/talk-outline.html#conceptual-framework",
-    "title": "Great Tables & gt-extras: Talk Outline",
-    "section": "",
-    "text": "The talk follows a specific philosophy about tables as a medium: 1. Tables have components (not monolith structure) - Great Tables teaches you to think compositionally 2. Each component serves the story - Nothing is decorative; every choice guides understanding 3. Great Tables provides the foundation - Structure, formatting, styling 4. gt-extras adds creative power - Embed visualizations, leverage color, achieve polish 5. The result is data storytelling - Just as effective as (often better than) charts for communicating insights\nUse this framework to guide which examples you show and how you present them. Every visual should reinforce: “Look how these components work together to tell a story.”"
-  },
-  {
-    "objectID": "talks/Great-Tables-and-More-Nov-19/old_index.html#who-are-you-listening-to",
-    "href": "talks/Great-Tables-and-More-Nov-19/old_index.html#who-are-you-listening-to",
+    "objectID": "talks/Great-Tables-and-More-Nov-19/index.html#tables-dont-have-to-be-boring",
+    "href": "talks/Great-Tables-and-More-Nov-19/index.html#tables-dont-have-to-be-boring",
     "title": "Great Tables & gt-extras",
-    "section": "Who are you listening to",
-    "text": "Who are you listening to\n\n\n\n📊 gt-extras author, and Great Tables contributor\n💡 I enjoy patterns and helping people see patterns\n🧗 I like to play table tennis, soccer, chess, and climb rocks\n🔢 I like logic puzzles!"
+    "section": "Tables Don’t Have to Be Boring",
+    "text": "Tables Don’t Have to Be Boring"
   },
   {
-    "objectID": "talks/Great-Tables-and-More-Nov-19/old_index.html#great-tables",
-    "href": "talks/Great-Tables-and-More-Nov-19/old_index.html#great-tables",
+    "objectID": "talks/Great-Tables-and-More-Nov-19/index.html#teaching-through-example",
+    "href": "talks/Great-Tables-and-More-Nov-19/index.html#teaching-through-example",
     "title": "Great Tables & gt-extras",
-    "section": "Great Tables",
-    "text": "Great Tables"
+    "section": "Teaching Through Example",
+    "text": "Teaching Through Example"
   },
   {
-    "objectID": "talks/Great-Tables-and-More-Nov-19/old_index.html#great-tables-1",
-    "href": "talks/Great-Tables-and-More-Nov-19/old_index.html#great-tables-1",
+    "objectID": "talks/Great-Tables-and-More-Nov-19/index.html#understanding-the-building-blocks",
+    "href": "talks/Great-Tables-and-More-Nov-19/index.html#understanding-the-building-blocks",
     "title": "Great Tables & gt-extras",
-    "section": "Great Tables",
-    "text": "Great Tables"
+    "section": "Understanding the Building Blocks",
+    "text": "Understanding the Building Blocks"
   },
   {
-    "objectID": "talks/Great-Tables-and-More-Nov-19/old_index.html#great-tables-2",
-    "href": "talks/Great-Tables-and-More-Nov-19/old_index.html#great-tables-2",
+    "objectID": "talks/Great-Tables-and-More-Nov-19/index.html#examples-gallery",
+    "href": "talks/Great-Tables-and-More-Nov-19/index.html#examples-gallery",
     "title": "Great Tables & gt-extras",
-    "section": "Great Tables",
-    "text": "Great Tables\nExamples\n\n\n\nfound at https://posit-dev.github.io/gt-extras/examples/"
+    "section": "Examples Gallery",
+    "text": "Examples Gallery"
   },
   {
-    "objectID": "talks/Great-Tables-and-More-Nov-19/old_index.html#gt-extras",
-    "href": "talks/Great-Tables-and-More-Nov-19/old_index.html#gt-extras",
+    "objectID": "talks/Great-Tables-and-More-Nov-19/index.html#the-table-contest-design-meets-data",
+    "href": "talks/Great-Tables-and-More-Nov-19/index.html#the-table-contest-design-meets-data",
     "title": "Great Tables & gt-extras",
-    "section": "gt-extras",
-    "text": "gt-extras\n\n\n\nPlotting\n\n\nColoring\n\n\nTheming\n\n\nIconing + Imaging\n\n\n\n\n\ngt_plt_bar()\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCar\nmfr\nyear\nhp\nhp_rpm\ntrq\ntrq_rpm\nmpg_c\nmpg_h\n\n\n\n\nLaFerrari\nFerrari\n2015\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNSX\nAcura\n2017\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nGT-R\nNissan\n2016\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nAventador\nLamborghini\n2015\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHuracan\nLamborghini\n2015\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nGallardo\nLamborghini\n2014\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nContinental GT\nBentley\n2016\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nGranturismo\nMaserati\n2016\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nQuattroporte\nMaserati\n2016\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n        \n\n\n\n\ngt_color_box()\n\n\n\n\n\n\n\n\n\n\n\n\nIsland\nsize\n\n\n\n\nAsia\n\n\n\n\n\n\n16988\n\n\n\n\n\nAfrica\n\n\n\n\n\n\n11506\n\n\n\n\n\nNorth America\n\n\n\n\n\n\n9390\n\n\n\n\n\nSouth America\n\n\n\n\n\n\n6795\n\n\n\n\n\nAntarctica\n\n\n\n\n\n\n5500\n\n\n\n\n\nEurope\n\n\n\n\n\n\n3745\n\n\n\n\n\nAustralia\n\n\n\n\n\n\n2968\n\n\n\n\n\nGreenland\n\n\n\n\n\n\n840\n\n\n\n\n\nNew Guinea\n\n\n\n\n\n\n306\n\n\n\n\n\nBorneo\n\n\n\n\n\n\n280\n\n\n\n\n\n\n\n\n\n        \n\n\n\n\ngt_theme_dot_matrix()\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nDot Matrix Theme\n\n\nNew York Air Quality Measurements\n\n\nTime\nMeasurement\n\n\nYear\nMonth\nDay\nOzone,\nppbV\nSolar R.,\ncal/m2\nWind,\nmph\nTemp,\n°F\n\n\n\n\n1973\n5\n1\n41.0\n190.0\n7.4\n67\n\n\n1973\n5\n2\n36.0\n118.0\n8.0\n72\n\n\n1973\n5\n3\n12.0\n149.0\n12.6\n74\n\n\n1973\n5\n4\n18.0\n313.0\n11.5\n62\n\n\n1973\n5\n5\n\n\n14.3\n56\n\n\n1973\n5\n6\n28.0\n\n14.9\n66\n\n\n1973\n5\n7\n23.0\n299.0\n8.6\n65\n\n\n1973\n5\n8\n19.0\n99.0\n13.8\n59\n\n\n1973\n5\n9\n8.0\n19.0\n20.1\n61\n\n\n1973\n5\n10\n\n194.0\n8.6\n69\n\n\n\n\n\n\n        \n\n\n\n\ngt_fa_rank_change()\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nname\n1996_2001\n2001_2006\n2006_2011\n\n\n\n\nAddington Highlands\n\n\n\n\nAngles down\n\n\n\n\n\n-0.0111\n\n\n\n\n\n\nAngles up\n\n\n\n\n\n0.0458\n\n\n\n\n\n\nEquals\n\n\n\n\n\n0.002\n\n\n\n\nAdelaide Metcalfe\n\n\n\n\nEquals\n\n\n\n\n\n0.0067\n\n\n\n\n\n\nEquals\n\n\n\n\n\n-0.0044\n\n\n\n\n\n\nAngles down\n\n\n\n\n\n-0.0341\n\n\n\n\nAdjala-Tosorontio\n\n\n\n\nAngles up\n\n\n\n\n\n0.0773\n\n\n\n\n\n\nAngles up\n\n\n\n\n\n0.0608\n\n\n\n\n\n\nEquals\n\n\n\n\n\n-0.0086\n\n\n\n\nAdmaston/Bromley\n\n\n\n\nEquals\n\n\n\n\n\n-0.0046\n\n\n\n\n\n\nAngles down\n\n\n\n\n\n-0.0382\n\n\n\n\n\n\nAngles up\n\n\n\n\n\n0.0471\n\n\n\n\nAjax\n\n\n\n\nAngles up\n\n\n\n\n\n0.1447\n\n\n\n\n\n\nAngles up\n\n\n\n\n\n0.2226\n\n\n\n\n\n\nAngles up\n\n\n\n\n\n0.2155\n\n\n\n\nAlberton\n\n\n\n\nAngles down\n\n\n\n\n\n-0.0691\n\n\n\n\n\n\nEquals\n\n\n\n\n\n0.0021\n\n\n\n\n\n\nAngles down\n\n\n\n\n\n-0.0981\n\n\n\n\nAlfred and Plantagenet\n\n\n\n\nAngles up\n\n\n\n\n\n0.0334\n\n\n\n\n\n\nEquals\n\n\n\n\n\n0.0071\n\n\n\n\n\n\nAngles up\n\n\n\n\n\n0.0626\n\n\n\n\nAlgonquin Highlands\n\n\n\n\nAngles up\n\n\n\n\n\n0.083\n\n\n\n\n\n\nAngles up\n\n\n\n\n\n0.0816\n\n\n\n\n\n\nAngles up\n\n\n\n\n\n0.1063\n\n\n\n\nAlnwick/Haldimand\n\n\n\n\nAngles up\n\n\n\n\n\n0.0575\n\n\n\n\n\n\nAngles up\n\n\n\n\n\n0.1008\n\n\n\n\n\n\nAngles up\n\n\n\n\n\n0.0283\n\n\n\n\nAmaranth\n\n\n\n\nAngles up\n\n\n\n\n\n0.0928\n\n\n\n\n\n\nAngles up\n\n\n\n\n\n0.0199\n\n\n\n\n\n\nAngles up\n\n\n\n\n\n0.0307"
+    "section": "The Table Contest: Design Meets Data",
+    "text": "The Table Contest: Design Meets Data"
   },
   {
-    "objectID": "talks/Great-Tables-and-More-Nov-19/old_index.html#subheader",
-    "href": "talks/Great-Tables-and-More-Nov-19/old_index.html#subheader",
+    "objectID": "talks/Great-Tables-and-More-Nov-19/index.html#key-takeaways",
+    "href": "talks/Great-Tables-and-More-Nov-19/index.html#key-takeaways",
     "title": "Great Tables & gt-extras",
-    "section": "Subheader",
-    "text": "Subheader"
+    "section": "Key Takeaways",
+    "text": "Key Takeaways"
   },
   {
     "objectID": "posts/Posit-adding-plots-to-great-tables/index.html",
@@ -250,48 +166,6 @@
     "title": "Things I’ve Done",
     "section": "Personal Projects",
     "text": "Personal Projects\nMarion Stokes Shiny Dashboard\n\nThe dashboard is a place to explore television news data from the Marion Stokes tapes archive\nIn collaboration with Daniel Fernandez, a history student at The New School working on his senior thesis\n\nMega Tic Tac Toe\n\nAn iOS app to play tic tac toe inside of tic tac toe\nHere are the rules, but be careful I’m always up for a game\n\nConnect Four\n\nSocket-backed Connect four full-stack application written in TypeScript\nPlay in real time here"
-  },
-  {
-    "objectID": "talks/Great-Tables-and-More-Nov-19/index.html#tables-dont-have-to-be-boring",
-    "href": "talks/Great-Tables-and-More-Nov-19/index.html#tables-dont-have-to-be-boring",
-    "title": "Great Tables & gt-extras",
-    "section": "Tables Don’t Have to Be Boring",
-    "text": "Tables Don’t Have to Be Boring"
-  },
-  {
-    "objectID": "talks/Great-Tables-and-More-Nov-19/index.html#teaching-through-example",
-    "href": "talks/Great-Tables-and-More-Nov-19/index.html#teaching-through-example",
-    "title": "Great Tables & gt-extras",
-    "section": "Teaching Through Example",
-    "text": "Teaching Through Example"
-  },
-  {
-    "objectID": "talks/Great-Tables-and-More-Nov-19/index.html#understanding-the-building-blocks",
-    "href": "talks/Great-Tables-and-More-Nov-19/index.html#understanding-the-building-blocks",
-    "title": "Great Tables & gt-extras",
-    "section": "Understanding the Building Blocks",
-    "text": "Understanding the Building Blocks"
-  },
-  {
-    "objectID": "talks/Great-Tables-and-More-Nov-19/index.html#examples-gallery",
-    "href": "talks/Great-Tables-and-More-Nov-19/index.html#examples-gallery",
-    "title": "Great Tables & gt-extras",
-    "section": "Examples Gallery",
-    "text": "Examples Gallery"
-  },
-  {
-    "objectID": "talks/Great-Tables-and-More-Nov-19/index.html#the-table-contest-design-meets-data",
-    "href": "talks/Great-Tables-and-More-Nov-19/index.html#the-table-contest-design-meets-data",
-    "title": "Great Tables & gt-extras",
-    "section": "The Table Contest: Design Meets Data",
-    "text": "The Table Contest: Design Meets Data"
-  },
-  {
-    "objectID": "talks/Great-Tables-and-More-Nov-19/index.html#key-takeaways",
-    "href": "talks/Great-Tables-and-More-Nov-19/index.html#key-takeaways",
-    "title": "Great Tables & gt-extras",
-    "section": "Key Takeaways",
-    "text": "Key Takeaways"
   },
   {
     "objectID": "talks/Posit-Open-Source-Reflection/index.html#who-are-you-listening-to",
