@@ -298,11 +298,43 @@ Finally, I'll teach you a bit about gt-extras, which makes great tables shine ev
 ---
 
 
-## Table contest examples of tables: 5 minutes
+## Posit 2025 Table Contest
 
-<!-- todo -->
+![](./assets/images/contest_image.png)
 
 ---
+
+### Jeremy Selva's Winning Entry
+
+![](./assets/images/selva.png)
+
+::: {.footer}
+Check out [Jeremy's table entry](https://github.com/rich-iannone/table-contest/discussions/13)
+:::
+
+---
+
+### Leo Ohyama's Winning Entry
+
+![](./assets/images/ohyama.png)
+
+::: {.footer}
+Check out [Leo's table entry](https://github.com/rich-iannone/table-contest/discussions/16)
+:::
+
+
+---
+
+### Victor Yuan's Winning Entry
+
+![](./assets/images/yuan.png)
+
+::: {.footer}
+Check out [Victor's table entry](https://github.com/rich-iannone/table-contest/discussions/10)
+:::
+
+---
+
 
 <!-- section on what elements go into a table, as defined by great tables -->
 
