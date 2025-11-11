@@ -1,31 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://juleswg.me/talks/Posit-Open-Source-Reflection/index.html</loc>
-    <lastmod>2025-10-21T16:42:38.977Z</lastmod>
-  </url>
-  <url>
     <loc>https://juleswg.me/blog.html</loc>
-    <lastmod>2025-10-21T16:42:38.941Z</lastmod>
-  </url>
-  <url>
-    <loc>https://juleswg.me/posts/Posit-adding-plots-to-great-tables/index.html</loc>
-    <lastmod>2025-10-21T16:42:38.964Z</lastmod>
-  </url>
-  <url>
-    <loc>https://juleswg.me/work.html</loc>
-    <lastmod>2025-10-21T16:42:38.977Z</lastmod>
+    <lastmod>2025-08-21T16:44:44.196Z</lastmod>
   </url>
   <url>
     <loc>https://juleswg.me/index.html</loc>
-    <lastmod>2025-10-21T16:42:38.964Z</lastmod>
+    <lastmod>2025-10-21T16:45:30.817Z</lastmod>
+  </url>
+  <url>
+    <loc>https://juleswg.me/talks/Great-Tables-and-More-Nov-19/talk-outline.html</loc>
+    <lastmod>2025-11-09T19:19:05.662Z</lastmod>
+  </url>
+  <url>
+    <loc>https://juleswg.me/talks/Great-Tables-and-More-Nov-19/old_index.html</loc>
+    <lastmod>2025-10-21T16:42:33.856Z</lastmod>
+  </url>
+  <url>
+    <loc>https://juleswg.me/posts/Posit-adding-plots-to-great-tables/index.html</loc>
+    <lastmod>2025-08-21T16:45:11.678Z</lastmod>
   </url>
   <url>
     <loc>https://juleswg.me/posts/Posit-Internship-Reflection/index.html</loc>
-    <lastmod>2025-10-21T16:42:38.964Z</lastmod>
+    <lastmod>2025-08-21T16:15:16.125Z</lastmod>
+  </url>
+  <url>
+    <loc>https://juleswg.me/work.html</loc>
+    <lastmod>2025-08-18T21:18:18.963Z</lastmod>
+  </url>
+  <url>
+    <loc>https://juleswg.me/talks/Great-Tables-and-More-Nov-19/index.html</loc>
+    <lastmod>2025-11-10T14:40:41.243Z</lastmod>
+  </url>
+  <url>
+    <loc>https://juleswg.me/talks/Posit-Open-Source-Reflection/index.html</loc>
+    <lastmod>2025-10-21T16:42:15.322Z</lastmod>
   </url>
   <url>
     <loc>https://juleswg.me/blogroll.html</loc>
-    <lastmod>2025-10-21T16:42:38.942Z</lastmod>
+    <lastmod>2025-08-21T16:44:09.366Z</lastmod>
   </url>
 </urlset>
