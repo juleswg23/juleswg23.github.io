@@ -608,17 +608,28 @@ gt
 
 ### 7) Style - Add Color
 
+::::: {.columns}
+
+:::: {.column style="width: 33%; margin-right: 3%; margin-top: 10%;"}
+
 ```{python}
-#| echo: true
-#| eval: false
-#| code-line-numbers: "1-6"
+# | echo: true
+# | eval: false
 gt = gt.pipe(
     gte.gt_color_box,
     columns="Point Diff",
-    palette=["red", "yellow", "green"],
-    domain=[-14, 14]
+    palette=[
+        "red",
+        "yellow",
+        "green",
+    ],
+    domain=[-14, 14],
 )
 ```
+
+::::
+
+:::: {.column width="64%"}
 
 ```{python}
 # | echo: false
@@ -631,14 +642,21 @@ gt = gt.pipe(
 gte.gt_highlight_cols(gt, "Point Diff", include_column_labels=True, fill="lightblue")
 ```
 
+::::
+
+:::::
+
 ---
 
 ### 8) gt-extras - Embed Win/Loss Visualization
 
+::::: {.columns}
+
+:::: {.column style="width: 33%; margin-right: 3%; margin-top: 10%;"}
+
 ```{python}
 #| echo: true
 #| eval: false
-#| code-line-numbers: "1-8"
 gt = gt.pipe(
     gte.gt_plt_winloss,
     column="Games",
@@ -647,6 +665,10 @@ gt = gt.pipe(
     width=100
 )
 ```
+
+::::
+
+:::: {.column width="64%"}
 
 ```{python}
 #| echo: false
@@ -661,14 +683,21 @@ gt = gt.pipe(
 gte.gt_highlight_cols(gt, "Games", include_column_labels=True, fill="lightblue")
 ```
 
+::::
+
+:::::
+
 ---
 
 ### 9) gt-extras - Dumbbell Chart
 
+::::: {.columns}
+
+:::: {.column style="width: 33%; margin-right: 3%; margin-top: 10%;"}
+
 ```{python}
 #| echo: true
 #| eval: false
-#| code-line-numbers: "1-9"
 gt = gt.pipe(
     gte.gt_plt_dumbbell,
     col1="Avg PF",
@@ -679,6 +708,10 @@ gt = gt.pipe(
     label="Average Points For vs. Against"
 )
 ```
+
+::::
+
+:::: {.column width="64%"}
 
 ```{python}
 #| echo: false
@@ -695,14 +728,21 @@ gt = gt.pipe(
 gte.gt_highlight_cols(gt, "Avg PF", include_column_labels=True, fill="lightblue")
 ```
 
+::::
+
+:::::
+
 ---
 
 ### 10) gt-extras - Add Streak Icons
 
+::::: {.columns}
+
+:::: {.column style="width: 33%; margin-right: 3%; margin-top: 10%;"}
+
 ```{python}
 #| echo: true
 #| eval: false
-#| code-line-numbers: "1-7"
 gt = gt.pipe(
     gte.gt_fa_rank_change,
     column="Streak",
@@ -711,6 +751,10 @@ gt = gt.pipe(
     color_down="orange"
 )
 ```
+
+::::
+
+:::: {.column width="64%"}
 
 ```{python}
 #| echo: false
@@ -724,35 +768,67 @@ gt = gt.pipe(
 gte.gt_highlight_cols(gt, "Streak", include_column_labels=True, fill="lightblue")
 ```
 
+::::
+
+:::::
+
 ---
 
 ### 11) gt-extras - Add Divider
 
-```{python}
-#| echo: true
-#| eval: false
-#| code-line-numbers: "1"
-gt = gt.pipe(gte.gt_add_divider, columns="Point Diff", color="darkblue", weight=2)
-```
+::::: {.columns}
+
+:::: {.column style="width: 33%; margin-right: 3%; margin-top: 10%;"}
 
 ```{python}
-#| echo: false
+# | echo: true
+# | eval: false
 gt = gt.pipe(
-    gte.gt_add_divider, columns="Point Diff", color="darkblue", weight=2
+    gte.gt_add_divider,
+    columns="Point Diff",
+    color="darkblue",
+    weight=2,
+)
+```
+
+::::
+
+:::: {.column width="64%"}
+
+```{python}
+# | echo: false
+gt = gt.pipe(
+    gte.gt_add_divider,
+    columns="Point Diff",
+    color="darkblue",
+    weight=2,
 )
 gt
 ```
+
+::::
+
+:::::
 
 ---
 
 ### 12) gt-extras - Apply Theme
 
+::::: {.columns}
+
+:::: {.column style="width: 33%; margin-right: 3%; margin-top: 10%;"}
+
 ```{python}
-#| echo: true
-#| eval: false
-#| code-line-numbers: "1"
-gt = gt.pipe(gte.gt_theme_538)
+# | echo: true
+# | eval: false
+gt = gt.pipe(
+    gte.gt_theme_538,
+)
 ```
+
+::::
+
+:::: {.column width="64%"}
 
 ```{python}
 #| echo: false
@@ -763,19 +839,41 @@ gt = ( gt
 gt
 ```
 
+::::
+
+:::::
+
 ---
 
 ### 13) gt-extras - Two-Column Table
 
+::::: {.columns}
+
+:::: {.column style="width: 42%; margin-right: 0%; margin-top: 10%;"}
+
 ```{python}
-#| echo: true
-#| eval: false
-#| code-line-numbers: "1-4"
+# | echo: true
+# | eval: false
+
+
+def make_gt(df: pl.DataFrame) -> GT:
+    [build GT here]
+
+
 gt1 = make_gt(nfl_df.head(16))
 gt2 = make_gt(nfl_df.slice(16, 16))
 
-gt_final = gte.gt_two_column_layout(gt1, gt2, table_header_from=1)
+gte.gt_two_column_layout(
+    gt1,
+    gt2,
+    table_header_from=1,
+)
+
 ```
+
+::::
+
+:::: {.column width="58%"}
 
 ::: {style="zoom: 40%;"}
 
@@ -785,6 +883,10 @@ final_nfl_example
 ```
 
 :::
+
+::::
+
+:::::
 
 ---
 
@@ -1028,8 +1130,6 @@ gte.gt_two_column_layout(gt1, gt2, table_header_from=1)
 ![found at [https://posit-dev.github.io/gt-extras/examples/](https://posit-dev.github.io/gt-extras/examples/)](./assets/images/examples.png){width="80%"}
 
 
-## Understanding the building blocks
-
 ---
 
 ### The Takeaway
@@ -1040,7 +1140,7 @@ gte.gt_two_column_layout(gt1, gt2, table_header_from=1)
 ### Thank you
 
 ::: {.fragment fragment-index=1}
-Michael Chow and Richard Ianonne (and the Posit family)
+to Michael Chow and Richard Ianonne (and the Posit family)
 :::
 
 
@@ -1069,5 +1169,5 @@ Michael Chow and Richard Ianonne (and the Posit family)
 ::::::
 
 ::: footer
-Find the slides [here](https://juleswg.me/talks/Great-Tables-and-More-Nov-19/index.html)
+Find the slides [on my website, juleswg.me](https://juleswg.me/talks/Great-Tables-and-More-Nov-19/index.html)
 :::
