@@ -22,11 +22,11 @@ filters:
   - editable
 ---
 
-## intro section: 1 minute
+<!-- todo remove title -->
 
 ### About me
 
-- gt-extras author
+- Author of **gt-extras**
 - Great Tables at Posit: Michael Chow and Richard Iannone
 - I enjoy patterns and helping people see patterns
 
@@ -43,8 +43,6 @@ Intersection of these is data visualization
 :::
 
 ---
-
-## Goals of the talk: 5 minutes
 
 ### The problem
 
@@ -183,9 +181,7 @@ gt1
 
 ### What did we really solve?
 
-:::{.fragment}
 ![](./assets/images/pipeline.png){.absolute width=1060.94px height=118px left=-15px top=303.357px}
-:::
 
 :::{.fragment}
 ![](./assets/images/excel.png){.absolute width=146.808px height=115px left=665px top=144.84px}
@@ -1129,11 +1125,53 @@ gte.gt_two_column_layout(gt1, gt2, table_header_from=1)
 
 ![found at [https://posit-dev.github.io/gt-extras/examples/](https://posit-dev.github.io/gt-extras/examples/)](./assets/images/examples.png){width="80%"}
 
+---
+
+## What's Next
+
+:::: {.columns}
+
+::: {.column width="30%"}
+
+::::: {.nonincremental}
+- Summary Rows
+- Latex
+- Whatever you want!
+:::::
+
+:::
+
+::: {.column width="70%"}
+![](./assets/images/summary_rows.png)
+:::
+
+::::
 
 ---
 
-### The Takeaway
+### What Else is Next?
 
+![](./assets/images/pipeline2.png){.absolute width=1060.94px height=118px left=-15px top=303.357px}
+
+:::{.fragment}
+![](./assets/images/excel.png){.absolute width=146.808px height=115px left=665px top=144.84px}
+:::
+
+:::{.fragment}
+![](./assets/images/non_excel2.png){.absolute width=139.29px height=113.786px left=600px top=463.29px}
+:::
+
+:::{.fragment}
+![](./assets/images/gmail.png){.absolute width=146.808px height=115px left=878px top=144.84px}
+:::
+
+:::{.fragment}
+![](./assets/images/nbmail.png){.absolute width=139.29px height=113.786px left=813px top=463.29px}
+:::
+
+::: {.notes}
+We want to keep the data flow within python
+:::
 
 ---
 
