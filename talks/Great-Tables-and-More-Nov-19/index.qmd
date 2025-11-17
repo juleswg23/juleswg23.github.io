@@ -377,6 +377,10 @@ display(HTML("<style>.dataframe { zoom: 45%; }</style>"))
 nfl_df.head(8)
 ```
 
+::: {.fragment}
+![](./assets/images/angry_bills.png){ .absolute width=150px height=200px left=10px top=500px}
+:::
+
 ---
 
 ### 1) Convert to Great Table
@@ -679,9 +683,15 @@ gte.gt_highlight_cols(gt, "Games", include_column_labels=True, fill="lightblue")
 
 :::::
 
+::: {.fragment}
+![](./assets/images/upset_browns.png){ .absolute width=160px height=240 left=180px top=350px}
+:::
+
+
 ---
 
 ### 9) Format - gt-extras Dumbbell Chart
+
 
 ::::: {.columns}
 
@@ -723,6 +733,10 @@ gte.gt_highlight_cols(gt, "Avg PF", include_column_labels=True, fill="lightblue"
 ::::
 
 :::::
+
+::: {.fragment}
+![](./assets/images/happy_dolphins.png){ .absolute width=180px height=250 left=158px top=400px}
+:::
 
 ---
 
@@ -837,7 +851,7 @@ gt
 
 ---
 
-### 13) Structure gt-extras Two-Column Table
+### 13) Structure - gt-extras Two-Column Table
 
 ::::: {.columns}
 
@@ -879,6 +893,487 @@ final_nfl_example
 ::::
 
 :::::
+
+::: {.fragment}
+![](./assets/images/upset_49ers.jpg){ .absolute width=180px height=200 left=251px top=460px}
+
+:::
+
+---
+
+:::: {.r-stack}
+
+::: {.fragment fragment-index=1 .fade-in-then-out}
+#### `GT()`
+
+```{python}
+#| echo: false
+gt = (
+    GT(nfl_df.head(8))
+    .tab_options(
+        table_background_color="transparent",
+        table_border_top_color="transparent",
+        table_font_size=font_size,
+    )
+)
+gt
+```
+:::
+
+::: {.fragment fragment-index=2 .fade-in-then-out}
+#### `GT(rowname_col=..., groupname_col=...)`
+
+```{python}
+#| echo: false
+gt = (
+    GT(nfl_df.head(8), rowname_col="Team", groupname_col="team_division")
+    .tab_options(
+        table_background_color="transparent",
+        table_border_top_color="transparent",
+        table_font_size=font_size,
+    )
+)
+gt.tab_style(style=style.fill(color="lightblue"), locations=[loc.row_groups(), loc.stub()])
+```
+:::
+
+::: {.fragment fragment-index=3 .fade-in-then-out}
+#### `tab_header()` + `tab_stubhead()`
+
+```{python}
+#| echo: false
+gt = (
+    GT(nfl_df.head(8), rowname_col="Team", groupname_col="team_division")
+    .tab_header(
+        title="2011 NFL Season",
+        subtitle="Team Statistics"
+    )
+    .tab_stubhead(label="Team")
+    .tab_options(
+        table_background_color="transparent",
+        table_border_top_color="transparent",
+        table_font_size=font_size,
+    )
+)
+gt.tab_style(style=style.fill(color="lightblue"), locations=[loc.header(), loc.stubhead()])
+```
+:::
+
+::: {.fragment fragment-index=4 .fade-in-then-out}
+#### `tab_spanner()`
+
+```{python}
+#| echo: false
+gt = (
+    GT(nfl_df.head(8), rowname_col="Team", groupname_col="team_division")
+    .tab_header(
+        title="2011 NFL Season",
+        subtitle="Team Statistics"
+    )
+    .tab_stubhead(label="Team")
+    .tab_spanner(label="Scoring", columns=["Avg PF", "Avg PA", "Point Diff"])
+    .tab_spanner(label="Season Trends", columns=["Games", "Streak"])
+    .tab_options(
+        table_background_color="transparent",
+        table_border_top_color="transparent",
+        table_font_size=font_size,
+    )
+)
+
+gt.tab_style(style=style.fill(color="lightblue"), locations=loc.spanner_labels(["Scoring", "Season Trends"]))
+```
+:::
+
+::: {.fragment fragment-index=5 .fade-in-then-out}
+#### `fmt_number()`
+
+```{python}
+#| echo: false
+gt = (
+    GT(nfl_df.head(8), rowname_col="Team", groupname_col="team_division")
+    .tab_header(
+        title="2011 NFL Season",
+        subtitle="Team Statistics"
+    )
+    .tab_stubhead(label="Team")
+    .tab_spanner(label="Scoring", columns=["Avg PF", "Avg PA", "Point Diff"])
+    .tab_spanner(label="Season Trends", columns=["Games", "Streak"])
+    .fmt_number(columns="Point Diff", decimals=1)
+    .cols_align(align="center", columns=["Avg PF", "Avg PA"])
+    .tab_options(
+        table_background_color="transparent",
+        table_border_top_color="transparent",
+        table_font_size=font_size,
+    )
+)
+gte.gt_highlight_cols(gt, ["Point Diff"], include_column_labels=True, fill="lightblue")
+```
+:::
+
+::: {.fragment fragment-index=6 .fade-in-then-out}
+#### `cols_hide()`
+
+```{python}
+#| echo: false
+gt = (
+    GT(nfl_df.head(8), rowname_col="Team", groupname_col="team_division")
+    .tab_header(
+        title="2011 NFL Season",
+        subtitle="Team Statistics"
+    )
+    .tab_stubhead(label="Team")
+    .tab_spanner(label="Scoring", columns=["Avg PF", "Avg PA", "Point Diff"])
+    .tab_spanner(label="Season Trends", columns=["Games", "Streak"])
+    .fmt_number(columns="Point Diff", decimals=1)
+    .cols_align(align="center", columns=["Avg PF", "Avg PA"])
+    .cols_width({"Point Diff": "20px"})
+    .cols_hide(["Wins", "team_conf", "team_name", "team_logo_espn"])
+    .tab_options(
+        table_background_color="transparent",
+        table_border_top_color="transparent",
+        table_font_size=font_size,
+    )
+)
+gt
+```
+:::
+
+::: {.fragment fragment-index=7 .fade-in-then-out}
+#### `gte.gt_color_box()`
+
+```{python}
+#| echo: false
+gt = (
+    GT(nfl_df.head(8), rowname_col="Team", groupname_col="team_division")
+    .tab_header(
+        title="2011 NFL Season",
+        subtitle="Team Statistics"
+    )
+    .tab_stubhead(label="Team")
+    .tab_spanner(label="Scoring", columns=["Avg PF", "Avg PA", "Point Diff"])
+    .tab_spanner(label="Season Trends", columns=["Games", "Streak"])
+    .fmt_number(columns="Point Diff", decimals=1)
+    .cols_align(align="center", columns=["Avg PF", "Avg PA"])
+    .cols_width({"Point Diff": "20px"})
+    .cols_hide(["Wins", "team_conf", "team_name", "team_logo_espn"])
+    .tab_options(
+        table_background_color="transparent",
+        table_border_top_color="transparent",
+        table_font_size=font_size,
+    )
+)
+gt = gt.pipe(
+    gte.gt_color_box,
+    columns="Point Diff",
+    palette=["red", "yellow", "green"],
+    domain=[-14, 14],
+)
+gte.gt_highlight_cols(gt, "Point Diff", include_column_labels=True, fill="lightblue")
+```
+:::
+
+::: {.fragment fragment-index=8 .fade-in-then-out}
+#### `gte.gt_plt_winloss()`
+
+```{python}
+#| echo: false
+gt = (
+    GT(nfl_df.head(8), rowname_col="Team", groupname_col="team_division")
+    .tab_header(
+        title="2011 NFL Season",
+        subtitle="Team Statistics"
+    )
+    .tab_stubhead(label="Team")
+    .tab_spanner(label="Scoring", columns=["Avg PF", "Avg PA", "Point Diff"])
+    .tab_spanner(label="Season Trends", columns=["Games", "Streak"])
+    .fmt_number(columns="Point Diff", decimals=1)
+    .cols_align(align="center", columns=["Avg PF", "Avg PA"])
+    .cols_width({"Point Diff": "20px"})
+    .cols_hide(["Wins", "team_conf", "team_name", "team_logo_espn"])
+    .tab_options(
+        table_background_color="transparent",
+        table_border_top_color="transparent",
+        table_font_size=font_size,
+    )
+    .pipe(
+        gte.gt_color_box,
+        columns="Point Diff",
+        palette=["red", "yellow", "green"],
+        domain=[-14, 14],
+    )
+)
+gt = gt.pipe(
+    gte.gt_plt_winloss,
+    column="Games",
+    win_color="blue",
+    loss_color="orange",
+    height=30,
+    width=100
+)
+gte.gt_highlight_cols(gt, "Games", include_column_labels=True, fill="lightblue")
+```
+:::
+
+::: {.fragment fragment-index=9 .fade-in-then-out}
+#### `gte.gt_plt_dumbbell()`
+
+```{python}
+#| echo: false
+gt = (
+    GT(nfl_df.head(8), rowname_col="Team", groupname_col="team_division")
+    .tab_header(
+        title="2011 NFL Season",
+        subtitle="Team Statistics"
+    )
+    .tab_stubhead(label="Team")
+    .tab_spanner(label="Scoring", columns=["Avg PF", "Avg PA", "Point Diff"])
+    .tab_spanner(label="Season Trends", columns=["Games", "Streak"])
+    .fmt_number(columns="Point Diff", decimals=1)
+    .cols_align(align="center", columns=["Avg PF", "Avg PA"])
+    .cols_width({"Point Diff": "20px"})
+    .cols_hide(["Wins", "team_conf", "team_name", "team_logo_espn"])
+    .tab_options(
+        table_background_color="transparent",
+        table_border_top_color="transparent",
+        table_font_size=font_size,
+    )
+    .pipe(
+        gte.gt_color_box,
+        columns="Point Diff",
+        palette=["red", "yellow", "green"],
+        domain=[-14, 14],
+    )
+    .pipe(
+        gte.gt_plt_winloss,
+        column="Games",
+        win_color="blue",
+        loss_color="orange",
+        height=30,
+        width=100
+    )
+)
+gt = gt.pipe(
+    gte.gt_plt_dumbbell,
+    col1="Avg PF",
+    col2="Avg PA",
+    col1_color="green",
+    col2_color="magenta",
+    width=250,
+    height=30,
+    label="Average Points For vs. Against"
+)
+gte.gt_highlight_cols(gt, "Avg PF", include_column_labels=True, fill="lightblue")
+```
+:::
+
+::: {.fragment fragment-index=10 .fade-in-then-out}
+#### `gte.gt_fa_rank_change()`
+
+```{python}
+#| echo: false
+gt = (
+    GT(nfl_df.head(8), rowname_col="Team", groupname_col="team_division")
+    .tab_header(
+        title="2011 NFL Season",
+        subtitle="Team Statistics"
+    )
+    .tab_stubhead(label="Team")
+    .tab_spanner(label="Scoring", columns=["Avg PF", "Avg PA", "Point Diff"])
+    .tab_spanner(label="Season Trends", columns=["Games", "Streak"])
+    .fmt_number(columns="Point Diff", decimals=1)
+    .cols_align(align="center", columns=["Avg PF", "Avg PA"])
+    .cols_width({"Point Diff": "20px"})
+    .cols_hide(["Wins", "team_conf", "team_name", "team_logo_espn"])
+    .tab_options(
+        table_background_color="transparent",
+        table_border_top_color="transparent",
+        table_font_size=font_size,
+    )
+    .pipe(
+        gte.gt_color_box,
+        columns="Point Diff",
+        palette=["red", "yellow", "green"],
+        domain=[-14, 14],
+    )
+    .pipe(
+        gte.gt_plt_winloss,
+        column="Games",
+        win_color="blue",
+        loss_color="orange",
+        height=30,
+        width=100
+    )
+    .pipe(
+        gte.gt_plt_dumbbell,
+        col1="Avg PF",
+        col2="Avg PA",
+        col1_color="green",
+        col2_color="magenta",
+        width=250,
+        height=30,
+        label="Average Points For vs. Against"
+    )
+)
+gt = gt.pipe(
+    gte.gt_fa_rank_change,
+    column="Streak",
+    icon_type="turn",
+    color_up="blue",
+    color_down="orange"
+)
+gte.gt_highlight_cols(gt, "Streak", include_column_labels=True, fill="lightblue")
+```
+:::
+
+::: {.fragment fragment-index=11 .fade-in-then-out}
+#### `gte.gt_add_divider()`
+
+```{python}
+#| echo: false
+gt = (
+    GT(nfl_df.head(8), rowname_col="Team", groupname_col="team_division")
+    .tab_header(
+        title="2011 NFL Season",
+        subtitle="Team Statistics"
+    )
+    .tab_stubhead(label="Team")
+    .tab_spanner(label="Scoring", columns=["Avg PF", "Avg PA", "Point Diff"])
+    .tab_spanner(label="Season Trends", columns=["Games", "Streak"])
+    .fmt_number(columns="Point Diff", decimals=1)
+    .cols_align(align="center", columns=["Avg PF", "Avg PA"])
+    .cols_width({"Point Diff": "20px"})
+    .cols_hide(["Wins", "team_conf", "team_name", "team_logo_espn"])
+    .tab_options(
+        table_background_color="transparent",
+        table_border_top_color="transparent",
+        table_font_size=font_size,
+    )
+    .pipe(
+        gte.gt_color_box,
+        columns="Point Diff",
+        palette=["red", "yellow", "green"],
+        domain=[-14, 14],
+    )
+    .pipe(
+        gte.gt_plt_winloss,
+        column="Games",
+        win_color="blue",
+        loss_color="orange",
+        height=30,
+        width=100
+    )
+    .pipe(
+        gte.gt_plt_dumbbell,
+        col1="Avg PF",
+        col2="Avg PA",
+        col1_color="green",
+        col2_color="magenta",
+        width=250,
+        height=30,
+        label="Average Points For vs. Against"
+    )
+    .pipe(
+        gte.gt_fa_rank_change,
+        column="Streak",
+        icon_type="turn",
+        color_up="blue",
+        color_down="orange"
+    )
+)
+gt = gt.pipe(
+    gte.gt_add_divider,
+    columns="Point Diff",
+    color="darkblue",
+    weight=2,
+)
+gt
+```
+:::
+
+::: {.fragment fragment-index=12 .fade-in-then-out}
+#### `gte.gt_theme_538()`
+
+```{python}
+#| echo: false
+gt = (
+    GT(nfl_df.head(8), rowname_col="Team", groupname_col="team_division")
+    .tab_header(
+        title="2011 NFL Season",
+        subtitle="Team Statistics"
+    )
+    .tab_stubhead(label="Team")
+    .tab_spanner(label="Scoring", columns=["Avg PF", "Avg PA", "Point Diff"])
+    .tab_spanner(label="Season Trends", columns=["Games", "Streak"])
+    .fmt_number(columns="Point Diff", decimals=1)
+    .cols_align(align="center", columns=["Avg PF", "Avg PA"])
+    .cols_width({"Point Diff": "20px"})
+    .cols_hide(["Wins", "team_conf", "team_name", "team_logo_espn"])
+    .tab_options(
+        table_background_color="transparent",
+        table_border_top_color="transparent",
+        table_font_size=font_size,
+    )
+    .pipe(
+        gte.gt_color_box,
+        columns="Point Diff",
+        palette=["red", "yellow", "green"],
+        domain=[-14, 14],
+    )
+    .pipe(
+        gte.gt_plt_winloss,
+        column="Games",
+        win_color="blue",
+        loss_color="orange",
+        height=30,
+        width=100
+    )
+    .pipe(
+        gte.gt_plt_dumbbell,
+        col1="Avg PF",
+        col2="Avg PA",
+        col1_color="green",
+        col2_color="magenta",
+        width=250,
+        height=30,
+        label="Average Points For vs. Against"
+    )
+    .pipe(
+        gte.gt_fa_rank_change,
+        column="Streak",
+        icon_type="turn",
+        color_up="blue",
+        color_down="orange"
+    )
+    .pipe(
+        gte.gt_add_divider,
+        columns="Point Diff",
+        color="darkblue",
+        weight=2,
+    )
+)
+gt = ( gt
+    .pipe(gte.gt_theme_538)
+    .tab_style(style=style.fill("transparent"), locations=[loc.spanner_labels(["Scoring", "Season Trends"]), loc.column_header(), loc.stubhead()])
+)
+gt
+```
+:::
+
+::: {.fragment fragment-index=13 .fade-in-then-out}
+#### `gte.gt_two_column_layout()`
+
+:::::{style="zoom: 45%;"}
+
+```{python}
+#| echo: false
+final_nfl_example
+```
+
+:::::
+
+:::
+
+::::
 
 ---
 
