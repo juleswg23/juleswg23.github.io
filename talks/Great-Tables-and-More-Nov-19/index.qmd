@@ -124,7 +124,7 @@ def make_gt(df) -> GT:
             col1="Avg PF",
             col2="Avg PA",
             col1_color="green",
-            col2_color="red",
+            col2_color="magenta",
             width=300,
             height=40,
             num_decimals=0,
@@ -699,7 +699,7 @@ gt = gt.pipe(
     col1="Avg PF",
     col2="Avg PA",
     col1_color="green",
-    col2_color="red",
+    col2_color="magenta",
     width=250,
     label="Average Points For vs. Against"
 )
@@ -716,7 +716,7 @@ gt = gt.pipe(
     col1="Avg PF",
     col2="Avg PA",
     col1_color="green",
-    col2_color="red",
+    col2_color="magenta",
     width=250,
     height=30,
     label="Average Points For vs. Against"
