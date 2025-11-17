@@ -208,7 +208,7 @@ Understanding tables for data visualization
 
 :::
 
-::: {.column style="width: 60%; justify-items: center;"}
+::: {.column style="width: 60%; justify-items: center; display: inline-grid;"}
 
 ![](./assets/images/table_components.svg){height="200px"}
 
@@ -224,7 +224,7 @@ How to use **Great Tables**
 
 :::
 
-::: {.column style="width: 60%; justify-items: center;"}
+::: {.column style="width: 60%; justify-items: center; display: inline-grid;"}
 
 ![](./assets/images/GT_logo.svg){height="100px"}
 
@@ -240,7 +240,7 @@ Advanced use cases: **gt-extras**
 
 :::
 
-::: {.column style="width: 60%; zoom: 45%; justify-items: center;"}
+::: {.column style="width: 60%; zoom: 45%; justify-items: center; display: inline-grid;"}
 
 ```{python}
 from great_tables import GT, loc, style
@@ -644,7 +644,7 @@ gte.gt_highlight_cols(gt, "Point Diff", include_column_labels=True, fill="lightb
 
 ---
 
-### 8) gt-extras - Embed Win/Loss Visualization
+### 8) Format - gt-extras Win/Loss Visualization
 
 ::::: {.columns}
 
@@ -685,7 +685,7 @@ gte.gt_highlight_cols(gt, "Games", include_column_labels=True, fill="lightblue")
 
 ---
 
-### 9) gt-extras - Dumbbell Chart
+### 9) Format - gt-extras Dumbbell Chart
 
 ::::: {.columns}
 
@@ -730,7 +730,7 @@ gte.gt_highlight_cols(gt, "Avg PF", include_column_labels=True, fill="lightblue"
 
 ---
 
-### 10) gt-extras - Add Streak Icons
+### 10) Format - gt-extras Streak Icons
 
 ::::: {.columns}
 
@@ -770,7 +770,7 @@ gte.gt_highlight_cols(gt, "Streak", include_column_labels=True, fill="lightblue"
 
 ---
 
-### 11) gt-extras - Add Divider
+### 11) Structure - gt-extras Divider
 
 ::::: {.columns}
 
@@ -808,7 +808,7 @@ gt
 
 ---
 
-### 12) gt-extras - Apply Theme
+### 12) Style - gt-extras Theme
 
 ::::: {.columns}
 
@@ -841,7 +841,7 @@ gt
 
 ---
 
-### 13) gt-extras - Two-Column Table
+### 13) Structure gt-extras Two-Column Table
 
 ::::: {.columns}
 
@@ -913,7 +913,6 @@ Theming
 ::: {.fragment fragment-index=4 .highlight-current-red}
 Iconing + Imaging
 :::
-
 
 ::: {.fragment fragment-index=5 .highlight-current-red}
 Utilities
@@ -1035,78 +1034,97 @@ gt.pipe(gte.gt_theme_dot_matrix)
 
 ::: {.fragment fragment-index=4 .fade-in-then-out}
 
-`gt_fa_rank_change()`
+`fa_icon_repeat()`
 ```{python}
+import pandas as pd
 from great_tables import GT
-from great_tables.data import towny
+from great_tables.data import countrypops
 import gt_extras as gte
 
-mini_towny = towny.head(10)
-gt = GT(mini_towny).cols_hide(None).cols_unhide("name")
+countries_2020 = (
+    countrypops
+    .query("year == 2020")
+    .sort_values("population", ascending=False)
+    .iloc[[2, 5, 10, 20, 28, 38, 65, 80, 98]]
+)
 
-columns = [
-    "pop_change_1996_2001_pct",
-    "pop_change_2001_2006_pct",
-    "pop_change_2006_2011_pct",
-]
+# Scale: 1 icon = 10 million people
+def create_population_icons(population):
+    icon_count = max(1, round(population / 10_000_000))
 
-for col in columns:
-    gt = (
-        gt
-        .cols_align(columns=col, align="center")
-        .cols_unhide(col)
-        .cols_label({col: col[11:20]})
-        .tab_options(
-            table_background_color="transparent",
-            table_border_top_color="transparent",
-            table_width="320px",
-            table_font_size="20px",
-        )
-
-        .pipe(
-            gte.gt_fa_rank_change,
-            column=col,
-            neutral_range=[-0.01, 0.01],
-        )
+    return gte.fa_icon_repeat(
+        name="person",
+        repeats=icon_count,
+        fill="cornflowerblue",
     )
 
-gt
+# Prepare the data
+df = pd.DataFrame({
+    "Country": countries_2020["country_name"],
+    "Population": countries_2020["population"],
+    "People": [create_population_icons(pop) for pop in countries_2020["population"]],
+})
+
+(
+    GT(df)
+    .tab_header(
+        title="World Population in 2020",
+        subtitle="Each person icon represents ~10 million people"
+    )
+    .fmt_number(
+        columns="Population",
+        decimals=0
+    )
+    .tab_options(
+        table_background_color="transparent",
+        table_border_top_color="transparent",
+        table_width="720px",
+        table_font_size="20px",
+    )
+)
 ```
 
 :::
 
 ::: {.fragment fragment-index=5 .fade-in-then-out}
 
-`gt_two_column_layout()`
+`fmt_pct_extra()`
 ```{python}
-from great_tables import GT, style, loc
+from great_tables import GT
+from great_tables.data import towny
 import gt_extras as gte
-from great_tables.data import peeps
 
-df1 = peeps.loc[0:15, ["name_given", "address"]]
-df2 = peeps.loc[16:31, ["name_given", "address"]]
+towny_mini = towny[
+    [
+        "name",
+        "pop_change_1996_2001_pct",
+        "pop_change_2001_2006_pct",
+        "pop_change_2006_2011_pct",
+    ]
+].tail(10)
 
-gt1 = (
-    GT(df1)
-    .tab_header(title="Double Table")
+gt = (
+    GT(towny_mini)
+    .tab_spanner(label="Population Change", columns=[1, 2, 3])
+    .cols_label(
+        pop_change_1996_2001_pct="'96-'01",
+        pop_change_2001_2006_pct="'01-'06",
+        pop_change_2006_2011_pct="'06-'11",
+    )
     .tab_options(
         table_background_color="transparent",
         table_border_top_color="transparent",
+        table_width="540px",
         table_font_size="20px",
     )
-    .tab_style(style=style.fill("transparent"), locations=[loc.column_header(), loc.stubhead()])
-)
-gt2 = (
-    GT(df2)
-    .tab_options(
-        table_background_color="transparent",
-        table_border_top_color="transparent",
-        table_font_size="20px",
-    )
-    .tab_style(style=style.fill("transparent"), locations=[loc.column_header(), loc.stubhead()])
 )
 
-gte.gt_two_column_layout(gt1, gt2, table_header_from=1)
+gt.pipe(
+    gte.fmt_pct_extra,
+    columns=[1, 2, 3],
+    threshold=5,
+    color="green",
+)
 ```
 
 :::
