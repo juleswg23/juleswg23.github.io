@@ -16,10 +16,6 @@ format:
     auto-stretch: false
     # controls: true
     css: custom-styles.css
-revealjs-plugins:
-  - editable
-filters:
-  - editable
 ---
 
 <!-- todo remove title -->
