@@ -21,6 +21,7 @@ website:
 
 format:
   html:
+    canonical-url: true
     theme:
       - cosmo
       - brand
