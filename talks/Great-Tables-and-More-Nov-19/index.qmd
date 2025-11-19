@@ -14,33 +14,20 @@ format:
     transition: fade
     transition-speed: fast
     auto-stretch: false
-    # controls: true
     css: custom-styles.css
 ---
 
 <!-- todo remove title -->
 
-### About me
+### About Me
 
 - Author of **gt-extras**
 - Great Tables at Posit: Michael Chow and Richard Iannone
 - I enjoy patterns and helping people see patterns
 
-<!-- todo add image of myself? -->
-
-::: {.notes}
-I want to quickly introduce myself. I'm Jules, and I'm the author of gt-extras and a contributor to Great Tables.
-
-Been at posit 6 months
-
-Am into patterns and puzzles, and sports
-
-Intersection of these is data visualization
-:::
-
 ---
 
-### The problem
+### The Problem
 
 > "They say a picture is worth a thousand words, so why do we have to look at tables with a thousand cells of text?"
 
@@ -58,7 +45,7 @@ But when we look at a table, we have to look at
 
 ---
 
-### The solution
+### The Solution
 
 ::: {style="zoom: 50%;"}
 
@@ -153,7 +140,7 @@ final_nfl_example
 
 ---
 
-### The solution
+### The Solution
 
 ::::: {.columns}
 
@@ -175,12 +162,16 @@ gt1
 
 ---
 
-### What did we really solve?
+### What Are We Really Solving?
 
 ![](./assets/images/pipeline.png){.absolute width=1060.94px height=118px left=-15px top=303.357px}
 
 :::{.fragment}
 ![](./assets/images/excel.png){.absolute width=146.808px height=115px left=665px top=144.84px}
+:::
+
+:::{.fragment}
+![](./assets/images/excel_table.png){.absolute width=260px height=115px left=856px top=145px}
 :::
 
 :::{.fragment}
@@ -193,7 +184,7 @@ We want to keep the data flow within python
 
 ---
 
-### Today's goals
+### Today's Goals
 
 ::::: {.columns}
 
@@ -277,15 +268,6 @@ cars_gt_extras.show()
 :::
 
 :::::
-
-::: {.notes}
-You may not be convinced tables are up for the job.
-So let's dissect what a presentation-level table looks like
-
-Then, we'll see an example workflow of using great tables
-
-Finally, I'll teach you a bit about gt-extras, which makes great tables shine even more
-:::
 
 ---
 
@@ -389,6 +371,8 @@ nfl_df.head(8)
 #| echo: true
 #| eval: false
 #| code-line-numbers: "1"
+from great_tables import GT
+
 gt = GT(nfl_df.head(8))
 ```
 
@@ -611,6 +595,8 @@ gt
 ```{python}
 # | echo: true
 # | eval: false
+import gt_extras as gte
+
 gt = gt.pipe(
     gte.gt_color_box,
     columns="Point Diff",
@@ -1375,9 +1361,7 @@ final_nfl_example
 
 ::::
 
----
-
-### gt-extras
+## gt-extras
 
 [![](./assets/images/API.png)](https://posit-dev.github.io/gt-extras/reference/)
 
@@ -1684,7 +1668,7 @@ We want to keep the data flow within python
 
 ---
 
-### Thank you
+### Thank You
 
 ::: {.fragment fragment-index=1}
 to Michael Chow and Richard Ianonne (and the Posit family)
