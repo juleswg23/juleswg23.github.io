@@ -4,6 +4,7 @@ project:
 website:
   title: "Jules Walzer-Goldfeld"
   site-url: https://juleswg.me/
+  favicon: images/logo.svg
   navbar:
     right:
       - file: index.qmd
@@ -18,6 +19,7 @@ website:
         href: https://www.linkedin.com/in/jules-w-51bb03199/
       - icon: rss
         href: blog.xml
+    logo: images/logo.png
 
 format:
   html:
