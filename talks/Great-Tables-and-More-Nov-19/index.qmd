@@ -3,7 +3,7 @@ title: "Great Tables & gt-extras"
 subtitle: "Telling Better Data Stories with Beautiful Tables"
 author: "Jules Walzer-Goldfeld"
 date-meta: 11-19-2025
-# freeze: true
+freeze: true
 format:
   revealjs:
     slide-number: c/t
