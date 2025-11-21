@@ -28,6 +28,8 @@ format:
       - cosmo
       - brand
     css: styles.css
-
-
+    include-in-header: 
+      text: |
+        <link rel="shortcut icon" href="images/logo.svg" />
+        <link rel="icon" type="image/x-icon" href="images/logo.ico">
 
