@@ -1,0 +1,338 @@
+---
+title: "Wrappers and Extenders"
+subtitle: "Companion Packages for Python Projects"
+author: "Jules Walzer-Goldfeld"
+date-meta: 12-10-2025
+freeze: false
+format:
+  revealjs:
+    slide-number: c/t
+    incremental: true
+    progress: true
+    theme: [simple, custom.scss]
+    preview-links: auto
+    transition: fade
+    transition-speed: fast
+    auto-stretch: false
+    css: custom-styles.css
+---
+
+
+<!--
+NOTE FOR AGENTS: Do not add speaker notes to this file. 
+Jules will add speaker notes later.
+-->
+
+### About Me
+
+- Author of **gt-extras**
+- Great Tables at Posit: Michael Chow and Richard Iannone
+- I enjoy patterns and helping people see patterns
+
+---
+
+::: {.panel-tabset .custom-font-size .first-tabset }
+
+
+## Read the dataset
+
+```{python}
+# | echo: true
+# | output-location: column
+import polars as pl
+
+pre_tax_col = "gini_market__age_total"
+post_tax_col = "gini_disposable__age_total"
+
+df = pl.read_csv(
+    "./assets/income_inequality.csv"
+)
+
+df
+```
+
+## What We Have
+
+```{python}
+# | echo: true
+# | output-location: column
+from great_tables import GT, html
+import gt_extras as gte
+
+df_with_icons = df.with_columns(
+    pl.col("pop_icons").map_elements(
+        lambda x: gte.fa_icon_repeat(name="person", repeats=int(x)),
+        return_dtype=pl.String,
+    )
+)
+
+# Generate the table, before gt-extras add-ons
+gt = (
+    GT(df_with_icons, rowname_col="Entity", groupname_col="owid_region")
+    .tab_header(
+        "Income Inequality Before and After Taxes in 2020",
+    )
+    .cols_move("pop_icons", after=pre_tax_col)
+    .cols_align("left")
+    .cols_hide(["Year", "pop_log", "population_historical"])
+    .fmt_flag("Code")
+    .cols_label(
+        {
+            "Code": "",
+            "gini_pct_change": "Improvement Post Taxes",
+            "pop_icons": "Population",
+        }
+    )
+    .with_id("gini-table")
+)
+
+gt
+```
+
+## What We Want
+
+```{python}
+# | echo: true
+# | output-location: column
+import gt_extras as gte
+
+gt.pipe(
+    gte.gt_plt_dumbbell,
+    col1=pre_tax_col,
+    col2=post_tax_col,
+    col1_color="#e0b165",
+    col2_color="#106ea0",
+    dot_border_color="transparent",
+    num_decimals=2,
+    width=240,
+    label="Pre-tax to Post-tax Coefficient",
+).pipe(
+    gte.gt_plt_bullet,
+    "gini_pct_change",
+    "gini_pct_benchmark_5yr",
+    fill="#963d4c",
+    target_color="#3D3D3D",
+    bar_height=15,
+    width=200,
+).pipe(
+    gte.gt_merge_stack,
+    col1="pop_icons",
+    col2="population_historical",
+).pipe(gte.gt_theme_guardian)
+```
+
+:::
+
+---
+
+### The Gap
+
+You want a table with embedded visualizations. Not just numbers—though numbers are good. But also plots, icons, colors that actually encode meaning.
+
+Great Tables gives you a beautiful, structured table. Formatted cells. Pristine data presentation. But adding visualizations? That's not in its scope.
+
+You check the docs. Not there. You open an issue, hoping. The maintainer responds politely:
+
+> "That's cool, but it's outside our scope."
+
+---
+
+### Quick and Dirty Solution
+
+* Hunt for a while, realize there's nothing out there that does quite what you want
+* Code the solution ourselves
+* hyper-specific to our use case
+
+---
+
+<!-- examples doing each solution -->
+
+<!-- describe what the option is by doing a minimal version of it -->
+
+<!-- list out some advantages and painful aspects of the solution  -->
+
+---
+
+## The Problem
+
+You have three options.
+
+### Three Bad Options
+
+* 1: You've done it locally.  Build it in your notebook, in your scripts, in your project code.
+
+Pros/cons
+It works for you. But it breaks for your colleague. It doesn't scale. It doesn't travel.
+
+* 2 Fork the repo
+pros/cons 
+maintaining a shadow version of a library you didn't write, forever watching for updates you have to manually merge.
+
+* 3 Hope it get's built in to the library
+
+pros/cons
+Submit your feature request, your code review, hope they say yes. Six months later, maybe they do, Maybe they don't.
+
+---
+
+### A Fourth Option?
+
+> What if there was a fourth option?
+
+Not forking. Not waiting. Not setting it up locally
+
+---
+
+### A Companion Package!
+
+There's a pattern in Python's ecosystem. Libraries that don't fork, don't replace, don't hide. They live alongside their upstream libraries and add what's missing—without changing what's already there.
+
+This is what **gt-extras** did for Great Tables. What **nbmail** and **red-mail** did for `smtplib`. What **requests-toolbelt** did for `requests`. 
+
+They're extensions. Companions. The missing piece that was never meant to be in the core.
+
+---
+
+### When Is This the Right Move?
+
+Not every library needs a companion package. But if you recognize yourself in any of these, you're probably a good candidate:
+
+- **Core maintainers prioritize stability over novelty.** They say no not because your idea is bad, but because it's not in scope.
+- **Your feature is niche/domain-specific.** Not everyone needs what you need, so the core library doesn't either.
+- **You need faster iteration.** You can't wait for release cycles and deliberation.
+- **You want to add dependencies without burdening core users.** Maybe your feature needs matplotlib, or plotly, or something heavy.
+- **Your workflow is opinionated.** Not universal, just specific to your problem.
+
+If you check a few of these boxes, you're ready to build.
+
+---
+
+## First Challenge: How Do I Even Start?
+
+Here's the thing: most people think building a companion package is complicated. It's not. Let's demystify it.
+
+*"Okay, so I need to extend my favorite library. Where do I start?"*
+
+---
+
+### The Simplest Wrapper Pattern
+
+A companion package, at its heart, is just a function. A function that takes an object from the upstream library, modifies it, and returns it.
+
+You import the library. You don't copy it, you don't fork it—you just import it. Then you write a function that accepts that library's core object as input, does something with it, and returns it.
+
+That's the whole pattern. Your wrapper is just a function that takes and returns the upstream object.
+
+---
+
+### A Real Example
+
+Take a look at how actual companion packages do this. You'll see the same pattern: import the upstream library, write functions that accept its objects, return them modified.
+
+Notice the intentional design choice here. They're not subclassing. They're not monkey-patching. They're extending through composition—building alongside, not on top of.
+
+---
+
+## Second Challenge: But What About...?
+
+You've written your wrapper. It works. But now the maintainer releases a new version of the upstream library, and suddenly everything breaks. Now you have to think like a real package maintainer.
+
+*"You wrote your wrapper. Great! But now the maintainer updates the upstream library and... everything breaks."*
+
+---
+
+### Challenge 1a: Dependency Hell
+
+Here's a common mistake: you build your wrapper and you import everything you need. Matplotlib, Plotly, Pandas, whatever. Your users install your package, and now they've installed all of that too. Even if they only use one function.
+
+The better approach is optional dependencies. Let your users choose what they install. If they want plots, they install matplotlib. If they want fancy charts, they install plotly. Your package shouldn't force them.
+
+**Principle:** "Keep dependencies light. Let users choose."
+
+---
+
+### Challenge 1b: Compatibility Testing
+
+What happens when Great Tables releases version 0.5, and your package was written for version 0.3? You probably don't want to find out from your users.
+
+The solution is automated testing against multiple versions. You set up CI/CD to test your package against the current version, the version before that, maybe the next one. This runs automatically every time Great Tables updates. You know immediately what breaks.
+
+**Principle:** "Stay compatible. Test against multiple versions. Document what you support."
+
+---
+
+### Challenge 1c: Respecting the Original API
+
+Here's a subtle but important principle: your package should feel like a natural extension of the upstream library, not a replacement or a hack.
+
+Don't subclass the upstream objects. Don't monkey-patch them. Instead, take them as input to your functions, modify them, return them. This respects the original design and makes your package composable—your functions can chain with upstream functions without confusion.
+
+**Principle:** "Extend, don't replace. Your package should feel like a natural extension of the original."
+
+---
+
+## Third Challenge: Making It Real
+
+You've learned to wrap. You've learned to test. Now you have a working companion package. But it's only working on your machine. How do you make it something other people can use?
+
+*"I have a working wrapper. How do I make it something others can actually use?"*
+
+---
+
+### Package Structure
+
+The structure of a real companion package is simple. You have your source code. You have tests. You have configuration that describes your package to the world: what it's called, what version it is, what it depends on.
+
+That's it. You don't need thousands of lines. You don't need a complex architecture. You just need structure.
+
+---
+
+### Configuration & Exports
+
+Your configuration file declares the essentials: name, version, dependencies, and which of those dependencies are optional. Your __init__.py file tells Python which functions to expose to users. When someone imports your package, they get exactly what you put there.
+
+This is where the power of composition shines. You're not hiding anything. You're just organizing what you've built.
+
+**Principle:** "Keep it minimal. Don't over-engineer on day one."
+
+---
+
+## Your Transformation
+
+You came here with a problem. You loved a library, but it wasn't enough.
+
+You learned that companion packages aren't magic. They're a pattern. Import, wrap, compose, extend. You saw that the pattern works—real packages do it this way, successfully, at scale.
+
+You learned to think about dependencies, compatibility, and respect for the original design. You learned that distribution is learnable, not mysterious.
+
+You're no longer the person who forks or waits or hacks. You're the person who builds.
+
+---
+
+### Your First Step
+
+Take these one at a time. Don't try to do everything at once.
+
+- Find a library you use regularly and identify one feature that's missing.
+- Write a single function that wraps it. Keep it to 5-10 lines of code.
+- Test it with your own code. Make sure it works for you.
+- If it works, write a test so you know it'll keep working.
+- Share it with one person who asked for that feature. Get feedback.
+
+That's the start. You don't need to build the entire ecosystem on day one.
+
+---
+
+### You Don't Need to Understand Everything
+
+You understand the principles now. The pattern. The mindset. That's the hard part. The rest—the specific code, the specific tools—you can learn as you go.
+
+You have enough to start. And starting is what matters.
+
+---
+
+## Thank You
+
+::: footer
+Find these slides at [juleswg.me](https://juleswg.me)
+:::
