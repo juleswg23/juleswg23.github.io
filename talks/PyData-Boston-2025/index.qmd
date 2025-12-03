@@ -106,6 +106,14 @@ and Pixabay: https://www.pexels.com/photo/black-fixed-gear-bike-beside-wall-2765
 
 :::::
 
+::: {.footer}
+Photos by chatchawarn loetsupan: https://www.pexels.com/photo/close-up-of-a-back-light-on-a-bicycle-10744841/
+
+Nick Duell: https://www.pexels.com/photo/brass-bicycle-bell-107510/
+
+and Mathias Reding: https://www.pexels.com/photo/close-up-photo-of-bicycle-gears-13415392/
+:::
+
 ---
 
 ## You Borrow It
@@ -134,6 +142,12 @@ and Pixabay: https://www.pexels.com/photo/black-fixed-gear-bike-beside-wall-2765
 
 :::::
 
+::: {.footer}
+Photos by Gül Işık: https://www.pexels.com/photo/black-wireless-mouse-beside-laptop-2272759/
+
+and Jacob Yavin: https://www.pexels.com/photo/snack-meal-inside-a-lunch-box-12861383/
+:::
+
 ---
 
 ## Solve It For Yourself
@@ -158,6 +172,10 @@ Photo by ronyescobarhn: https://www.pexels.com/photo/cyclist-enjoying-sunny-beac
 
 :::
 
+::: {.footer}
+Photo by Martii Tolentino: https://www.pexels.com/photo/man-and-woman-riding-bicycle-on-crosswalk-18529803/
+:::
+
 ---
 
 ## Fork The Bike
@@ -168,6 +186,10 @@ Photo by ronyescobarhn: https://www.pexels.com/photo/cyclist-enjoying-sunny-beac
 
 :::
 
+::: {.footer}
+Photo by Jan van der Wolf: https://www.pexels.com/photo/red-electric-bicycles-in-a-scenic-outdoor-setting-30179590/
+:::
+
 ---
 
 ## Use An Optional Attachment
@@ -176,6 +198,10 @@ Photo by ronyescobarhn: https://www.pexels.com/photo/cyclist-enjoying-sunny-beac
 
 ![](./assets/images/saddle_bags.jpg)
 
+:::
+
+::: {.footer}
+Photo by Pack2Ride: https://www.pexels.com/photo/a-bicycle-on-the-road-8934535/
 :::
 
 # Developing Packages
