@@ -17,6 +17,7 @@ format:
     css: custom-styles.css
 ---
 
+<!-- todo: background color trick on all tables -->
 
 <!--
 NOTE FOR AGENTS: Do not add speaker notes to this file. 
@@ -414,44 +415,34 @@ Or use it for when we are comparing extenders to wrappers?
 <!-- list out some advantages and painful aspects of the solution  -->
 
 
-# Actually Developing Packages
+# What Goes In The Package
 
 ---
 
-## What's Missing
+## What's In A Package?
 
-::: {.columns style="margin-top: 100px;"}
+:::: {.columns}
+::: {.column}
 
-:::: {.column style="width: 40%;"}
+![](./assets/images/function.png){width=5in}
 
-```{python}
-(
-    gt
-    .cols_hide(["Code", "gini_pct_benchmark_5yr", "pop_icons"])
-    .tab_options(table_font_size="80%")
-    .cols_label({"gini_disposable__age_total": "Pre-Tax", "gini_market__age_total": "Post-Tax"})
-)
-```
+:::
+::: {.column}
 
-::::
+::: {data-id="elem1"}
+1. Wrapping
+:::
 
-:::: {.column style="width: 60%;"}
-
-
-```{python}
-(
-    gt_extra
-    .cols_hide(["Code", "pop_icons"])
-)
-```
-
-::::
+2. Composing
+3. Extending
 
 :::
 
+::::
+
 ---
 
-## Where Do We Start?
+## 1) Wrapping
 
 ::: {.two-column-code}
 
@@ -466,8 +457,8 @@ airquality_mini = airquality.head(10).assign(Year=1973)
 gt = (
     GT(airquality_mini)
     .tab_header(
-        title="Default Theme",
-        subtitle="New York Air Quality Measurements",
+        title="New York Air Quality Measurements",
+        subtitle="Daily measurements in New York City (May 1-10, 1973)"
     )
     .tab_spanner(label="Time", columns=["Year", "Month", "Day"])
     .tab_spanner(
@@ -490,7 +481,7 @@ gt
 
 ---
 
-## Where Do We Start?
+## 1) Wrapping
 
 :::: {layout-ncol="2"}
 
@@ -505,7 +496,22 @@ gt
 :::  {.fragment fragment-index=1}
 
 ```{python}
-gt.pipe(gte.gt_theme_dot_matrix)
+from great_tables import loc, style
+
+columns = ["Wind"]
+
+locations = [
+    loc.body(columns=columns),
+    loc.column_labels(columns=columns),
+]
+
+# Make the wrapped tab_style call
+gt_highlighted = gt.tab_style(
+    style=style.fill(color="lightblue"),
+    locations=locations,
+)
+
+gt_highlighted
 ```
 
 :::
@@ -514,46 +520,71 @@ gt.pipe(gte.gt_theme_dot_matrix)
 
 ---
 
-### The Wrapper Pattern
+## 1) Wrapping
 
 :::: {.columns}
 
-::: {.column width=40%}
+::: {.column width=50%}
 
 ```{python}
-gt.pipe(gte.gt_theme_dot_matrix)
+gt_highlighted
 ```
 
 :::
 
-::: {.column .fragment fragment-index=1 style="font-size:65%;"}
+::: {.column}
+
+:::::: {.r-stack}
+
+::::: {.fragment fragment-index=1 .fade-in-then-out style="font-size:75%; padding-top:10px; position:absolute;"}
 
 ```{python}
 # | echo: true
 # | output: false
-(
-    gt
-    .opt_row_striping()
-    .opt_table_font(font="Courier")
-    .tab_options(
-        heading_align="left",
-        heading_border_bottom_color="white",
-        column_labels_text_transform="lowercase",
-        column_labels_font_size="85%",
-        column_labels_border_top_style="none",
-        column_labels_border_bottom_color="black",
-        column_labels_border_bottom_width="2px",
-        table_border_bottom_style="none",
-        table_border_bottom_width="2px",
-        table_border_bottom_color="white",
-        table_border_top_style="none",
-        row_striping_background_color="#b5dbb6",
-        table_body_hlines_style="none",
-        table_body_vlines_style="none",
-        data_row_padding="1px",
-    )
+from great_tables import loc, style
+
+locations = [
+    loc.body(columns="Wind"),
+    loc.column_labels(columns="Wind"),
+]
+
+# Make the wrapped tab_style call
+gt.tab_style(
+    style=style.fill(color="lightblue"),
+    locations=locations,
 )
 ```
+
+:::::
+
+::::: {.fragment fragment-index=2 style="font-size:75%; padding-top:10px;"}
+
+```{python}
+# | echo: true
+# | output: false
+# | code-line-numbers: "|4-13|"
+from great_tables import GT, loc, style
+
+def highlight_columns(gt: GT, columns) -> GT:
+    locations = [
+        loc.body(columns=columns),
+        loc.column_labels(columns=columns),
+    ]
+
+    # Make the wrapped tab_style call
+    return gt.tab_style(
+        style=style.fill(color="lightblue"),
+        locations=locations,
+    )
+
+highlight_columns(gt, columns="Wind")
+```
+
+:::::
+
+
+
+::::::
 
 :::
 
@@ -561,31 +592,277 @@ gt.pipe(gte.gt_theme_dot_matrix)
 
 ---
 
-## Title TBD
+<!-- first composing slide -->
+
+## 2) Composing
+
+::: {.two-column-code}
 
 ```{python}
 # | echo: true
-# | output: false
-# | code-line-numbers: "|1-2,11-13"
-def gt_theme_dot_matrix(gt: GT, color: str = "#b5dbb6") -> GT:
-    gt_themed = (
+# | output-location: column
+from great_tables import GT, html
+from great_tables.data import airquality
+
+airquality_mini = airquality.head(10).assign(Year=1973)
+
+gt = (
+    GT(airquality_mini)
+    .tab_header(
+        title="New York Air Quality Measurements",
+        subtitle="Daily measurements in New York City (May 1-10, 1973)"
+    )
+    .tab_spanner(label="Time", columns=["Year", "Month", "Day"])
+    .tab_spanner(
+        label="Measurement",
+        columns=["Ozone", "Solar_R", "Wind", "Temp"],
+    )
+    .cols_move_to_start(columns=["Year", "Month", "Day"])
+    .cols_label(
+        Ozone=html("Ozone,<br>ppbV"),
+        Solar_R=html("Solar R.,<br>cal/m<sup>2</sup>"),
+        Wind=html("Wind,<br>mph"),
+        Temp=html("Temp,<br>&deg;F"),
+    )
+)
+
+gt
+```
+
+:::
+
+---
+
+## 2) Composing
+
+:::: {layout-ncol="2"}
+
+::: {.placeholder-class}
+
+```{python}
+gt
+```
+
+:::
+
+:::  {.fragment fragment-index=1}
+
+```{python}
+def some_theme(gt: GT) -> GT:
+    return (
         gt
         .opt_row_striping()
         .opt_table_font(font="Courier")
         .tab_options(
             heading_align="left",
             column_labels_text_transform="lowercase",
-            row_striping_background_color=color,
+            row_striping_background_color="#b5dbb6",
         )
     )
 
-    return gt_themed
+gt.pipe(some_theme)
 ```
+
+:::
+
+::::
+
+---
+
+## 2) Composing
+
+:::: {.columns}
+
+::: {.column width=40%}
+
+```{python}
+gt.pipe(some_theme)
+```
+
+:::
+
+::: {.column .fragment fragment-index=1 style="font-size:75%; padding-top:10px; width:60%;"}
+
+```{python}
+# | echo: true
+# | output: false
+# | code-line-numbers: "|3-10|1-2,11"
+def some_theme(gt: GT) -> GT:
+    return (
+        gt
+        .opt_row_striping()
+        .opt_table_font(font="Courier")
+        .tab_options(
+            heading_align="left",
+            column_labels_text_transform="lowercase",
+            row_striping_background_color="#b5dbb6",
+        )
+    )
+
+gt.pipe(some_theme)
+```
+
+:::
+
+::::
+
+---
+
+<!-- first extending slide -->
+
+## 3) Extending
+
+::: {.two-column-code}
+
+```{python}
+# | echo: true
+# | output-location: column
+from great_tables import GT, html
+from great_tables.data import airquality
+
+airquality_mini = airquality.head(10).assign(Year=1973)
+
+gt = (
+    GT(airquality_mini)
+    .tab_header(
+        title="New York Air Quality Measurements",
+        subtitle="Daily measurements in New York City (May 1-10, 1973)"
+    )
+    .tab_spanner(label="Time", columns=["Year", "Month", "Day"])
+    .tab_spanner(
+        label="Measurement",
+        columns=["Ozone", "Solar_R", "Wind", "Temp"],
+    )
+    .cols_move_to_start(columns=["Year", "Month", "Day"])
+    .cols_label(
+        Ozone=html("Ozone,<br>ppbV"),
+        Solar_R=html("Solar R.,<br>cal/m<sup>2</sup>"),
+        Wind=html("Wind,<br>mph"),
+        Temp=html("Temp,<br>&deg;F"),
+    )
+)
+
+gt
+```
+
+:::
+
+---
+
+## 3) Extending
+
+:::: {layout-ncol="2"}
+
+::: {.placeholder-class}
+
+```{python}
+gt
+```
+
+:::
+
+:::  {.fragment fragment-index=1}
+
+<!-- todo: revisit this, the build step should be seperate in the slides -->
+
+```{python}
+def fmt_threshold(gt, columns, threshold: float):
+
+    def _truncate(val: float):
+        return f"<{threshold}" if val < threshold else str(val)
+
+    return gt.fmt(_truncate, columns)
+
+gt.pipe(fmt_threshold, "Wind", 10.0)
+
+```
+
+:::
+
+::::
+
+---
+
+## 3) Extending
+
+:::: {.columns}
+
+::: {.column width=40%}
+
+```{python}
+gt.pipe(fmt_threshold, "Wind", 10.0)
+```
+
+:::
+
+::: {.column .fragment fragment-index=1 style="font-size:75%; padding-top:10px; width:60%;"}
+
+```{python}
+# | echo: true
+# | output: false
+# | code-line-numbers: "|3-5"
+def fmt_threshold(gt, columns, threshold: float):
+
+    def _truncate(val: float):
+        return f"<{threshold}" if val < threshold else str(val)
+
+    return gt.fmt(_truncate, columns)
+
+gt.pipe(fmt_threshold, "Wind", 10.0)
+```
+
+:::
+
+::::
+
+---
+
+<!-- done with 3 cases -->
+
+## What's Missing
+
+::: {.columns style="margin-top: 100px;"}
+
+:::: {.column style="width: 40%;"}
+
+```{python}
+# (
+#     gt
+#     .cols_hide(["Code", "gini_pct_benchmark_5yr", "pop_icons"])
+#     .tab_options(table_font_size="80%")
+#     .cols_label({"gini_disposable__age_total": "Pre-Tax", "gini_market__age_total": "Post-Tax"})
+# )
+```
+
+::::
+
+:::: {.column style="width: 60%;"}
+
+
+```{python}
+# (
+#     gt_extra
+#     .cols_hide(["Code", "pop_icons"])
+# )
+```
+
+::::
+
+:::
+
+---
+
+# Finishing the Package
+
+<!-- Nothing after this are my slides -->
+
+
+## Package Structure
 
 
 ---
 
-## Second Challenge: But What About...?
+## Testing
 
 You've written your wrapper. It works. But now the maintainer releases a new version of the upstream library, and suddenly everything breaks. Now you have to think like a real package maintainer.
 
@@ -593,61 +870,25 @@ You've written your wrapper. It works. But now the maintainer releases a new ver
 
 ---
 
-### Challenge 2a: Compatibility Testing
+## Documenting
 
 What happens when Great Tables releases version 0.5, and your package was written for version 0.3? You probably don't want to find out from your users.
 
 The solution is automated testing against multiple versions. You set up CI/CD to test your package against the current version, the version before that, maybe the next one. This runs automatically every time Great Tables updates. You know immediately what breaks.
 
-**Principle:** "Stay compatible. Test against multiple versions. Document what you support."
-
 ---
 
-### Challenge 2b: Respecting the Original API
-
-Here's a subtle but important principle: your package should feel like a natural extension of the upstream library, not a replacement or a hack.
-
-Don't subclass the upstream objects. Don't monkey-patch them. Instead, take them as input to your functions, modify them, return them. This respects the original design and makes your package composable—your functions can chain with upstream functions without confusion.
-
-**Principle:** "Extend, don't replace. Your package should feel like a natural extension of the original."
-
----
-
-## Third Challenge: Making It Real
-
-You've learned to wrap. You've learned to test. Now you have a working companion package. But it's only working on your machine. How do you make it something other people can use?
-
-*"I have a working wrapper. How do I make it something others can actually use?"*
-
----
-
-### Package Structure
-
-The structure of a real companion package. You have your source code. You have tests. You have configuration that describes your package to the world: what it's called, what version it is, what it depends on.
-
-Documentation
-
----
-
-### Configuration & Exports
+## Configuration & Exports
 
 Your configuration file declares the essentials: name, version, dependencies, and which of those dependencies are optional. Your __init__.py file tells Python which functions to expose to users. When someone imports your package, they get exactly what you put there.
 
-This is where the power of composition shines. You're not hiding anything. You're just organizing what you've built.
-
-**Principle:** "Keep it minimal. Don't over-engineer on day one."
-
 ---
 
-## Your Transformation
+## Conclusion
 
-You came here with a problem. You loved a library, but it wasn't enough.
-
-You learned that companion packages aren't magic. They're a pattern. Import, wrap, compose, extend. You saw that the pattern works—real packages do it this way, successfully, at scale.
-
-You learned to think about dependencies, compatibility, and respect for the original design. You learned that distribution is learnable, not mysterious.
-
-You're no longer the person who forks or waits or hacks. You're the person who builds.
+- a
+- b
+- c
 
 ---
 
