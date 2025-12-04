@@ -451,27 +451,137 @@ Or use it for when we are comparing extenders to wrappers?
 
 ---
 
-## First Challenge: How Do I Even Start?
+## Where Do We Start?
 
-Here's the thing: most people think building a package is complicated. Let's demystify it.
+::: {.two-column-code}
+
+```{python}
+# | echo: true
+# | output-location: column
+from great_tables import GT, html
+from great_tables.data import airquality
+
+airquality_mini = airquality.head(10).assign(Year=1973)
+
+gt = (
+    GT(airquality_mini)
+    .tab_header(
+        title="Default Theme",
+        subtitle="New York Air Quality Measurements",
+    )
+    .tab_spanner(label="Time", columns=["Year", "Month", "Day"])
+    .tab_spanner(
+        label="Measurement",
+        columns=["Ozone", "Solar_R", "Wind", "Temp"],
+    )
+    .cols_move_to_start(columns=["Year", "Month", "Day"])
+    .cols_label(
+        Ozone=html("Ozone,<br>ppbV"),
+        Solar_R=html("Solar R.,<br>cal/m<sup>2</sup>"),
+        Wind=html("Wind,<br>mph"),
+        Temp=html("Temp,<br>&deg;F"),
+    )
+)
+
+gt
+```
+
+:::
 
 ---
 
-### The Simplest Wrapper Pattern
+## Where Do We Start?
 
-A companion package, at its heart, is just a function. A function that takes an object from the upstream library, modifies it, and returns it.
+:::: {layout-ncol="2"}
 
-You import the library. You don't copy it, you don't fork it—you just import it. Then you write a function that accepts that library's core object as input, does something with it, and returns it.
+::: {.placeholder-class}
 
-That's the whole pattern. Your wrapper is just a function that takes and returns the upstream object.
+```{python}
+gt
+```
+
+:::
+
+:::  {.fragment fragment-index=1}
+
+```{python}
+gt.pipe(gte.gt_theme_dot_matrix)
+```
+
+:::
+
+::::
 
 ---
 
-### A Real Example
+### The Wrapper Pattern
 
-Take a look at how actual companion packages do this. You'll see the same pattern: import the upstream library, write functions that accept its objects, return them modified.
+:::: {.columns}
 
-Notice the intentional design choice here. They're not subclassing. They're not monkey-patching. They're extending through composition—building alongside, not on top of.
+::: {.column width=40%}
+
+```{python}
+gt.pipe(gte.gt_theme_dot_matrix)
+```
+
+:::
+
+::: {.column .fragment fragment-index=1 style="font-size:65%;"}
+
+```{python}
+# | echo: true
+# | output: false
+(
+    gt
+    .opt_row_striping()
+    .opt_table_font(font="Courier")
+    .tab_options(
+        heading_align="left",
+        heading_border_bottom_color="white",
+        column_labels_text_transform="lowercase",
+        column_labels_font_size="85%",
+        column_labels_border_top_style="none",
+        column_labels_border_bottom_color="black",
+        column_labels_border_bottom_width="2px",
+        table_border_bottom_style="none",
+        table_border_bottom_width="2px",
+        table_border_bottom_color="white",
+        table_border_top_style="none",
+        row_striping_background_color="#b5dbb6",
+        table_body_hlines_style="none",
+        table_body_vlines_style="none",
+        data_row_padding="1px",
+    )
+)
+```
+
+:::
+
+::::
+
+---
+
+## Title TBD
+
+```{python}
+# | echo: true
+# | output: false
+# | code-line-numbers: "|1-2,11-13"
+def gt_theme_dot_matrix(gt: GT, color: str = "#b5dbb6") -> GT:
+    gt_themed = (
+        gt
+        .opt_row_striping()
+        .opt_table_font(font="Courier")
+        .tab_options(
+            heading_align="left",
+            column_labels_text_transform="lowercase",
+            row_striping_background_color=color,
+        )
+    )
+
+    return gt_themed
+```
+
 
 ---
 
