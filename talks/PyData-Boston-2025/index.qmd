@@ -3,6 +3,7 @@ title: "Wrappers and Extenders"
 subtitle: "Companion Packages for Python Projects"
 author: "Jules Walzer-Goldfeld"
 date-meta: 12-10-2025
+draft: true
 freeze: false
 format:
   revealjs:
@@ -21,6 +22,8 @@ format:
 
 <!-- todo: try to animate? 
 https://quarto.org/docs/presentations/revealjs/advanced.html#code-animations -->
+
+<!-- todo write slide notes -->
 
 ### About Me
 
