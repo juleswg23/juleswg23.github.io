@@ -22,26 +22,6 @@ format:
 <!-- todo: try to animate? 
 https://quarto.org/docs/presentations/revealjs/advanced.html#code-animations -->
 
-<!--
-NOTE FOR AGENTS: Do not add speaker notes to this file. 
-Jules will add speaker notes later.
--->
-
-<!-- 
-Images:
-bike_drivetrain: Photo by Mathias Reding: https://www.pexels.com/photo/close-up-photo-of-bicycle-gears-13415392/
-bike_tail_light: Photo by chatchawarn loetsupan: https://www.pexels.com/photo/close-up-of-a-back-light-on-a-bicycle-10744841/
-bike_bell: Photo by Nick Duell: https://www.pexels.com/photo/brass-bicycle-bell-107510/
-bike_with_basket: Photo by Martii Tolentino: https://www.pexels.com/photo/man-and-woman-riding-bicycle-on-crosswalk-18529803/
-generic_bike: Photo by Pixabay: https://www.pexels.com/photo/black-fixed-gear-bike-beside-wall-276517/ (or my bike)
-wireless_mouse: Photo by Gül Işık: https://www.pexels.com/photo/black-wireless-mouse-beside-laptop-2272759/
-lunch_and_fork: Photo by Jacob  Yavin: https://www.pexels.com/photo/snack-meal-inside-a-lunch-box-12861383/
-bike_backpack: Photo by ronyescobarhn  : https://www.pexels.com/photo/cyclist-enjoying-sunny-beach-boulevard-ride-34975805/
-two_bikes: Photo by Jan van der Wolf: https://www.pexels.com/photo/red-electric-bicycles-in-a-scenic-outdoor-setting-30179590/
-saddle_bags: Photo by Pack2Ride: https://www.pexels.com/photo/a-bicycle-on-the-road-8934535/
-stick_figures: Photo by Tara Winstead: https://www.pexels.com/photo/an-illustration-of-stick-people-8378752/
--->
-
 ### About Me
 
 - Author of **gt-extras**
@@ -53,14 +33,14 @@ stick_figures: Photo by Tara Winstead: https://www.pexels.com/photo/an-illustrat
 ## Roommate Story
 :::: {.r-stack}
 
-::: {.fragment fragment-index=1 .fade-in-then-out}
+::: {.fragment fragment-index=1 .fade-out}
 
 ![](./assets/images/stick_figures.jpg){width=9in}
 
 :::
 
 
-::: {.fragment fragment-index=2}
+::: {.fragment fragment-index=1 .fade-in}
 
 ![](./assets/images/generic_bike.jpg){width=9in}
 
@@ -84,23 +64,19 @@ and Pixabay: https://www.pexels.com/photo/black-fixed-gear-bike-beside-wall-2765
 
 :::: {.column width="3.965in"}
 
-::: {.fragment fragment-index=1}
-
 ![](./assets/images/bike_tail_light.jpg)
-
-:::
 
 ::::
 
 :::: {.column}
 
-::: {.fragment fragment-index=2}
+::: {.fragment fragment-index=1}
 
 ![](./assets/images/bike_bell.jpg){width=3.8in}
 
 :::
 
-::: {.fragment fragment-index=3}
+::: {.fragment fragment-index=2}
 
 ![](./assets/images/bike_drivetrain.jpg){width=3.8in}
 
@@ -126,17 +102,13 @@ and Mathias Reding: https://www.pexels.com/photo/close-up-photo-of-bicycle-gears
 
 :::: {.column}
 
-::: {.fragment fragment-index=1}
-
 ![](./assets/images/wireless_mouse.jpg)
-
-:::
 
 ::::
 
 :::: {.column width="46.9%"}
 
-::: {.fragment fragment-index=2}
+::: {.fragment fragment-index=1 .fade-in}
 
 ![](./assets/images/lunch_and_fork.jpg)
 
@@ -156,11 +128,7 @@ and Jacob Yavin: https://www.pexels.com/photo/snack-meal-inside-a-lunch-box-1286
 
 ## Solve It For Yourself
 
-::: {.fragment fragment-index=1}
-
 ![](./assets/images/bike_backpack.jpg){width=9in}
-
-:::
 
 ::: {.footer}
 Photo by ronyescobarhn: https://www.pexels.com/photo/cyclist-enjoying-sunny-beach-boulevard-ride-34975805/ 
@@ -170,11 +138,7 @@ Photo by ronyescobarhn: https://www.pexels.com/photo/cyclist-enjoying-sunny-beac
 
 ## Modify The Bike For Everyone
 
-::: {.fragment fragment-index=1}
-
 ![](./assets/images/bike_with_basket.jpg){width=9in}
-
-:::
 
 ::: {.footer}
 Photo by Martii Tolentino: https://www.pexels.com/photo/man-and-woman-riding-bicycle-on-crosswalk-18529803/
@@ -184,11 +148,7 @@ Photo by Martii Tolentino: https://www.pexels.com/photo/man-and-woman-riding-bic
 
 ## Fork The Bike
 
-::: {.fragment fragment-index=1}
-
 ![](./assets/images/two_bikes.jpg){width=9in}
-
-:::
 
 ::: {.footer}
 Photo by Jan van der Wolf: https://www.pexels.com/photo/red-electric-bicycles-in-a-scenic-outdoor-setting-30179590/
@@ -198,11 +158,8 @@ Photo by Jan van der Wolf: https://www.pexels.com/photo/red-electric-bicycles-in
 
 ## Use An Optional Attachment
 
-::: {.fragment fragment-index=1}
-
 ![](./assets/images/saddle_bags.jpg){width=9in}
 
-:::
 
 ::: {.footer} 
 Photo by Pack2Ride: https://www.pexels.com/photo/a-bicycle-on-the-road-8934535/
@@ -214,7 +171,7 @@ Photo by Pack2Ride: https://www.pexels.com/photo/a-bicycle-on-the-road-8934535/
 
 ::::: {.r-stack}
 
-::: {.fragment fragment-index=1 .fade-in-then-out}
+::: {.fragment fragment-index=1 .fade-out}
 
 ![](./assets/images/stick_figures.jpg){width=9in}
 
@@ -222,13 +179,13 @@ Photo by Pack2Ride: https://www.pexels.com/photo/a-bicycle-on-the-road-8934535/
 
 :::: {layout-nrow="2"}
 
-::: {.fragment fragment-index=2}
+::: {.fragment fragment-index=1}
 
 ![](./assets/images/GT_logo.svg){width=3in height=0.5in style="margin-bottom: 0em !important;"}
 
 :::
 
-::: {.fragment fragment-index=3}
+::: {.fragment fragment-index=2}
 
 ![](./assets/images/tables.png){width=9in}
 
@@ -246,11 +203,7 @@ Your roommates developed a package, (Michael and Richard)
 
 ## Maintenance, Upgrades
 
-::: {.fragment fragment-index=1}
-
 ![](./assets/images/great_tables_PRs.png){width=10in}
-
-:::
 
 ---
 
@@ -349,13 +302,13 @@ gt_extra
 
 :::: {.r-stack}
 
-::: {.fragment fragment-index=1 .fade-in-then-out}
+::: {.fragment fragment-index=1 .fade-out}
 
 ![](./assets/images/gt_api.png){width=10in}
 
 :::
 
-::: {.fragment fragment-index=2}
+::: {.fragment fragment-index=1}
 
 
 ![](./assets/images/gt_fmt.png){width=9in}
