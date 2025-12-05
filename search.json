@@ -1,5 +1,26 @@
 [
   {
+    "objectID": "blog.html",
+    "href": "blog.html",
+    "title": "Moments and Musings",
+    "section": "",
+    "text": "A Great Summer of Great Tables\n\n\nMy experience as a 2025 Posit intern\n\n\n\nPython\n\nGreat Tables\n\nPosit\n\n\n\n\n\n\n\n\n\nAug 4, 2025\n\n\nJules Walzer-Goldfeld\n\n\n\n\n\n\n\n\n\n\n\n\nAdding Plots to Great Tables\n\n\n*Cross Posted from the Great Tables blog\n\n\n\nPython\n\nGreat Tables\n\nPosit\n\n\n\n\n\n\n\n\n\nJul 3, 2025\n\n\nJules Walzer-Goldfeld and Michael Chow\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "About",
+    "section": "",
+    "text": "I graduated from Williams College in 2023 with a double major in computer science and math. After my undergraduate education, I spent a year in Spain teaching computer science, among other topics, at a vocational school. I’ve also had the good fortune to join batches at the Recurse Center in summer of 2022 and fall of 2024 in which I spent time building out a number of projects, like these!\nLast year, I helped out in the Michigan Dems 2024 campaign, writing some texting scripts and mostly organzing volunteer door-knockers and phone bankers. More recently I worked as a maintainer for an in-house Student Information Service for a local high school, which entailed a full-stack React/NextJS project deployed on Vercel.\nCurrently, I’m working on Python Email resources for Posit!\n\n🔭 My role now involves the exploration and development of resources for email in Python!\n🔭 I had previously been working on a supplemental Great Tables package called gt-extras!\n🌱 I’m currently learning how to toy around with R Shiny apps, one of which can be found here.\n💬 I’m looking to collaborate on gt-extras, please submit issues and PR’s!\n👯 I spend my time climbing, playing soccer and table tennis, and volunteering at a weekly legal clinic."
+  },
+  {
+    "objectID": "index.html#hi-im-jules-walzer-goldfeld",
+    "href": "index.html#hi-im-jules-walzer-goldfeld",
+    "title": "About",
+    "section": "",
+    "text": "I graduated from Williams College in 2023 with a double major in computer science and math. After my undergraduate education, I spent a year in Spain teaching computer science, among other topics, at a vocational school. I’ve also had the good fortune to join batches at the Recurse Center in summer of 2022 and fall of 2024 in which I spent time building out a number of projects, like these!\nLast year, I helped out in the Michigan Dems 2024 campaign, writing some texting scripts and mostly organzing volunteer door-knockers and phone bankers. More recently I worked as a maintainer for an in-house Student Information Service for a local high school, which entailed a full-stack React/NextJS project deployed on Vercel.\nCurrently, I’m working on Python Email resources for Posit!\n\n🔭 My role now involves the exploration and development of resources for email in Python!\n🔭 I had previously been working on a supplemental Great Tables package called gt-extras!\n🌱 I’m currently learning how to toy around with R Shiny apps, one of which can be found here.\n💬 I’m looking to collaborate on gt-extras, please submit issues and PR’s!\n👯 I spend my time climbing, playing soccer and table tennis, and volunteering at a weekly legal clinic."
+  },
+  {
     "objectID": "talks/Great-Tables-and-More-Nov-19/index.html#posit-2025-table-contest",
     "href": "talks/Great-Tables-and-More-Nov-19/index.html#posit-2025-table-contest",
     "title": "Great Tables & gt-extras",
@@ -28,11 +49,32 @@
     "text": "What’s Next\n\n\n\nSummary Rows\nLatex\nWhatever you want!"
   },
   {
-    "objectID": "blogroll.html",
-    "href": "blogroll.html",
-    "title": "Blogroll",
+    "objectID": "work.html",
+    "href": "work.html",
+    "title": "Things I’ve Done",
     "section": "",
-    "text": "Python-Bloggers"
+    "text": "gt-extras\n\nAuthor of the gt-extras library, a collection of helpers for Great Tables\nBased on {gtExtras} in R\n\nGreat Tables\n\nContributor to a number of features and bug fixes in the popular port of R’s {gt}\nPublished an entry in the Great Tables blog"
+  },
+  {
+    "objectID": "work.html#open-source",
+    "href": "work.html#open-source",
+    "title": "Things I’ve Done",
+    "section": "",
+    "text": "gt-extras\n\nAuthor of the gt-extras library, a collection of helpers for Great Tables\nBased on {gtExtras} in R\n\nGreat Tables\n\nContributor to a number of features and bug fixes in the popular port of R’s {gt}\nPublished an entry in the Great Tables blog"
+  },
+  {
+    "objectID": "work.html#talks",
+    "href": "work.html#talks",
+    "title": "Things I’ve Done",
+    "section": "Talks",
+    "text": "Talks\n\nI presented on Python companion packages at PyData Boston 2025! The slides can be found here on my website.\nI spoke at The Budapest BI Forum 2025 about Great Tables, and all the wonderful things you can do with the package! Here are the slides.\nSlides for an internal talk I gave about my internship at Posit"
+  },
+  {
+    "objectID": "work.html#personal-projects",
+    "href": "work.html#personal-projects",
+    "title": "Things I’ve Done",
+    "section": "Personal Projects",
+    "text": "Personal Projects\nMarion Stokes Shiny Dashboard\n\nThe dashboard is a place to explore television news data from the Marion Stokes tapes archive\nIn collaboration with Daniel Fernandez, a history student at The New School working on his senior thesis\n\nMega Tic Tac Toe\n\nAn iOS app to play tic tac toe inside of tic tac toe\nHere are the rules, but be careful I’m always up for a game\n\nConnect Four\n\nSocket-backed Connect four full-stack application written in TypeScript\nPlay in real time here"
   },
   {
     "objectID": "posts/Posit-Internship-Reflection/index.html",
@@ -61,48 +103,6 @@
     "title": "A Great Summer of Great Tables",
     "section": "What’s Next (It’s not over yet)",
     "text": "What’s Next (It’s not over yet)\nAt the time of publication, I still have a few weeks remaining in my time at Posit. Big things are still planned, from more features in gt-extras, to upgrades for Great Tables. Stick around here or give gt-extras a star and follow along with my work there."
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "About",
-    "section": "",
-    "text": "I graduated from Williams College in 2023 with a double major in computer science and math. After my undergraduate education, I spent a year in Spain teaching computer science, among other topics, at a vocational school. I’ve also had the good fortune to join batches at the Recurse Center in summer of 2022 and fall of 2024 in which I spent time building out a number of projects, like these!\nLast year, I helped out in the Michigan Dems 2024 campaign, writing some texting scripts and mostly organzing volunteer door-knockers and phone bankers. More recently I worked as a maintainer for an in-house Student Information Service for a local high school, which entailed a full-stack React/NextJS project deployed on Vercel.\nCurrently, I’m working on Python Email resources for Posit!\n\n🔭 My role now involves the exploration and development of resources for email in Python!\n🔭 I had previously been working on a supplemental Great Tables package called gt-extras!\n🌱 I’m currently learning how to toy around with R Shiny apps, one of which can be found here.\n💬 I’m looking to collaborate on gt-extras, please submit issues and PR’s!\n👯 I spend my time climbing, playing soccer and table tennis, and volunteering at a weekly legal clinic."
-  },
-  {
-    "objectID": "index.html#hi-im-jules-walzer-goldfeld",
-    "href": "index.html#hi-im-jules-walzer-goldfeld",
-    "title": "About",
-    "section": "",
-    "text": "I graduated from Williams College in 2023 with a double major in computer science and math. After my undergraduate education, I spent a year in Spain teaching computer science, among other topics, at a vocational school. I’ve also had the good fortune to join batches at the Recurse Center in summer of 2022 and fall of 2024 in which I spent time building out a number of projects, like these!\nLast year, I helped out in the Michigan Dems 2024 campaign, writing some texting scripts and mostly organzing volunteer door-knockers and phone bankers. More recently I worked as a maintainer for an in-house Student Information Service for a local high school, which entailed a full-stack React/NextJS project deployed on Vercel.\nCurrently, I’m working on Python Email resources for Posit!\n\n🔭 My role now involves the exploration and development of resources for email in Python!\n🔭 I had previously been working on a supplemental Great Tables package called gt-extras!\n🌱 I’m currently learning how to toy around with R Shiny apps, one of which can be found here.\n💬 I’m looking to collaborate on gt-extras, please submit issues and PR’s!\n👯 I spend my time climbing, playing soccer and table tennis, and volunteering at a weekly legal clinic."
-  },
-  {
-    "objectID": "work.html",
-    "href": "work.html",
-    "title": "Things I’ve Done",
-    "section": "",
-    "text": "gt-extras\n\nAuthor of the gt-extras library, a collection of helpers for Great Tables\nBased on {gtExtras} in R\n\nGreat Tables\n\nContributor to a number of features and bug fixes in the popular port of R’s {gt}\nPublished an entry in the Great Tables blog"
-  },
-  {
-    "objectID": "work.html#open-source",
-    "href": "work.html#open-source",
-    "title": "Things I’ve Done",
-    "section": "",
-    "text": "gt-extras\n\nAuthor of the gt-extras library, a collection of helpers for Great Tables\nBased on {gtExtras} in R\n\nGreat Tables\n\nContributor to a number of features and bug fixes in the popular port of R’s {gt}\nPublished an entry in the Great Tables blog"
-  },
-  {
-    "objectID": "work.html#talks",
-    "href": "work.html#talks",
-    "title": "Things I’ve Done",
-    "section": "Talks",
-    "text": "Talks\n\n\nI spoke at The Budapest BI Forum 2025 about Great Tables, and all the wonderful things you can do with the package! Here are the slides, and coming soon is the video link!\nSlides for an internal talk I gave about my internship at Posit"
-  },
-  {
-    "objectID": "work.html#personal-projects",
-    "href": "work.html#personal-projects",
-    "title": "Things I’ve Done",
-    "section": "Personal Projects",
-    "text": "Personal Projects\nMarion Stokes Shiny Dashboard\n\nThe dashboard is a place to explore television news data from the Marion Stokes tapes archive\nIn collaboration with Daniel Fernandez, a history student at The New School working on his senior thesis\n\nMega Tic Tac Toe\n\nAn iOS app to play tic tac toe inside of tic tac toe\nHere are the rules, but be careful I’m always up for a game\n\nConnect Four\n\nSocket-backed Connect four full-stack application written in TypeScript\nPlay in real time here"
   },
   {
     "objectID": "posts/Posit-adding-plots-to-great-tables/index.html",
@@ -152,13 +152,6 @@
     "title": "Adding Plots to Great Tables",
     "section": "Conclusion",
     "text": "Conclusion\nHow you choose to add plots to Great Tables is up to you. In writing graphical plotting functions for gt-extras, I’ve personally turned towards an HTML-only approach that I’ve felt comfortable with in other settings. With that said, I do believe converting table values to graphic output is a task best done with a little bit of help (whether it be svg-py or another plotting package will depend on how detailed your plots are).\nThe choice ultimately depends on your specific needs: simplicity and directness, versus abstraction and power. By understanding the trade-offs, you will be able to tailor your approach to the needs of your project."
-  },
-  {
-    "objectID": "blog.html",
-    "href": "blog.html",
-    "title": "Moments and Musings",
-    "section": "",
-    "text": "A Great Summer of Great Tables\n\n\nMy experience as a 2025 Posit intern\n\n\n\nPython\n\nGreat Tables\n\nPosit\n\n\n\n\n\n\n\n\n\nAug 4, 2025\n\n\nJules Walzer-Goldfeld\n\n\n\n\n\n\n\n\n\n\n\n\nAdding Plots to Great Tables\n\n\n*Cross Posted from the Great Tables blog\n\n\n\nPython\n\nGreat Tables\n\nPosit\n\n\n\n\n\n\n\n\n\nJul 3, 2025\n\n\nJules Walzer-Goldfeld and Michael Chow\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "talks/Posit-Open-Source-Reflection/index.html#who-are-you-listening-to",
@@ -229,5 +222,12 @@
     "title": "A Great Summer of Great Tables",
     "section": "Building Community",
     "text": "Building Community"
+  },
+  {
+    "objectID": "blogroll.html",
+    "href": "blogroll.html",
+    "title": "Blogroll",
+    "section": "",
+    "text": "Python-Bloggers"
   }
 ]
