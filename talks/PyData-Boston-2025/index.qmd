@@ -772,7 +772,10 @@ gt
 def fmt_threshold(gt, columns, threshold: float):
 
     def _truncate(val: float):
-        return f"<{threshold}" if val < threshold else str(val)
+        if val < threshold:
+            return f"<{threshold}"
+        else:
+            return str(val)
 
     return gt.fmt(_truncate, columns)
 
@@ -803,11 +806,14 @@ gt.pipe(fmt_threshold, "Wind", 10.0).pipe(highlight_columns, "Wind")
 ```{python}
 # | echo: true
 # | output: false
-# | code-line-numbers: "|3-5"
+# | code-line-numbers: "|3-7|1-9"
 def fmt_threshold(gt, columns, threshold: float):
 
     def _truncate(val: float):
-        return f"<{threshold}" if val < threshold else str(val)
+        if val < threshold:
+            return f"<{threshold}"
+        else:
+            return str(val)
 
     return gt.fmt(_truncate, columns)
 
@@ -822,6 +828,8 @@ gt.pipe(fmt_threshold, "Wind", 10.0)
 
 ## Package Structure {auto-animate="true"}
 
+#### Metadata and source code
+
 ```{text}
 gt-extras
 ├── pyproject.toml            # Metadata
@@ -831,6 +839,9 @@ gt-extras
 ```
 
 ## Package Structure {auto-animate="true"}
+
+#### Tests
+
 
 ```{text}
 gt-extras
@@ -842,6 +853,8 @@ gt-extras
 ```
 
 ## Package Structure {auto-animate="true"}
+
+#### Documentation
 
 ```{text}
 gt-extras
@@ -861,9 +874,11 @@ gt-extras
 
 ## Package Structure {auto-animate="true"}
 
+#### Continuous Integration / Continuous Development
+
 ```{text}
 gt-extras
-├── .github/
+├── .github/                  # CI/CD
 │   ├── CONTRIBUTING.md
 │   └── workflows/
 │       ├── ci_build.yml
@@ -884,7 +899,9 @@ gt-extras
 
 ---
 
-## Testing {auto-animate="true"}
+## Tests {auto-animate="true"}
+
+#### Using `pytest`
 
 ```{python filename="test_highlight.py"}
 # | echo: true
@@ -893,10 +910,11 @@ gt-extras
 import pytest
 from great_tables import GT
 from gt_extras import highlight_columns
-
 ```
 
-## Testing {auto-animate="true"}
+## Tests {auto-animate="true"}
+
+#### Snapshot test
 
 ```{python filename="test_highlight.py"}
 # | echo: true
@@ -912,7 +930,9 @@ def test_highlight_columns_snap(snapshot, mini_gt):
     assert_rendered_body(snapshot, gt=res)
 ```
 
-## Testing {auto-animate="true"}
+## Tests {auto-animate="true"}
+
+#### Check content directly
 
 ```{python filename="test_highlight.py"}
 # | echo: true
@@ -928,7 +948,7 @@ def test_highlight_columns_snap(snapshot, mini_gt):
     assert_rendered_body(snapshot, gt=res)
 
 
-def test_highlight_columns_all_params(mini_gt):
+def test_highlight_columns(mini_gt):
     gt = highlight_columns(mini_gt, columns=[1, 2])
     html = gt.as_raw_html()
     assert html.count("lightblue") == num_rows(mini_gt) * 2
@@ -936,7 +956,9 @@ def test_highlight_columns_all_params(mini_gt):
 
 ---
 
-## Documenting {auto-animate="true"}
+## Documentation {auto-animate="true"}
+
+#### Docstring
 
 ```{python}
 # | eval: false
@@ -956,7 +978,9 @@ def highlight_columns(gt: GT, columns) -> GT:
         If `None`, the coloring is applied to all columns.
 ```
 
-## Documenting {auto-animate="true"}
+## Documentation {auto-animate="true"}
+
+#### Return value
 
 ```{python}
 # | eval: false
@@ -981,7 +1005,9 @@ def highlight_columns(gt: GT, columns) -> GT:
         The `GT` object is returned.
 ```
 
-## Documenting {auto-animate="true"}
+## Documentation {auto-animate="true"}
+
+#### Example
 
 ```{python}
 # | eval: false
@@ -1002,7 +1028,7 @@ def highlight_columns(gt: GT, columns) -> GT:
     GT
         The `GT` object is returned.
 
-    Examples
+    Example
     --------
     gt.pipe(gte.highlight_columns, columns="hp")
     """
@@ -1010,80 +1036,164 @@ def highlight_columns(gt: GT, columns) -> GT:
 
 ---
 
-## Continuous Integration {auto-animate="true"}
+## CI/CD {auto-animate="true"}
+
+#### Continuous Integration / Continuous Development
+
+`.github/workflows/*.yml`
+
+## CI/CD {auto-animate="true"}
+
+#### When to run it
 
 ```{yaml}
 name: Tests
 
-on: [push, pull_request]
+on: [push, pull_request, release]
 ```
 
-## Continuous Integration {auto-animate="true"}
+## CI/CD {auto-animate="true"}
+
+#### Write a job
+
 
 ```{yaml}
 name: Tests
 
-on: [push, pull_request]
+on: [push, pull_request, release]
 
 jobs:
   test:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        python-version: ['3.9', '3.10', '3.11']
-```
-
-## Continuous Integration {auto-animate="true"}
-
-```{yaml}
-name: Tests
-
-on: [push, pull_request]
-
-jobs:
-  test:
-    runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        python-version: ['3.9', '3.10', '3.11']
-        great-tables-version: ['0.3', '0.4', '0.5']
+        python-version: ['3.9', '3.12']
     steps:
-      - uses: actions/checkout@v3
-      - name: Run tests
-        run: pytest
+      - name: Checkout
+      - name: Install uv
+      - name: "Set up Python"
+      - name: Install the project
+      - name: Test
+```
+
+## CI/CD {auto-animate="true"}
+
+#### Execute each step
+
+```{yaml}
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Install uv
+        uses: astral-sh/setup-uv@v5
+      - name: "Set up Python"
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Install the project
+        run: uv sync --all-extras --dev
+      - name: Test
+        run: |
+          uv run pytest
 ```
 
 ---
 
-## Configuration & Exports {auto-animate="true"}
+## Configuration {auto-animate="true"}
+
+#### `pyproject.toml`
 
 ```{text}
 [project]
 name = "gt-extras"
 version = "0.1.0"
+description = "Provides additional functions for creating beautiful tables with 'great-tables'."
 ```
 
-## Configuration & Exports {auto-animate="true"}
+
+## Configuration {auto-animate="true"}
+
+#### Requirements
 
 ```{text}
 [project]
 name = "gt-extras"
 version = "0.1.0"
+description = "Provides additional functions for creating beautiful tables with 'great-tables'."
+requires-python = ">=3.9"
 dependencies = [
-    "great-tables>=0.3.0",
+    "great-tables>=0.18.0",
+    "svg-py>=1.6.0",
+]
+```
+
+## Configuration {auto-animate="true"}
+
+#### Other metadata
+
+```{text}
+[project]
+name = "gt-extras"
+version = "0.1.0"
+description = "Provides additional functions for creating beautiful tables with 'great-tables'."
+requires-python = ">=3.9"
+dependencies = [
+    "great-tables>=0.18.0",
+    "svg-py>=1.6.0",
 ]
 
-[project.optional-dependencies]
-dev = ["pytest", "black", "ruff"]
+[tool.pytest.ini_options]
+minversion = "6.0"
+addopts = "-ra --cov=gt_extras --cov-report=term-missing"
+testpaths = ["gt_extras/tests"]
+
+keywords = ["tables", "html"]
 ```
 
 ---
 
-## Conclusion
+## We Talked About
 
-- a
-- b
-- c
+
+::::: {.r-stack}
+
+::: {.fragment fragment-index=1 .fade-in-then-out}
+
+![](./assets/images/saddle_bags.jpg){width=4in}
+
+:::
+
+::: {.fragment fragment-index=2 .fade-in-then-out}
+
+
+```{python}
+gt_extra
+```
+
+:::
+
+
+::: {.fragment fragment-index=3 .fade-in-then-out}
+![](./assets/images/function.png){width=5in}
+![](./assets/images/structure.png){width=5in}
+:::
+
+:::::
+
+
+
+
+::: {.notes}
+
+- Bicycle bags!
+- Why to write a companion package
+- How to write a companion package
+- How to build a companion package
+
+:::
 
 ---
 
