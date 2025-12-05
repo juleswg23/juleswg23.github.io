@@ -154,6 +154,328 @@
     "text": "Conclusion\nHow you choose to add plots to Great Tables is up to you. In writing graphical plotting functions for gt-extras, I’ve personally turned towards an HTML-only approach that I’ve felt comfortable with in other settings. With that said, I do believe converting table values to graphic output is a task best done with a little bit of help (whether it be svg-py or another plotting package will depend on how detailed your plots are).\nThe choice ultimately depends on your specific needs: simplicity and directness, versus abstraction and power. By understanding the trade-offs, you will be able to tailor your approach to the needs of your project."
   },
   {
+    "objectID": "talks/PyData-Boston-2025/index.html#roommate-story",
+    "href": "talks/PyData-Boston-2025/index.html#roommate-story",
+    "title": "Wrappers and Extenders",
+    "section": "Roommate Story",
+    "text": "Roommate Story\n\n\n\n\n\n\n\n\n\nPhotos by Tara Winstead: https://www.pexels.com/photo/an-illustration-of-stick-people-8378752/\nand Pixabay: https://www.pexels.com/photo/black-fixed-gear-bike-beside-wall-276517/"
+  },
+  {
+    "objectID": "talks/PyData-Boston-2025/index.html#maintenance-upgrades",
+    "href": "talks/PyData-Boston-2025/index.html#maintenance-upgrades",
+    "title": "Wrappers and Extenders",
+    "section": "Maintenance, Upgrades",
+    "text": "Maintenance, Upgrades\n\n\n\n\n\n\n\n\n\n\n\n\nPhotos by chatchawarn loetsupan: https://www.pexels.com/photo/close-up-of-a-back-light-on-a-bicycle-10744841/\nNick Duell: https://www.pexels.com/photo/brass-bicycle-bell-107510/\nand Mathias Reding: https://www.pexels.com/photo/close-up-photo-of-bicycle-gears-13415392/"
+  },
+  {
+    "objectID": "talks/PyData-Boston-2025/index.html#you-borrow-it",
+    "href": "talks/PyData-Boston-2025/index.html#you-borrow-it",
+    "title": "Wrappers and Extenders",
+    "section": "You Borrow It",
+    "text": "You Borrow It\n\n\n\n\n\n\n\n\n\nPhotos by Gül Işık: https://www.pexels.com/photo/black-wireless-mouse-beside-laptop-2272759/\nand Jacob Yavin: https://www.pexels.com/photo/snack-meal-inside-a-lunch-box-12861383/"
+  },
+  {
+    "objectID": "talks/PyData-Boston-2025/index.html#solve-it-for-yourself",
+    "href": "talks/PyData-Boston-2025/index.html#solve-it-for-yourself",
+    "title": "Wrappers and Extenders",
+    "section": "Solve It For Yourself",
+    "text": "Solve It For Yourself\n\n\nPhoto by ronyescobarhn: https://www.pexels.com/photo/cyclist-enjoying-sunny-beach-boulevard-ride-34975805/"
+  },
+  {
+    "objectID": "talks/PyData-Boston-2025/index.html#modify-the-bike-for-everyone",
+    "href": "talks/PyData-Boston-2025/index.html#modify-the-bike-for-everyone",
+    "title": "Wrappers and Extenders",
+    "section": "Modify The Bike For Everyone",
+    "text": "Modify The Bike For Everyone\n\n\nPhoto by Martii Tolentino: https://www.pexels.com/photo/man-and-woman-riding-bicycle-on-crosswalk-18529803/"
+  },
+  {
+    "objectID": "talks/PyData-Boston-2025/index.html#fork-the-bike",
+    "href": "talks/PyData-Boston-2025/index.html#fork-the-bike",
+    "title": "Wrappers and Extenders",
+    "section": "Fork The Bike",
+    "text": "Fork The Bike\n\n\nPhoto by Jan van der Wolf: https://www.pexels.com/photo/red-electric-bicycles-in-a-scenic-outdoor-setting-30179590/"
+  },
+  {
+    "objectID": "talks/PyData-Boston-2025/index.html#use-an-optional-attachment",
+    "href": "talks/PyData-Boston-2025/index.html#use-an-optional-attachment",
+    "title": "Wrappers and Extenders",
+    "section": "Use An Optional Attachment",
+    "text": "Use An Optional Attachment\n\n\nPhoto by Pack2Ride: https://www.pexels.com/photo/a-bicycle-on-the-road-8934535/"
+  },
+  {
+    "objectID": "talks/PyData-Boston-2025/index.html#programming-story",
+    "href": "talks/PyData-Boston-2025/index.html#programming-story",
+    "title": "Wrappers and Extenders",
+    "section": "Programming story",
+    "text": "Programming story\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nYour roommates developed a package, (Michael and Richard)"
+  },
+  {
+    "objectID": "talks/PyData-Boston-2025/index.html#maintenance-upgrades-1",
+    "href": "talks/PyData-Boston-2025/index.html#maintenance-upgrades-1",
+    "title": "Wrappers and Extenders",
+    "section": "Maintenance, Upgrades",
+    "text": "Maintenance, Upgrades"
+  },
+  {
+    "objectID": "talks/PyData-Boston-2025/index.html#you-borrow-it-1",
+    "href": "talks/PyData-Boston-2025/index.html#you-borrow-it-1",
+    "title": "Wrappers and Extenders",
+    "section": "You Borrow It",
+    "text": "You Borrow It\n\nThe DatasetGreat TableYour Great(er) Table\n\n\n\n\n\nshape: (9, 11)\n\n\n\nEntity\nCode\nYear\ngini_disposable__age_total\ngini_market__age_total\npopulation_historical\nowid_region\ngini_pct_change\ngini_pct_benchmark_5yr\npop_log\npop_icons\n\n\nstr\nstr\ni64\nf64\nf64\nstr\nstr\nf64\nf64\nf64\ni64\n\n\n\n\n\"France\"\n\"FRA\"\n2020\n0.278\n0.515\n\"65,905,226\"\n\"Europe\"\n46.02\nnull\n7.81892\n3\n\n\n\"Germany\"\n\"DEU\"\n2020\n0.303\n0.496\n\"83,628,661\"\n\"Europe\"\n38.91\n40.966\n7.922355\n4\n\n\n\"South Korea\"\n\"KOR\"\n2020\n0.328\n0.405\n\"51,858,440\"\n\"Asia\"\n19.01\n14.756\n7.714819\n1\n\n\n\"Spain\"\n\"ESP\"\n2020\n0.329\n0.515\n\"47,679,437\"\n\"Europe\"\n36.12\n34.792\n7.678331\n1\n\n\n\"Italy\"\n\"ITA\"\n2020\n0.331\n0.527\n\"59,912,714\"\n\"Europe\"\n37.19\n36.08\n7.777519\n2\n\n\n\"United Kingdom\"\n\"GBR\"\n2020\n0.355\n0.507\n\"67,351,806\"\n\"Europe\"\n29.98\n29.332\n7.828349\n3\n\n\n\"United States\"\n\"USA\"\n2020\n0.377\n0.521\n\"339,436,106\"\n\"North America\"\n27.64\n23.48\n8.530758\n11\n\n\n\"Turkey\"\n\"TUR\"\n2020\n0.403\n0.504\n\"86,091,644\"\n\"Asia\"\n20.04\n16.208\n7.934961\n4\n\n\n\"Mexico\"\n\"MEX\"\n2020\n0.42\n0.435\n\"126,798,998\"\n\"North America\"\n3.45\n3.35\n8.103116\n6\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nIncome Inequality Before and After Taxes in 2020\n\n\n\n\ngini_disposable__age_total\ngini_market__age_total\nPopulation\nImprovement Post Taxes\ngini_pct_benchmark_5yr\n\n\n\n\nEurope\n\n\nFrance\n\n\n\nFrance\n\n\n\n\n0.278\n0.515\n\n\n\n\n\n\n\n\n\n46.02\nNone\n\n\nGermany\n\n\n\nGermany\n\n\n\n\n0.303\n0.496\n\n\n\n\n\n\n\n\n\n\n\n\n38.91\n40.966\n\n\nSpain\n\n\n\nSpain\n\n\n\n\n0.329\n0.515\n\n\n\n36.12\n34.791999999999994\n\n\nItaly\n\n\n\nItaly\n\n\n\n\n0.331\n0.527\n\n\n\n\n\n\n37.19\n36.080000000000005\n\n\nUnited Kingdom\n\n\n\nUnited Kingdom\n\n\n\n\n0.355\n0.507\n\n\n\n\n\n\n\n\n\n29.98\n29.332\n\n\nAsia\n\n\nSouth Korea\n\n\n\nKorea, Rep.\n\n\n\n\n0.328\n0.405\n\n\n\n19.01\n14.756\n\n\nTurkey\n\n\n\nTurkiye\n\n\n\n\n0.403\n0.504\n\n\n\n\n\n\n\n\n\n\n\n\n20.04\n16.208\n\n\nNorth America\n\n\nUnited States\n\n\n\nUnited States\n\n\n\n\n0.377\n0.521\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n27.64\n23.48\n\n\nMexico\n\n\n\nMexico\n\n\n\n\n0.42\n0.435\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n3.45\n3.35\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nIncome Inequality Before and After Taxes in 2020\n\n\n\n\nPre-tax to Post-tax Coefficient\nPopulation\nImprovement Post Taxes\n\n\n\n\nEurope\n\n\nFrance\n\n\n\nFrance\n\n\n\n\n\n\n0.520.28\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n 65,905,226 \n\n\n\n\n\n\n\n\n\nGermany\n\n\n\nGermany\n\n\n\n\n\n\n0.50.3\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n 83,628,661 \n\n\n\n\n\n\n\n\n\nSpain\n\n\n\nSpain\n\n\n\n\n\n\n0.520.33\n\n\n\n\n\n\n\n\n\n\n\n 47,679,437 \n\n\n\n\n\n\n\n\n\nItaly\n\n\n\nItaly\n\n\n\n\n\n\n0.530.33\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n 59,912,714 \n\n\n\n\n\n\n\n\n\nUnited Kingdom\n\n\n\nUnited Kingdom\n\n\n\n\n\n\n0.510.35\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n 67,351,806 \n\n\n\n\n\n\n\n\n\nAsia\n\n\nSouth Korea\n\n\n\nKorea, Rep.\n\n\n\n\n\n\n0.410.33\n\n\n\n\n\n\n\n\n\n\n\n 51,858,440 \n\n\n\n\n\n\n\n\n\nTurkey\n\n\n\nTurkiye\n\n\n\n\n\n\n0.50.4\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n 86,091,644 \n\n\n\n\n\n\n\n\n\nNorth America\n\n\nUnited States\n\n\n\nUnited States\n\n\n\n\n\n\n0.520.38\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n 339,436,106 \n\n\n\n\n\n\n\n\n\nMexico\n\n\n\nMexico\n\n\n\n\n\n\n0.430.42\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n 126,798,998"
+  },
+  {
+    "objectID": "talks/PyData-Boston-2025/index.html#solve-it-for-yourself-1",
+    "href": "talks/PyData-Boston-2025/index.html#solve-it-for-yourself-1",
+    "title": "Wrappers and Extenders",
+    "section": "Solve It For Yourself",
+    "text": "Solve It For Yourself\nWrite It Locally"
+  },
+  {
+    "objectID": "talks/PyData-Boston-2025/index.html#modify-the-bike-for-everyone-1",
+    "href": "talks/PyData-Boston-2025/index.html#modify-the-bike-for-everyone-1",
+    "title": "Wrappers and Extenders",
+    "section": "Modify The Bike For Everyone",
+    "text": "Modify The Bike For Everyone\nSubmit a PR For Everyone"
+  },
+  {
+    "objectID": "talks/PyData-Boston-2025/index.html#fork-the-bike-1",
+    "href": "talks/PyData-Boston-2025/index.html#fork-the-bike-1",
+    "title": "Wrappers and Extenders",
+    "section": "Fork The Bike",
+    "text": "Fork The Bike\nFork the Package\n\n\n\n\n\nPhoto by Lukas: https://www.pexels.com/photo/turned-on-laptop-computer-574073/"
+  },
+  {
+    "objectID": "talks/PyData-Boston-2025/index.html#use-an-optional-attachment-1",
+    "href": "talks/PyData-Boston-2025/index.html#use-an-optional-attachment-1",
+    "title": "Wrappers and Extenders",
+    "section": "Use An Optional Attachment",
+    "text": "Use An Optional Attachment\nBuild A Companion Package\n\ngt-extras + great_tables\nnbmail or red-mail + smtplib\nrequests-toolbelt + requests"
+  },
+  {
+    "objectID": "talks/PyData-Boston-2025/index.html#whats-in-a-package",
+    "href": "talks/PyData-Boston-2025/index.html#whats-in-a-package",
+    "title": "Wrappers and Extenders",
+    "section": "What’s In A Package?",
+    "text": "What’s In A Package?\n\n\n\n\n\n\n\n\n17th gear\nMountain Ride\nFolding Bike\n\n\n\nWrapping\nComposing\nExtending"
+  },
+  {
+    "objectID": "talks/PyData-Boston-2025/index.html#wrapping",
+    "href": "talks/PyData-Boston-2025/index.html#wrapping",
+    "title": "Wrappers and Extenders",
+    "section": "1) Wrapping",
+    "text": "1) Wrapping\n\n\n\nfrom great_tables import GT, html\nfrom great_tables.data import airquality\n\nairquality_mini = airquality.head(10).assign(Year=1973)\n\ngt = (\n    GT(airquality_mini)\n    .tab_header(\n        title=\"New York Air Quality Measurements\",\n        subtitle=\"Daily measurements in New York City (May 1-10, 1973)\"\n    )\n    .tab_spanner(label=\"Time\", columns=[\"Year\", \"Month\", \"Day\"])\n    .tab_spanner(\n        label=\"Measurement\",\n        columns=[\"Ozone\", \"Solar_R\", \"Wind\", \"Temp\"],\n    )\n    .cols_move_to_start(columns=[\"Year\", \"Month\", \"Day\"])\n    .cols_label(\n        Ozone=html(\"Ozone,&lt;br&gt;ppbV\"),\n        Solar_R=html(\"Solar R.,&lt;br&gt;cal/m&lt;sup&gt;2&lt;/sup&gt;\"),\n        Wind=html(\"Wind,&lt;br&gt;mph\"),\n        Temp=html(\"Temp,&lt;br&gt;&deg;F\"),\n    )\n)\n\ngt\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNew York Air Quality Measurements\n\n\nDaily measurements in New York City (May 1-10, 1973)\n\n\nTime\nMeasurement\n\n\nYear\nMonth\nDay\nOzone,\nppbV\nSolar R.,\ncal/m2\nWind,\nmph\nTemp,\n°F\n\n\n\n\n1973\n5\n1\n41.0\n190.0\n7.4\n67\n\n\n1973\n5\n2\n36.0\n118.0\n8.0\n72\n\n\n1973\n5\n3\n12.0\n149.0\n12.6\n74\n\n\n1973\n5\n4\n18.0\n313.0\n11.5\n62\n\n\n1973\n5\n5\n\n\n14.3\n56\n\n\n1973\n5\n6\n28.0\n\n14.9\n66\n\n\n1973\n5\n7\n23.0\n299.0\n8.6\n65\n\n\n1973\n5\n8\n19.0\n99.0\n13.8\n59\n\n\n1973\n5\n9\n8.0\n19.0\n20.1\n61\n\n\n1973\n5\n10\n\n194.0\n8.6\n69"
+  },
+  {
+    "objectID": "talks/PyData-Boston-2025/index.html#wrapping-1",
+    "href": "talks/PyData-Boston-2025/index.html#wrapping-1",
+    "title": "Wrappers and Extenders",
+    "section": "1) Wrapping",
+    "text": "1) Wrapping\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNew York Air Quality Measurements\n\n\nDaily measurements in New York City (May 1-10, 1973)\n\n\nTime\nMeasurement\n\n\nYear\nMonth\nDay\nOzone,\nppbV\nSolar R.,\ncal/m2\nWind,\nmph\nTemp,\n°F\n\n\n\n\n1973\n5\n1\n41.0\n190.0\n7.4\n67\n\n\n1973\n5\n2\n36.0\n118.0\n8.0\n72\n\n\n1973\n5\n3\n12.0\n149.0\n12.6\n74\n\n\n1973\n5\n4\n18.0\n313.0\n11.5\n62\n\n\n1973\n5\n5\n\n\n14.3\n56\n\n\n1973\n5\n6\n28.0\n\n14.9\n66\n\n\n1973\n5\n7\n23.0\n299.0\n8.6\n65\n\n\n1973\n5\n8\n19.0\n99.0\n13.8\n59\n\n\n1973\n5\n9\n8.0\n19.0\n20.1\n61\n\n\n1973\n5\n10\n\n194.0\n8.6\n69\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNew York Air Quality Measurements\n\n\nDaily measurements in New York City (May 1-10, 1973)\n\n\nTime\nMeasurement\n\n\nYear\nMonth\nDay\nOzone,\nppbV\nSolar R.,\ncal/m2\nWind,\nmph\nTemp,\n°F\n\n\n\n\n1973\n5\n1\n41.0\n190.0\n7.4\n67\n\n\n1973\n5\n2\n36.0\n118.0\n8.0\n72\n\n\n1973\n5\n3\n12.0\n149.0\n12.6\n74\n\n\n1973\n5\n4\n18.0\n313.0\n11.5\n62\n\n\n1973\n5\n5\n\n\n14.3\n56\n\n\n1973\n5\n6\n28.0\n\n14.9\n66\n\n\n1973\n5\n7\n23.0\n299.0\n8.6\n65\n\n\n1973\n5\n8\n19.0\n99.0\n13.8\n59\n\n\n1973\n5\n9\n8.0\n19.0\n20.1\n61\n\n\n1973\n5\n10\n\n194.0\n8.6\n69"
+  },
+  {
+    "objectID": "talks/PyData-Boston-2025/index.html#wrapping-2",
+    "href": "talks/PyData-Boston-2025/index.html#wrapping-2",
+    "title": "Wrappers and Extenders",
+    "section": "1) Wrapping",
+    "text": "1) Wrapping\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNew York Air Quality Measurements\n\n\nDaily measurements in New York City (May 1-10, 1973)\n\n\nTime\nMeasurement\n\n\nYear\nMonth\nDay\nOzone,\nppbV\nSolar R.,\ncal/m2\nWind,\nmph\nTemp,\n°F\n\n\n\n\n1973\n5\n1\n41.0\n190.0\n7.4\n67\n\n\n1973\n5\n2\n36.0\n118.0\n8.0\n72\n\n\n1973\n5\n3\n12.0\n149.0\n12.6\n74\n\n\n1973\n5\n4\n18.0\n313.0\n11.5\n62\n\n\n1973\n5\n5\n\n\n14.3\n56\n\n\n1973\n5\n6\n28.0\n\n14.9\n66\n\n\n1973\n5\n7\n23.0\n299.0\n8.6\n65\n\n\n1973\n5\n8\n19.0\n99.0\n13.8\n59\n\n\n1973\n5\n9\n8.0\n19.0\n20.1\n61\n\n\n1973\n5\n10\n\n194.0\n8.6\n69\n\n\n\n\n\n\n\n\n\n\n\n\nfrom great_tables import loc, style\n\nlocations = [\n    loc.body(columns=\"Wind\"),\n    loc.column_labels(columns=\"Wind\"),\n]\n\n# Make the wrapped tab_style call\ngt.tab_style(\n    style=style.fill(color=\"lightblue\"),\n    locations=locations,\n)\n\n\n\n\nfrom great_tables import GT, loc, style\n\ndef highlight_columns(gt: GT, columns) -&gt; GT:\n    locations = [\n        loc.body(columns=columns),\n        loc.column_labels(columns=columns),\n    ]\n\n    # Make the wrapped tab_style call\n    return gt.tab_style(\n        style=style.fill(color=\"lightblue\"),\n        locations=locations,\n    )\n\nhighlight_columns(gt, columns=\"Wind\")"
+  },
+  {
+    "objectID": "talks/PyData-Boston-2025/index.html#composing",
+    "href": "talks/PyData-Boston-2025/index.html#composing",
+    "title": "Wrappers and Extenders",
+    "section": "2) Composing",
+    "text": "2) Composing\n\n\n\nfrom great_tables import GT, html\nfrom great_tables.data import airquality\n\nairquality_mini = airquality.head(10).assign(Year=1973)\n\ngt = (\n    GT(airquality_mini)\n    .tab_header(\n        title=\"New York Air Quality Measurements\",\n        subtitle=\"Daily measurements in New York City (May 1-10, 1973)\"\n    )\n    .tab_spanner(label=\"Time\", columns=[\"Year\", \"Month\", \"Day\"])\n    .tab_spanner(\n        label=\"Measurement\",\n        columns=[\"Ozone\", \"Solar_R\", \"Wind\", \"Temp\"],\n    )\n    .cols_move_to_start(columns=[\"Year\", \"Month\", \"Day\"])\n    .cols_label(\n        Ozone=html(\"Ozone,&lt;br&gt;ppbV\"),\n        Solar_R=html(\"Solar R.,&lt;br&gt;cal/m&lt;sup&gt;2&lt;/sup&gt;\"),\n        Wind=html(\"Wind,&lt;br&gt;mph\"),\n        Temp=html(\"Temp,&lt;br&gt;&deg;F\"),\n    )\n)\n\ngt\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNew York Air Quality Measurements\n\n\nDaily measurements in New York City (May 1-10, 1973)\n\n\nTime\nMeasurement\n\n\nYear\nMonth\nDay\nOzone,\nppbV\nSolar R.,\ncal/m2\nWind,\nmph\nTemp,\n°F\n\n\n\n\n1973\n5\n1\n41.0\n190.0\n7.4\n67\n\n\n1973\n5\n2\n36.0\n118.0\n8.0\n72\n\n\n1973\n5\n3\n12.0\n149.0\n12.6\n74\n\n\n1973\n5\n4\n18.0\n313.0\n11.5\n62\n\n\n1973\n5\n5\n\n\n14.3\n56\n\n\n1973\n5\n6\n28.0\n\n14.9\n66\n\n\n1973\n5\n7\n23.0\n299.0\n8.6\n65\n\n\n1973\n5\n8\n19.0\n99.0\n13.8\n59\n\n\n1973\n5\n9\n8.0\n19.0\n20.1\n61\n\n\n1973\n5\n10\n\n194.0\n8.6\n69"
+  },
+  {
+    "objectID": "talks/PyData-Boston-2025/index.html#composing-1",
+    "href": "talks/PyData-Boston-2025/index.html#composing-1",
+    "title": "Wrappers and Extenders",
+    "section": "2) Composing",
+    "text": "2) Composing\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNew York Air Quality Measurements\n\n\nDaily measurements in New York City (May 1-10, 1973)\n\n\nTime\nMeasurement\n\n\nYear\nMonth\nDay\nOzone,\nppbV\nSolar R.,\ncal/m2\nWind,\nmph\nTemp,\n°F\n\n\n\n\n1973\n5\n1\n41.0\n190.0\n7.4\n67\n\n\n1973\n5\n2\n36.0\n118.0\n8.0\n72\n\n\n1973\n5\n3\n12.0\n149.0\n12.6\n74\n\n\n1973\n5\n4\n18.0\n313.0\n11.5\n62\n\n\n1973\n5\n5\n\n\n14.3\n56\n\n\n1973\n5\n6\n28.0\n\n14.9\n66\n\n\n1973\n5\n7\n23.0\n299.0\n8.6\n65\n\n\n1973\n5\n8\n19.0\n99.0\n13.8\n59\n\n\n1973\n5\n9\n8.0\n19.0\n20.1\n61\n\n\n1973\n5\n10\n\n194.0\n8.6\n69\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNew York Air Quality Measurements\n\n\nDaily measurements in New York City (May 1-10, 1973)\n\n\nTime\nMeasurement\n\n\nYear\nMonth\nDay\nOzone,\nppbV\nSolar R.,\ncal/m2\nWind,\nmph\nTemp,\n°F\n\n\n\n\n1973\n5\n1\n41.0\n190.0\n7.4\n67\n\n\n1973\n5\n2\n36.0\n118.0\n8.0\n72\n\n\n1973\n5\n3\n12.0\n149.0\n12.6\n74\n\n\n1973\n5\n4\n18.0\n313.0\n11.5\n62\n\n\n1973\n5\n5\n\n\n14.3\n56\n\n\n1973\n5\n6\n28.0\n\n14.9\n66\n\n\n1973\n5\n7\n23.0\n299.0\n8.6\n65\n\n\n1973\n5\n8\n19.0\n99.0\n13.8\n59\n\n\n1973\n5\n9\n8.0\n19.0\n20.1\n61\n\n\n1973\n5\n10\n\n194.0\n8.6\n69"
+  },
+  {
+    "objectID": "talks/PyData-Boston-2025/index.html#composing-2",
+    "href": "talks/PyData-Boston-2025/index.html#composing-2",
+    "title": "Wrappers and Extenders",
+    "section": "2) Composing",
+    "text": "2) Composing\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNew York Air Quality Measurements\n\n\nDaily measurements in New York City (May 1-10, 1973)\n\n\nTime\nMeasurement\n\n\nYear\nMonth\nDay\nOzone,\nppbV\nSolar R.,\ncal/m2\nWind,\nmph\nTemp,\n°F\n\n\n\n\n1973\n5\n1\n41.0\n190.0\n7.4\n67\n\n\n1973\n5\n2\n36.0\n118.0\n8.0\n72\n\n\n1973\n5\n3\n12.0\n149.0\n12.6\n74\n\n\n1973\n5\n4\n18.0\n313.0\n11.5\n62\n\n\n1973\n5\n5\n\n\n14.3\n56\n\n\n1973\n5\n6\n28.0\n\n14.9\n66\n\n\n1973\n5\n7\n23.0\n299.0\n8.6\n65\n\n\n1973\n5\n8\n19.0\n99.0\n13.8\n59\n\n\n1973\n5\n9\n8.0\n19.0\n20.1\n61\n\n\n1973\n5\n10\n\n194.0\n8.6\n69\n\n\n\n\n\n\n\n\n\n\ndef some_theme(gt: GT) -&gt; GT:\n    return (\n        gt\n        .opt_row_striping()\n        .opt_table_font(font=\"Courier\")\n        .tab_options(\n            heading_align=\"left\",\n            column_labels_text_transform=\"lowercase\",\n            row_striping_background_color=\"#b5dbb6\",\n        )\n    )\n\ngt.pipe(some_theme)"
+  },
+  {
+    "objectID": "talks/PyData-Boston-2025/index.html#extending",
+    "href": "talks/PyData-Boston-2025/index.html#extending",
+    "title": "Wrappers and Extenders",
+    "section": "3) Extending",
+    "text": "3) Extending\n\n\n\nfrom great_tables import GT, html\nfrom great_tables.data import airquality\n\nairquality_mini = airquality.head(10).assign(Year=1973)\n\ngt = (\n    GT(airquality_mini)\n    .tab_header(\n        title=\"New York Air Quality Measurements\",\n        subtitle=\"Daily measurements in New York City (May 1-10, 1973)\"\n    )\n    .tab_spanner(label=\"Time\", columns=[\"Year\", \"Month\", \"Day\"])\n    .tab_spanner(\n        label=\"Measurement\",\n        columns=[\"Ozone\", \"Solar_R\", \"Wind\", \"Temp\"],\n    )\n    .cols_move_to_start(columns=[\"Year\", \"Month\", \"Day\"])\n    .cols_label(\n        Ozone=html(\"Ozone,&lt;br&gt;ppbV\"),\n        Solar_R=html(\"Solar R.,&lt;br&gt;cal/m&lt;sup&gt;2&lt;/sup&gt;\"),\n        Wind=html(\"Wind,&lt;br&gt;mph\"),\n        Temp=html(\"Temp,&lt;br&gt;&deg;F\"),\n    )\n)\n\ngt\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNew York Air Quality Measurements\n\n\nDaily measurements in New York City (May 1-10, 1973)\n\n\nTime\nMeasurement\n\n\nYear\nMonth\nDay\nOzone,\nppbV\nSolar R.,\ncal/m2\nWind,\nmph\nTemp,\n°F\n\n\n\n\n1973\n5\n1\n41.0\n190.0\n7.4\n67\n\n\n1973\n5\n2\n36.0\n118.0\n8.0\n72\n\n\n1973\n5\n3\n12.0\n149.0\n12.6\n74\n\n\n1973\n5\n4\n18.0\n313.0\n11.5\n62\n\n\n1973\n5\n5\n\n\n14.3\n56\n\n\n1973\n5\n6\n28.0\n\n14.9\n66\n\n\n1973\n5\n7\n23.0\n299.0\n8.6\n65\n\n\n1973\n5\n8\n19.0\n99.0\n13.8\n59\n\n\n1973\n5\n9\n8.0\n19.0\n20.1\n61\n\n\n1973\n5\n10\n\n194.0\n8.6\n69"
+  },
+  {
+    "objectID": "talks/PyData-Boston-2025/index.html#extending-1",
+    "href": "talks/PyData-Boston-2025/index.html#extending-1",
+    "title": "Wrappers and Extenders",
+    "section": "3) Extending",
+    "text": "3) Extending\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNew York Air Quality Measurements\n\n\nDaily measurements in New York City (May 1-10, 1973)\n\n\nTime\nMeasurement\n\n\nYear\nMonth\nDay\nOzone,\nppbV\nSolar R.,\ncal/m2\nWind,\nmph\nTemp,\n°F\n\n\n\n\n1973\n5\n1\n41.0\n190.0\n7.4\n67\n\n\n1973\n5\n2\n36.0\n118.0\n8.0\n72\n\n\n1973\n5\n3\n12.0\n149.0\n12.6\n74\n\n\n1973\n5\n4\n18.0\n313.0\n11.5\n62\n\n\n1973\n5\n5\n\n\n14.3\n56\n\n\n1973\n5\n6\n28.0\n\n14.9\n66\n\n\n1973\n5\n7\n23.0\n299.0\n8.6\n65\n\n\n1973\n5\n8\n19.0\n99.0\n13.8\n59\n\n\n1973\n5\n9\n8.0\n19.0\n20.1\n61\n\n\n1973\n5\n10\n\n194.0\n8.6\n69\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNew York Air Quality Measurements\n\n\nDaily measurements in New York City (May 1-10, 1973)\n\n\nTime\nMeasurement\n\n\nYear\nMonth\nDay\nOzone,\nppbV\nSolar R.,\ncal/m2\nWind,\nmph\nTemp,\n°F\n\n\n\n\n1973\n5\n1\n41.0\n190.0\n&lt;10.0\n67\n\n\n1973\n5\n2\n36.0\n118.0\n&lt;10.0\n72\n\n\n1973\n5\n3\n12.0\n149.0\n12.6\n74\n\n\n1973\n5\n4\n18.0\n313.0\n11.5\n62\n\n\n1973\n5\n5\n\n\n14.3\n56\n\n\n1973\n5\n6\n28.0\n\n14.9\n66\n\n\n1973\n5\n7\n23.0\n299.0\n&lt;10.0\n65\n\n\n1973\n5\n8\n19.0\n99.0\n13.8\n59\n\n\n1973\n5\n9\n8.0\n19.0\n20.1\n61\n\n\n1973\n5\n10\n\n194.0\n&lt;10.0\n69"
+  },
+  {
+    "objectID": "talks/PyData-Boston-2025/index.html#extending-2",
+    "href": "talks/PyData-Boston-2025/index.html#extending-2",
+    "title": "Wrappers and Extenders",
+    "section": "3) Extending",
+    "text": "3) Extending\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNew York Air Quality Measurements\n\n\nDaily measurements in New York City (May 1-10, 1973)\n\n\nTime\nMeasurement\n\n\nYear\nMonth\nDay\nOzone,\nppbV\nSolar R.,\ncal/m2\nWind,\nmph\nTemp,\n°F\n\n\n\n\n1973\n5\n1\n41.0\n190.0\n&lt;10.0\n67\n\n\n1973\n5\n2\n36.0\n118.0\n&lt;10.0\n72\n\n\n1973\n5\n3\n12.0\n149.0\n12.6\n74\n\n\n1973\n5\n4\n18.0\n313.0\n11.5\n62\n\n\n1973\n5\n5\n\n\n14.3\n56\n\n\n1973\n5\n6\n28.0\n\n14.9\n66\n\n\n1973\n5\n7\n23.0\n299.0\n&lt;10.0\n65\n\n\n1973\n5\n8\n19.0\n99.0\n13.8\n59\n\n\n1973\n5\n9\n8.0\n19.0\n20.1\n61\n\n\n1973\n5\n10\n\n194.0\n&lt;10.0\n69\n\n\n\n\n\n\n\n\n\n\ndef fmt_threshold(gt, columns, threshold: float):\n\n    def _truncate(val: float):\n        if val &lt; threshold:\n            return f\"&lt;{threshold}\"\n        else:\n            return str(val)\n\n    return gt.fmt(_truncate, columns)\n\ngt.pipe(fmt_threshold, \"Wind\", 10.0)"
+  },
+  {
+    "objectID": "talks/PyData-Boston-2025/index.html#package-structure",
+    "href": "talks/PyData-Boston-2025/index.html#package-structure",
+    "title": "Wrappers and Extenders",
+    "section": "Package Structure",
+    "text": "Package Structure\nMetadata and source code\ngt-extras\n├── pyproject.toml            # Metadata\n└── gt_extras/                # Source code\n    ├── __init__.py\n    └── functions.py"
+  },
+  {
+    "objectID": "talks/PyData-Boston-2025/index.html#package-structure-1",
+    "href": "talks/PyData-Boston-2025/index.html#package-structure-1",
+    "title": "Wrappers and Extenders",
+    "section": "Package Structure",
+    "text": "Package Structure\nTests\ngt-extras\n├── pyproject.toml            # Metadata\n└── gt_extras/                # Source code\n    ├── __init__.py\n    ├── functions.py\n    └── tests/                # Package tests"
+  },
+  {
+    "objectID": "talks/PyData-Boston-2025/index.html#package-structure-2",
+    "href": "talks/PyData-Boston-2025/index.html#package-structure-2",
+    "title": "Wrappers and Extenders",
+    "section": "Package Structure",
+    "text": "Package Structure\nDocumentation\ngt-extras\n├── docs/                     # Package documentation\n│   ├── getting-started.md\n│   ├── examples.md\n│   └── gt_extras_reference.md\n├── LICENSE\n├── README.md\n├── Makefile                  # Metadata\n├── pyproject.toml\n└── gt_extras/                # Source code\n    ├── __init__.py\n    ├── functions.py\n    └── tests/                # Package tests"
+  },
+  {
+    "objectID": "talks/PyData-Boston-2025/index.html#package-structure-3",
+    "href": "talks/PyData-Boston-2025/index.html#package-structure-3",
+    "title": "Wrappers and Extenders",
+    "section": "Package Structure",
+    "text": "Package Structure\nContinuous Integration / Continuous Development\ngt-extras\n├── .github/                  # CI/CD\n│   ├── CONTRIBUTING.md\n│   └── workflows/\n│       ├── ci_build.yml\n│       └── ci_tests.yml\n├── docs/                     # Package documentation\n│   ├── getting-started.md\n│   ├── examples.md\n│   └── gt_extras_reference.md\n├── LICENSE\n├── README.md\n├── Makefile                  # Metadata\n├── pyproject.toml\n└── gt_extras/                # Source code\n    ├── __init__.py\n    ├── functions.py\n    └── tests/                # Package tests"
+  },
+  {
+    "objectID": "talks/PyData-Boston-2025/index.html#tests-1",
+    "href": "talks/PyData-Boston-2025/index.html#tests-1",
+    "title": "Wrappers and Extenders",
+    "section": "Tests",
+    "text": "Tests\nUsing pytest\n\nimport pytest\nfrom great_tables import GT\nfrom gt_extras import highlight_columns"
+  },
+  {
+    "objectID": "talks/PyData-Boston-2025/index.html#tests-2",
+    "href": "talks/PyData-Boston-2025/index.html#tests-2",
+    "title": "Wrappers and Extenders",
+    "section": "Tests",
+    "text": "Tests\nSnapshot test\n\nimport pytest\nfrom great_tables import GT\nfrom gt_extras import highlight_columns\n\n   \ndef test_highlight_columns_snap(snapshot, mini_gt):\n    res = highlight_columns(mini_gt)\n    assert_rendered_body(snapshot, gt=res)"
+  },
+  {
+    "objectID": "talks/PyData-Boston-2025/index.html#tests-3",
+    "href": "talks/PyData-Boston-2025/index.html#tests-3",
+    "title": "Wrappers and Extenders",
+    "section": "Tests",
+    "text": "Tests\nCheck content directly\n\nimport pytest\nfrom great_tables import GT\nfrom gt_extras import highlight_columns\n\n   \ndef test_highlight_columns_snap(snapshot, mini_gt):\n    res = highlight_columns(mini_gt)\n    assert_rendered_body(snapshot, gt=res)\n\n\ndef test_highlight_columns(mini_gt):\n    gt = highlight_columns(mini_gt, columns=[1, 2])\n    html = gt.as_raw_html()\n    assert html.count(\"lightblue\") == num_rows(mini_gt) * 2"
+  },
+  {
+    "objectID": "talks/PyData-Boston-2025/index.html#documentation-1",
+    "href": "talks/PyData-Boston-2025/index.html#documentation-1",
+    "title": "Wrappers and Extenders",
+    "section": "Documentation",
+    "text": "Documentation\nDocstring\n\ndef highlight_columns(gt: GT, columns) -&gt; GT:\n    \"\"\"\n    Add color highlighting to one or more specific columns.\n\n    Parameters\n    ----------\n    gt\n        An existing `GT` object.\n\n    columns\n        The columns to target. Can be a single column or a list of columns (by name or index).\n        If `None`, the coloring is applied to all columns."
+  },
+  {
+    "objectID": "talks/PyData-Boston-2025/index.html#documentation-2",
+    "href": "talks/PyData-Boston-2025/index.html#documentation-2",
+    "title": "Wrappers and Extenders",
+    "section": "Documentation",
+    "text": "Documentation\nReturn value\n\ndef highlight_columns(gt: GT, columns) -&gt; GT:\n    \"\"\"\n    Add color highlighting to one or more specific columns.\n\n    Parameters\n    ----------\n    gt\n        An existing `GT` object.\n\n    columns\n        The columns to target. Can be a single column or a list of columns (by name or index).\n        If `None`, the coloring is applied to all columns.\n\n    Returns\n    -------\n    GT\n        The `GT` object is returned."
+  },
+  {
+    "objectID": "talks/PyData-Boston-2025/index.html#documentation-3",
+    "href": "talks/PyData-Boston-2025/index.html#documentation-3",
+    "title": "Wrappers and Extenders",
+    "section": "Documentation",
+    "text": "Documentation\nExample\n\n    \"\"\"\n    Parameters\n    ----------\n    gt\n        An existing `GT` object.\n\n    columns\n        The columns to target. Can be a single column or a list of columns (by name or index).\n        If `None`, the coloring is applied to all columns.\n\n    Returns\n    -------\n    GT\n        The `GT` object is returned.\n\n    Example\n    --------\n    gt.pipe(gte.highlight_columns, columns=\"hp\")\n    \"\"\""
+  },
+  {
+    "objectID": "talks/PyData-Boston-2025/index.html#cicd",
+    "href": "talks/PyData-Boston-2025/index.html#cicd",
+    "title": "Wrappers and Extenders",
+    "section": "CI/CD",
+    "text": "CI/CD\nContinuous Integration / Continuous Development\n.github/workflows/*.yml"
+  },
+  {
+    "objectID": "talks/PyData-Boston-2025/index.html#cicd-1",
+    "href": "talks/PyData-Boston-2025/index.html#cicd-1",
+    "title": "Wrappers and Extenders",
+    "section": "CI/CD",
+    "text": "CI/CD\nWhen to run it\nname: Tests\n\non: [push, pull_request, release]"
+  },
+  {
+    "objectID": "talks/PyData-Boston-2025/index.html#cicd-2",
+    "href": "talks/PyData-Boston-2025/index.html#cicd-2",
+    "title": "Wrappers and Extenders",
+    "section": "CI/CD",
+    "text": "CI/CD\nWrite a job\nname: Tests\n\non: [push, pull_request, release]\n\njobs:\n  test:\n    runs-on: ubuntu-latest\n    strategy:\n      matrix:\n        python-version: ['3.9', '3.12']\n    steps:\n      - name: Checkout\n      - name: Install uv\n      - name: \"Set up Python\"\n      - name: Install the project\n      - name: Test"
+  },
+  {
+    "objectID": "talks/PyData-Boston-2025/index.html#cicd-3",
+    "href": "talks/PyData-Boston-2025/index.html#cicd-3",
+    "title": "Wrappers and Extenders",
+    "section": "CI/CD",
+    "text": "CI/CD\nExecute each step\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - name: Checkout\n        uses: actions/checkout@v4\n      - name: Install uv\n        uses: astral-sh/setup-uv@v5\n      - name: \"Set up Python\"\n        uses: actions/setup-python@v5\n        with:\n          python-version: ${{ matrix.python-version }}\n      - name: Install the project\n        run: uv sync --all-extras --dev\n      - name: Test\n        run: |\n          uv run pytest"
+  },
+  {
+    "objectID": "talks/PyData-Boston-2025/index.html#configuration",
+    "href": "talks/PyData-Boston-2025/index.html#configuration",
+    "title": "Wrappers and Extenders",
+    "section": "Configuration",
+    "text": "Configuration\npyproject.toml\n[project]\nname = \"gt-extras\"\nversion = \"0.1.0\"\ndescription = \"Provides additional functions for creating beautiful tables with 'great-tables'.\""
+  },
+  {
+    "objectID": "talks/PyData-Boston-2025/index.html#configuration-1",
+    "href": "talks/PyData-Boston-2025/index.html#configuration-1",
+    "title": "Wrappers and Extenders",
+    "section": "Configuration",
+    "text": "Configuration\nRequirements\n[project]\nname = \"gt-extras\"\nversion = \"0.1.0\"\ndescription = \"Provides additional functions for creating beautiful tables with 'great-tables'.\"\nrequires-python = \"&gt;=3.9\"\ndependencies = [\n    \"great-tables&gt;=0.18.0\",\n    \"svg-py&gt;=1.6.0\",\n]"
+  },
+  {
+    "objectID": "talks/PyData-Boston-2025/index.html#configuration-2",
+    "href": "talks/PyData-Boston-2025/index.html#configuration-2",
+    "title": "Wrappers and Extenders",
+    "section": "Configuration",
+    "text": "Configuration\nOther metadata\n[project]\nname = \"gt-extras\"\nversion = \"0.1.0\"\ndescription = \"Provides additional functions for creating beautiful tables with 'great-tables'.\"\nrequires-python = \"&gt;=3.9\"\ndependencies = [\n    \"great-tables&gt;=0.18.0\",\n    \"svg-py&gt;=1.6.0\",\n]\n\n[tool.pytest.ini_options]\nminversion = \"6.0\"\naddopts = \"-ra --cov=gt_extras --cov-report=term-missing\"\ntestpaths = [\"gt_extras/tests\"]\n\nkeywords = [\"tables\", \"html\"]"
+  },
+  {
+    "objectID": "talks/PyData-Boston-2025/index.html#we-talked-about",
+    "href": "talks/PyData-Boston-2025/index.html#we-talked-about",
+    "title": "Wrappers and Extenders",
+    "section": "We Talked About",
+    "text": "We Talked About\n\n\n\n\n\n\n\n\n\nBicycle bags!"
+  },
+  {
+    "objectID": "talks/PyData-Boston-2025/index.html#we-talked-about-1",
+    "href": "talks/PyData-Boston-2025/index.html#we-talked-about-1",
+    "title": "Wrappers and Extenders",
+    "section": "We Talked About",
+    "text": "We Talked About\n\n\n\n\n\n\n\n\n\n\n\n\nBicycle bags!\nWhy to write a companion package"
+  },
+  {
+    "objectID": "talks/PyData-Boston-2025/index.html#we-talked-about-2",
+    "href": "talks/PyData-Boston-2025/index.html#we-talked-about-2",
+    "title": "Wrappers and Extenders",
+    "section": "We Talked About",
+    "text": "We Talked About\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nBicycle bags!\nWhy to write a companion package\nHow to write a companion package"
+  },
+  {
+    "objectID": "talks/PyData-Boston-2025/index.html#we-talked-about-3",
+    "href": "talks/PyData-Boston-2025/index.html#we-talked-about-3",
+    "title": "Wrappers and Extenders",
+    "section": "We Talked About",
+    "text": "We Talked About\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nBicycle bags!\nWhy to write a companion package\nHow to write a companion package\nHow to build a companion package"
+  },
+  {
+    "objectID": "talks/PyData-Boston-2025/index.html#thank-you",
+    "href": "talks/PyData-Boston-2025/index.html#thank-you",
+    "title": "Wrappers and Extenders",
+    "section": "Thank You",
+    "text": "Thank You\n\nto Michael Chow and Richard Ianonne (and the Posit family)\n\n\n\n\n\nGreat Tables\ngt-extras\n\n\n\n\n\n\nFind these slides at juleswg.me"
+  },
+  {
     "objectID": "talks/Posit-Open-Source-Reflection/index.html#who-are-you-listening-to",
     "href": "talks/Posit-Open-Source-Reflection/index.html#who-are-you-listening-to",
     "title": "A Great Summer of Great Tables",
