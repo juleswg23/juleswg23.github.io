@@ -1155,44 +1155,72 @@ keywords = ["tables", "html"]
 
 ---
 
-## We Talked About
+## We Talked About {auto-animate="true"}
 
-
-::::: {.r-stack}
-
-::: {.fragment fragment-index=1 .fade-in-then-out}
-
-![](./assets/images/saddle_bags.jpg){width=4in}
-
+::: {layout="[[1]]"}
+![](./assets/images/saddle_bags.jpg){width=9in data-id="img1"}
 :::
-
-::: {.fragment fragment-index=2 .fade-in-then-out}
-
-
-```{python}
-gt_extra
-```
-
-:::
-
-
-::: {.fragment fragment-index=3 .fade-in-then-out}
-![](./assets/images/function.png){width=5in}
-![](./assets/images/structure.png){width=5in}
-:::
-
-:::::
-
-
-
 
 ::: {.notes}
+- Bicycle bags!
+:::
 
+---
+
+## We Talked About {auto-animate="true"}
+
+::: {layout="[[30,70]]"}
+
+![](./assets/images/saddle_bags.jpg){width=3in data-id="img1"}
+
+![](./assets/images/gini_table.png){width=7in data-id="img2"}
+:::
+
+::: {.notes}
+- Bicycle bags!
+- Why to write a companion package
+:::
+
+---
+
+## We Talked About {auto-animate="true"}
+
+::: {layout="[[1, 1], [1]]"}
+
+![](./assets/images/saddle_bags.jpg){width=3in data-id="img1"}
+
+![](./assets/images/gini_table.png){width=2.6in data-id="img2"}
+
+![](./assets/images/function.png){width=4in data-id="img3"}
+
+:::
+
+::: {.notes}
+- Bicycle bags!
+- Why to write a companion package
+- How to write a companion package
+:::
+
+---
+
+## We Talked About {auto-animate="true"}
+
+::: {layout="[[1, 1], [1, 1]]"}
+
+![](./assets/images/saddle_bags.jpg){width=3in data-id="img1"}
+
+![](./assets/images/gini_table.png){width=2.6in data-id="img2"}
+
+![](./assets/images/function.png){width=3in data-id="img3"}
+
+![](./assets/images/structure.png){width=5.5in data-id="img4"}
+:::
+
+::: {.notes}
 - Bicycle bags!
 - Why to write a companion package
 - How to write a companion package
 - How to build a companion package
-
 :::
 
 ---
@@ -1229,4 +1257,3 @@ to Michael Chow and Richard Ianonne (and the Posit family)
 ::: footer
 Find these slides at [juleswg.me](https://juleswg.me)
 :::
-
