@@ -393,9 +393,19 @@ Submit your feature request, your code review, hope they say yes. Six months lat
 
 ### Fork the *Package*
 
+::: {.fragment fragment-index=1}
+
+![](./assets/images/working.jpg){width=8in}
+
+:::
+
 <!-- Fork the repo
 pros/cons 
 maintaining a shadow version of a library you didn't write, forever watching for updates you have to manually merge. -->
+
+::: {.footer}
+Photo by Lukas: https://www.pexels.com/photo/turned-on-laptop-computer-574073/
+:::
 
 ---
 
@@ -403,13 +413,9 @@ maintaining a shadow version of a library you didn't write, forever watching for
 
 ### *Build A Companion Package*
 
-This is what **gt-extras** did for Great Tables. 
-
-Say this?
-What **nbmail** and **red-mail** did for `smtplib`. What **requests-toolbelt** did for `requests`. 
-
-Or use it for when we are comparing extenders to wrappers?
-
+* **gt-extras** + `great_tables`
+* **nbmail** or **red-mail** + `smtplib`
+* **requests-toolbelt** + `requests`
 
 <!-- For the above examples doing each solution -->
 
@@ -420,7 +426,6 @@ Or use it for when we are comparing extenders to wrappers?
 
 # What Goes In The Package
 
----
 
 ## What's In A Package?
 
