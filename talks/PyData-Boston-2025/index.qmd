@@ -19,6 +19,9 @@ format:
 
 <!-- todo: background color trick on all tables -->
 
+<!-- todo: try to animate? 
+https://quarto.org/docs/presentations/revealjs/advanced.html#code-animations -->
+
 <!--
 NOTE FOR AGENTS: Do not add speaker notes to this file. 
 Jules will add speaker notes later.
@@ -421,18 +424,21 @@ Or use it for when we are comparing extenders to wrappers?
 
 ## What's In A Package?
 
+![](./assets/images/function.png){width=3.5in fig-align="left" style="margin-bottom:0px;"}
+
 :::: {.columns}
-::: {.column}
 
-![](./assets/images/function.png){width=5in}
+::: {.column width=50%}
+
+1. 17th gear
+2. Mountain Ride
+3. Folding Bike
 
 :::
-::: {.column}
 
-::: {data-id="elem1"}
+::: {.column width=50%}
+
 1. Wrapping
-:::
-
 2. Composing
 3. Extending
 
@@ -773,7 +779,7 @@ def fmt_threshold(gt, columns, threshold: float):
 
     return gt.fmt(_truncate, columns)
 
-gt.pipe(fmt_threshold, "Wind", 10.0)
+gt.pipe(fmt_threshold, "Wind", 10.0).pipe(highlight_columns, "Wind")
 
 ```
 
@@ -790,7 +796,7 @@ gt.pipe(fmt_threshold, "Wind", 10.0)
 ::: {.column width=40%}
 
 ```{python}
-gt.pipe(fmt_threshold, "Wind", 10.0)
+gt.pipe(fmt_threshold, "Wind", 10.0).pipe(highlight_columns, "Wind")
 ```
 
 :::
@@ -815,58 +821,121 @@ gt.pipe(fmt_threshold, "Wind", 10.0)
 
 ::::
 
----
-
-<!-- done with 3 cases -->
-
-## What's Missing
-
-::: {.columns style="margin-top: 100px;"}
-
-:::: {.column style="width: 40%;"}
-
-```{python}
-# (
-#     gt
-#     .cols_hide(["Code", "gini_pct_benchmark_5yr", "pop_icons"])
-#     .tab_options(table_font_size="80%")
-#     .cols_label({"gini_disposable__age_total": "Pre-Tax", "gini_market__age_total": "Post-Tax"})
-# )
-```
-
-::::
-
-:::: {.column style="width: 60%;"}
-
-
-```{python}
-# (
-#     gt_extra
-#     .cols_hide(["Code", "pop_icons"])
-# )
-```
-
-::::
-
-:::
-
----
-
 # Finishing the Package
 
-<!-- Nothing after this are my slides -->
+## Package Structure {auto-animate="true"}
 
+```{text}
+gt-extras
+├── pyproject.toml            # Metadata
+└── gt_extras/                # Source code
+    ├── __init__.py
+    └── functions.py
+```
 
-## Package Structure
+## Package Structure {auto-animate="true"}
 
+```{text}
+gt-extras
+├── pyproject.toml            # Metadata
+└── gt_extras/                # Source code
+    ├── __init__.py
+    ├── functions.py
+    └── tests/                # Package tests
+```
+
+## Package Structure {auto-animate="true"}
+
+```{text}
+gt-extras
+├── docs/                     # Package documentation
+│   ├── getting-started.md
+│   ├── examples.md
+│   └── gt_extras_reference.md
+├── LICENSE
+├── README.md
+├── Makefile                  # Metadata
+├── pyproject.toml
+└── gt_extras/                # Source code
+    ├── __init__.py
+    ├── functions.py
+    └── tests/                # Package tests
+```
+
+## Package Structure {auto-animate="true"}
+
+```{text}
+gt-extras
+├── .github/
+│   ├── CONTRIBUTING.md
+│   └── workflows/
+│       ├── ci_build.yml
+│       └── ci_tests.yml
+├── docs/                     # Package documentation
+│   ├── getting-started.md
+│   ├── examples.md
+│   └── gt_extras_reference.md
+├── LICENSE
+├── README.md
+├── Makefile                  # Metadata
+├── pyproject.toml
+└── gt_extras/                # Source code
+    ├── __init__.py
+    ├── functions.py
+    └── tests/                # Package tests
+```
 
 ---
 
-## Testing
+## Testing {auto-animate="true"}
 
-You've written your wrapper. It works. But now the maintainer releases a new version of the upstream library, and suddenly everything breaks. Now you have to think like a real package maintainer.
+```{python filename="test_highlight.py"}
+# | echo: true
+# | output: false
+# | eval: false
+import pytest
+from great_tables import GT
+from gt_extras import highlight_columns
 
-*"You wrote your wrapper. Great! But now the maintainer updates the upstream library and... everything breaks."*
+```
+
+## Testing {auto-animate="true"}
+
+```{python filename="test_highlight.py"}
+# | echo: true
+# | output: false
+# | eval: false
+import pytest
+from great_tables import GT
+from gt_extras import highlight_columns
+
+   
+def test_gt_highlight_cols_snap(snapshot, mini_gt):
+    res = highlight_columns(mini_gt)
+    assert_rendered_body(snapshot, gt=res)
+```
+
+## Testing {auto-animate="true"}
+
+```{python filename="test_highlight.py"}
+# | echo: true
+# | output: false
+# | eval: false
+import pytest
+from great_tables import GT
+from gt_extras import highlight_columns
+
+   
+def test_gt_highlight_cols_snap(snapshot, mini_gt):
+    res = highlight_columns(mini_gt)
+    assert_rendered_body(snapshot, gt=res)
+
+
+def test_gt_highlight_cols_all_params(mini_gt):
+    gt = highlight_columns(mini_gt, columns=[1, 2])
+    html = gt.as_raw_html()
+    assert html.count("lightblue") == num_rows(mini_gt) * 2
+```
 
 ---
 
@@ -875,6 +944,11 @@ You've written your wrapper. It works. But now the maintainer releases a new ver
 What happens when Great Tables releases version 0.5, and your package was written for version 0.3? You probably don't want to find out from your users.
 
 The solution is automated testing against multiple versions. You set up CI/CD to test your package against the current version, the version before that, maybe the next one. This runs automatically every time Great Tables updates. You know immediately what breaks.
+
+
+## Continuous Integration
+
+* yml file example
 
 ---
 
