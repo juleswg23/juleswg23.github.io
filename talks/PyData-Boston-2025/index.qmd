@@ -596,7 +596,6 @@ highlight_columns(gt, columns="Wind")
 
 ::::
 
----
 
 <!-- first composing slide -->
 
@@ -711,8 +710,6 @@ gt.pipe(some_theme)
 :::
 
 ::::
-
----
 
 <!-- first extending slide -->
 
@@ -910,7 +907,7 @@ from great_tables import GT
 from gt_extras import highlight_columns
 
    
-def test_gt_highlight_cols_snap(snapshot, mini_gt):
+def test_highlight_columns_snap(snapshot, mini_gt):
     res = highlight_columns(mini_gt)
     assert_rendered_body(snapshot, gt=res)
 ```
@@ -926,12 +923,12 @@ from great_tables import GT
 from gt_extras import highlight_columns
 
    
-def test_gt_highlight_cols_snap(snapshot, mini_gt):
+def test_highlight_columns_snap(snapshot, mini_gt):
     res = highlight_columns(mini_gt)
     assert_rendered_body(snapshot, gt=res)
 
 
-def test_gt_highlight_cols_all_params(mini_gt):
+def test_highlight_columns_all_params(mini_gt):
     gt = highlight_columns(mini_gt, columns=[1, 2])
     html = gt.as_raw_html()
     assert html.count("lightblue") == num_rows(mini_gt) * 2
@@ -939,22 +936,146 @@ def test_gt_highlight_cols_all_params(mini_gt):
 
 ---
 
-## Documenting
+## Documenting {auto-animate="true"}
 
-What happens when Great Tables releases version 0.5, and your package was written for version 0.3? You probably don't want to find out from your users.
+```{python}
+# | eval: false
+# | echo: true
+# | output: false
+def highlight_columns(gt: GT, columns) -> GT:
+    """
+    Add color highlighting to one or more specific columns.
 
-The solution is automated testing against multiple versions. You set up CI/CD to test your package against the current version, the version before that, maybe the next one. This runs automatically every time Great Tables updates. You know immediately what breaks.
+    Parameters
+    ----------
+    gt
+        An existing `GT` object.
 
+    columns
+        The columns to target. Can be a single column or a list of columns (by name or index).
+        If `None`, the coloring is applied to all columns.
+```
 
-## Continuous Integration
+## Documenting {auto-animate="true"}
 
-* yml file example
+```{python}
+# | eval: false
+# | echo: true
+# | output: false
+def highlight_columns(gt: GT, columns) -> GT:
+    """
+    Add color highlighting to one or more specific columns.
+
+    Parameters
+    ----------
+    gt
+        An existing `GT` object.
+
+    columns
+        The columns to target. Can be a single column or a list of columns (by name or index).
+        If `None`, the coloring is applied to all columns.
+
+    Returns
+    -------
+    GT
+        The `GT` object is returned.
+```
+
+## Documenting {auto-animate="true"}
+
+```{python}
+# | eval: false
+# | echo: true
+# | output: false
+    """
+    Parameters
+    ----------
+    gt
+        An existing `GT` object.
+
+    columns
+        The columns to target. Can be a single column or a list of columns (by name or index).
+        If `None`, the coloring is applied to all columns.
+
+    Returns
+    -------
+    GT
+        The `GT` object is returned.
+
+    Examples
+    --------
+    gt.pipe(gte.highlight_columns, columns="hp")
+    """
+```
 
 ---
 
-## Configuration & Exports
+## Continuous Integration {auto-animate="true"}
 
-Your configuration file declares the essentials: name, version, dependencies, and which of those dependencies are optional. Your __init__.py file tells Python which functions to expose to users. When someone imports your package, they get exactly what you put there.
+```{yaml}
+name: Tests
+
+on: [push, pull_request]
+```
+
+## Continuous Integration {auto-animate="true"}
+
+```{yaml}
+name: Tests
+
+on: [push, pull_request]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ['3.9', '3.10', '3.11']
+```
+
+## Continuous Integration {auto-animate="true"}
+
+```{yaml}
+name: Tests
+
+on: [push, pull_request]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ['3.9', '3.10', '3.11']
+        great-tables-version: ['0.3', '0.4', '0.5']
+    steps:
+      - uses: actions/checkout@v3
+      - name: Run tests
+        run: pytest
+```
+
+---
+
+## Configuration & Exports {auto-animate="true"}
+
+```{text}
+[project]
+name = "gt-extras"
+version = "0.1.0"
+```
+
+## Configuration & Exports {auto-animate="true"}
+
+```{text}
+[project]
+name = "gt-extras"
+version = "0.1.0"
+dependencies = [
+    "great-tables>=0.3.0",
+]
+
+[project.optional-dependencies]
+dev = ["pytest", "black", "ruff"]
+```
 
 ---
 
@@ -968,103 +1089,34 @@ Your configuration file declares the essentials: name, version, dependencies, an
 
 ## Thank You
 
+::: {.fragment fragment-index=1}
+to Michael Chow and Richard Ianonne (and the Posit family)
+:::
+
+:::::: {.fragment fragment-index=2}
+
+::::: {.columns}
+
+::: {.column width="60%"}
+
+- [Great Tables](https://posit-dev.github.io/great-tables/)
+
+- [gt-extras](https://posit-dev.github.io/gt-extras/)
+
+:::
+
+::: {.column width="40%"}
+
+![](./assets/images/GT_logo.svg)
+
+:::
+
+::::
+
+:::::
+
+
 ::: footer
 Find these slides at [juleswg.me](https://juleswg.me)
 :::
 
----
-
-## icebox
-
-::: {.panel-tabset .custom-font-size .first-tabset }
-
-
-## Read the dataset
-
-```{python}
-# | echo: true
-# | output-location: column
-import polars as pl
-
-pre_tax_col = "gini_market__age_total"
-post_tax_col = "gini_disposable__age_total"
-
-df = pl.read_csv("./assets/income_inequality.csv")
-
-df
-```
-
-## What We Have
-
-```{python}
-# | echo: true
-# | output-location: column
-from great_tables import GT, html
-import gt_extras as gte
-
-df_with_icons = df.with_columns(
-    pl.col("pop_icons").map_elements(
-        lambda x: gte.fa_icon_repeat(name="person", repeats=int(x)),
-        return_dtype=pl.String,
-    )
-)
-
-# Generate the table, before gt-extras add-ons
-gt = (
-    GT(df_with_icons, rowname_col="Entity", groupname_col="owid_region")
-    .tab_header(
-        "Income Inequality Before and After Taxes in 2020",
-    )
-    .cols_move("pop_icons", after=pre_tax_col)
-    .cols_align("left")
-    .cols_hide(["Year", "pop_log", "population_historical"])
-    .fmt_flag("Code")
-    .cols_label(
-        {
-            "Code": "",
-            "gini_pct_change": "Improvement Post Taxes",
-            "pop_icons": "Population",
-        }
-    )
-    .with_id("gini-table")
-)
-
-gt
-```
-
-
-## What We Want
-
-```{python}
-# | echo: true
-# | output-location: column
-import gt_extras as gte
-
-gt_extra = gt.pipe(
-    gte.gt_plt_dumbbell,
-    col1=pre_tax_col,
-    col2=post_tax_col,
-    col1_color="#e0b165",
-    col2_color="#106ea0",
-    dot_border_color="transparent",
-    num_decimals=2,
-    width=240,
-    label="Pre-tax to Post-tax Coefficient",
-).pipe(
-    gte.gt_plt_bullet,
-    "gini_pct_change",
-    "gini_pct_benchmark_5yr",
-    fill="#963d4c",
-    target_color="#3D3D3D",
-    bar_height=15,
-    width=200,
-).pipe(
-    gte.gt_merge_stack,
-    col1="pop_icons",
-    col2="population_historical",
-).pipe(gte.gt_theme_guardian)
-
-gt_extra
-```
-
-:::
