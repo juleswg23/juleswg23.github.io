@@ -22,12 +22,14 @@ format:
 
 ### About Me
 
+- Software developer, tool builder
 - Author of **gt-extras**
 - Great Tables at Posit: Michael Chow and Richard Iannone
 - I enjoy 🏓, ⚽, 🧗, 🚴
 
 :::{.notes}
 
+* **turn on DND or focus mode**
 * Thank you all for coming
 * Don't need to know about great tables for this talk
 
@@ -56,7 +58,7 @@ format:
 
 :::{.notes}
 
-* Four roomates that share a bike
+* Four roommates that share a bike
 * Bike has an owner
 
 :::
@@ -149,7 +151,7 @@ and Jacob Yavin: https://www.pexels.com/photo/snack-meal-inside-a-lunch-box-1286
 
 * You want to borrow the bike
 * Your use case is different
-* Main user isn't maintining the bike for the purpose
+* Main user isn't maintaining the bike for the purpose
 
 :::
 
@@ -183,7 +185,7 @@ Photo by Martii Tolentino: https://www.pexels.com/photo/man-and-woman-riding-bic
 
 :::{.notes}
 
-* Don't neet a bag
+* Don't need a bag
 * Owner has to agree to this
 * Makes the bike heavier
 
@@ -222,7 +224,7 @@ Photo by Pack2Ride: https://www.pexels.com/photo/a-bicycle-on-the-road-8934535/
 
 * Holy grail
 * Removable, therefore optional
-* Other roomates can use it
+* Other roommates can use it
 * Won't interfere with owner
 * Don't have to maintain your own bike
 
@@ -232,7 +234,7 @@ Photo by Pack2Ride: https://www.pexels.com/photo/a-bicycle-on-the-road-8934535/
 
 :::{.notes}
 
-* Should be at 7:30
+* **Should be at 7:30**
 
 * Marinate on how this has to do with developing packages
 
@@ -293,6 +295,7 @@ Photo by Pack2Ride: https://www.pexels.com/photo/a-bicycle-on-the-road-8934535/
 
 :::{.notes}
 
+* **Can't change tabs from here**
 * Using the bike
 * Lots of text, want plots instead
 * Dumbbell and bar plots
@@ -493,7 +496,7 @@ Photo by Lukas: https://www.pexels.com/photo/turned-on-laptop-computer-574073/
 
 ::: {.notes}
 
-* Should be at 15:00
+* **Should be at 16:00**
 
 :::
 
@@ -959,7 +962,7 @@ gt.pipe(fmt_threshold, "Wind", 10.0).pipe(highlight_columns, "Wind")
 ```{python}
 # | echo: true
 # | output: false
-# | code-line-numbers: "|3-7|1-9"
+# | code-line-numbers: "|3-7|1-9|11"
 def fmt_threshold(gt, columns, threshold: float):
 
     def _truncate(val: float):
@@ -989,7 +992,7 @@ gt.pipe(fmt_threshold, "Wind", 10.0)
 
 :::{.notes}
 
-* Should be at TODO!!
+* **Should be at 24:00**
 
 * You've written all of the desired utilities
 * Ideally version controlled
@@ -1533,7 +1536,7 @@ keywords = ["tables", "html"]
 ## Thank You
 
 ::: {.fragment fragment-index=1}
-to Michael Chow and Richard Ianonne (and the Posit family)
+to Michael Chow and Richard Iannone (and the Posit family)
 :::
 
 :::::: {.fragment fragment-index=2}
@@ -1560,5 +1563,5 @@ to Michael Chow and Richard Ianonne (and the Posit family)
 
 
 ::: footer
-Find these slides at [juleswg.me](https://juleswg.me)
+Find these slides at [juleswg.me/talks/PyData-Boston-2025](https://juleswg.me/talks/PyData-Boston-2025)
 :::
