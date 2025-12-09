@@ -3,7 +3,6 @@ title: "Wrappers and Extenders"
 subtitle: "Companion Packages for Python Projects"
 author: "Jules Walzer-Goldfeld"
 date-meta: 12-10-2025
-draft: true
 freeze: false
 format:
   revealjs:
@@ -20,16 +19,19 @@ format:
 
 <!-- todo: background color trick on all tables -->
 
-<!-- todo: try to animate? 
-https://quarto.org/docs/presentations/revealjs/advanced.html#code-animations -->
-
-<!-- todo write slide notes -->
 
 ### About Me
 
 - Author of **gt-extras**
 - Great Tables at Posit: Michael Chow and Richard Iannone
 - I enjoy 🏓, ⚽, 🧗, 🚴
+
+:::{.notes}
+
+* Thank you all for coming
+* Don't need to know about great tables for this talk
+
+:::
 
 # Biking
 
@@ -50,6 +52,14 @@ https://quarto.org/docs/presentations/revealjs/advanced.html#code-animations -->
 :::
 
 ::::
+
+
+:::{.notes}
+
+* Four roomates that share a bike
+* Bike has an owner
+
+:::
 
 ::: {.footer}
 
@@ -97,6 +107,14 @@ Nick Duell: https://www.pexels.com/photo/brass-bicycle-bell-107510/
 and Mathias Reding: https://www.pexels.com/photo/close-up-photo-of-bicycle-gears-13415392/
 :::
 
+
+:::{.notes}
+
+* Owner is great
+* Maintains lights, bells and whistles, drivetrain
+
+:::
+
 ---
 
 ## You Borrow It
@@ -127,6 +145,14 @@ Photos by Gül Işık: https://www.pexels.com/photo/black-wireless-mouse-beside-
 and Jacob Yavin: https://www.pexels.com/photo/snack-meal-inside-a-lunch-box-12861383/
 :::
 
+:::{.notes}
+
+* You want to borrow the bike
+* Your use case is different
+* Main user isn't maintining the bike for the purpose
+
+:::
+
 ---
 
 ## Solve It For Yourself
@@ -135,6 +161,14 @@ and Jacob Yavin: https://www.pexels.com/photo/snack-meal-inside-a-lunch-box-1286
 
 ::: {.footer}
 Photo by ronyescobarhn: https://www.pexels.com/photo/cyclist-enjoying-sunny-beach-boulevard-ride-34975805/ 
+:::
+
+:::{.notes}
+
+* Do it yourself
+* Back sweat
+* Other people borrow bike, can't take your bag
+
 :::
 
 ---
@@ -147,6 +181,14 @@ Photo by ronyescobarhn: https://www.pexels.com/photo/cyclist-enjoying-sunny-beac
 Photo by Martii Tolentino: https://www.pexels.com/photo/man-and-woman-riding-bicycle-on-crosswalk-18529803/
 :::
 
+:::{.notes}
+
+* Don't neet a bag
+* Owner has to agree to this
+* Makes the bike heavier
+
+:::
+
 ---
 
 ## Fork The Bike
@@ -155,6 +197,14 @@ Photo by Martii Tolentino: https://www.pexels.com/photo/man-and-woman-riding-bic
 
 ::: {.footer}
 Photo by Jan van der Wolf: https://www.pexels.com/photo/red-electric-bicycles-in-a-scenic-outdoor-setting-30179590/
+:::
+
+:::{.notes}
+
+* Copy the bike
+* We copy owner's upgrades
+* Rear fender upgrade not compatible with basket
+
 :::
 
 ---
@@ -168,7 +218,25 @@ Photo by Jan van der Wolf: https://www.pexels.com/photo/red-electric-bicycles-in
 Photo by Pack2Ride: https://www.pexels.com/photo/a-bicycle-on-the-road-8934535/
 :::
 
+:::{.notes}
+
+* Holy grail
+* Removable, therefore optional
+* Other roomates can use it
+* Won't interfere with owner
+* Don't have to maintain your own bike
+
+:::
+
 # Developing Packages
+
+:::{.notes}
+
+* Should be at 7:30
+
+* Marinate on how this has to do with developing packages
+
+:::
 
 ## Programming story
 
@@ -198,8 +266,11 @@ Photo by Pack2Ride: https://www.pexels.com/photo/a-bicycle-on-the-road-8934535/
 
 :::::
 
-::: {.notes}
-Your roommates developed a package, (Michael and Richard)
+:::{.notes}
+
+* Michael and Richard and my co-workers/roommates
+* Great tables = dataframes (pandas) to publication tables
+
 :::
 
 ---
@@ -208,9 +279,26 @@ Your roommates developed a package, (Michael and Richard)
 
 ![](./assets/images/great_tables_PRs.png){width=10in}
 
+:::{.notes}
+
+* Always adding new features
+* Responding and working with community
+* Akin to the bike owner
+
+:::
+
 ---
 
 ## You Borrow It
+
+:::{.notes}
+
+* Using the bike
+* Lots of text, want plots instead
+* Dumbbell and bar plots
+* Not everyone wants/needs this
+
+:::
 
 ::: {.panel-tabset style="zoom: 90%; font-size: 36px;"}
 
@@ -320,10 +408,15 @@ gt_extra
 
 ::::
 
-<!-- Build it in your notebook, in your scripts, in your project code.
+:::{.notes}
 
-Pros/cons
-It works for you. But it breaks for your colleague. It doesn't scale. -->
+* Build in a script, locally
+* fmt_nanoplot doesn't do our plotting
+* fmt lets you plug in generically (show 2nd image)
+* Hard to share with peers or collaborate
+    * great starting point
+
+:::
 
 ---
 
@@ -337,11 +430,16 @@ It works for you. But it breaks for your colleague. It doesn't scale. -->
 
 :::
 
+:::{.notes}
 
-<!-- 3 Hope it get's built in to the library
+* Take that local script
+    * make a function
+    * submit PR
+* might end up waiting
+* might get heavily edited
+    * (hopefully not issues in great tables)
 
-pros/cons
-Submit your feature request, your code review, hope they say yes. Six months later, maybe they do, Maybe they don't. -->
+:::
 
 ---
 
@@ -355,9 +453,15 @@ Submit your feature request, your code review, hope they say yes. Six months lat
 
 :::
 
-<!-- Fork the repo
-pros/cons 
-maintaining a shadow version of a library you didn't write, forever watching for updates you have to manually merge. -->
+:::{.notes}
+
+* Good for sharing
+* Shadow-maintaining the package
+    * Watch for updates
+    * Check for breaking
+* Users have to rely on you for work that isn't yours
+
+:::
 
 ::: {.footer}
 Photo by Lukas: https://www.pexels.com/photo/turned-on-laptop-computer-574073/
@@ -373,17 +477,43 @@ Photo by Lukas: https://www.pexels.com/photo/turned-on-laptop-computer-574073/
 * **nbmail** or **red-mail** + `smtplib`
 * **requests-toolbelt** + `requests`
 
-<!-- For the above examples doing each solution -->
+:::{.notes}
 
-<!-- describe what the option is, with an image-->
+* Our saddle bag of packages
+    * not required for great tables use
+    * Anyone can use
+    * don't need your own
+* redmail, yagmail wrap
+* requests-toolbelt for data-scraping
 
-<!-- list out some advantages and painful aspects of the solution  -->
+:::
 
 
 # What Goes In The Package
 
+::: {.notes}
+
+* Should be at 15:00
+
+:::
+
 
 ## What's In A Package?
+
+:::{.notes}
+
+* Collection of actions
+    * gt is dataframe -> beautiful table
+1) Many options in one selection, easy access to one
+    * click button to set this specific gear
+2) Many places to make many selections, easy access to a set
+    * 4th gear
+    * Lights
+    * Reflective vest
+3) New functionality not supported
+    * Re-structure the bike
+
+:::
 
 ![](./assets/images/function.png){width=3.5in fig-align="left" style="margin-bottom:0px;"}
 
@@ -392,8 +522,8 @@ Photo by Lukas: https://www.pexels.com/photo/turned-on-laptop-computer-574073/
 ::: {.column width=50%}
 
 1. 17th gear
-2. Mountain Ride
-3. Folding Bike
+2. Night mountain ride
+3. Folding bike
 
 :::
 
@@ -446,6 +576,13 @@ gt
 
 :::
 
+:::{.notes}
+
+* Example dataset
+* Air quality measures May 1973
+
+:::
+
 ---
 
 ## 1) Wrapping
@@ -485,6 +622,13 @@ gt_highlighted
 
 ::::
 
+:::{.notes}
+
+* I want to highlight
+* Can do with great tables
+
+:::
+
 ---
 
 ## 1) Wrapping
@@ -515,7 +659,7 @@ locations = [
     loc.column_labels(columns="Wind"),
 ]
 
-# Make the wrapped tab_style call
+# Make the tab_style call
 gt.tab_style(
     style=style.fill(color="lightblue"),
     locations=locations,
@@ -529,7 +673,7 @@ gt.tab_style(
 ```{python}
 # | echo: true
 # | output: false
-# | code-line-numbers: "|4-13|"
+# | code-line-numbers: "|4-13|15"
 from great_tables import GT, loc, style
 
 def highlight_columns(gt: GT, columns) -> GT:
@@ -556,6 +700,17 @@ highlight_columns(gt, columns="Wind")
 :::
 
 ::::
+
+:::{.notes}
+
+* How we would do it in great tables
+* Wrap it in our own function
+* Now can call it in one line
+* tab_style has many options
+    * we wrapped it and chose one
+    * fewer lines
+
+:::
 
 
 <!-- first composing slide -->
@@ -597,6 +752,13 @@ gt
 
 :::
 
+:::{.notes}
+
+* restart
+* Same dataset
+
+:::
+
 ---
 
 ## 2) Composing
@@ -633,6 +795,15 @@ gt.pipe(some_theme)
 
 ::::
 
+:::{.notes}
+
+* Table theme
+    * font
+    * spacing
+    * lowercased
+
+:::
+
 ---
 
 ## 2) Composing
@@ -652,7 +823,7 @@ gt.pipe(some_theme)
 ```{python}
 # | echo: true
 # | output: false
-# | code-line-numbers: "|3-10|1-2,11"
+# | code-line-numbers: "|3-10|1-2,11|13"
 def some_theme(gt: GT) -> GT:
     return (
         gt
@@ -671,6 +842,15 @@ gt.pipe(some_theme)
 :::
 
 ::::
+
+:::{.notes}
+
+* Compose many choices
+* can call some theme and pass in object
+    * or use the pipe method
+* Can apply theme to another table
+
+:::
 
 <!-- first extending slide -->
 
@@ -711,6 +891,12 @@ gt
 
 :::
 
+:::{.notes}
+
+* Things not possible in great tables
+
+:::
+
 ---
 
 ## 3) Extending
@@ -727,7 +913,6 @@ gt
 
 :::  {.fragment fragment-index=1}
 
-<!-- todo: revisit this, the build step should be seperate in the slides -->
 
 ```{python}
 def fmt_threshold(gt, columns, threshold: float):
@@ -747,6 +932,13 @@ gt.pipe(fmt_threshold, "Wind", 10.0).pipe(highlight_columns, "Wind")
 :::
 
 ::::
+
+:::{.notes}
+
+* Plotting, dumbbell or bar
+* Truncate, might be nice for p-value
+
+:::
 
 ---
 
@@ -785,7 +977,25 @@ gt.pipe(fmt_threshold, "Wind", 10.0)
 
 ::::
 
+:::{.notes}
+
+* `_truncate` does the heavy lifting
+    * could do the same with any svg, plot
+* Wrap `gt.fmt` with the new functionality
+
+:::
+
 # Finishing the Package
+
+:::{.notes}
+
+* Should be at TODO!!
+
+* You've written all of the desired utilities
+* Ideally version controlled
+* How to bundle them into a package
+
+:::
 
 ## Package Structure {auto-animate="true"}
 
@@ -798,6 +1008,16 @@ gt-extras
     ├── __init__.py
     └── functions.py
 ```
+
+:::{.notes}
+
+
+* At this point assume we have the `gt_extras` source code
+* `__init__` exports the functions
+* Add some metadata
+* This is just one approach
+
+:::
 
 ## Package Structure {auto-animate="true"}
 
@@ -812,6 +1032,12 @@ gt-extras
     ├── functions.py
     └── tests/                # Package tests
 ```
+
+:::{.notes}
+
+* Tests ensure upstream changes don't break our package
+
+:::
 
 ## Package Structure {auto-animate="true"}
 
@@ -832,6 +1058,12 @@ gt-extras
     ├── functions.py
     └── tests/                # Package tests
 ```
+
+:::{.notes}
+
+* Documentation helps users engage
+
+:::
 
 ## Package Structure {auto-animate="true"}
 
@@ -858,6 +1090,12 @@ gt-extras
     └── tests/                # Package tests
 ```
 
+:::{.notes}
+
+* Use a pipeline, github workflows can do this
+
+:::
+
 ---
 
 ## Tests {auto-animate="true"}
@@ -872,6 +1110,12 @@ import pytest
 from great_tables import GT
 from gt_extras import highlight_columns
 ```
+
+:::{.notes}
+
+* Show two possible tests
+
+:::
 
 ## Tests {auto-animate="true"}
 
@@ -890,6 +1134,16 @@ def test_highlight_columns_snap(snapshot, mini_gt):
     res = highlight_columns(mini_gt)
     assert_rendered_body(snapshot, gt=res)
 ```
+
+
+:::{.notes}
+
+* Snapshot tests
+    * Saves raw output to disc
+    * Might not be ideal with massive data
+    * Easy to parse as developer
+
+:::
 
 ## Tests {auto-animate="true"}
 
@@ -915,6 +1169,14 @@ def test_highlight_columns(mini_gt):
     assert html.count("lightblue") == num_rows(mini_gt) * 2
 ```
 
+
+:::{.notes}
+
+* Check analytically
+* Can pass in different tables
+
+:::
+
 ---
 
 ## Documentation {auto-animate="true"}
@@ -938,6 +1200,16 @@ def highlight_columns(gt: GT, columns) -> GT:
         The columns to target. Can be a single column or a list of columns (by name or index).
         If `None`, the coloring is applied to all columns.
 ```
+
+
+:::{.notes}
+
+* Many many approaches
+* This docstring gets parsed by quartodoc
+    * Produces webpages for API docs
+* Title, params
+
+:::
 
 ## Documentation {auto-animate="true"}
 
@@ -965,6 +1237,12 @@ def highlight_columns(gt: GT, columns) -> GT:
     GT
         The `GT` object is returned.
 ```
+
+:::{.notes}
+
+* Return value
+
+:::
 
 ## Documentation {auto-animate="true"}
 
@@ -995,13 +1273,29 @@ def highlight_columns(gt: GT, columns) -> GT:
     """
 ```
 
+
+:::{.notes}
+
+* Return value
+* Examples
+* Michael Chow has an awesome talk on this very topic
+    * `quartodoc` is his library
+
+:::
+
 ---
 
 ## CI/CD {auto-animate="true"}
 
-#### Continuous Integration / Continuous Development
+#### Continuous Integration / Continuous Deployment
 
 `.github/workflows/*.yml`
+
+:::{.notes}
+
+* `.yaml` file to execute jobs
+
+:::
 
 ## CI/CD {auto-animate="true"}
 
@@ -1012,6 +1306,13 @@ name: Tests
 
 on: [push, pull_request, release]
 ```
+
+:::{.notes}
+
+* `.yaml` file to execute jobs
+* Happens on certain triggers
+
+:::
 
 ## CI/CD {auto-animate="true"}
 
@@ -1032,10 +1333,20 @@ jobs:
     steps:
       - name: Checkout
       - name: Install uv
-      - name: "Set up Python"
+      - name: Set up Python
       - name: Install the project
       - name: Test
 ```
+
+:::{.notes}
+
+* `.yaml` file to execute jobs
+* Happens on certain triggers
+* Runs on certain test environments
+* Performs a number of actions
+    * checking failures
+
+:::
 
 ## CI/CD {auto-animate="true"}
 
@@ -1050,7 +1361,7 @@ jobs:
         uses: actions/checkout@v4
       - name: Install uv
         uses: astral-sh/setup-uv@v5
-      - name: "Set up Python"
+      - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: ${{ matrix.python-version }}
@@ -1060,6 +1371,15 @@ jobs:
         run: |
           uv run pytest
 ```
+
+:::{.notes}
+
+* Calling common github actions
+* Executing bash content
+    * install dependencies
+    * run tests
+
+:::
 
 ---
 
@@ -1074,6 +1394,11 @@ version = "0.1.0"
 description = "Provides additional functions for creating beautiful tables with 'great-tables'."
 ```
 
+:::{.notes}
+
+* Metadata
+
+:::
 
 ## Configuration {auto-animate="true"}
 
@@ -1090,6 +1415,14 @@ dependencies = [
     "svg-py>=1.6.0",
 ]
 ```
+
+:::{.notes}
+
+* Metadata
+* Dependencies
+    * Plot graphics
+
+:::
 
 ## Configuration {auto-animate="true"}
 
@@ -1113,6 +1446,17 @@ testpaths = ["gt_extras/tests"]
 
 keywords = ["tables", "html"]
 ```
+
+:::{.notes}
+
+* Metadata
+* Dependencies
+    * Plot graphics
+* More metadata
+    * How to run tests
+    * Keywords
+
+:::
 
 ---
 
