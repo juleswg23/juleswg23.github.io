@@ -172,7 +172,7 @@
     "href": "talks/PyData-Boston-2025/index.html#you-borrow-it",
     "title": "Wrappers and Extenders",
     "section": "You Borrow It",
-    "text": "You Borrow It\n\n\n\n\n\n\n\n\n\nPhotos by Gül Işık: https://www.pexels.com/photo/black-wireless-mouse-beside-laptop-2272759/\nand Jacob Yavin: https://www.pexels.com/photo/snack-meal-inside-a-lunch-box-12861383/\n\n\n\nYou want to borrow the bike\nYour use case is different\nMain user isn’t maintaining the bike for the purpose"
+    "text": "You Borrow It\n\n\n\n\n\n\n\n\n\nPhotos by Gül Işık: https://www.pexels.com/photo/black-wireless-mouse-beside-laptop-2272759/\nand Jacob Yavin: https://www.pexels.com/photo/snack-meal-inside-a-lunch-box-12861383/\n\n\n\nYou want to borrow the bike\nYour use case is different\nBring lunch or mouse\nMain user isn’t maintaining the bike for the purpose"
   },
   {
     "objectID": "talks/PyData-Boston-2025/index.html#solve-it-for-yourself",
@@ -200,14 +200,14 @@
     "href": "talks/PyData-Boston-2025/index.html#use-an-optional-attachment",
     "title": "Wrappers and Extenders",
     "section": "Use An Optional Attachment",
-    "text": "Use An Optional Attachment\n\n\nPhoto by Pack2Ride: https://www.pexels.com/photo/a-bicycle-on-the-road-8934535/\n\n\n\nHoly grail\nRemovable, therefore optional\nOther roommates can use it\nWon’t interfere with owner\nDon’t have to maintain your own bike"
+    "text": "Use An Optional Attachment\n\n\nPhoto by Pack2Ride: https://www.pexels.com/photo/a-bicycle-on-the-road-8934535/\n\n\n\nHoly grail\nDream of mine\nRemovable, therefore optional\nOther roommates can use it\nWon’t interfere with owner\nDon’t have to maintain your own bike"
   },
   {
     "objectID": "talks/PyData-Boston-2025/index.html#programming-story",
     "href": "talks/PyData-Boston-2025/index.html#programming-story",
     "title": "Wrappers and Extenders",
     "section": "Programming story",
-    "text": "Programming story\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nMichael and Richard and my co-workers/roommates\nGreat tables = dataframes (pandas) to publication tables"
+    "text": "Programming story\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nMichael and Richard and my co-workers/roommates\nGreat tables = dataframes (pandas) to publication tables\nCheatsheet outside"
   },
   {
     "objectID": "talks/PyData-Boston-2025/index.html#maintenance-upgrades-1",
@@ -228,14 +228,14 @@
     "href": "talks/PyData-Boston-2025/index.html#solve-it-for-yourself-1",
     "title": "Wrappers and Extenders",
     "section": "Solve It For Yourself",
-    "text": "Solve It For Yourself\nWrite It Locally\n\n\n\n\n\n\n\n\n\n\nBuild in a script, locally\nfmt_nanoplot doesn’t do our plotting\nfmt lets you plug in generically (show 2nd image)\nHard to share with peers or collaborate\n\ngreat starting point"
+    "text": "Solve It For Yourself\nWrite It Locally\n\n\n\n\n\n\n\n\n\n\nBring your own backpack\nBuild in a script, locally\nfmt_nanoplot doesn’t do our plotting\nfmt lets you plug in generically (show 2nd image)\nHard to share with peers or collaborate\n\ngreat starting point"
   },
   {
     "objectID": "talks/PyData-Boston-2025/index.html#modify-the-bike-for-everyone-1",
     "href": "talks/PyData-Boston-2025/index.html#modify-the-bike-for-everyone-1",
     "title": "Wrappers and Extenders",
     "section": "Modify The Bike For Everyone",
-    "text": "Modify The Bike For Everyone\nSubmit a PR For Everyone\n\n\n\n\n\nTake that local script\n\nmake a function\nsubmit PR\n\nmight end up waiting\nmight get heavily edited\n\n(hopefully not issues in great tables)"
+    "text": "Modify The Bike For Everyone\nSubmit a PR For Everyone\n\n\n\n\n\nTake that local script\n\nmake a function\nsubmit PR\nHave to learn about internals\n\nmight end up waiting\nmight get heavily edited\n\n(hopefully not issues in great tables)"
   },
   {
     "objectID": "talks/PyData-Boston-2025/index.html#fork-the-bike-1",
@@ -256,7 +256,7 @@
     "href": "talks/PyData-Boston-2025/index.html#whats-in-a-package",
     "title": "Wrappers and Extenders",
     "section": "What’s In A Package?",
-    "text": "What’s In A Package?\n\n\nCollection of actions\n\ngt is dataframe -&gt; beautiful table\n\n\n\nMany options in one selection, easy access to one\n\nclick button to set this specific gear\n\nMany places to make many selections, easy access to a set\n\n4th gear\nLights\nReflective vest\n\nNew functionality not supported\n\nRe-structure the bike\n\n\n\n\n\n\n\n\n\n\n\n17th gear\nNight mountain ride\nFolding bike\n\n\n\nWrapping\nComposing\nExtending"
+    "text": "What’s In A Package?\n\n\nCollection of actions\n\ngt is dataframe -&gt; beautiful table\n\nBeen talking packages too long\n\n\nMany options in one selection, easy access to one\n\nclick button to set this specific gear\n\nMany places to make many selections, easy access to a set\n\n3rd gear, Lights, Reflective vest\n\nNew functionality not supported\n\nRe-structure the bike\nDon’t fold a road bike\n\n\n\n\n\n\n\n\n\n\n\n17th gear\nNight mountain ride\nFolding bike\n\n\n\nWrapping\nComposing\nExtending"
   },
   {
     "objectID": "talks/PyData-Boston-2025/index.html#wrapping",
@@ -396,7 +396,7 @@
     "href": "talks/PyData-Boston-2025/index.html#cicd",
     "title": "Wrappers and Extenders",
     "section": "CI/CD",
-    "text": "CI/CD\nContinuous Integration / Continuous Deployment\n.github/workflows/*.yml\n\n\n.yaml file to execute jobs"
+    "text": "CI/CD\nContinuous Integration / Continuous Development\n.github/workflows/*.yml\n\n\n.yaml file to execute jobs"
   },
   {
     "objectID": "talks/PyData-Boston-2025/index.html#cicd-1",
