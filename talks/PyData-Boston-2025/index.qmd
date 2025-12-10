@@ -151,6 +151,7 @@ and Jacob Yavin: https://www.pexels.com/photo/snack-meal-inside-a-lunch-box-1286
 
 * You want to borrow the bike
 * Your use case is different
+* Bring lunch or mouse
 * Main user isn't maintaining the bike for the purpose
 
 :::
@@ -223,6 +224,7 @@ Photo by Pack2Ride: https://www.pexels.com/photo/a-bicycle-on-the-road-8934535/
 :::{.notes}
 
 * Holy grail
+* Dream of mine
 * Removable, therefore optional
 * Other roommates can use it
 * Won't interfere with owner
@@ -272,6 +274,7 @@ Photo by Pack2Ride: https://www.pexels.com/photo/a-bicycle-on-the-road-8934535/
 
 * Michael and Richard and my co-workers/roommates
 * Great tables = dataframes (pandas) to publication tables
+* Cheatsheet outside
 
 :::
 
@@ -413,6 +416,7 @@ gt_extra
 
 :::{.notes}
 
+* Bring your own backpack
 * Build in a script, locally
 * fmt_nanoplot doesn't do our plotting
 * fmt lets you plug in generically (show 2nd image)
@@ -438,6 +442,7 @@ gt_extra
 * Take that local script
     * make a function
     * submit PR
+    * Have to learn about internals
 * might end up waiting
 * might get heavily edited
     * (hopefully not issues in great tables)
@@ -507,14 +512,14 @@ Photo by Lukas: https://www.pexels.com/photo/turned-on-laptop-computer-574073/
 
 * Collection of actions
     * gt is dataframe -> beautiful table
+* Been talking packages too long
 1) Many options in one selection, easy access to one
     * click button to set this specific gear
 2) Many places to make many selections, easy access to a set
-    * 4th gear
-    * Lights
-    * Reflective vest
+    * 3rd gear, Lights, Reflective vest
 3) New functionality not supported
     * Re-structure the bike
+    * Don't fold a road bike
 
 :::
 
@@ -1290,7 +1295,7 @@ def highlight_columns(gt: GT, columns) -> GT:
 
 ## CI/CD {auto-animate="true"}
 
-#### Continuous Integration / Continuous Deployment
+#### Continuous Integration / Continuous Development
 
 `.github/workflows/*.yml`
 
