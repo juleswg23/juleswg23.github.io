@@ -3,7 +3,7 @@ title: "Wrappers and Extenders"
 subtitle: "Companion Packages for Python Projects"
 author: "Jules Walzer-Goldfeld"
 date-meta: 12-10-2025
-freeze: false
+freeze: true
 format:
   revealjs:
     slide-number: c/t
