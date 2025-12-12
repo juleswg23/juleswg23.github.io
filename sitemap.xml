@@ -1,39 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://juleswg.me/blog.html</loc>
-    <lastmod>2025-11-19T19:51:21.443Z</lastmod>
-  </url>
-  <url>
-    <loc>https://juleswg.me/index.html</loc>
-    <lastmod>2025-11-21T18:39:20.652Z</lastmod>
-  </url>
-  <url>
-    <loc>https://juleswg.me/talks/Great-Tables-and-More-Nov-19/index.html</loc>
-    <lastmod>2025-11-19T20:54:13.829Z</lastmod>
-  </url>
-  <url>
-    <loc>https://juleswg.me/work.html</loc>
-    <lastmod>2025-12-05T15:25:53.873Z</lastmod>
-  </url>
-  <url>
-    <loc>https://juleswg.me/posts/Posit-Internship-Reflection/index.html</loc>
-    <lastmod>2025-11-19T19:51:21.509Z</lastmod>
-  </url>
-  <url>
-    <loc>https://juleswg.me/posts/Posit-adding-plots-to-great-tables/index.html</loc>
-    <lastmod>2025-11-19T19:51:21.509Z</lastmod>
-  </url>
-  <url>
     <loc>https://juleswg.me/talks/PyData-Boston-2025/index.html</loc>
-    <lastmod>2025-12-10T03:34:30.750Z</lastmod>
+    <lastmod>2025-12-12T19:16:37.067Z</lastmod>
   </url>
   <url>
     <loc>https://juleswg.me/talks/Posit-Open-Source-Reflection/index.html</loc>
-    <lastmod>2025-11-19T19:51:21.542Z</lastmod>
+    <lastmod>2025-12-12T19:16:36.960Z</lastmod>
+  </url>
+  <url>
+    <loc>https://juleswg.me/blog.html</loc>
+    <lastmod>2025-12-12T19:16:36.870Z</lastmod>
+  </url>
+  <url>
+    <loc>https://juleswg.me/posts/Posit-adding-plots-to-great-tables/index.html</loc>
+    <lastmod>2025-12-12T19:16:36.893Z</lastmod>
+  </url>
+  <url>
+    <loc>https://juleswg.me/work.html</loc>
+    <lastmod>2025-12-12T19:16:37.067Z</lastmod>
+  </url>
+  <url>
+    <loc>https://juleswg.me/index.html</loc>
+    <lastmod>2025-12-12T19:16:36.893Z</lastmod>
+  </url>
+  <url>
+    <loc>https://juleswg.me/posts/Posit-Internship-Reflection/index.html</loc>
+    <lastmod>2025-12-12T19:16:36.893Z</lastmod>
   </url>
   <url>
     <loc>https://juleswg.me/blogroll.html</loc>
-    <lastmod>2025-11-19T19:51:21.443Z</lastmod>
+    <lastmod>2025-12-12T19:16:36.870Z</lastmod>
+  </url>
+  <url>
+    <loc>https://juleswg.me/talks/Great-Tables-and-More-Nov-19/index.html</loc>
+    <lastmod>2025-12-12T19:16:36.948Z</lastmod>
   </url>
 </urlset>
