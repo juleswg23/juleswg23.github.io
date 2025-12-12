@@ -16,8 +16,8 @@ title: "Things I've Done"
 
 ## Talks
 
-<!-- TODO add video link -->
-* I spoke at [The Budapest BI Forum 2025](https://budapestbiforum.com/2025/en/) about Great Tables, and all the wonderful things you can do with the package! Here are the [slides](./talks/Great-Tables-and-More-Nov-19/index.qmd), and coming soon is the video link!
+* I presented on Python companion packages at [PyData Boston 2025](https://pydata.org/boston2025)! The [slides](./talks/PyData-Boston-2025/index.qmd) can be found here on my website.
+* I spoke at [The Budapest BI Forum 2025](https://budapestbiforum.com/2025/en/) about Great Tables, and all the wonderful things you can do with the package! Here are the [slides](./talks/Great-Tables-and-More-Nov-19/index.qmd).
 * [Slides](./talks/Posit-Open-Source-Reflection/index.qmd) for an internal talk I gave about my [internship at Posit](./posts/Posit-Internship-Reflection/index.qmd)
 
 ## Personal Projects
