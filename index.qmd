@@ -25,9 +25,9 @@ I graduated from Williams College in 2023 with a double major in computer scienc
 
 Last year, I helped out in the Michigan Dems 2024 campaign, writing some texting scripts and mostly organzing volunteer door-knockers and phone bankers. More recently I worked as a maintainer for an in-house Student Information Service for a local high school, which entailed a full-stack React/NextJS project deployed on Vercel.
 
-Currently, I'm working on Python Email resources for [Posit](https://posit.co/)!
+Last fall, I worked on Python open-source resources for [Posit](https://posit.co/) and currently I'm supporting data scientists at the [World Bank](https://www.worldbank.org/en/about/unit/unit-dec/dev) in their quest for data-powered development.
 
-- 🔭 My role now involves the exploration and development of resources for [email in Python](https://github.com/posit-dev/email-for-data-science)!
+- 🔭 My role now involves the development of resources for data scientists at the World Bank.
 - 🔭 I had previously been working on a supplemental [Great Tables](https://github.com/posit-dev/great-tables) package called [gt-extras](https://github.com/posit-dev/gt-extras)!
 - 🌱 I’m currently learning how to toy around with R Shiny apps, one of which can be found [here](https://jules-dev.shinyapps.io/Marion-Stokes-Tapes-Dashboard/).
 - 💬 I’m looking to collaborate on [gt-extras](https://github.com/posit-dev/gt-extras), please submit issues and PR's!
